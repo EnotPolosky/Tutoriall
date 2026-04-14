@@ -1,0 +1,344 @@
+1
+00:00:03,170 --> 00:00:03,910
+Hello.
+
+2
+00:00:03,920 --> 00:00:09,110
+In this next lecture, we're going to go over how to create a life system so it might play a character
+
+3
+00:00:09,110 --> 00:00:12,440
+dies and loses all their hearts if they still have some lives.
+
+4
+00:00:12,440 --> 00:00:15,470
+We're going to respawn our player character back into our game.
+
+5
+00:00:15,470 --> 00:00:22,610
+So in order to set that system up, if we open up our player blueprint and we want to create a new variable
+
+6
+00:00:23,150 --> 00:00:24,500
+for this life's.
+
+7
+00:00:25,820 --> 00:00:27,530
+Make this bearable type afloat.
+
+8
+00:00:29,160 --> 00:00:30,390
+And just go compile.
+
+9
+00:00:30,750 --> 00:00:33,420
+And for now we're going to make it to our player character.
+
+10
+00:00:33,450 --> 00:00:35,420
+We'll start off the game with three lives.
+
+11
+00:00:35,430 --> 00:00:40,130
+So here on the lights, I'm going to type in three into free space.
+
+12
+00:00:40,140 --> 00:00:45,600
+If you just right click a look for add custom event and call this respawn.
+
+13
+00:00:46,320 --> 00:00:50,610
+Whenever our player character dies, we're going to call this respawn custom event.
+
+14
+00:00:50,910 --> 00:00:56,880
+And if our player character has more than zero likes, so drag a player in A for greater than zero.
+
+15
+00:00:56,910 --> 00:01:00,780
+So if our player character has more than zero lives, we're going to respawn our player character.
+
+16
+00:01:01,020 --> 00:01:02,700
+So drink up and look for Branch.
+
+17
+00:01:04,360 --> 00:01:09,550
+The first thing we're going to do when we respawn our character is make it so that they can move again.
+
+18
+00:01:09,580 --> 00:01:15,550
+When our player dies, we disable their input so they can't really do anything if their respawn will
+
+19
+00:01:15,550 --> 00:01:16,920
+enable their input again.
+
+20
+00:01:16,930 --> 00:01:24,580
+So our right click for enable input and for the player controller, we can right click and we'll get
+
+21
+00:01:24,790 --> 00:01:26,020
+player controller.
+
+22
+00:01:26,870 --> 00:01:28,130
+And connect us here.
+
+23
+00:01:29,750 --> 00:01:34,600
+The second thing we're going to do is give the player their health back and update their heart.
+
+24
+00:01:34,610 --> 00:01:38,390
+So when our player character dies, they're going to have no hearts.
+
+25
+00:01:38,390 --> 00:01:42,920
+So we need to update our heart again to make things cleaner and easier.
+
+26
+00:01:43,250 --> 00:01:47,750
+When our player character dies, we're just going to remove the heart from the viewport.
+
+27
+00:01:47,930 --> 00:01:53,540
+So after this jump node drag in our heart reference.
+
+28
+00:01:54,440 --> 00:01:58,280
+And drink up here and look for removed from Arat.
+
+29
+00:01:58,490 --> 00:02:01,850
+This will make it so our hard will disappear when our character dies.
+
+30
+00:02:02,750 --> 00:02:06,740
+If we respawn up our character, we'll add our hard back to the viewport.
+
+31
+00:02:07,040 --> 00:02:10,580
+But before we do this, we're going to drag in our health.
+
+32
+00:02:11,690 --> 00:02:16,640
+And to our health to be our mctell because one of our dies, their health will be set to zero.
+
+33
+00:02:16,670 --> 00:02:18,710
+So we just need to give them the health back.
+
+34
+00:02:20,110 --> 00:02:22,450
+Then after we do this, we'll create a widget.
+
+35
+00:02:24,200 --> 00:02:25,850
+This widget will be the player HUD.
+
+36
+00:02:27,020 --> 00:02:30,370
+And we'll just set this as our new HUD reference.
+
+37
+00:02:30,380 --> 00:02:34,400
+So I'll drive up here and look for set HUD reference and connect this node here.
+
+38
+00:02:35,790 --> 00:02:38,100
+And then we will add this to the viewport.
+
+39
+00:02:40,360 --> 00:02:45,100
+After we do this, we're going to move our player character to a safe, restful location.
+
+40
+00:02:45,220 --> 00:02:49,180
+So if we just drag up here and look for set actor location.
+
+41
+00:02:51,060 --> 00:02:53,840
+And we're going to move them to a safe location.
+
+42
+00:02:53,850 --> 00:02:56,640
+So if we create a new variable and call this checkpoint.
+
+43
+00:02:58,550 --> 00:02:59,540
+Undesirable type.
+
+44
+00:02:59,570 --> 00:03:01,370
+Change this to be a vector.
+
+45
+00:03:01,910 --> 00:03:09,890
+And if we go over to the in play, we're going to make our actors starting location their first checkpoint.
+
+46
+00:03:10,130 --> 00:03:16,670
+So if I just drag in this checkpoint and look for set checkpoint, and then if I just right click,
+
+47
+00:03:16,910 --> 00:03:19,040
+we'll get actor location.
+
+48
+00:03:19,520 --> 00:03:24,740
+As soon as our game starts, we'll set our actors starting location as their first checkpoint.
+
+49
+00:03:28,050 --> 00:03:31,650
+I can now crack in my checkpoint babble and connect us here.
+
+50
+00:03:32,580 --> 00:03:36,820
+After we do this, we need to tell the game that the player has lost one of their lives.
+
+51
+00:03:36,840 --> 00:03:44,610
+So if we drag in the life cerebral and drag up here and look for decrement, bloat and just drag in
+
+52
+00:03:44,610 --> 00:03:46,050
+our lights and set it.
+
+53
+00:03:49,520 --> 00:03:52,040
+This will subtract the amount of lives we have by one.
+
+54
+00:03:52,700 --> 00:03:57,980
+Then if you remember, when our character dies, we kind of call this do once event.
+
+55
+00:03:58,130 --> 00:04:01,580
+If we respawn off that character, we're going to need to reset this.
+
+56
+00:04:01,580 --> 00:04:08,000
+So I'm just going to right click and look for add custom event and I'll call this reset player death.
+
+57
+00:04:10,720 --> 00:04:12,160
+And connect us into here.
+
+58
+00:04:12,970 --> 00:04:18,279
+Then after we do all of this, I will call the Reset Player Deaths custom event.
+
+59
+00:04:19,810 --> 00:04:25,330
+So the final thing we need to do is make it so that when our player dies, we cool the respawn custom
+
+60
+00:04:25,330 --> 00:04:25,900
+event.
+
+61
+00:04:26,110 --> 00:04:33,850
+If we just compile and save this and then head over to our animation folder, go over to the animation
+
+62
+00:04:33,850 --> 00:04:36,850
+source and select the death animation.
+
+63
+00:04:38,050 --> 00:04:41,290
+And go over to frame ten.
+
+64
+00:04:42,270 --> 00:04:42,930
+At frame ten.
+
+65
+00:04:42,960 --> 00:04:47,220
+Right click and go add, notify new notify and call this restore.
+
+66
+00:04:48,710 --> 00:04:55,580
+Then if we close this and go to our characters animation blueprint, go over to the respawn function
+
+67
+00:04:55,700 --> 00:04:57,650
+and drag in our player reference.
+
+68
+00:04:58,450 --> 00:05:02,980
+And we want to travel here and hold the respawn event that we've just made.
+
+69
+00:05:03,100 --> 00:05:08,320
+Finally, if we go over to the new state machine, hook up from dire to idle slash run.
+
+70
+00:05:08,500 --> 00:05:13,420
+So we're going to make it so that we can transition from our diet to our idle start running animation.
+
+71
+00:05:13,750 --> 00:05:15,820
+In order to enter this transition.
+
+72
+00:05:16,240 --> 00:05:19,690
+We're going to make sure our player character has more than zero lives.
+
+73
+00:05:19,750 --> 00:05:24,670
+So I'll drag in my player character reference, drag up here and look for their lives.
+
+74
+00:05:26,090 --> 00:05:29,480
+We will check to see that this value is greater than zero.
+
+75
+00:05:30,810 --> 00:05:37,030
+And so I'm just going to try and we'll make sure that our death animation has finished playing.
+
+76
+00:05:37,050 --> 00:05:41,190
+So I'm just going to right click and look for time remaining death.
+
+77
+00:05:41,910 --> 00:05:47,790
+And if we don't prepare for this, then and put the value put 0.01.
+
+78
+00:05:47,910 --> 00:05:54,060
+So the reason we're putting a 0.01 is because for my death animation and I put the respawn notified
+
+79
+00:05:54,060 --> 00:05:55,410
+quite late towards the end.
+
+80
+00:05:56,210 --> 00:05:58,790
+So just to be safe, I've made this value 0.01.
+
+81
+00:05:59,890 --> 00:06:06,970
+Then if we connect us here, we can go compile, save, and we should be able to test this all out.
+
+82
+00:06:07,270 --> 00:06:08,890
+So if I can play.
+
+83
+00:06:09,910 --> 00:06:14,460
+And I jump in from my Scampton and I get damaged four times.
+
+84
+00:06:14,470 --> 00:06:17,290
+I should die and it should call the return.
+
+85
+00:06:17,710 --> 00:06:19,170
+So I died.
+
+86
+00:06:19,180 --> 00:06:23,320
+And then it called the respawn custom event and it moved me to my safe location.
+

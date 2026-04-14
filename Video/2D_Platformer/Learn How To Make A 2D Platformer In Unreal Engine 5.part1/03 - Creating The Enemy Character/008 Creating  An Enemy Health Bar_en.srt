@@ -1,0 +1,224 @@
+1
+00:00:03,180 --> 00:00:03,880
+Hello.
+
+2
+00:00:03,900 --> 00:00:09,090
+In this next lecture, we're going to go over how to give a health bar to our enemy character so we
+
+3
+00:00:09,090 --> 00:00:11,880
+can visually see how much help it has when we damage them.
+
+4
+00:00:11,970 --> 00:00:16,530
+To get started, I want us to create a new folder and just call it widget blueprints.
+
+5
+00:00:20,060 --> 00:00:24,980
+Once you've done this, head inside this folder and create another folder and just call it images.
+
+6
+00:00:27,560 --> 00:00:32,150
+Once you've done this really close on your engine and attach in the lecture of this course, I'm going
+
+7
+00:00:32,150 --> 00:00:33,950
+to make sure to include these two images.
+
+8
+00:00:34,340 --> 00:00:36,230
+Just drag them inside of this folder.
+
+9
+00:00:38,120 --> 00:00:43,100
+Once you've done that, select both of the images right click and go through fractions and apply paper
+
+10
+00:00:43,100 --> 00:00:44,510
+to texture settings.
+
+11
+00:00:44,660 --> 00:00:47,090
+We're now ready to create an enemy health bar.
+
+12
+00:00:47,120 --> 00:00:51,470
+We're going to create it in something called a Widget Blueprint, which allows us to display user interfaces
+
+13
+00:00:51,470 --> 00:00:52,820
+inside of Unreal Engine.
+
+14
+00:00:53,090 --> 00:00:58,220
+So to create one, just right click and go user interface, then set widget blueprint.
+
+15
+00:00:58,460 --> 00:01:02,900
+So use a widget and call this enemy helper underscore widget blueprint.
+
+16
+00:01:07,100 --> 00:01:09,440
+We then want to double click and head inside here.
+
+17
+00:01:10,790 --> 00:01:13,030
+And currently it's blank on the palette.
+
+18
+00:01:13,040 --> 00:01:14,750
+You want to look for canvas panel.
+
+19
+00:01:15,110 --> 00:01:16,550
+So no, look, canvas.
+
+20
+00:01:16,580 --> 00:01:20,150
+Just select it and drag it inside of this enemy health widget blueprint.
+
+21
+00:01:20,660 --> 00:01:22,430
+You'll be able to see this little grid.
+
+22
+00:01:23,090 --> 00:01:25,760
+Inside of this grid is where we're going to customize our health bar.
+
+23
+00:01:26,680 --> 00:01:29,390
+Go back to the palette and look for progress for.
+
+24
+00:01:31,130 --> 00:01:35,570
+Just dragons like that and move it somewhere into the middle of your screen.
+
+25
+00:01:36,050 --> 00:01:38,660
+Then just go anchor and select this middle one.
+
+26
+00:01:38,660 --> 00:01:42,800
+And this will just ensure when we display the health bar, it's going to appear in the center of the
+
+27
+00:01:42,800 --> 00:01:43,340
+screen.
+
+28
+00:01:43,610 --> 00:01:46,190
+Next, I want you to go to our test progress.
+
+29
+00:01:46,220 --> 00:01:47,840
+Currently, the percent is zero.
+
+30
+00:01:47,870 --> 00:01:49,850
+This goes from a value of 0 to 1.
+
+31
+00:01:49,850 --> 00:01:52,460
+And as I increase it, this bar is going to fill up.
+
+32
+00:01:52,730 --> 00:01:54,650
+We can also change how it builds up.
+
+33
+00:01:54,650 --> 00:01:59,870
+So if I just select this and go right to left, we can make this bar fill up from the right to left
+
+34
+00:02:00,140 --> 00:02:01,850
+or from the center.
+
+35
+00:02:02,720 --> 00:02:04,940
+But for now, let's just set left or right.
+
+36
+00:02:04,940 --> 00:02:10,220
+But I just wanted to show you that in case you wanted to customize it next, in order to customize our
+
+37
+00:02:10,220 --> 00:02:12,830
+health bar, because the default one looks kind of boring.
+
+38
+00:02:12,860 --> 00:02:14,480
+Go over to where it says style.
+
+39
+00:02:14,690 --> 00:02:16,340
+Then go to background image.
+
+40
+00:02:16,640 --> 00:02:20,360
+And on the background image, I want you to look for the enemy health bar.
+
+41
+00:02:21,740 --> 00:02:22,040
+Sorry.
+
+42
+00:02:22,040 --> 00:02:23,420
+I want you to look for the health bar.
+
+43
+00:02:23,450 --> 00:02:23,990
+This one.
+
+44
+00:02:23,990 --> 00:02:24,470
+The health bar.
+
+45
+00:02:24,480 --> 00:02:25,070
+Empty.
+
+46
+00:02:26,110 --> 00:02:29,440
+And under draw as just like image.
+
+47
+00:02:29,980 --> 00:02:33,940
+Then I want you to go to feel image and select the enemy Health ball.
+
+48
+00:02:37,200 --> 00:02:40,320
+And then I wanted to go to draw ads and select image.
+
+49
+00:02:41,500 --> 00:02:43,960
+Now I scroll down and I go to my present.
+
+50
+00:02:44,410 --> 00:02:46,390
+It's going to flip between those two images.
+
+51
+00:02:46,390 --> 00:02:47,980
+So that's why we imported them.
+
+52
+00:02:48,010 --> 00:02:50,680
+If you had your own custom health bar, you could use it there.
+
+53
+00:02:51,220 --> 00:02:55,390
+I'm just going to adjust the size of this as it looks a bit stretch so when we get a bit thicker.
+
+54
+00:02:56,120 --> 00:03:01,730
+So the idea here is we're going to use this progress bar to represent the health of our enemy.
+
+55
+00:03:01,850 --> 00:03:04,550
+And when our enemy has full health, it's going to be at one.
+
+56
+00:03:04,640 --> 00:03:08,990
+And when our enemy has no health, then it's going to suddenly deteriorate and look like this.
+

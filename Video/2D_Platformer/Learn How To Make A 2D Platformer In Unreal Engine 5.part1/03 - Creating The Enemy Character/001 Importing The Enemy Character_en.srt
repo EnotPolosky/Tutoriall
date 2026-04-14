@@ -1,0 +1,420 @@
+1
+00:00:03,070 --> 00:00:03,680
+Hello.
+
+2
+00:00:03,700 --> 00:00:09,700
+In this next section, we're going to set up an enemy character to get started briefly close on our
+
+3
+00:00:09,700 --> 00:00:12,370
+engine and attach somewhere in this course.
+
+4
+00:00:12,370 --> 00:00:14,770
+I'm going to make sure to include this content file.
+
+5
+00:00:14,800 --> 00:00:20,440
+Just select it and drag it somewhere inside of your Unreal Engine project with all the images selected,
+
+6
+00:00:20,440 --> 00:00:25,120
+just right click and go spread actions and apply paper to detect your settings.
+
+7
+00:00:25,300 --> 00:00:30,310
+The next thing we're going to do is set up the animations that our enemy is going to have just to keep
+
+8
+00:00:30,310 --> 00:00:31,170
+things organized.
+
+9
+00:00:31,180 --> 00:00:34,750
+I'm going to create a folder for each of its separate animations.
+
+10
+00:00:37,090 --> 00:00:40,960
+So once you've done that, just drag the respective animation into its photo.
+
+11
+00:00:42,710 --> 00:00:44,360
+Let's head into the first order.
+
+12
+00:00:44,360 --> 00:00:45,200
+The attack one.
+
+13
+00:00:45,500 --> 00:00:50,090
+Then if we just right click on this image, I go extractions and go extract Sprite.
+
+14
+00:00:50,990 --> 00:00:54,250
+This is kind of different to how we extracted our characters, right?
+
+15
+00:00:54,260 --> 00:00:57,410
+So our characters came with all the images individually.
+
+16
+00:00:57,410 --> 00:00:59,780
+This sprite came with all the images together.
+
+17
+00:00:59,990 --> 00:01:02,750
+In Unreal Engine, there are two ways we can extract sprites.
+
+18
+00:01:02,750 --> 00:01:08,120
+So the first way is to use this auto method, and here Unreal Engine will try to get each frame for
+
+19
+00:01:08,120 --> 00:01:09,620
+Sprite and try to extract it.
+
+20
+00:01:09,710 --> 00:01:12,200
+Although you can see it's kind of struggling with this last one.
+
+21
+00:01:12,560 --> 00:01:15,950
+So it may not be best to do auto, but sometimes it can work.
+
+22
+00:01:15,980 --> 00:01:21,590
+The other method we have is grid, and here we can specify how we'd like it to trip up our image.
+
+23
+00:01:21,590 --> 00:01:27,140
+So here, under cell width, I know that if I have a value of 150, then it's going to split all the
+
+24
+00:01:27,140 --> 00:01:28,430
+images accurately.
+
+25
+00:01:28,430 --> 00:01:33,530
+But I could change this to be something like 100 and it would split up all the images in that way.
+
+26
+00:01:35,220 --> 00:01:37,410
+I'm just going to change it back and go extract.
+
+27
+00:01:38,420 --> 00:01:43,670
+And then I'm gonna collect all the sprite right click and go create flipbook, and I'll call this skeleton
+
+28
+00:01:44,180 --> 00:01:44,720
+attack.
+
+29
+00:01:45,230 --> 00:01:48,560
+So we're not going to do the same thing with our skeletons, other animations.
+
+30
+00:01:48,560 --> 00:01:50,720
+So we go to the death folder.
+
+31
+00:01:51,320 --> 00:01:58,340
+Right click on it goes fractions, sprites, go to grid and change this to be 150.
+
+32
+00:01:58,550 --> 00:02:04,730
+They're all going to be 150 in the cell width and just go extract our select all the sprites, create
+
+33
+00:02:04,730 --> 00:02:07,880
+a flipbook and call the skeleton death.
+
+34
+00:02:08,919 --> 00:02:14,140
+And what this death one just like the last one right click and go create flipbook and call the skeleton
+
+35
+00:02:14,680 --> 00:02:19,540
+dead body because later when we kill Stanton will make it play the scam to death.
+
+36
+00:02:19,540 --> 00:02:22,270
+And then we just want a flipbook of the Stanton's dead body.
+
+37
+00:02:23,170 --> 00:02:24,960
+Next we head over to the other powder.
+
+38
+00:02:25,480 --> 00:02:27,250
+We will extract the sprite.
+
+39
+00:02:28,570 --> 00:02:33,670
+Go to grid, put 150 here and extract.
+
+40
+00:02:34,030 --> 00:02:35,920
+So hopefully you've got the hang of this.
+
+41
+00:02:36,190 --> 00:02:38,800
+I'm just going to fast forward and do this for the other sprites.
+
+42
+00:02:42,650 --> 00:02:47,810
+So once you created a flipbook animation for all of your Stanton's animations just to be organized,
+
+43
+00:02:47,810 --> 00:02:50,570
+I'm going to create a new folder and call it flip books.
+
+44
+00:02:51,660 --> 00:02:54,000
+And I'm just going to put all these folders inside of it.
+
+45
+00:03:00,500 --> 00:03:01,250
+Hello.
+
+46
+00:03:01,280 --> 00:03:05,090
+The next thing I want to do is set up my skeleton's animation blueprint.
+
+47
+00:03:05,240 --> 00:03:08,210
+So I'm going to right click and create a new folder.
+
+48
+00:03:08,300 --> 00:03:10,040
+And just pull this animations.
+
+49
+00:03:11,400 --> 00:03:17,400
+Then if we head inside here, just right, click again and go ahead and select animation source and
+
+50
+00:03:17,400 --> 00:03:20,940
+just call this a skeleton animation source.
+
+51
+00:03:22,020 --> 00:03:27,510
+If we head inside here, I want you to go add new and set new animation sequence and just cool this
+
+52
+00:03:27,510 --> 00:03:30,640
+first one skeleton item.
+
+53
+00:03:31,140 --> 00:03:34,680
+Then add another one and just call this skeleton walking.
+
+54
+00:03:37,580 --> 00:03:39,740
+But now we're just going to work with these two animations.
+
+55
+00:03:39,740 --> 00:03:41,870
+So here, understand an idol.
+
+56
+00:03:41,900 --> 00:03:43,220
+I'm going to slap my skeleton.
+
+57
+00:03:43,220 --> 00:03:46,490
+I do animation and hair under skins and walking.
+
+58
+00:03:46,610 --> 00:03:48,770
+I'm going to set my skin to walking animation.
+
+59
+00:03:51,240 --> 00:03:53,130
+Once you've done this, you can just go save.
+
+60
+00:03:54,800 --> 00:03:55,340
+Next.
+
+61
+00:03:55,340 --> 00:04:00,250
+Before we set up our sentence animation blueprint, we're going to set up a very simple script and blueprint.
+
+62
+00:04:00,260 --> 00:04:05,900
+So I'm going to go back to my Scantron folder and just right click and go new folder and call this blueprint.
+
+63
+00:04:07,230 --> 00:04:13,050
+Then we head inside here on the right Click and Go Blueprint class and under all classes, look for
+
+64
+00:04:13,050 --> 00:04:14,160
+Paper Z.
+
+65
+00:04:15,770 --> 00:04:17,510
+And this one paper Z character.
+
+66
+00:04:18,470 --> 00:04:22,670
+Select it and just call the Scantron underscore beep.
+
+67
+00:04:23,180 --> 00:04:28,190
+We don't need to do anything else because inside my animation blueprint, we're going to reference this
+
+68
+00:04:28,190 --> 00:04:31,250
+phantom beep so we can just access some variables inside of that.
+
+69
+00:04:31,820 --> 00:04:33,570
+Next, we can just right click and go.
+
+70
+00:04:33,590 --> 00:04:36,620
+Paper z, seq, Paper Z Animation Blueprint.
+
+71
+00:04:36,710 --> 00:04:39,020
+And we want to set the scan to an animation source.
+
+72
+00:04:39,020 --> 00:04:41,180
+So a reference to scan animations.
+
+73
+00:04:41,420 --> 00:04:45,950
+I'll just go to my skeleton and beep.
+
+74
+00:04:46,730 --> 00:04:48,170
+Then if we head inside here.
+
+75
+00:04:50,040 --> 00:04:50,840
+I bet on it.
+
+76
+00:04:50,850 --> 00:04:54,230
+We're going to play a reference to our skeleton so we can access an.
+
+77
+00:04:56,500 --> 00:04:57,060
+They went on.
+
+78
+00:04:57,060 --> 00:05:01,860
+And we're going to create a reference to our skeleton blueprint just so that we can access any variables
+
+79
+00:05:01,860 --> 00:05:03,390
+inside of our Scranton character.
+
+80
+00:05:03,810 --> 00:05:08,820
+So event on end, I'm going to right click and will get owning actor.
+
+81
+00:05:09,150 --> 00:05:12,750
+And from here we're going to drag off and forecast to Scranton.
+
+82
+00:05:13,690 --> 00:05:14,380
+As a skeleton.
+
+83
+00:05:14,380 --> 00:05:15,850
+We'll use this animation blueprint.
+
+84
+00:05:16,510 --> 00:05:19,870
+Then we just want to right click on this variable and print it to a variable.
+
+85
+00:05:20,590 --> 00:05:22,510
+Then we head into our animation graph.
+
+86
+00:05:22,900 --> 00:05:28,600
+We just want to right click and go new state machine and hook us up here.
+
+87
+00:05:29,260 --> 00:05:30,940
+And we head inside our state machine.
+
+88
+00:05:31,540 --> 00:05:36,580
+If we just check out an animation state, just call this idle slash walk.
+
+89
+00:05:41,650 --> 00:05:42,880
+And we head inside here.
+
+90
+00:05:44,260 --> 00:05:47,050
+We're going to check to see the velocity of our Stanton.
+
+91
+00:05:47,170 --> 00:05:48,400
+If it's not equal to zero.
+
+92
+00:05:48,430 --> 00:05:50,310
+Then we'll play our walking animation.
+
+93
+00:05:50,320 --> 00:05:53,140
+If it is equal to zero, then we'll play our other animation.
+
+94
+00:05:53,290 --> 00:05:56,800
+So our struggle here and look for good velocity.
+
+95
+00:05:58,940 --> 00:06:07,490
+Well, travel panic will break to three F and we'll see if the philosophy and the x axis is not equal
+
+96
+00:06:07,490 --> 00:06:08,360
+to zero.
+
+97
+00:06:09,050 --> 00:06:11,540
+Then, depending on the value of this, we'll play an animation.
+
+98
+00:06:11,540 --> 00:06:13,010
+So we'll look for blend.
+
+99
+00:06:13,850 --> 00:06:15,560
+There's one slight animations by Paul.
+
+100
+00:06:16,880 --> 00:06:20,330
+If this is true, then we will play our stance of voting.
+
+101
+00:06:23,240 --> 00:06:26,240
+If this is false, then we'll play Oscar into an idol.
+
+102
+00:06:28,820 --> 00:06:32,210
+So I'm going to take this one up here and go compile and save.
+
+103
+00:06:33,360 --> 00:06:33,840
+Nice.
+
+104
+00:06:33,990 --> 00:06:36,570
+Next, we're going to be ready to set up our scan and beep.
+
+105
+00:06:36,600 --> 00:06:39,150
+So I'll scan to walk and move around our level.
+

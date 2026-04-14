@@ -1,0 +1,508 @@
+1
+00:00:03,160 --> 00:00:03,820
+Hello.
+
+2
+00:00:03,850 --> 00:00:08,380
+The next feature we're going to add to our game is going to be a slide mechanic, so our player character
+
+3
+00:00:08,380 --> 00:00:10,750
+will be able to slide along the walls inside of our game.
+
+4
+00:00:10,990 --> 00:00:15,430
+To get started, I want us to create a new folder and just call this levels.
+
+5
+00:00:16,650 --> 00:00:18,120
+Then we go to file.
+
+6
+00:00:18,300 --> 00:00:19,770
+I'm going to select new level.
+
+7
+00:00:20,010 --> 00:00:21,360
+Then select the basic.
+
+8
+00:00:21,570 --> 00:00:22,650
+Click create.
+
+9
+00:00:23,100 --> 00:00:24,400
+And then go save.
+
+10
+00:00:24,420 --> 00:00:27,960
+And then save this inside of our levels folder and just pull this prototype.
+
+11
+00:00:31,890 --> 00:00:32,950
+Want to level out.
+
+12
+00:00:32,970 --> 00:00:38,430
+I want you to go to the player character folder and just make sure that this level has the 2D game mode.
+
+13
+00:00:39,850 --> 00:00:43,180
+And we just want to go here and go basics and add a player start.
+
+14
+00:00:45,940 --> 00:00:50,020
+And then I want us to go add and go shapes and just add this cube.
+
+15
+00:00:52,130 --> 00:00:52,620
+And just go.
+
+16
+00:00:52,640 --> 00:00:54,320
+Select and scale objects.
+
+17
+00:00:55,530 --> 00:00:56,790
+And just make us keep quiet.
+
+18
+00:00:56,960 --> 00:00:57,360
+Oh.
+
+19
+00:00:58,790 --> 00:00:59,810
+And I'll just go play.
+
+20
+00:01:00,410 --> 00:01:02,480
+The idea here is, Oops.
+
+21
+00:01:02,780 --> 00:01:05,060
+So I'm gonna make my cube a bit thicker as well.
+
+22
+00:01:08,300 --> 00:01:11,660
+The idea here is I'm going to make it all my plan sliding along the wall.
+
+23
+00:01:11,690 --> 00:01:13,430
+They're going to play a wall, sliding animation.
+
+24
+00:01:14,300 --> 00:01:19,070
+And when this writing on the wall, my plane about to jump off the wall and be launched in the opposite
+
+25
+00:01:19,070 --> 00:01:19,820
+direction.
+
+26
+00:01:20,120 --> 00:01:23,570
+So to set that up, let's head over to our player, BP.
+
+27
+00:01:25,860 --> 00:01:29,130
+And I'm just going to come in all these notes, all the dash.
+
+28
+00:01:30,800 --> 00:01:34,610
+And we just want to find some free space and just right click and look for a vent.
+
+29
+00:01:34,730 --> 00:01:35,270
+It.
+
+30
+00:01:36,130 --> 00:01:38,140
+So the way this event hit will work.
+
+31
+00:01:38,350 --> 00:01:44,640
+It's whenever our players collision hits anything, this node will fire and of event hit.
+
+32
+00:01:44,650 --> 00:01:48,150
+We want to check if the other actor we've hit has a particular tag.
+
+33
+00:01:48,160 --> 00:01:53,350
+So for other drag has tag this one actor has tag.
+
+34
+00:01:53,350 --> 00:01:55,630
+And the tag we're going to be looking for is Wolf.
+
+35
+00:01:58,040 --> 00:01:59,690
+And we just want to drink up at four.
+
+36
+00:01:59,920 --> 00:02:01,180
+And Julian.
+
+37
+00:02:02,120 --> 00:02:06,950
+So we're going to check to see if our black actor is being an actor, which has the tag, which is warm.
+
+38
+00:02:06,950 --> 00:02:10,830
+And we're going to be checking to see if our player character is also falling in the air, because I
+
+39
+00:02:10,830 --> 00:02:13,250
+only want my character to do a wall slide if they're falling.
+
+40
+00:02:13,400 --> 00:02:20,240
+So we can drag in our character movement track off here and the floor is falling and then just hook
+
+41
+00:02:20,240 --> 00:02:20,990
+this up here.
+
+42
+00:02:21,890 --> 00:02:23,900
+I love this and I'm a for branch.
+
+43
+00:02:25,340 --> 00:02:30,710
+So if my character hit something and has the tiger and they're falling, then I'll tell the game that
+
+44
+00:02:30,710 --> 00:02:31,790
+we should be wall sliding.
+
+45
+00:02:31,790 --> 00:02:35,420
+So we create a new variable before it will start.
+
+46
+00:02:35,420 --> 00:02:40,010
+Question Mark And I'll just drag this in here and just check it.
+
+47
+00:02:40,010 --> 00:02:40,910
+So it's true.
+
+48
+00:02:42,740 --> 00:02:45,330
+Then we just want to try and look for retrievable.
+
+49
+00:02:45,380 --> 00:02:45,890
+Too late.
+
+50
+00:02:46,310 --> 00:02:51,450
+So the way this node will work is as long as this is constantly cooled, its node won't fire.
+
+51
+00:02:51,470 --> 00:02:54,410
+So as long as we're on a wall, this node will not fire.
+
+52
+00:02:54,440 --> 00:02:58,460
+However, if after 0.1 seconds, there's no does not fire.
+
+53
+00:02:58,490 --> 00:03:00,170
+That means my plan must not be on a wall.
+
+54
+00:03:00,200 --> 00:03:04,430
+So we're just going to copy this node and tell the game that we're not wall siding.
+
+55
+00:03:05,570 --> 00:03:07,100
+So I'm just going to go compile.
+
+56
+00:03:08,280 --> 00:03:11,130
+And just so that we can test that everything is working.
+
+57
+00:03:11,280 --> 00:03:14,160
+I'm just going to drive up here and look for print shrink.
+
+58
+00:03:15,030 --> 00:03:17,930
+And I meant to say on a roll.
+
+59
+00:03:19,050 --> 00:03:25,530
+And I'm just going to copy this, paste this here, and then I'll make a say, not on the wall.
+
+60
+00:03:26,340 --> 00:03:29,940
+And if you just go compile, save and close this.
+
+61
+00:03:30,420 --> 00:03:32,340
+If I just let my cube go.
+
+62
+00:03:32,340 --> 00:03:35,340
+Details and search for tag.
+
+63
+00:03:36,120 --> 00:03:36,750
+It's going to go.
+
+64
+00:03:36,750 --> 00:03:41,340
+Actor And I just want to click this little add element and I'll give this the war tag.
+
+65
+00:03:42,030 --> 00:03:44,850
+So now if I go next to this war, my play character is fallen.
+
+66
+00:03:44,880 --> 00:03:46,770
+It should print string on a wall.
+
+67
+00:03:47,790 --> 00:03:51,750
+If I go play and I jump next to this wall, it says, On a wall.
+
+68
+00:03:51,750 --> 00:03:52,080
+On a wall.
+
+69
+00:03:52,110 --> 00:03:52,680
+On a wall.
+
+70
+00:03:52,710 --> 00:03:55,590
+And as you can see, when I reached the bottom, it said, not on a wall.
+
+71
+00:03:58,580 --> 00:04:03,050
+So the next thing you need to do is make it so it plays an animation when our character is on a wall.
+
+72
+00:04:03,260 --> 00:04:06,590
+Next, if we head over to our character's animation blueprint.
+
+73
+00:04:07,400 --> 00:04:11,810
+We're going to use a Trump node whenever our character is sliding along a wall so that they play that
+
+74
+00:04:11,810 --> 00:04:13,130
+wall sliding animation.
+
+75
+00:04:13,250 --> 00:04:17,420
+So if we just right click for Trump, just call this on a wall.
+
+76
+00:04:19,680 --> 00:04:21,950
+And we're going to make it play our wars like animation.
+
+77
+00:04:21,959 --> 00:04:26,490
+So if you just drag up here and look for animation, see it, and just cool this sliding.
+
+78
+00:04:29,040 --> 00:04:30,270
+And just head inside here.
+
+79
+00:04:30,630 --> 00:04:33,090
+And we're just going to play our Wolf Lightning animation.
+
+80
+00:04:36,660 --> 00:04:39,860
+Then we're going to hook from one sighting to our run.
+
+81
+00:04:39,900 --> 00:04:45,430
+So once we stop all siding and we're on the ground, we want to enter our Idol run state.
+
+82
+00:04:45,450 --> 00:04:49,980
+So if we head inside here in order to enter that state, we want to check out the character is on the
+
+83
+00:04:49,980 --> 00:04:50,470
+ground.
+
+84
+00:04:50,490 --> 00:04:53,220
+So we'll drag in our player reference.
+
+85
+00:04:53,280 --> 00:04:55,950
+And we'll just up here and for is walking.
+
+86
+00:04:57,150 --> 00:04:59,960
+We also want to check that our character has stopped or sliding.
+
+87
+00:04:59,970 --> 00:05:02,880
+So in order to do that, we can drag in our player, our hunts.
+
+88
+00:05:03,060 --> 00:05:07,500
+And if you remember, we made this variable to tell us whether we're on a wall or whether we're off
+
+89
+00:05:07,500 --> 00:05:07,950
+a wall.
+
+90
+00:05:08,680 --> 00:05:13,480
+So if we just drag up, if we want to look for is all sliding.
+
+91
+00:05:14,120 --> 00:05:19,240
+So I pulled a wall slide saying, get waterlogged and we want to check that this variable is not true.
+
+92
+00:05:19,250 --> 00:05:22,220
+So we just drag up here and look for the not boolean.
+
+93
+00:05:23,510 --> 00:05:29,060
+If this Bible is not true and my character is walking, then we will enter our search one step.
+
+94
+00:05:29,180 --> 00:05:34,280
+So we just drag and go and boolean and hook this into here.
+
+95
+00:05:35,630 --> 00:05:38,900
+If both of these conditions are true, then we'll enter our idol such front state.
+
+96
+00:05:39,410 --> 00:05:40,770
+So one more war siding.
+
+97
+00:05:40,790 --> 00:05:44,540
+We could also just enter our fooling state if our character decides to jump off the wall.
+
+98
+00:05:44,690 --> 00:05:47,780
+So for that reason, we need to hook up from wall slide to here.
+
+99
+00:05:48,560 --> 00:05:50,120
+And we double click in hand side here.
+
+100
+00:05:50,950 --> 00:05:52,870
+We want to check to see if our character is falling.
+
+101
+00:05:52,870 --> 00:05:55,840
+So we'll get our player VP reference trophy.
+
+102
+00:05:55,870 --> 00:05:57,370
+And the fourth is falling.
+
+103
+00:05:58,980 --> 00:06:00,930
+And we'll also check that we're not all riding.
+
+104
+00:06:00,930 --> 00:06:04,740
+So I'll drag my play of reference again and look for wool slide.
+
+105
+00:06:06,420 --> 00:06:08,460
+And again, we want to check that this is not true.
+
+106
+00:06:08,490 --> 00:06:10,950
+So I'm not for not ruling.
+
+107
+00:06:12,160 --> 00:06:15,260
+And these conditions to be true in order to enter the state.
+
+108
+00:06:15,280 --> 00:06:20,140
+So I drove up here and Vivian and Jess hook us up here.
+
+109
+00:06:21,770 --> 00:06:22,880
+And go compile.
+
+110
+00:06:23,300 --> 00:06:25,610
+So that's the animation sorted for this.
+
+111
+00:06:25,640 --> 00:06:30,530
+Next, let's head over to our play a blueprint and we'll make it so that whenever we're on a wall it
+
+112
+00:06:30,530 --> 00:06:35,070
+will jump to the on a wall state inside of our animation blueprint.
+
+113
+00:06:35,090 --> 00:06:42,290
+So to do that, if we just drag in our animation component and to look for the anim instance.
+
+114
+00:06:44,140 --> 00:06:51,580
+I'm just going to delete this note and we just want to drive up here and for Trump to note Trump, we're
+
+115
+00:06:51,580 --> 00:06:52,480
+going to be jamming to.
+
+116
+00:06:52,480 --> 00:06:54,400
+I called mine on a wall.
+
+117
+00:06:54,910 --> 00:06:57,880
+Again, this needs to be spelt correctly, otherwise it won't work.
+
+118
+00:06:57,880 --> 00:06:59,260
+So actually I called it on.
+
+119
+00:07:00,010 --> 00:07:05,440
+I'm just going to copy it and paste it here and connect this into here.
+
+120
+00:07:07,260 --> 00:07:09,960
+So now when I'm on a walk, I will jump to that state.
+
+121
+00:07:09,990 --> 00:07:12,240
+We can compile and test this all out.
+
+122
+00:07:12,480 --> 00:07:13,830
+So now they're going to play.
+
+123
+00:07:14,490 --> 00:07:15,720
+And I jump on a wall.
+
+124
+00:07:16,440 --> 00:07:17,970
+I'll play my wall signing animation.
+
+125
+00:07:18,090 --> 00:07:19,570
+So it looks a bit off.
+
+126
+00:07:19,590 --> 00:07:21,540
+So my characters are bit away from the wall.
+
+127
+00:07:21,960 --> 00:07:24,420
+We're going to work on fixing that next.
+

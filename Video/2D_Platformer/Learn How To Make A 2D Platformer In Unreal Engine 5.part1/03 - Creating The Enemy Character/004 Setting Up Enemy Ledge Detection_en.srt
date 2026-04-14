@@ -1,0 +1,196 @@
+1
+00:00:03,050 --> 00:00:03,740
+Hello.
+
+2
+00:00:03,770 --> 00:00:06,770
+That actually one more thing going to add to our air.
+
+3
+00:00:06,920 --> 00:00:07,939
+We've made it through that.
+
+4
+00:00:08,330 --> 00:00:10,700
+I can detect if there's something in front of it.
+
+5
+00:00:10,700 --> 00:00:12,620
+And if there is, then I'll turn around.
+
+6
+00:00:12,710 --> 00:00:19,580
+However, if I remove these walls and I'm just going to shrink this platform, so I'm just going to
+
+7
+00:00:19,580 --> 00:00:20,870
+scale that down a bit.
+
+8
+00:00:23,610 --> 00:00:26,040
+I'm just going to slap my eye and move it back a bit.
+
+9
+00:00:26,070 --> 00:00:29,070
+If I just go straight, I will continue walking.
+
+10
+00:00:29,100 --> 00:00:31,350
+It doesn't know when it's on the edge of the world.
+
+11
+00:00:31,470 --> 00:00:33,240
+It'll just walk off the edge and die.
+
+12
+00:00:33,540 --> 00:00:38,550
+We need to make it so, and I can detect whether it's on the edge and if it's on an edge for turnaround.
+
+13
+00:00:38,850 --> 00:00:44,490
+So if we head back to our Scantron and blueprint, and I'm just going to common all these nodes, so
+
+14
+00:00:44,490 --> 00:00:50,550
+it's a bit tidier and I'll call this detect whether something is in front of our Scantron.
+
+15
+00:00:51,780 --> 00:00:57,660
+Then after add movement input, we just want to drag off this node and look for sequence.
+
+16
+00:00:58,410 --> 00:01:03,660
+So the way a sequence will work first or for this node, then you'll fire at this node.
+
+17
+00:01:04,319 --> 00:01:11,160
+We just want to copy all these nodes and paste them here and pick up from then one to here.
+
+18
+00:01:12,030 --> 00:01:14,100
+I'm just going to double click to make this a bit tidier.
+
+19
+00:01:16,650 --> 00:01:21,720
+And this time we're going to do a line phrase, which is a couple of units in front of our actor and
+
+20
+00:01:21,720 --> 00:01:26,070
+around here to basically detect whether there is some edge in front of us.
+
+21
+00:01:26,920 --> 00:01:30,730
+So over here we just drag and subtract.
+
+22
+00:01:31,700 --> 00:01:36,420
+And in the Z, we're going to put a value of 102 circles up here.
+
+23
+00:01:36,900 --> 00:01:42,150
+So what this line tries will be doing first, it'll start wherever actor is, but it's going to end
+
+24
+00:01:42,490 --> 00:01:45,450
+100 units beneath our character and 100 units in front of them.
+
+25
+00:01:45,450 --> 00:01:46,800
+So roughly around here.
+
+26
+00:01:47,340 --> 00:01:53,610
+And the way this will work, as long as this is firing true, that means there's ground below our character.
+
+27
+00:01:53,850 --> 00:01:57,660
+However, if this is false, that means there's no more ground beneath our character.
+
+28
+00:01:58,050 --> 00:02:01,200
+You'll visually see what I mean in the moment over time.
+
+29
+00:02:01,200 --> 00:02:03,000
+Just drag up here and look for Branch.
+
+30
+00:02:03,480 --> 00:02:06,450
+So if this is false, that means there's no more edge in front of us.
+
+31
+00:02:06,520 --> 00:02:08,610
+We want all Scampton to turn around.
+
+32
+00:02:08,759 --> 00:02:10,050
+So over false.
+
+33
+00:02:10,050 --> 00:02:11,190
+I'm going to hook into our.
+
+34
+00:02:11,190 --> 00:02:11,880
+Do you want.
+
+35
+00:02:13,040 --> 00:02:17,750
+And I'm just going to turn off the duration here and make sure this is turned on here.
+
+36
+00:02:18,230 --> 00:02:24,070
+If we now go compile and save and I close this, if I go simulate, we can see my line trace.
+
+37
+00:02:24,080 --> 00:02:26,900
+As long as there's ground in front of us, this will go green.
+
+38
+00:02:27,140 --> 00:02:29,870
+However, if I reach the edge, that last line is red.
+
+39
+00:02:29,870 --> 00:02:31,610
+So it means there's no more ground in front of us.
+
+40
+00:02:31,640 --> 00:02:34,100
+So my Scampton stopped and then turned around.
+
+41
+00:02:34,100 --> 00:02:38,960
+So now I'll scan to know when it's on the edge of a world or if there's an object in front of us.
+
+42
+00:02:38,960 --> 00:02:41,900
+So there's a bit more clever to keep things tidy.
+
+43
+00:02:41,900 --> 00:02:42,610
+I'm just going to come.
+
+44
+00:02:42,650 --> 00:02:45,570
+All the nodes I've made so far so common.
+
+45
+00:02:45,590 --> 00:02:49,670
+All these nodes detect whether Scampton is on the edge of a world.
+
+46
+00:02:51,410 --> 00:02:55,070
+I am going to comment this node handle rotation.
+
+47
+00:02:57,870 --> 00:02:58,650
+And I'm going to come in.
+
+48
+00:02:58,650 --> 00:03:01,200
+All these nodes handle movement.
+
+49
+00:03:06,780 --> 00:03:07,920
+We can compile and say.
+

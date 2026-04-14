@@ -1,0 +1,524 @@
+1
+00:00:03,310 --> 00:00:03,930
+Hello.
+
+2
+00:00:03,940 --> 00:00:08,380
+In this next lecture, we're going to go over how to make it so that one of our character attacks,
+
+3
+00:00:08,480 --> 00:00:13,450
+Scranton or Scranton, will react with a damaged animation and their lost count and takes enough damage.
+
+4
+00:00:13,450 --> 00:00:15,160
+It will react with a death animation.
+
+5
+00:00:15,250 --> 00:00:17,950
+So if we head over to our Scranton blueprint.
+
+6
+00:00:19,340 --> 00:00:24,020
+And some free space, just right click and prevent any damage.
+
+7
+00:00:24,230 --> 00:00:27,240
+Now, this node will fire when our skeleton is damaged.
+
+8
+00:00:27,260 --> 00:00:32,390
+If you remember earlier, and I'll play a beep when we do our tag event, we do a line trace in front
+
+9
+00:00:32,390 --> 00:00:36,980
+of our player character and if it hits anything we call this apply damage node to the hit actor.
+
+10
+00:00:36,980 --> 00:00:40,730
+So when the actor is hit, it will call this event any damage node.
+
+11
+00:00:41,510 --> 00:00:45,050
+What we want to do is create a new variable and call it health.
+
+12
+00:00:46,540 --> 00:00:49,750
+I just make this variable type A float and go compile.
+
+13
+00:00:50,320 --> 00:00:53,110
+But now we just want to give us a help of three.
+
+14
+00:00:54,470 --> 00:00:58,370
+Then on event any damage you want to get the help the skeleton has.
+
+15
+00:00:58,790 --> 00:01:01,760
+I'm going to subtract it by whatever damage we took.
+
+16
+00:01:02,580 --> 00:01:05,040
+We don't want to tell the game that this is our new health.
+
+17
+00:01:05,190 --> 00:01:09,780
+So we just drag in our health and health and connect all the nodes here.
+
+18
+00:01:11,820 --> 00:01:17,570
+After this, I'm going to check to see if my health is less than or equal to zero to travel here and
+
+19
+00:01:17,580 --> 00:01:18,360
+look for Branch.
+
+20
+00:01:20,030 --> 00:01:24,050
+If this condition is false, that means my Scranton has more than zero health.
+
+21
+00:01:24,200 --> 00:01:28,730
+If that is true and they've just been damaged, we want to tell the game that we want the skeleton to
+
+22
+00:01:28,730 --> 00:01:30,230
+play the damaged animation.
+
+23
+00:01:30,620 --> 00:01:37,040
+So in order to do that, we can close this head into our animations folder and go to the skeleton animation
+
+24
+00:01:37,040 --> 00:01:37,520
+source.
+
+25
+00:01:38,110 --> 00:01:40,940
+I'm going to go add new and set new animation sequence.
+
+26
+00:01:41,390 --> 00:01:44,330
+Just rename this Scampton damaged.
+
+27
+00:01:45,780 --> 00:01:49,560
+Here under the animation data step, the skin tone damage flipbook.
+
+28
+00:01:50,070 --> 00:01:51,600
+So I call it scan to take care.
+
+29
+00:01:52,230 --> 00:01:56,700
+We also want to add a new animated sequence and call the scan to death.
+
+30
+00:01:59,580 --> 00:02:06,300
+And just like the scammed and death flipbook, we also want to add one more animation sequence and call
+
+31
+00:02:06,300 --> 00:02:07,590
+the scanned and dead body.
+
+32
+00:02:08,100 --> 00:02:12,330
+So after our skin tone dies, we just want to have an animation of a dead body.
+
+33
+00:02:12,510 --> 00:02:15,420
+So here are the animation data so that the scan and dead body.
+
+34
+00:02:16,050 --> 00:02:19,190
+Then if we head into our skeletons animation agreement.
+
+35
+00:02:20,160 --> 00:02:25,770
+We'll go to the new animation state machine and a jump net whenever our Scampton is damaged.
+
+36
+00:02:25,920 --> 00:02:30,990
+So if we just right click and forward jump and call this damaged.
+
+37
+00:02:33,100 --> 00:02:39,550
+Then over this node, we want to look for animation, see it, and just call this phantom damage.
+
+38
+00:02:40,540 --> 00:02:47,230
+If we don't click and hence out here we will right click and look for the play Skeleton damaged animation.
+
+39
+00:02:47,440 --> 00:02:52,570
+And just put this up here then if we connect from Scampton, damage to here.
+
+40
+00:02:52,870 --> 00:02:57,670
+So in order to transition from our scanned and damaged back to our normal idle start walking animation
+
+41
+00:02:57,670 --> 00:03:03,850
+step, if we head inside here just right click and look for time remaining Scampton damage.
+
+42
+00:03:03,850 --> 00:03:08,500
+So when there's less than 0.1 seconds of the animation remaining, we'll transition back to our normal
+
+43
+00:03:08,500 --> 00:03:08,980
+state.
+
+44
+00:03:09,190 --> 00:03:11,800
+So let us off here and look for less.
+
+45
+00:03:11,800 --> 00:03:16,240
+And here in the valley we're going to have 0.1 and just click this here.
+
+46
+00:03:17,060 --> 00:03:20,870
+We can just compile and we head back to our scans and BP.
+
+47
+00:03:21,860 --> 00:03:26,310
+Of course, I'm going to drag in my animation component from here.
+
+48
+00:03:26,330 --> 00:03:28,800
+We're going to look for get an instant.
+
+49
+00:03:29,360 --> 00:03:32,540
+And from here, we're going to drag off and jump to Node.
+
+50
+00:03:33,290 --> 00:03:34,370
+Connect this to false.
+
+51
+00:03:34,370 --> 00:03:37,570
+And here under jump name, I call mine damaged.
+
+52
+00:03:37,580 --> 00:03:39,530
+So I'm just going to hit and jump.
+
+53
+00:03:39,530 --> 00:03:40,700
+Name put damaged.
+
+54
+00:03:42,090 --> 00:03:47,550
+And I'm just gonna remove these line traces so that everything is a bit more clear to see.
+
+55
+00:03:47,790 --> 00:03:51,570
+I'll just go compile, save and close this and let it play.
+
+56
+00:03:52,230 --> 00:03:53,370
+And I hit what's going to do?
+
+57
+00:03:53,850 --> 00:03:55,350
+It will do the damage animation.
+
+58
+00:03:55,650 --> 00:03:56,990
+So I haven't really quickly.
+
+59
+00:03:57,000 --> 00:04:04,890
+So what I'm actually going to do is go to my accountant book and go to the take here.
+
+60
+00:04:05,430 --> 00:04:06,930
+And here I'm just going to take care.
+
+61
+00:04:07,110 --> 00:04:09,390
+I'm going to make the frames per second, like five.
+
+62
+00:04:10,490 --> 00:04:16,200
+Honestly make it six just a bit more slow and a bit more clear to see that we've hit the Scampton so
+
+63
+00:04:16,200 --> 00:04:16,880
+I can play.
+
+64
+00:04:18,450 --> 00:04:19,709
+That looked a bit better.
+
+65
+00:04:20,190 --> 00:04:24,750
+The next thing we're going to do is make it so if our skeleton takes enough damage, they will die.
+
+66
+00:04:24,870 --> 00:04:27,150
+So I go back to my animations.
+
+67
+00:04:27,480 --> 00:04:29,390
+I'm going to go to the animation.
+
+68
+00:04:30,900 --> 00:04:35,010
+Just right click, add another jump state and call this death.
+
+69
+00:04:36,480 --> 00:04:42,060
+Now, when we die, we're going to create a new animation stage and we'll call the first one die.
+
+70
+00:04:43,110 --> 00:04:46,950
+I'll head inside here and we just want to play our skeleton animation.
+
+71
+00:04:47,410 --> 00:04:55,030
+So we'll play Skeleton Death and hook this up here after we play our Skeleton Death animation.
+
+72
+00:04:55,050 --> 00:04:58,740
+We want to add another animation state and just call this dead body.
+
+73
+00:05:01,180 --> 00:05:01,510
+Here.
+
+74
+00:05:01,510 --> 00:05:04,600
+We just want to play our sentence that for the animation.
+
+75
+00:05:08,540 --> 00:05:13,580
+In order to transition from our diet to our dead body animation state, we're going to wait for our
+
+76
+00:05:13,580 --> 00:05:19,820
+Dalmatian to finish playing so we can just right click click for the time remaining skeleton depth.
+
+77
+00:05:20,240 --> 00:05:21,890
+And if this is less than.
+
+78
+00:05:23,430 --> 00:05:24,480
+0.1.
+
+79
+00:05:24,660 --> 00:05:27,270
+Well, transition to our dead body animation.
+
+80
+00:05:28,840 --> 00:05:36,520
+Then if I head back to my scans and beep and copy all these notes, paste them here, and this time
+
+81
+00:05:36,520 --> 00:05:38,740
+under jump name, I called mine.
+
+82
+00:05:39,510 --> 00:05:39,970
+Death.
+
+83
+00:05:40,000 --> 00:05:40,890
+Yeah, I call it death.
+
+84
+00:05:41,310 --> 00:05:42,720
+So here, I'm going to have death.
+
+85
+00:05:44,180 --> 00:05:48,030
+And I'm just going to go compile and we can now test this out.
+
+86
+00:05:48,050 --> 00:05:48,980
+So go play.
+
+87
+00:05:49,790 --> 00:05:51,690
+If I hit my Scantron three times, I should die.
+
+88
+00:05:51,710 --> 00:05:53,720
+One, two, three.
+
+89
+00:05:53,900 --> 00:05:54,190
+Alone.
+
+90
+00:05:54,200 --> 00:05:54,710
+Third one.
+
+91
+00:05:54,710 --> 00:05:55,490
+It died.
+
+92
+00:05:56,470 --> 00:05:57,160
+Nice.
+
+93
+00:05:57,340 --> 00:06:02,790
+So after I cut my Scantron, we can see its body is still moving and it's kind of blocking me.
+
+94
+00:06:02,800 --> 00:06:04,630
+So we're going to do a couple of things.
+
+95
+00:06:05,390 --> 00:06:06,980
+When Oscar Nintendo's.
+
+96
+00:06:08,390 --> 00:06:12,250
+The first thing I'm going to do is just tell the game that it's dead.
+
+97
+00:06:12,260 --> 00:06:15,470
+So I'm gonna create an example and I'll call it is dead.
+
+98
+00:06:16,310 --> 00:06:20,450
+I'll make this babble type a float, sorry, a boolean and just go compile.
+
+99
+00:06:20,600 --> 00:06:25,100
+Then when I scan, ten is dead, I'm just going to drag in this babble and that will set is dead.
+
+100
+00:06:25,430 --> 00:06:27,140
+I'm just going to leave it checked.
+
+101
+00:06:28,480 --> 00:06:30,640
+Then on handle movement.
+
+102
+00:06:31,330 --> 00:06:32,380
+I have a branch.
+
+103
+00:06:34,760 --> 00:06:37,340
+And the condition of the branch it's going to be is dead.
+
+104
+00:06:39,440 --> 00:06:41,030
+And we just want to break from truth.
+
+105
+00:06:41,660 --> 00:06:43,500
+Only if Scranton is not dead.
+
+106
+00:06:43,520 --> 00:06:45,360
+We're going to continue adding movement info.
+
+107
+00:06:47,010 --> 00:06:52,530
+Across concerns that just so that we can overlap it and look past it, we're going to drug in its capsule
+
+108
+00:06:52,530 --> 00:06:57,990
+component and just drag up here and it will set collision by profile name.
+
+109
+00:06:59,380 --> 00:07:02,530
+And under inclusion or just like this capsule collision.
+
+110
+00:07:03,520 --> 00:07:04,840
+Right now it's set to --.
+
+111
+00:07:04,990 --> 00:07:07,690
+We're going to set to overlap only --.
+
+112
+00:07:07,690 --> 00:07:09,070
+So I'll play a character.
+
+113
+00:07:09,100 --> 00:07:10,480
+Also has a -- collection.
+
+114
+00:07:10,930 --> 00:07:15,340
+And by setting it to overlap, any -- or player character will be able to walk over the dead body
+
+115
+00:07:15,340 --> 00:07:16,270
+of our scandal.
+
+116
+00:07:16,300 --> 00:07:22,930
+So under here, I'm going to change the collision profile name to overlap only or make sure this is
+
+117
+00:07:22,930 --> 00:07:24,850
+spelt correctly, otherwise it won't work.
+
+118
+00:07:26,720 --> 00:07:28,550
+After this, I'm going to have a delay.
+
+119
+00:07:30,300 --> 00:07:32,040
+Of a 3 seconds.
+
+120
+00:07:32,280 --> 00:07:34,350
+And then I'm going to destroy this actor.
+
+121
+00:07:34,740 --> 00:07:37,410
+Look for the Detroit actor, and this will just destroy it.
+
+122
+00:07:37,560 --> 00:07:41,250
+It's never going to compile close this and go play.
+
+123
+00:07:41,880 --> 00:07:43,110
+I hit my scan two, three times.
+
+124
+00:07:43,110 --> 00:07:44,730
+One, two, three.
+
+125
+00:07:44,730 --> 00:07:46,700
+It will die and just stop moving.
+
+126
+00:07:46,710 --> 00:07:48,750
+And after 3 seconds, it should be destroyed.
+
+127
+00:07:49,140 --> 00:07:49,720
+Nice.
+
+128
+00:07:49,740 --> 00:07:52,040
+So we've made it so we can damage our scanner.
+
+129
+00:07:52,080 --> 00:07:52,290
+Think.
+
+130
+00:07:52,290 --> 00:07:54,370
+Still look a bit off when I attack my Scampton.
+
+131
+00:07:54,390 --> 00:07:56,910
+So in the next lecture, we're going to polish it up a bit.
+

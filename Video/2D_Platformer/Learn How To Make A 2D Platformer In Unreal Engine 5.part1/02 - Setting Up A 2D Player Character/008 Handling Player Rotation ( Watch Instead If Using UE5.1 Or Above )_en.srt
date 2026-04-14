@@ -1,0 +1,364 @@
+1
+00:00:03,380 --> 00:00:05,750
+So you may have noticed something.
+
+2
+00:00:05,750 --> 00:00:10,850
+When we move our player character towards the right, they're moving and facing in the correct direction.
+
+3
+00:00:10,850 --> 00:00:15,740
+However, if we move our player character towards the left, they're moving towards the left, although
+
+4
+00:00:15,740 --> 00:00:19,070
+they're not facing the left in this lecture, we're going to fix that.
+
+5
+00:00:19,400 --> 00:00:22,490
+The first thing we're going to do is open up our player blueprint.
+
+6
+00:00:22,640 --> 00:00:29,180
+And if we create a new variable and just call this move right question mark and we're basically going
+
+7
+00:00:29,180 --> 00:00:33,770
+to use this variable to help tell the game if we should move towards the right and face the right or
+
+8
+00:00:33,770 --> 00:00:38,810
+if we should move towards the left and face the left, we can delete this print shrink as we now know
+
+9
+00:00:38,810 --> 00:00:39,620
+where it does.
+
+10
+00:00:40,130 --> 00:00:43,070
+And what we're going to do is we want to check the value of this action.
+
+11
+00:00:43,070 --> 00:00:48,980
+Value If this value is ever greater than zero, that basically means my player character must be pressing
+
+12
+00:00:48,980 --> 00:00:49,700
+the one.
+
+13
+00:00:49,700 --> 00:00:51,530
+And so we want them to face the right.
+
+14
+00:00:51,740 --> 00:00:55,010
+So if we just drag up here and look for Branch.
+
+15
+00:00:56,020 --> 00:00:57,640
+And correct from triggered into here.
+
+16
+00:00:58,550 --> 00:01:00,410
+And we just want to drag in this move, right.
+
+17
+00:01:00,410 --> 00:01:02,450
+And just set it and make sure it's checked.
+
+18
+00:01:02,450 --> 00:01:07,880
+Because if this value is greater than zero, that must mean my player character is moving towards the
+
+19
+00:01:07,880 --> 00:01:08,210
+right.
+
+20
+00:01:10,910 --> 00:01:14,300
+If this is false, then we won't do another branch.
+
+21
+00:01:14,510 --> 00:01:19,040
+And we want to check to see if this action value is less than zero.
+
+22
+00:01:19,490 --> 00:01:23,530
+If that is true, that means we want our player character to move towards the left.
+
+23
+00:01:23,540 --> 00:01:30,020
+So if we just drag in this move right, set it and just make sure it's unchecked, then connect it into
+
+24
+00:01:30,020 --> 00:01:32,870
+here and here and off of this false.
+
+25
+00:01:32,870 --> 00:01:35,300
+If you just connect this into the add movement input.
+
+26
+00:01:35,570 --> 00:01:40,880
+So what we've done is if our player character is ever moving towards the right, we've told the game
+
+27
+00:01:40,880 --> 00:01:42,380
+that this variable should be true.
+
+28
+00:01:42,410 --> 00:01:47,210
+However, if our player character is moving towards the left, then we've told this variable to be untrue.
+
+29
+00:01:47,240 --> 00:01:52,370
+The next thing I need you to do is look for this event, take note, and the way it works is every single
+
+30
+00:01:52,370 --> 00:01:57,320
+frame is going to run this node and on event ticket we're going to basically make sure that the player
+
+31
+00:01:57,320 --> 00:01:59,630
+character is facing the correct direction.
+
+32
+00:01:59,630 --> 00:02:06,920
+So over event Tick, we first want to drag in our character event and over here we'll look for velocity.
+
+33
+00:02:08,850 --> 00:02:10,900
+And we're going to get the velocity of our character.
+
+34
+00:02:12,260 --> 00:02:15,170
+We just want to right click on this value and click split structure pin.
+
+35
+00:02:15,410 --> 00:02:20,390
+We're only going to be concerned with the velocity of our character in x axis because as I mentioned
+
+36
+00:02:20,390 --> 00:02:25,640
+earlier in our two D game, our character is only going to be moving in the x axis and we're going to
+
+37
+00:02:25,640 --> 00:02:30,140
+do is we won't take a drag of here for compare look.
+
+38
+00:02:32,640 --> 00:02:38,190
+Now we're going to compare the velocity of our cat in the x axis with the values here in our characters.
+
+39
+00:02:38,190 --> 00:02:40,650
+Velocity in the x axis is ever greater than zero.
+
+40
+00:02:40,680 --> 00:02:43,860
+That means our player character should be facing towards the right.
+
+41
+00:02:44,010 --> 00:02:49,500
+So in order to make that happen, what we can do is just right click and forget control.
+
+42
+00:02:51,210 --> 00:02:56,190
+So get the controller that we're controlling the player character as and what we want to do is just
+
+43
+00:02:56,190 --> 00:02:58,530
+drag up here for is valid.
+
+44
+00:02:59,490 --> 00:03:02,700
+This will just make sure that we have a valid reference to our controller.
+
+45
+00:03:03,300 --> 00:03:08,160
+And if that is valid, then we're going to set the rotation of our player character to be facing towards
+
+46
+00:03:08,160 --> 00:03:08,860
+the right.
+
+47
+00:03:08,880 --> 00:03:14,730
+We can do that by dragging off this node and looking for a set control rotation.
+
+48
+00:03:17,610 --> 00:03:23,010
+Then under this new rotation value, we can strike up here and we'll make rotator.
+
+49
+00:03:24,650 --> 00:03:28,370
+And we can write the values that we want our character to have and the X, Y, and Z.
+
+50
+00:03:28,550 --> 00:03:34,760
+If I head over to the viewport and just select my Sprite, currently we can see my sprite rotation in
+
+51
+00:03:34,760 --> 00:03:38,980
+the x, Y, and Z is zero and my player character is facing the right.
+
+52
+00:03:38,990 --> 00:03:43,370
+So here in Minecraft, I'm just going to leave this value at 000.
+
+53
+00:03:44,660 --> 00:03:49,400
+If my player characters velocity in the x axis is ever less than zero, that means my player character
+
+54
+00:03:49,400 --> 00:03:50,670
+is moving towards the left.
+
+55
+00:03:50,700 --> 00:03:53,240
+We want our player character to be facing the left.
+
+56
+00:03:53,240 --> 00:03:57,980
+Some copy all these nodes press control C and then control V.
+
+57
+00:03:58,830 --> 00:04:01,890
+And from this node the left hand to here.
+
+58
+00:04:02,900 --> 00:04:06,780
+If I go back to my viewport and just like my Sprite in the Z.
+
+59
+00:04:06,800 --> 00:04:13,220
+If I make this value 180, my sprite will flip and they'll be facing towards the left.
+
+60
+00:04:13,430 --> 00:04:15,020
+I'm just going to put this back at zero.
+
+61
+00:04:16,019 --> 00:04:17,459
+And head over to my bank graph.
+
+62
+00:04:17,940 --> 00:04:23,610
+So when my characters velocity in the x axis is less than zero, I will make it so my character is facing
+
+63
+00:04:23,610 --> 00:04:24,380
+towards the left.
+
+64
+00:04:24,390 --> 00:04:28,440
+So here under Z we want to put a value of 180.
+
+65
+00:04:30,200 --> 00:04:34,790
+And if I play a character's velocity in the x axis is equal to zero.
+
+66
+00:04:34,970 --> 00:04:41,000
+Then what we're going to do is drag in this write variable, which will be determined by here.
+
+67
+00:04:42,130 --> 00:04:44,410
+And just track up here and look for Branch.
+
+68
+00:04:45,920 --> 00:04:49,670
+If the mood right variable is true and we'll make it so I'll play a character.
+
+69
+00:04:49,670 --> 00:04:50,780
+It's facing towards the right.
+
+70
+00:04:51,050 --> 00:04:55,670
+And if our right variable is false, we'll make it so our player character is facing towards the left.
+
+71
+00:04:56,030 --> 00:05:01,190
+And we'll just go from here to here and just go compile and save.
+
+72
+00:05:01,520 --> 00:05:04,250
+So I just close this and go play.
+
+73
+00:05:06,460 --> 00:05:10,930
+If I move towards the right, my captain, me to the right and equal to the left.
+
+74
+00:05:10,960 --> 00:05:11,650
+Whoops.
+
+75
+00:05:11,650 --> 00:05:12,950
+So that's not working.
+
+76
+00:05:12,970 --> 00:05:14,920
+If we head back to our player character.
+
+77
+00:05:15,780 --> 00:05:19,610
+We just want to set our spring goal and currently its rotation is set to relative.
+
+78
+00:05:19,620 --> 00:05:24,030
+We need to change it so that it's set to the world and go compile save.
+
+79
+00:05:24,750 --> 00:05:26,730
+Both this and now, if I could play.
+
+80
+00:05:27,490 --> 00:05:29,410
+When I pressed the right mouse button.
+
+81
+00:05:29,830 --> 00:05:30,160
+Sorry.
+
+82
+00:05:30,190 --> 00:05:32,950
+When I press the right on my capital mutual's the right.
+
+83
+00:05:33,130 --> 00:05:34,930
+If I press the left key on my character.
+
+84
+00:05:35,020 --> 00:05:36,520
+Move towards the left.
+
+85
+00:05:36,760 --> 00:05:42,260
+Now, normally in 2D platformer games, our character starts facing the right by default.
+
+86
+00:05:42,280 --> 00:05:43,990
+So under my play, BP.
+
+87
+00:05:44,320 --> 00:05:48,910
+Just make sure they'll move right variable is are checked so our character will start the game facing
+
+88
+00:05:48,940 --> 00:05:50,170
+towards the right.
+
+89
+00:05:52,010 --> 00:05:57,350
+So if I go play, my character starts facing towards the right and I can move around and jump.
+
+90
+00:05:57,740 --> 00:06:03,020
+The next thing I want to do is use the paper Z animation system to make it so a character will play
+
+91
+00:06:03,020 --> 00:06:06,650
+some different animations when they're jumping and moving.
+

@@ -1,0 +1,380 @@
+1
+00:00:03,220 --> 00:00:04,090
+Hello.
+
+2
+00:00:04,300 --> 00:00:09,270
+In this next lecture, we're going to go over how to create a health pickup system.
+
+3
+00:00:09,280 --> 00:00:15,100
+So if my player character is damaged and they lose one of our hearts with our health pickup system,
+
+4
+00:00:15,130 --> 00:00:17,840
+if my player character collects it, they'll be killed.
+
+5
+00:00:17,860 --> 00:00:24,220
+So in order to create the system, head over to the items order and just right click on the Apple pickup
+
+6
+00:00:24,220 --> 00:00:25,630
+and go duplicate.
+
+7
+00:00:26,470 --> 00:00:27,910
+Put this all health care.
+
+8
+00:00:29,620 --> 00:00:35,290
+Next head over to the images folder inside of your widget blueprint and just right click on the heart
+
+9
+00:00:35,290 --> 00:00:38,770
+wall and goes fractions and create a sprite.
+
+10
+00:00:39,370 --> 00:00:45,970
+Next, if we go back to our items, order, open up the health, pick up and go over to the viewport
+
+11
+00:00:46,540 --> 00:00:48,310
+and select the paper sprite.
+
+12
+00:00:48,820 --> 00:00:50,620
+Change this to be the heart sprite.
+
+13
+00:00:50,650 --> 00:00:52,870
+That way our player will know it's a health pick up.
+
+14
+00:00:54,200 --> 00:00:58,160
+Now it's quite big, so just get it down so it fits in the capsule collision.
+
+15
+00:01:00,030 --> 00:01:05,970
+Once you've done that, head over to the then graph and we can just delete all the nodes which reference
+
+16
+00:01:05,970 --> 00:01:06,810
+our apples.
+
+17
+00:01:09,870 --> 00:01:14,040
+Then if we just close this and go over to our player character.
+
+18
+00:01:15,920 --> 00:01:17,470
+We need to create a new variable.
+
+19
+00:01:17,480 --> 00:01:21,830
+So go over to the variables tab and call this max health.
+
+20
+00:01:24,740 --> 00:01:25,940
+Undesirable type.
+
+21
+00:01:26,000 --> 00:01:27,650
+Change this to be a float.
+
+22
+00:01:28,470 --> 00:01:29,700
+And just go compile.
+
+23
+00:01:30,000 --> 00:01:35,640
+So the reason we're creating a max health variable is because with our health pick up, if we collect
+
+24
+00:01:35,640 --> 00:01:39,840
+it, we're not going to give our player character any more health if they're on max health.
+
+25
+00:01:41,380 --> 00:01:47,150
+If we go to the B.B. King play after we do all of this track in our max health and look for set max
+
+26
+00:01:47,150 --> 00:01:52,690
+health and then drag in our health and forget health and just connect this to here.
+
+27
+00:01:52,930 --> 00:01:57,520
+So our max health is going to be whatever our characters health is at the start of the game.
+
+28
+00:01:57,850 --> 00:02:04,240
+Next, if we just compile and go back to the health pick up, we're only going to give our player character
+
+29
+00:02:04,240 --> 00:02:06,880
+more health if they're not already on max health.
+
+30
+00:02:06,910 --> 00:02:14,050
+So in order to do this, we can drag up here and not forget health and connect the notes here.
+
+31
+00:02:14,920 --> 00:02:18,400
+Then we can drag okay again and not forget max health.
+
+32
+00:02:20,140 --> 00:02:21,460
+And connect the nodes here.
+
+33
+00:02:21,490 --> 00:02:26,710
+So if my player character has maxed out, when they pick up a health pick up, we're going to do nothing.
+
+34
+00:02:26,740 --> 00:02:30,910
+If they don't, then we're going to give our character one more piece of health.
+
+35
+00:02:31,180 --> 00:02:37,540
+So if we drag in as player VP reference and just drag up here and look for get health.
+
+36
+00:02:38,790 --> 00:02:43,680
+And to strike a fair and add and undervalue one.
+
+37
+00:02:44,100 --> 00:02:48,390
+So every time I play a character picks up a heel, pick up will give them one more health.
+
+38
+00:02:49,290 --> 00:02:53,930
+Then we want to just wrap up here and look for cramp and look for cramp.
+
+39
+00:02:53,940 --> 00:02:58,440
+Float under minimum value, put one and under max value.
+
+40
+00:02:58,470 --> 00:03:03,910
+Just drag off here and look for get max health and connect this here.
+
+41
+00:03:03,960 --> 00:03:07,110
+So we're just clamping this value like we did last time.
+
+42
+00:03:07,110 --> 00:03:11,010
+That way, our player character can never have more health than max health.
+
+43
+00:03:11,490 --> 00:03:15,510
+Then we just want to drag off here and look for set health.
+
+44
+00:03:16,550 --> 00:03:21,140
+And connect with return value into here and hook up false into here.
+
+45
+00:03:22,090 --> 00:03:27,030
+Okay, So after we give our player character more health, we need to update our heart.
+
+46
+00:03:27,040 --> 00:03:29,990
+So our heart is reflected that we have more health.
+
+47
+00:03:30,010 --> 00:03:36,820
+In order to do this, we can just close this and go back to our Widget blueprint and we will open up
+
+48
+00:03:36,820 --> 00:03:37,600
+the player HUD.
+
+49
+00:03:39,290 --> 00:03:40,120
+We went ahead of it.
+
+50
+00:03:40,140 --> 00:03:41,030
+The growth.
+
+51
+00:03:42,070 --> 00:03:50,130
+And in some free space, just right click and add custom event and pull this show art.
+
+52
+00:03:50,680 --> 00:03:56,440
+So if you remember when we made our player character get damaged, we get the last heart that they have
+
+53
+00:03:56,530 --> 00:04:01,780
+and then we remove it and add it to this lost heart array reference, and then we remove it from our
+
+54
+00:04:01,780 --> 00:04:02,680
+heart reference.
+
+55
+00:04:02,710 --> 00:04:09,070
+So when we show a heart, we are going to drag in our Lost Heart reference, which has a collection
+
+56
+00:04:09,070 --> 00:04:10,720
+of all the hearts that we have lost.
+
+57
+00:04:11,110 --> 00:04:13,570
+And we just want to drag up here and get the length.
+
+58
+00:04:14,710 --> 00:04:17,200
+And then we just drag up it and look for subtract.
+
+59
+00:04:18,980 --> 00:04:20,779
+And we want to subtract this from one.
+
+60
+00:04:20,899 --> 00:04:27,560
+So the reason we're subtracting this by one is because let's say I have lost one heart in my lost heart
+
+61
+00:04:27,560 --> 00:04:32,420
+reference because arrays start counting from the number zero, it would count it that I have lost two
+
+62
+00:04:32,420 --> 00:04:32,860
+hearts.
+
+63
+00:04:32,870 --> 00:04:36,680
+So we just need to subtract one because arrays start counting from the number zero.
+
+64
+00:04:37,250 --> 00:04:42,350
+After we've done this, we just want to drag in our lost heart reference and look, we'll get lost heart
+
+65
+00:04:42,350 --> 00:04:47,600
+reference and just drag up here, will get a copy and just hook up the value here.
+
+66
+00:04:47,870 --> 00:04:51,680
+So this will get a copy of the lost heart that we've lost.
+
+67
+00:04:52,250 --> 00:04:55,370
+We then want to just drag off here and look for is valid.
+
+68
+00:04:56,100 --> 00:05:00,510
+What this node will basically do is just check to see that we are actually referencing a heart.
+
+69
+00:05:02,740 --> 00:05:03,910
+After we do this.
+
+70
+00:05:03,910 --> 00:05:10,180
+If you remember earlier in our Hot Widget blueprint, we created this custom event called Ad Hoc.
+
+71
+00:05:10,570 --> 00:05:16,630
+So if I go back to my heart, when we show our heart, we are going to just get the heart that we've
+
+72
+00:05:16,630 --> 00:05:20,860
+lost and to struggle for it and call the ad part plus event.
+
+73
+00:05:21,040 --> 00:05:23,250
+And this will make our heart visible again.
+
+74
+00:05:23,260 --> 00:05:28,870
+Now that we've added our heart again, we're going to add this back to our heart reference, which keeps
+
+75
+00:05:28,870 --> 00:05:30,640
+a track of all the hearts that we have.
+
+76
+00:05:30,670 --> 00:05:35,350
+So I'm going to drag in my heart reference and just drag up here and look for ADD.
+
+77
+00:05:36,720 --> 00:05:38,420
+And then connect this into here.
+
+78
+00:05:39,580 --> 00:05:40,720
+And it's good to hear.
+
+79
+00:05:41,580 --> 00:05:45,870
+Then next, we're going to remove this heart from our lost heart reference.
+
+80
+00:05:45,870 --> 00:05:48,000
+And we've now added our heart again.
+
+81
+00:05:48,060 --> 00:05:51,780
+So if we drag in our lost heart reference and look for remove.
+
+82
+00:05:52,990 --> 00:05:55,360
+Item and just double click here.
+
+83
+00:05:56,620 --> 00:05:57,910
+And pick up this note here.
+
+84
+00:06:00,500 --> 00:06:02,150
+So now if I close this.
+
+85
+00:06:03,320 --> 00:06:06,290
+And go to my items and to my health pick up.
+
+86
+00:06:07,560 --> 00:06:12,930
+We can delete this update, Apple's custom event, and we're going to drag up here and look for the
+
+87
+00:06:12,930 --> 00:06:17,790
+show hot customer event and just hook up all the nodes here.
+
+88
+00:06:19,020 --> 00:06:23,270
+Now, if I could compile and save, we can now test this all out.
+
+89
+00:06:23,280 --> 00:06:30,270
+So if I close this, then if I drag in my heart blueprint and under location, I'm going to put this
+
+90
+00:06:30,270 --> 00:06:34,500
+in 20 e y axis because all my actors are on that axis.
+
+91
+00:06:34,590 --> 00:06:39,060
+And now if I go play and I try to pick up my heart, I can't pick it up.
+
+92
+00:06:39,630 --> 00:06:43,470
+Let's say I get damaged, so I'm going to let that scan to damage me.
+
+93
+00:06:44,330 --> 00:06:45,530
+At least one of my hearts.
+
+94
+00:06:45,980 --> 00:06:50,660
+And if I go and pick it up, the heart disappears and then my heart is updated.
+
+95
+00:06:50,690 --> 00:06:53,000
+So with that, we have created a health pickup.
+

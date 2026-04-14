@@ -1,0 +1,520 @@
+1
+00:00:03,100 --> 00:00:03,790
+Hello.
+
+2
+00:00:03,880 --> 00:00:06,310
+In this next lecture, we're going to make it to a play.
+
+3
+00:00:06,310 --> 00:00:08,650
+A character can attack and kill our enemy.
+
+4
+00:00:08,830 --> 00:00:13,920
+So if we head over to the Warrior Animations folder, I don't think we made an attacking animation for
+
+5
+00:00:13,990 --> 00:00:14,730
+that character.
+
+6
+00:00:14,740 --> 00:00:16,090
+So we go into this folder.
+
+7
+00:00:16,930 --> 00:00:22,780
+And just like the first nine frames, because if we add all the frames, the animation looks a bit kind
+
+8
+00:00:22,780 --> 00:00:23,260
+of weird.
+
+9
+00:00:23,290 --> 00:00:27,880
+So just use the first nine, right click on them and go to fractions and create Sprite.
+
+10
+00:00:28,630 --> 00:00:30,220
+Then if we select all the sprites.
+
+11
+00:00:32,439 --> 00:00:34,510
+And right click and go create a flipbook.
+
+12
+00:00:34,660 --> 00:00:37,270
+And we're going to call this player attack.
+
+13
+00:00:39,380 --> 00:00:43,370
+And if I head inside here, this is a good player talking animation.
+
+14
+00:00:43,430 --> 00:00:50,840
+We can close this and go to that character and go to that warrior animation source and just add a new
+
+15
+00:00:50,840 --> 00:00:53,630
+animation sequence and just call this attack.
+
+16
+00:00:55,390 --> 00:00:59,530
+Then in animation data set the play attack animation we just made.
+
+17
+00:01:01,750 --> 00:01:08,200
+And the idea here is because we're using this paper Z plugin at this specific frame in the animation,
+
+18
+00:01:08,200 --> 00:01:12,100
+we're going to shoot a line trace from our player character, and if there's anything in front of us,
+
+19
+00:01:12,100 --> 00:01:13,090
+we're going to damage it.
+
+20
+00:01:13,120 --> 00:01:20,590
+So in order to do that at frame, I think here around here, frame five, just right click.
+
+21
+00:01:21,320 --> 00:01:24,200
+I go add, notify, then new notify.
+
+22
+00:01:24,440 --> 00:01:26,000
+I just call this attack.
+
+23
+00:01:28,620 --> 00:01:32,310
+So at this point in our animation, we're going to shoot a line, chase a black actor.
+
+24
+00:01:32,310 --> 00:01:34,110
+And if that's anything in front of us, we'll take it.
+
+25
+00:01:34,230 --> 00:01:37,950
+So I'm just going to close this and then head over to my player character.
+
+26
+00:01:38,640 --> 00:01:39,900
+Go to the player blueprint.
+
+27
+00:01:41,610 --> 00:01:47,940
+And some free space, just right click and add custom event queries Attack.
+
+28
+00:01:49,310 --> 00:01:56,390
+And when we call this event, we just drive up here on the fourth line trace or objects where we're
+
+29
+00:01:56,390 --> 00:01:56,900
+going to start.
+
+30
+00:01:56,900 --> 00:02:00,380
+We just want to right click and get actor location.
+
+31
+00:02:01,490 --> 00:02:02,520
+Weather is going to end.
+
+32
+00:02:02,540 --> 00:02:08,240
+We're going to end at 100 units in front of our character so we can right click and get back to forward
+
+33
+00:02:08,240 --> 00:02:08,780
+Vector.
+
+34
+00:02:10,560 --> 00:02:12,390
+Struggle and multiply.
+
+35
+00:02:13,820 --> 00:02:18,050
+We can right click on this value and split it and then X per value of 100.
+
+36
+00:02:19,200 --> 00:02:21,090
+I'm going to strike a fair and at.
+
+37
+00:02:22,450 --> 00:02:24,010
+And just connect these into here.
+
+38
+00:02:24,190 --> 00:02:27,670
+So we'll end it 100 units in front of our actors location.
+
+39
+00:02:27,850 --> 00:02:32,260
+The object type we're going to be looking for is going to be the pawn because our warrior will have
+
+40
+00:02:32,260 --> 00:02:33,210
+a pawn collision.
+
+41
+00:02:33,220 --> 00:02:36,840
+So I'm just going to drag off object type and for make array.
+
+42
+00:02:37,420 --> 00:02:39,250
+And here I'm going to select pawn.
+
+43
+00:02:40,460 --> 00:02:41,500
+Under practice to ignore.
+
+44
+00:02:41,510 --> 00:02:50,330
+I'm going to drive a fair amount for make and right click and I forget player character so I can't accidentally
+
+45
+00:02:50,330 --> 00:02:51,530
+hit myself on something.
+
+46
+00:02:51,860 --> 00:02:54,020
+Then we want to just drag off our hit result.
+
+47
+00:02:54,170 --> 00:02:56,150
+This will get the data of anything we hit.
+
+48
+00:02:56,180 --> 00:03:02,730
+We just want to click, break, get result and we want to get the actor we hit and just struggle for
+
+49
+00:03:02,840 --> 00:03:04,430
+apply damage.
+
+50
+00:03:04,430 --> 00:03:07,460
+So this applied damage is a node which is built into Unreal Engine.
+
+51
+00:03:07,820 --> 00:03:11,510
+And basically if we hit on this line trace, we're going to apply damage to it.
+
+52
+00:03:11,660 --> 00:03:17,390
+So just hook up from here to here and under base damage for now, just put one.
+
+53
+00:03:18,530 --> 00:03:24,320
+And just so that we can see this under a draw diva type, just make this for duration so that we can
+
+54
+00:03:24,320 --> 00:03:26,360
+visually see our line when it's in our game.
+
+55
+00:03:27,230 --> 00:03:31,070
+Next, we head back to our Warrior Animation blueprint.
+
+56
+00:03:34,290 --> 00:03:39,270
+You'll see here under functions that should be this received net fire attack, which we made when we
+
+57
+00:03:39,270 --> 00:03:41,670
+created this attack and our attack animation.
+
+58
+00:03:42,430 --> 00:03:43,720
+Just double click on it.
+
+59
+00:03:44,910 --> 00:03:49,830
+Then drop in or beep and drag up and to be attacked.
+
+60
+00:03:49,860 --> 00:03:51,210
+Plus some event we just made.
+
+61
+00:03:52,980 --> 00:03:53,970
+And go compile.
+
+62
+00:03:54,450 --> 00:03:59,400
+So when we play this animation inside of our animation blueprint, it's going to cool the attack event
+
+63
+00:03:59,400 --> 00:04:00,720
+inside of our player character.
+
+64
+00:04:01,480 --> 00:04:05,800
+So the final thing we need to do is make it so that when we press a certain button, it will call the
+
+65
+00:04:05,800 --> 00:04:06,490
+attack event.
+
+66
+00:04:06,730 --> 00:04:10,660
+So if I go edit and go product settings.
+
+67
+00:04:12,900 --> 00:04:14,280
+And go to input.
+
+68
+00:04:15,710 --> 00:04:19,970
+I'm going to add a new action mapping and I'm just going to call this attack.
+
+69
+00:04:21,890 --> 00:04:27,110
+And I'm going to make it so I have to press the left mouse button in order to do the attack event.
+
+70
+00:04:27,830 --> 00:04:29,150
+I can just close this.
+
+71
+00:04:29,960 --> 00:04:35,600
+Head back to my lab and I'm just going to right click and pull attack.
+
+72
+00:04:36,230 --> 00:04:38,230
+Although this time I want the input action attack.
+
+73
+00:04:38,240 --> 00:04:39,590
+So make sure we select this one.
+
+74
+00:04:40,040 --> 00:04:44,300
+And when I press the attack one, we just want to go up here and look for do once.
+
+75
+00:04:44,300 --> 00:04:48,470
+So the reason why I didn't do once is I don't want the player to be able to continuously attack.
+
+76
+00:04:48,680 --> 00:04:51,230
+There's going to be a bit of a cooldown each time they've attacked.
+
+77
+00:04:51,950 --> 00:04:56,450
+After this two, once we are going to actually head back to our Warrior Animation brethren.
+
+78
+00:04:57,270 --> 00:05:02,730
+I'm going to go over to our new state machine and we're going to add a jump node for when our character
+
+79
+00:05:02,730 --> 00:05:03,480
+is attacking.
+
+80
+00:05:03,750 --> 00:05:07,380
+So in some free space, if we just right click for Jump.
+
+81
+00:05:07,830 --> 00:05:10,980
+And I'm just going to call this attack event.
+
+82
+00:05:12,490 --> 00:05:13,170
+After the attack.
+
+83
+00:05:13,420 --> 00:05:17,440
+We just want to go to Animation State and call this attack.
+
+84
+00:05:19,090 --> 00:05:23,680
+If we hadn't sat there just right click and play Attack.
+
+85
+00:05:24,730 --> 00:05:25,960
+And hook this up here.
+
+86
+00:05:27,400 --> 00:05:29,770
+Then if we connect from high tech to here.
+
+87
+00:05:30,070 --> 00:05:34,630
+So in order to leave our tackling, say we're going to wait for our animation to finish playing.
+
+88
+00:05:34,750 --> 00:05:36,200
+In order to achieve that effect.
+
+89
+00:05:36,220 --> 00:05:42,400
+We can just right click and call time remaining and we want to start this one time remaining attack.
+
+90
+00:05:42,700 --> 00:05:49,360
+So when the time remaining of our animation is less than 0.1, so our animation has no point.
+
+91
+00:05:49,360 --> 00:05:50,290
+1 seconds left.
+
+92
+00:05:50,440 --> 00:05:53,500
+We're going to transition back to our normal idle slash walking step.
+
+93
+00:05:53,740 --> 00:05:56,950
+So we'll just focus up here and go compile.
+
+94
+00:05:57,730 --> 00:05:59,760
+Then if we head back to our player VP.
+
+95
+00:06:00,920 --> 00:06:06,230
+I can drug in my animation component and look for an instance.
+
+96
+00:06:07,290 --> 00:06:09,600
+And then I can cool my jump to it.
+
+97
+00:06:10,440 --> 00:06:13,290
+And I called mine Attack event.
+
+98
+00:06:14,170 --> 00:06:15,910
+And we can just hook us up here.
+
+99
+00:06:17,890 --> 00:06:19,210
+And then just going to have a delay.
+
+100
+00:06:22,250 --> 00:06:24,170
+Foreground around no point 4 seconds.
+
+101
+00:06:25,750 --> 00:06:27,790
+And then I will hook this into reset.
+
+102
+00:06:27,880 --> 00:06:30,670
+That way I can only attack every 0.4 seconds.
+
+103
+00:06:31,720 --> 00:06:33,910
+So I'm just going to double click to make this a bit tidier.
+
+104
+00:06:34,270 --> 00:06:37,210
+And I can compile and just test this all out.
+
+105
+00:06:37,600 --> 00:06:41,200
+So if I go play, you can see my character.
+
+106
+00:06:41,230 --> 00:06:45,910
+If I click the left mouse button, when I reach that frame, you can see that line trace warp here.
+
+107
+00:06:48,440 --> 00:06:49,820
+So let's just test that.
+
+108
+00:06:49,820 --> 00:06:50,170
+This works.
+
+109
+00:06:50,200 --> 00:06:50,820
+My enemy.
+
+110
+00:06:50,840 --> 00:06:54,020
+I'm going to put my character and enemy in the same layer.
+
+111
+00:06:54,200 --> 00:06:56,720
+So it's on 20 in the Y axis.
+
+112
+00:06:57,050 --> 00:06:59,780
+And my enemy is 150, so I want to put it on 20.
+
+113
+00:07:01,600 --> 00:07:03,500
+And let's just test this out.
+
+114
+00:07:03,520 --> 00:07:04,750
+So if I go here.
+
+115
+00:07:05,610 --> 00:07:07,620
+When I hit my enemy, the line trees went green.
+
+116
+00:07:09,960 --> 00:07:11,890
+There's one more thing we actually need to fix.
+
+117
+00:07:11,910 --> 00:07:18,480
+If I was to just walk into my enemy or kind of jump on it, I kind of get pushed in the y axis.
+
+118
+00:07:18,480 --> 00:07:20,760
+So I kind of become out of place with my enemy.
+
+119
+00:07:20,910 --> 00:07:24,810
+I need to make it so I'll play a character and our enemy can never move from the y axis.
+
+120
+00:07:24,810 --> 00:07:29,530
+So we can't kind of like be pushed forwards or backwards in order to achieve that effect.
+
+121
+00:07:29,550 --> 00:07:36,240
+We can go back to our player character, go to character movement, and in details look for constrain.
+
+122
+00:07:37,130 --> 00:07:42,710
+I just slept constraint a plane and here onto a plane contrary normal just put a value of one in the
+
+123
+00:07:42,710 --> 00:07:46,250
+y axis and this will ensure that we can't move in the y axis.
+
+124
+00:07:46,340 --> 00:07:49,190
+We need to do the same for our Scranton character.
+
+125
+00:07:49,310 --> 00:07:55,760
+So we go over to where it's located, set character, and in details or constraint.
+
+126
+00:07:56,920 --> 00:08:00,880
+We want to control the plane and put one in the Y axis.
+
+127
+00:08:02,060 --> 00:08:04,880
+I'm gonna go back to my pipe and just common all the notes.
+
+128
+00:08:04,970 --> 00:08:08,030
+So I'll just call this figure attack.
+
+129
+00:08:10,710 --> 00:08:15,180
+And I'll just call this attack event.
+
+130
+00:08:16,050 --> 00:08:18,630
+Now I'm going to go compile and close this.
+

@@ -1,0 +1,240 @@
+1
+00:00:03,100 --> 00:00:03,719
+Hello.
+
+2
+00:00:03,730 --> 00:00:08,710
+In this lecture, we're going to add a camera shake whenever my player character is damaged, just to
+
+3
+00:00:08,710 --> 00:00:10,420
+add a bit of polish to our game.
+
+4
+00:00:10,570 --> 00:00:17,080
+So in order to make a camera shake effect instead of Unreal Engine, right Click and Go Blueprint class
+
+5
+00:00:17,260 --> 00:00:25,090
+and under all classes, search for Shake and you'll select this from one Maintain camera shake and let
+
+6
+00:00:25,090 --> 00:00:27,490
+us call this our damaged shake.
+
+7
+00:00:29,210 --> 00:00:31,100
+We want to double click and head inside here.
+
+8
+00:00:32,460 --> 00:00:39,180
+And we want to be concerned with the details here where we can control the options of our camera shake.
+
+9
+00:00:39,240 --> 00:00:44,490
+So the oscillation duration basically is how long our camera shake is going to last for.
+
+10
+00:00:45,500 --> 00:00:49,250
+You can play around with this, but I found a body of 0.25 works well.
+
+11
+00:00:49,970 --> 00:00:53,570
+I'm going to leave the oscillation blend in time and the oscillation blend out time.
+
+12
+00:00:53,570 --> 00:00:54,890
+But you can play around with this.
+
+13
+00:00:54,890 --> 00:00:59,600
+But like the name suggests, it controls how fast it blends in and how fast it blends out.
+
+14
+00:00:59,750 --> 00:01:02,270
+Next, let's go over to the root oscillation.
+
+15
+00:01:02,450 --> 00:01:07,040
+This basically controls how far my camera is going to shake into interactions.
+
+16
+00:01:07,040 --> 00:01:11,360
+So in the pitch, I'm going to show a diagram of the pitch, yaw and roll.
+
+17
+00:01:12,130 --> 00:01:17,500
+Basically we can play around with those values under both the rot and the lock oscillation.
+
+18
+00:01:17,530 --> 00:01:19,040
+There are a couple of settings.
+
+19
+00:01:19,060 --> 00:01:21,120
+The main ones are amplitude and frequency.
+
+20
+00:01:21,130 --> 00:01:26,470
+The amplitude basically describes how powerful a wave is going to be, and the frequency describes how
+
+21
+00:01:26,470 --> 00:01:27,650
+frequent the wave is going to be.
+
+22
+00:01:27,670 --> 00:01:33,280
+So maybe I can have very powerful waves, but I'm only going to have them spawn once.
+
+23
+00:01:33,790 --> 00:01:36,890
+I'm going to show you that the settings that I worked with, well, you can play around.
+
+24
+00:01:36,910 --> 00:01:41,410
+So in the pitch, I have an altitude of ten and a frequency of 50.
+
+25
+00:01:42,290 --> 00:01:43,040
+NPO.
+
+26
+00:01:43,070 --> 00:01:46,310
+I also have an amplitude of ten and 50.
+
+27
+00:01:46,460 --> 00:01:50,930
+Then in the lock oscillation, which basically describes how the camera is going to move.
+
+28
+00:01:52,420 --> 00:01:56,620
+In the Z app, a value of 1000 and had a frequency of one.
+
+29
+00:01:56,980 --> 00:02:01,540
+So you can play around with all these settings to get like a different camera shake, but that's kind
+
+30
+00:02:01,540 --> 00:02:02,620
+of the basics of it.
+
+31
+00:02:03,070 --> 00:02:08,560
+Next, if we close this in order to make this camera shake work, if we go to our EVP.
+
+32
+00:02:10,270 --> 00:02:17,180
+Whenever my character is damaged, after we damage them, I'm going to strike up here and play world.
+
+33
+00:02:17,200 --> 00:02:18,130
+Camera shake.
+
+34
+00:02:19,020 --> 00:02:22,740
+Under fake slept the damaged camera shake that we just made.
+
+35
+00:02:24,340 --> 00:02:25,590
+And under epicenter.
+
+36
+00:02:25,600 --> 00:02:26,740
+Just right click and look.
+
+37
+00:02:26,740 --> 00:02:28,690
+We'll get actor location.
+
+38
+00:02:29,020 --> 00:02:32,970
+The epicenter basically represents where the camera is going to start shaking from.
+
+39
+00:02:32,980 --> 00:02:36,070
+And we want it to start shaking from wherever our player character is.
+
+40
+00:02:36,220 --> 00:02:38,610
+Then we have the inner radius and the outer radius.
+
+41
+00:02:38,620 --> 00:02:43,600
+Basically anything inside the inner radius will not be affected by the camera shake and anything in
+
+42
+00:02:43,600 --> 00:02:45,890
+the outer radius will be affected by the camera shake.
+
+43
+00:02:45,910 --> 00:02:48,850
+The larger this value is, the more the camera is going to shake.
+
+44
+00:02:49,270 --> 00:02:55,750
+Let's test this out some of the value of 2500 and go compile and go play by Press one.
+
+45
+00:02:55,750 --> 00:02:57,790
+We can see the camera shakes quite violently.
+
+46
+00:02:57,910 --> 00:02:59,710
+Maybe that's even a bit too much.
+
+47
+00:02:59,710 --> 00:03:07,360
+So I'm going to reduce this to something like, let's say 1300 and go compile and play.
+
+48
+00:03:08,370 --> 00:03:09,720
+So maybe that's a bit.
+
+49
+00:03:09,720 --> 00:03:11,910
+So I'm just going to try a thousand.
+
+50
+00:03:11,940 --> 00:03:15,720
+So when I did 1000, it seems to have no effect.
+
+51
+00:03:15,750 --> 00:03:16,830
+Maybe it's not strong enough.
+
+52
+00:03:16,830 --> 00:03:18,630
+So I'm going to put 1100.
+
+53
+00:03:19,880 --> 00:03:20,620
+You could play.
+
+54
+00:03:21,430 --> 00:03:22,870
+So I think that's a bit better.
+
+55
+00:03:24,170 --> 00:03:31,220
+If I go back to my camera shake and for example, in the Z, if I made something a bit weaker like 500,
+
+56
+00:03:31,550 --> 00:03:33,920
+it should not shake up and down as much.
+
+57
+00:03:34,220 --> 00:03:36,620
+So now I can compile, play and go one.
+
+58
+00:03:36,830 --> 00:03:37,790
+It's not as much.
+
+59
+00:03:38,270 --> 00:03:40,400
+And I think that's decent.
+
+60
+00:03:40,610 --> 00:03:43,520
+So when my pancetta is damaged, we're going to play that little camera shake.
+

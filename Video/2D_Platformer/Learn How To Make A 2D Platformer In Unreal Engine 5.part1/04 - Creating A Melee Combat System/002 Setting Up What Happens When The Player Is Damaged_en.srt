@@ -1,0 +1,316 @@
+1
+00:00:03,060 --> 00:00:03,670
+Hello.
+
+2
+00:00:03,690 --> 00:00:08,270
+The next thing we want to do is make it so that whenever my character is damaged, the amount of hearts
+
+3
+00:00:08,280 --> 00:00:09,810
+that they have is removed.
+
+4
+00:00:10,500 --> 00:00:16,470
+So first of all, if we head over to the Heart Widget region and go over to the graph, I want you to
+
+5
+00:00:16,470 --> 00:00:23,280
+create a new custom event and you right click for add custom event and just cool this remove part.
+
+6
+00:00:24,550 --> 00:00:25,900
+Let me call this customer one.
+
+7
+00:00:25,920 --> 00:00:31,450
+What we're going to do is if we drag in our hot food and forget hot food to struggle here and offset.
+
+8
+00:00:32,549 --> 00:00:36,180
+Visibility and test visibility to be hidden.
+
+9
+00:00:36,780 --> 00:00:42,030
+So whenever my placard is damaged, we'll cool this customer event and this will basically hide my harmful
+
+10
+00:00:42,030 --> 00:00:45,660
+image and we'll see the empty image later on.
+
+11
+00:00:45,660 --> 00:00:47,040
+We're going to make a healthy cup.
+
+12
+00:00:47,040 --> 00:00:52,110
+And when my character picks up the help, they're going to be able to recover their lost hearts.
+
+13
+00:00:52,110 --> 00:00:54,140
+So I need you to create another customer event.
+
+14
+00:00:54,150 --> 00:01:04,019
+So if you right click and add custom event and call this add part, and when we fire this node, we're
+
+15
+00:01:04,019 --> 00:01:05,790
+basically just going to copy the data.
+
+16
+00:01:07,030 --> 00:01:09,080
+And make it so our heart is now visible.
+
+17
+00:01:09,100 --> 00:01:10,900
+So here under visibility.
+
+18
+00:01:10,930 --> 00:01:12,460
+Select visible.
+
+19
+00:01:12,730 --> 00:01:15,190
+Next thing we just compile and save this.
+
+20
+00:01:15,670 --> 00:01:17,290
+And if we head over to the player.
+
+21
+00:01:17,290 --> 00:01:17,710
+Hot.
+
+22
+00:01:18,910 --> 00:01:19,900
+In some free space.
+
+23
+00:01:19,900 --> 00:01:21,640
+I need you to create a new custom event.
+
+24
+00:01:21,820 --> 00:01:27,520
+So be right click and add custom event and call it player damaged.
+
+25
+00:01:28,390 --> 00:01:32,170
+So we're going to call this custom event whenever my character is damaged.
+
+26
+00:01:32,290 --> 00:01:39,190
+And what we're going to do is basically get the last heart in our pop box and we're going to make it
+
+27
+00:01:39,190 --> 00:01:39,820
+hidden.
+
+28
+00:01:40,090 --> 00:01:41,600
+In order to do this.
+
+29
+00:01:41,620 --> 00:01:43,450
+If we head over to the graph.
+
+30
+00:01:44,060 --> 00:01:48,650
+We want to get our heart reference and to struggle here and look for length.
+
+31
+00:01:49,670 --> 00:01:53,310
+And this will get how many items are inside of my heart, Reverend?
+
+32
+00:01:53,330 --> 00:01:56,930
+So I made my to start with three hearts.
+
+33
+00:01:56,930 --> 00:02:00,680
+So the length of this heart reference is going to be three.
+
+34
+00:02:01,400 --> 00:02:02,750
+There's one more thing we need to do.
+
+35
+00:02:02,780 --> 00:02:08,060
+If we just drag off this length and look for subtract, we need to subtract this from one.
+
+36
+00:02:08,090 --> 00:02:13,130
+Now, the reason we need to subtract one is kind of similar to the reason we added one here.
+
+37
+00:02:13,610 --> 00:02:15,530
+Arrays basically count the number zero.
+
+38
+00:02:15,560 --> 00:02:18,800
+So I made it so my character has three hearts.
+
+39
+00:02:18,800 --> 00:02:23,300
+So this heart reference is going to be three, but arrays count the number zero.
+
+40
+00:02:23,300 --> 00:02:25,520
+So the length of this is actually going to be four.
+
+41
+00:02:25,520 --> 00:02:30,210
+So we need to subtract it by a value of one so that this number accurately shows my parts.
+
+42
+00:02:30,260 --> 00:02:31,580
+Two my pair character has.
+
+43
+00:02:32,550 --> 00:02:35,280
+Next if we drag in a reference again.
+
+44
+00:02:36,090 --> 00:02:39,310
+We need to drag a pet and look for each lip.
+
+45
+00:02:40,270 --> 00:02:41,590
+And just hook us up here.
+
+46
+00:02:42,220 --> 00:02:45,130
+So this for each loop node will fire.
+
+47
+00:02:45,160 --> 00:02:47,170
+However many times my heart references.
+
+48
+00:02:47,170 --> 00:02:53,320
+So this will fire four times because of count zero one, two and three when this array index.
+
+49
+00:02:54,140 --> 00:02:55,040
+Equals.
+
+50
+00:02:55,950 --> 00:02:57,210
+The length of this.
+
+51
+00:02:58,340 --> 00:03:00,950
+That tells the game that we're referencing our last hall.
+
+52
+00:03:00,980 --> 00:03:04,040
+So if this array index is three.
+
+53
+00:03:05,410 --> 00:03:07,900
+And the length of this is three.
+
+54
+00:03:08,110 --> 00:03:12,220
+This array element is going to be the last hot inside of our hot box.
+
+55
+00:03:12,700 --> 00:03:15,520
+And when that is true, we're going to remove it from our game.
+
+56
+00:03:15,550 --> 00:03:22,660
+So if we just drag up here and look for Branch and hook up loop body into here, then if we drag off
+
+57
+00:03:22,660 --> 00:03:27,160
+this array element and pull the remove heart adjustment that we just made.
+
+58
+00:03:29,580 --> 00:03:33,210
+Now that we've removed our heart, I want to remove it from my heart reference.
+
+59
+00:03:33,360 --> 00:03:37,770
+So if we just track in our heart reference, which contains a list of all of our hearts, we can just
+
+60
+00:03:37,770 --> 00:03:41,010
+drag up here and look for remove item.
+
+61
+00:03:42,680 --> 00:03:46,850
+And then just double click here and connect us into here.
+
+62
+00:03:48,630 --> 00:03:53,100
+So later on in my game, we're going to be creating a health pickup system.
+
+63
+00:03:53,850 --> 00:03:59,550
+So when we pick out some health, we're basically going to add any lost hearts that my player has lost.
+
+64
+00:03:59,880 --> 00:04:04,890
+So in order to do this, we're going to need to keep track of all the hearts that my player character
+
+65
+00:04:04,890 --> 00:04:05,670
+has lost.
+
+66
+00:04:05,700 --> 00:04:12,300
+So on the heart reference, just right click and duplicate it and call it lost heart.
+
+67
+00:04:14,230 --> 00:04:15,070
+Reference.
+
+68
+00:04:15,850 --> 00:04:18,370
+Then I want need to draw in this lost heart reference.
+
+69
+00:04:19,540 --> 00:04:21,670
+And a struggle here I look for at.
+
+70
+00:04:23,160 --> 00:04:28,300
+And I need you to add this before we remove the heart from the heart reference.
+
+71
+00:04:28,320 --> 00:04:29,880
+Otherwise, it will be lost forever.
+
+72
+00:04:30,060 --> 00:04:35,100
+They just hook this up here and make sure it is in front of the bit before we remove it.
+
+73
+00:04:37,440 --> 00:04:39,330
+Then if we just connect this to here.
+
+74
+00:04:40,510 --> 00:04:46,900
+And if I could compile, if my character had three help and they were damaged using this node, it's
+
+75
+00:04:46,900 --> 00:04:50,920
+going to get that last half and called the remove heart, which will make it hidden.
+
+76
+00:04:51,160 --> 00:04:54,670
+Then we'll add it to our lost heart reference and remove it from our heart reference.
+
+77
+00:04:55,210 --> 00:04:59,800
+That way, if the player character is damaged again, it won't start counting from the heart that we've
+
+78
+00:04:59,800 --> 00:05:00,880
+already removed.
+
+79
+00:05:01,420 --> 00:05:02,890
+Next, if we just close this.
+

@@ -1,0 +1,120 @@
+1
+00:00:03,010 --> 00:00:06,250
+If you don't already, you're going to want to install Unreal Engine.
+
+2
+00:00:06,280 --> 00:00:11,080
+You can do that by heading over to Unreal Engine Dotcom and just clicking the download button here.
+
+3
+00:00:12,090 --> 00:00:15,720
+This will take you to this page and you just won't want to download the epic game launcher.
+
+4
+00:00:16,490 --> 00:00:20,480
+Once you've downloaded the Epic Games launcher, it will look something like this.
+
+5
+00:00:20,600 --> 00:00:26,660
+You want to head over to library and here under engine versions, you want to just add a new engine
+
+6
+00:00:26,660 --> 00:00:32,299
+version so you can click here and select Unreal Engine version five and just install it.
+
+7
+00:00:33,420 --> 00:00:37,590
+Once you've downloaded Unreal Engine, you should be able to select the version you want to use here.
+
+8
+00:00:37,620 --> 00:00:40,050
+Make sure to select Unreal Engine version five.
+
+9
+00:00:40,470 --> 00:00:43,980
+Once you've downloaded Unreal Engine, add it to the Marketplace tab.
+
+10
+00:00:44,010 --> 00:00:47,580
+And here under search products, look for Paper Z.
+
+11
+00:00:47,700 --> 00:00:48,840
+No spaces.
+
+12
+00:00:50,660 --> 00:00:54,500
+We're going to be using this paper Z plugin to help us build our two D game.
+
+13
+00:00:55,220 --> 00:00:57,560
+Just head over and select this paper Z.
+
+14
+00:00:59,580 --> 00:01:04,470
+Then click install to engine and install it to Unreal Engine version five.
+
+15
+00:01:05,280 --> 00:01:07,500
+We're now ready to create our project.
+
+16
+00:01:07,680 --> 00:01:08,790
+We click launch.
+
+17
+00:01:09,270 --> 00:01:14,590
+This will open up the Unreal Project browser and you just want to head over to the Games tab and you'll
+
+18
+00:01:14,610 --> 00:01:15,340
+see set blank.
+
+19
+00:01:15,360 --> 00:01:17,940
+We're going to be creating a 2D game from complete scratch.
+
+20
+00:01:18,240 --> 00:01:21,570
+Then under project name, just cool this what you want to call your project.
+
+21
+00:01:21,600 --> 00:01:24,170
+I'm going to call this the action platformer.
+
+22
+00:01:25,220 --> 00:01:27,950
+And under project defaults, make sure that you set blueprint.
+
+23
+00:01:28,310 --> 00:01:29,960
+Then you can click create.
+
+24
+00:01:29,990 --> 00:01:33,920
+It should open up your Unreal Engine project and it should look something like this.
+
+25
+00:01:33,950 --> 00:01:38,060
+Before we get started, we're just going to enable the plugin because we're going to be using it later.
+
+26
+00:01:38,060 --> 00:01:43,550
+When we make our game to enable a plugin, simply head over to edit and go plugins.
+
+27
+00:01:44,150 --> 00:01:50,030
+Then here we want to search for Paper Z, the plugin that we installed and just check this little box
+
+28
+00:01:50,330 --> 00:01:50,570
+for.
+
+29
+00:01:50,570 --> 00:01:53,060
+Ask us if we want to restart our engine editor.
+
+30
+00:01:53,060 --> 00:01:56,570
+We need to just click restart now so it can restart with the plugin.
+

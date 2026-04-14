@@ -1,0 +1,304 @@
+1
+00:00:02,990 --> 00:00:06,950
+Whenever my character is wall sliding, I'm going to change that relative location.
+
+2
+00:00:07,190 --> 00:00:10,040
+So if I head back to my player blueprint.
+
+3
+00:00:11,830 --> 00:00:12,910
+When I'm on a wall.
+
+4
+00:00:15,720 --> 00:00:15,940
+All right.
+
+5
+00:00:15,980 --> 00:00:21,270
+I'm just going to drag up this node and I'll set relative location.
+
+6
+00:00:21,360 --> 00:00:24,150
+I want to set the relative location of the sprite.
+
+7
+00:00:25,770 --> 00:00:29,280
+And we're only going to be changing its location in the x axis.
+
+8
+00:00:29,280 --> 00:00:32,130
+So just right click on here and it will split open.
+
+9
+00:00:32,250 --> 00:00:37,200
+And we want to keep whatever values our character has in its relative location in the Y and Z axis.
+
+10
+00:00:37,200 --> 00:00:40,980
+So if we just drag off the sprite and or get relative.
+
+11
+00:00:42,150 --> 00:00:42,960
+Location.
+
+12
+00:00:43,620 --> 00:00:49,110
+Right click on this and we'll split structure pin and you've got Y to Y and Z to Z.
+
+13
+00:00:50,190 --> 00:00:55,410
+Then for X, I found the value of 50 works quite well for the spread.
+
+14
+00:00:55,500 --> 00:00:57,990
+If you're using a difference right, you may need to use a different value.
+
+15
+00:00:58,020 --> 00:01:02,130
+But basically the higher the value this is, the closer the character is going to be to the wall.
+
+16
+00:01:02,160 --> 00:01:04,379
+You may need to play around to get the perfect value.
+
+17
+00:01:05,310 --> 00:01:09,780
+Then when a character is off the wall again, going to set their relative location back to their normal
+
+18
+00:01:09,780 --> 00:01:10,400
+values.
+
+19
+00:01:10,410 --> 00:01:14,220
+So I'm just going to copy this and paste this here.
+
+20
+00:01:14,520 --> 00:01:16,290
+We can delete this print shrink.
+
+21
+00:01:18,280 --> 00:01:20,420
+I think by default my character is no more relative.
+
+22
+00:01:20,440 --> 00:01:26,710
+Location is 20 in the x axis, so I'm just going to change it back to 20.
+
+23
+00:01:28,230 --> 00:01:29,970
+I want you to compile and test that.
+
+24
+00:01:29,970 --> 00:01:30,900
+This all works.
+
+25
+00:01:31,580 --> 00:01:33,980
+When I saw that on the wall, I'm going to be much closer.
+
+26
+00:01:34,490 --> 00:01:36,050
+So that looks a lot better.
+
+27
+00:01:38,100 --> 00:01:38,740
+Hello.
+
+28
+00:01:38,760 --> 00:01:41,660
+The next feature we're going to implement is a wall slide jump.
+
+29
+00:01:41,670 --> 00:01:45,600
+So whenever my character is sliding along a wall, if they jump, we're going to launch them in the
+
+30
+00:01:45,600 --> 00:01:49,030
+opposite direction they're facing in order to set that up.
+
+31
+00:01:49,050 --> 00:01:50,160
+If we head over to the player.
+
+32
+00:01:50,200 --> 00:01:55,740
+Beep and we can just come in all these notes and call the ball slide.
+
+33
+00:01:57,460 --> 00:01:59,140
+And we will go back to our jump.
+
+34
+00:01:59,170 --> 00:02:02,020
+So I'm just going to select it and move it all the way here.
+
+35
+00:02:03,390 --> 00:02:09,389
+So if my player character passes the jump on, if that's flying along the wall to do things a bit differently
+
+36
+00:02:09,539 --> 00:02:10,470
+if we have a branch.
+
+37
+00:02:11,490 --> 00:02:13,950
+And the condition of this product is going to be slight.
+
+38
+00:02:15,050 --> 00:02:17,210
+If this is false, then we'll just do our job.
+
+39
+00:02:18,520 --> 00:02:23,320
+Arthur, if this is true, I'll break the link here by just right clicking and break the link.
+
+40
+00:02:24,670 --> 00:02:29,140
+We want to launch our character somewhat for launch character.
+
+41
+00:02:31,210 --> 00:02:33,730
+I just moved the nodes around, so I had a bit more space.
+
+42
+00:02:33,820 --> 00:02:38,710
+So if my character is wall sliding along the wall and they jump, we're going to launch our character
+
+43
+00:02:39,340 --> 00:02:45,610
+over at Launch Velocity, just right click and split the structure pin and just click X, Y and Z override.
+
+44
+00:02:45,820 --> 00:02:53,470
+So in the Z axis, which will be launching our character upwards, I found a valley of 750 works well.
+
+45
+00:02:53,560 --> 00:03:00,250
+So we're going to launch our character up 750 units in terms of the x axis, depending whether my character
+
+46
+00:03:00,250 --> 00:03:02,170
+is on the left or the right of the wall.
+
+47
+00:03:02,200 --> 00:03:04,780
+It's going to depend what direction we're going to launch them.
+
+48
+00:03:05,020 --> 00:03:10,360
+So in order to do that, we can right click for Get forward Vector.
+
+49
+00:03:11,080 --> 00:03:13,100
+This will get the whoops, not this one.
+
+50
+00:03:13,120 --> 00:03:17,500
+I'm going to look for get actor forward vector.
+
+51
+00:03:17,710 --> 00:03:20,230
+This will get the four direction that our character is facing.
+
+52
+00:03:20,380 --> 00:03:24,880
+We just want to right click on this return value and the split structure pin as we're only concerned
+
+53
+00:03:24,880 --> 00:03:28,960
+with the value in the x axis and we just want to drag up here for multiply.
+
+54
+00:03:30,350 --> 00:03:35,480
+And multiply this by a -40 and then put the number that you want to launch the character.
+
+55
+00:03:35,510 --> 00:03:37,070
+So I'm going to pull up 1000.
+
+56
+00:03:37,310 --> 00:03:43,000
+And hook us up to X so this will not work out to negatively whatever direction they're facing.
+
+57
+00:03:43,010 --> 00:03:47,900
+So if they're facing right then on the left and if they're facing the left, then I want them to the
+
+58
+00:03:47,900 --> 00:03:48,380
+right.
+
+59
+00:03:48,800 --> 00:03:54,120
+We can just go compile save and I'm just going to duplicate this wall.
+
+60
+00:03:54,140 --> 00:03:56,690
+So I press control C, then control V.
+
+61
+00:03:58,260 --> 00:04:04,200
+And if I could play, if I could the longest walk and press spacebar launch me in the opposite direction.
+
+62
+00:04:04,540 --> 00:04:07,920
+I get on this wall and press spacebar will launch me in the opposite direction.
+
+63
+00:04:10,880 --> 00:04:14,780
+I've noticed that when my character is on the wall and I just jump off it.
+
+64
+00:04:16,670 --> 00:04:20,600
+They don't really have much control and it kind of feels a bit weird to fix that.
+
+65
+00:04:20,700 --> 00:04:24,890
+We go back to our lab and go over to character movement under details.
+
+66
+00:04:24,930 --> 00:04:28,970
+If you look for air control, just make this have a value of 0.7.
+
+67
+00:04:29,120 --> 00:04:31,320
+So let's go from a value of 0 to 1.
+
+68
+00:04:31,340 --> 00:04:35,540
+The higher the value this is, the more control the player character is going to have when they're falling
+
+69
+00:04:35,540 --> 00:04:36,050
+in the air.
+
+70
+00:04:37,130 --> 00:04:39,170
+So I'm just going to pile and save that.
+
+71
+00:04:40,470 --> 00:04:42,240
+And try jumping.
+
+72
+00:04:42,360 --> 00:04:43,200
+Sliding again.
+
+73
+00:04:44,260 --> 00:04:46,890
+It's a bit more control when I do that now.
+
+74
+00:04:48,510 --> 00:04:54,750
+Quick tip, but it's kind of blurry when I need to quickly and do stuff like that in order to fix that.
+
+75
+00:04:55,080 --> 00:05:01,260
+Just go to edit and go product settings and then get a motion blur and just leave this unchecked.
+
+76
+00:05:01,740 --> 00:05:04,500
+And then it should not be as blurry.
+

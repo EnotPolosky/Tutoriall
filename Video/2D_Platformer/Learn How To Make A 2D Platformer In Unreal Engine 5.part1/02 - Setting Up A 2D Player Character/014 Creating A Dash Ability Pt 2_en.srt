@@ -1,0 +1,268 @@
+1
+00:00:03,180 --> 00:00:03,850
+Hello.
+
+2
+00:00:03,870 --> 00:00:06,330
+Next, we're going to set up, so I'll play a character.
+
+3
+00:00:06,360 --> 00:00:07,920
+We'll play that dashing animation.
+
+4
+00:00:07,920 --> 00:00:13,980
+When that dashing if we head over to the animations folder and go to the warrior animation source.
+
+5
+00:00:15,000 --> 00:00:18,240
+Due to add new and new animation sequence.
+
+6
+00:00:18,750 --> 00:00:21,060
+I'm just going to rename this to be dashing.
+
+7
+00:00:23,170 --> 00:00:25,990
+And then we'll go through animation data and set what?
+
+8
+00:00:29,530 --> 00:00:32,320
+Next if we open up our animation blueprint.
+
+9
+00:00:33,370 --> 00:00:37,450
+And make sure we're in the new state machine with people's ID.
+
+10
+00:00:37,480 --> 00:00:41,110
+They invented this clever new feature called Jump nodes.
+
+11
+00:00:41,290 --> 00:00:47,530
+Jump nodes basically allow it so we can force our animation blueprint to start specific animation no
+
+12
+00:00:47,530 --> 00:00:48,580
+matter where we are.
+
+13
+00:00:49,430 --> 00:00:53,870
+In order to implement a jump node, just right click and select jump.
+
+14
+00:00:55,300 --> 00:00:58,120
+Just rename this and call this dash.
+
+15
+00:00:59,780 --> 00:01:05,540
+Ben Dreykov here and for animation state and just call this dashing.
+
+16
+00:01:06,820 --> 00:01:08,320
+Double click and head inside here.
+
+17
+00:01:08,860 --> 00:01:11,140
+And then right click on it for play.
+
+18
+00:01:12,250 --> 00:01:12,820
+That's.
+
+19
+00:01:13,480 --> 00:01:14,980
+And just hook this up here.
+
+20
+00:01:16,210 --> 00:01:23,320
+And from dashing connect and hook this to Idol run and to jumping.
+
+21
+00:01:24,150 --> 00:01:31,710
+So if we're in our state and we want to enter our state, we're just going to double click inside here
+
+22
+00:01:32,430 --> 00:01:35,700
+and right click and for time remaining.
+
+23
+00:01:36,670 --> 00:01:38,020
+Four time remaining dashing.
+
+24
+00:01:38,350 --> 00:01:42,490
+I'm going to check to see that the time remaining of our animation is less than.
+
+25
+00:01:44,150 --> 00:01:45,290
+0.1.
+
+26
+00:01:46,270 --> 00:01:53,350
+And so it's a struggle him and and if our blueprint reference.
+
+27
+00:01:54,510 --> 00:01:56,010
+If they're currently in working mode.
+
+28
+00:01:56,010 --> 00:01:57,780
+So look for is walking.
+
+29
+00:01:59,950 --> 00:02:00,970
+Because up to here.
+
+30
+00:02:02,290 --> 00:02:04,370
+Then enter our transition.
+
+31
+00:02:04,390 --> 00:02:09,490
+So if my play character enters that dashing transition and then there's no point 1 seconds left of the
+
+32
+00:02:09,490 --> 00:02:13,720
+animation and my character is walking, then we'll make them enter their walk and stay.
+
+33
+00:02:14,080 --> 00:02:19,630
+If my character is doing that dashing animation and the time remaining when the animation.
+
+34
+00:02:21,980 --> 00:02:22,700
+Is.
+
+35
+00:02:25,120 --> 00:02:28,060
+Is less than 0.1.
+
+36
+00:02:30,510 --> 00:02:34,350
+And if my character is fool, so will this time drag?
+
+37
+00:02:34,350 --> 00:02:35,520
+And I'll play BP.
+
+38
+00:02:36,030 --> 00:02:36,930
+And for.
+
+39
+00:02:38,830 --> 00:02:40,000
+Is falling.
+
+40
+00:02:44,130 --> 00:02:46,620
+Then we'll enter our falling animation state.
+
+41
+00:02:47,430 --> 00:02:49,260
+So I'm just going to drag this to the top.
+
+42
+00:02:49,590 --> 00:02:51,090
+I think that's a better position.
+
+43
+00:02:51,090 --> 00:02:52,530
+I mean, it's a bit more clear.
+
+44
+00:02:53,960 --> 00:02:56,180
+Then we can compile and save.
+
+45
+00:02:56,420 --> 00:03:02,450
+So inside of our player, BP, we're going to force our animation to enter the state whenever our player
+
+46
+00:03:02,450 --> 00:03:06,650
+character is dashing, and that will just force it to play the data, the animation.
+
+47
+00:03:06,860 --> 00:03:08,630
+So we go back to our player, BP.
+
+48
+00:03:10,360 --> 00:03:14,380
+After this two months, we can drag in this animation component.
+
+49
+00:03:15,100 --> 00:03:19,210
+Then you want to drag off here and get an instance.
+
+50
+00:03:20,050 --> 00:03:24,960
+Ben track four jump to Node and I got from that.
+
+51
+00:03:24,970 --> 00:03:26,050
+Who wants to hear?
+
+52
+00:03:27,120 --> 00:03:29,010
+And I got from here to here.
+
+53
+00:03:29,400 --> 00:03:31,920
+It's going to ask us the jump name.
+
+54
+00:03:32,160 --> 00:03:34,350
+So I called my dash.
+
+55
+00:03:34,800 --> 00:03:40,380
+So you want to get what have you called yours and make sure that you spelt it correctly and type it
+
+56
+00:03:40,380 --> 00:03:40,800
+in here.
+
+57
+00:03:41,460 --> 00:03:47,370
+So now when we press the dashboard inside of our animation component, it's going to force us to enter
+
+58
+00:03:47,370 --> 00:03:49,890
+this dash data and then we'll enter our dash and animation.
+
+59
+00:03:49,920 --> 00:03:55,980
+Then once it's over, depending whether we're walking or depending whether we're falling, it will enter
+
+60
+00:03:55,980 --> 00:03:57,810
+the relevant correct animation.
+
+61
+00:03:57,840 --> 00:04:00,000
+So now I can just close this.
+
+62
+00:04:00,570 --> 00:04:01,440
+Go play.
+
+63
+00:04:02,970 --> 00:04:05,690
+And my desk when I'm on the ground, I do my Dutch examination.
+
+64
+00:04:06,120 --> 00:04:08,250
+If I check up on the Dutch, I do.
+
+65
+00:04:08,250 --> 00:04:09,060
+My doesn't count.
+
+66
+00:04:09,420 --> 00:04:10,920
+And then I do my morning animation.
+
+67
+00:04:11,340 --> 00:04:15,720
+So with that, we have set up getting animation and also the editing system.
+

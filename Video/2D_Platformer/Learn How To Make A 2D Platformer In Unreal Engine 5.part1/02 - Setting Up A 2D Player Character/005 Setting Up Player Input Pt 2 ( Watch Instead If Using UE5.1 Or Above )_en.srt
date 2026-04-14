@@ -1,0 +1,424 @@
+1
+00:00:03,100 --> 00:00:03,610
+Hello.
+
+2
+00:00:03,640 --> 00:00:06,670
+Next, we're going to add some controls to our player blueprint.
+
+3
+00:00:07,000 --> 00:00:08,260
+If we open it up.
+
+4
+00:00:09,550 --> 00:00:13,510
+I actually think I made the camera a bit too close to my play character, so I'm just like the spring
+
+5
+00:00:13,510 --> 00:00:18,130
+go on and make up a value of 1000 just so it's a bit further back.
+
+6
+00:00:18,860 --> 00:00:21,060
+Next if we head over to the land graph.
+
+7
+00:00:21,080 --> 00:00:26,150
+So here inside of the graph, it's where we're going to write the code for how we should control and
+
+8
+00:00:26,150 --> 00:00:27,660
+move our player character.
+
+9
+00:00:27,680 --> 00:00:32,840
+The first thing we're going to do is create and reference this input mapping context, which has all
+
+10
+00:00:32,840 --> 00:00:34,210
+the controls for our game.
+
+11
+00:00:34,220 --> 00:00:38,600
+So in order to do that big begin play, this node will fire.
+
+12
+00:00:38,600 --> 00:00:40,190
+As soon as our game starts.
+
+13
+00:00:40,190 --> 00:00:42,110
+We're going to add the controls to our game.
+
+14
+00:00:42,410 --> 00:00:46,490
+If we just right click and we'll get controller.
+
+15
+00:00:46,940 --> 00:00:53,090
+And from here we just want to drag off the return value and cost to the player controller.
+
+16
+00:00:53,090 --> 00:00:56,720
+And this will allow us to reference the player controller that we're playing the game as.
+
+17
+00:00:56,840 --> 00:01:03,350
+And from the player controller, we're going to look for the enhanced input local player subsystem.
+
+18
+00:01:03,470 --> 00:01:06,530
+And this will basically allow us to add controls to our game.
+
+19
+00:01:06,530 --> 00:01:13,880
+And if we just drag up here and will add mapping context and for the mapping context, select the emcee
+
+20
+00:01:13,880 --> 00:01:15,470
+default that we made earlier.
+
+21
+00:01:15,470 --> 00:01:18,140
+And this basically add all the controls for our game.
+
+22
+00:01:18,440 --> 00:01:23,690
+But before we actually do this, we just want to drag off here and look for is valid and we want this
+
+23
+00:01:23,690 --> 00:01:27,080
+one with the question mark and just connect this into here.
+
+24
+00:01:27,230 --> 00:01:28,820
+And this is valid into here.
+
+25
+00:01:28,820 --> 00:01:29,930
+This is valid.
+
+26
+00:01:29,930 --> 00:01:34,730
+We'll basically just check to make sure that we can actually reference this enhanced input local player
+
+27
+00:01:34,730 --> 00:01:38,210
+subsystem and we just want to connect those to event back in play.
+
+28
+00:01:38,210 --> 00:01:41,960
+So as soon as the game starts, it will add these controls to our game.
+
+29
+00:01:42,140 --> 00:01:47,540
+Now that we've done this, we can code how the controls in our game will work in some free space.
+
+30
+00:01:47,540 --> 00:01:53,450
+If you just right click and look for jump, you should see this enhanced action events jump.
+
+31
+00:01:53,450 --> 00:01:55,250
+So just like this, I-A jump.
+
+32
+00:01:55,250 --> 00:01:58,520
+This is the action mapping jump that we made earlier.
+
+33
+00:01:58,940 --> 00:02:04,130
+And when we press the spacebar button, it's going to fire this trigger node.
+
+34
+00:02:04,310 --> 00:02:07,250
+And when this happens, we're going to make our player character jump.
+
+35
+00:02:07,250 --> 00:02:13,250
+So if you just drag off this trigger node and look for jump, this will make our player character automatically
+
+36
+00:02:13,250 --> 00:02:13,790
+jump.
+
+37
+00:02:14,120 --> 00:02:17,000
+When our player character stops pressing this baseball button.
+
+38
+00:02:17,030 --> 00:02:19,220
+We want our player character to stop jumping.
+
+39
+00:02:19,220 --> 00:02:24,350
+So off of the completed, if you just drag up here and force stop jumping.
+
+40
+00:02:24,710 --> 00:02:28,460
+And this will make it so our player character will no longer jump to test that.
+
+41
+00:02:28,460 --> 00:02:29,900
+Everything is working so far.
+
+42
+00:02:29,900 --> 00:02:35,270
+If you just go compile, save then close this and then click play in your project.
+
+43
+00:02:36,020 --> 00:02:37,430
+If you press the space problem.
+
+44
+00:02:38,950 --> 00:02:43,240
+If you click somewhere on the screen and then press the space button on the play, a character should
+
+45
+00:02:43,240 --> 00:02:43,840
+jump.
+
+46
+00:02:44,260 --> 00:02:47,650
+The next thing we're going to do is code it so our player character can move.
+
+47
+00:02:47,830 --> 00:02:53,710
+If we go back to our player blueprint in some free space, I'm going to right click and look for the
+
+48
+00:02:53,710 --> 00:02:54,220
+move.
+
+49
+00:02:54,400 --> 00:02:58,960
+And we want to select this one, The Enhanced Action event I move.
+
+50
+00:02:59,510 --> 00:03:02,630
+Now with our Enhanced Input Action Move event.
+
+51
+00:03:02,660 --> 00:03:09,020
+If you remember earlier when we created the key, I told you to just let this access one float because
+
+52
+00:03:09,020 --> 00:03:14,240
+we did this in our enhanced action move, We can see that it has this action value.
+
+53
+00:03:14,270 --> 00:03:19,490
+We're going to use this value to tell a game if the player character should move towards the left or
+
+54
+00:03:19,490 --> 00:03:22,220
+the right when the player presses the move button.
+
+55
+00:03:22,730 --> 00:03:29,630
+So I've triggered the first thing I need you to do is to drag off and add movement input.
+
+56
+00:03:30,430 --> 00:03:35,050
+Then here under the one direction in the x put a value of one.
+
+57
+00:03:35,290 --> 00:03:39,530
+This basically determines where in the world the player is going to move when we press this button.
+
+58
+00:03:39,550 --> 00:03:45,340
+The reason we're putting a value of one in the X value is because if I go to the viewport and select
+
+59
+00:03:45,340 --> 00:03:45,940
+my sprite.
+
+60
+00:03:46,950 --> 00:03:52,710
+I'm just going to change this to select and translate objects and if I just move this red arrow.
+
+61
+00:03:54,020 --> 00:03:58,190
+In the location, you're going to see that the value in the x axis is changing.
+
+62
+00:03:58,340 --> 00:04:03,680
+In 2D games, the player character normally only moves in one axis and that axis is going to be the
+
+63
+00:04:03,680 --> 00:04:05,210
+x axis in this project.
+
+64
+00:04:05,210 --> 00:04:09,620
+Because you can see when I move the player character in the x axis, they move towards the left or the
+
+65
+00:04:09,620 --> 00:04:09,980
+right.
+
+66
+00:04:10,100 --> 00:04:14,030
+So that's why we're putting a value of one in the X, Just make sure it's there.
+
+67
+00:04:14,390 --> 00:04:20,810
+Then for the action value, if you just connect this into here and actually if you just drag off the
+
+68
+00:04:20,810 --> 00:04:22,790
+trigger and print string.
+
+69
+00:04:23,820 --> 00:04:26,310
+And connect this action value into here.
+
+70
+00:04:27,640 --> 00:04:31,840
+I'm just going to close this and go back to my emcee underscore default.
+
+71
+00:04:32,110 --> 00:04:35,660
+If you remember whether, A, we made it negate this value.
+
+72
+00:04:35,680 --> 00:04:41,200
+This will basically mean that when the player presents the upon this value is going to be negative.
+
+73
+00:04:41,800 --> 00:04:44,890
+However, for the DBA, we left this blank.
+
+74
+00:04:44,890 --> 00:04:47,600
+So that means by default it's going to be positive.
+
+75
+00:04:47,620 --> 00:04:49,840
+So if I just close this and I'll go play.
+
+76
+00:04:50,990 --> 00:04:53,210
+Click somewhere on the screen and I press the A button.
+
+77
+00:04:53,330 --> 00:04:55,640
+We're going to see its print shrinking negative one.
+
+78
+00:04:55,640 --> 00:04:58,940
+And my player character is moving negatively in the x axis.
+
+79
+00:04:58,970 --> 00:05:03,740
+However, if I press the D one, then it's going to print string one and my player character positively
+
+80
+00:05:03,740 --> 00:05:05,540
+moves in the x axis.
+
+81
+00:05:06,300 --> 00:05:06,940
+Nice.
+
+82
+00:05:06,960 --> 00:05:10,110
+There are a couple more things I want to show you with the controls.
+
+83
+00:05:10,790 --> 00:05:12,950
+So if I go back to my player blueprint.
+
+84
+00:05:13,750 --> 00:05:19,900
+If you want to change how high the player character can jump, you can go over to character movement
+
+85
+00:05:19,900 --> 00:05:22,690
+and here under details if you look for jump.
+
+86
+00:05:23,020 --> 00:05:26,530
+The velocity currently is set to 420.
+
+87
+00:05:26,560 --> 00:05:31,800
+If I change this to something like 500, that's going to mean the player character will jump a lot higher.
+
+88
+00:05:31,810 --> 00:05:35,710
+So you can just do that if you want to kind of like change how high the player character jumps.
+
+89
+00:05:35,860 --> 00:05:39,940
+There are also some more things we can do with the jump if I set the player BP.
+
+90
+00:05:40,880 --> 00:05:43,730
+And I look for jump out.
+
+91
+00:05:44,420 --> 00:05:47,140
+Currently the jump max count is one.
+
+92
+00:05:47,150 --> 00:05:49,130
+If I change this to be something like three.
+
+93
+00:05:49,460 --> 00:05:52,160
+Close this and go play the player count.
+
+94
+00:05:52,170 --> 00:05:54,050
+It's going to be up to jump three times.
+
+95
+00:05:55,140 --> 00:05:59,910
+There's one more jumping thing I want to show you, and that is the jump time.
+
+96
+00:06:00,030 --> 00:06:06,570
+If I just look for a jump with the player selected and go jump back the whole time.
+
+97
+00:06:06,780 --> 00:06:12,240
+If I change this value to be something like one, I'm going to be able to hold my spacebar button for
+
+98
+00:06:12,240 --> 00:06:15,390
+one second and my player character will continuously jump.
+
+99
+00:06:15,600 --> 00:06:18,750
+I'll kind of visually show you what I mean if I could play.
+
+100
+00:06:19,200 --> 00:06:21,510
+And I just tapped the space up on my play.
+
+101
+00:06:21,510 --> 00:06:22,710
+Carter will just jump a bit.
+
+102
+00:06:22,740 --> 00:06:27,540
+However, if I hold the space for one second, my play, Carter is going to continuously jump.
+
+103
+00:06:27,540 --> 00:06:30,350
+So that's what that jump Max hold kind of does.
+
+104
+00:06:30,360 --> 00:06:35,610
+If you don't want that setting affecting your player characters, jump here under the jump, Max whole
+
+105
+00:06:35,610 --> 00:06:35,970
+time.
+
+106
+00:06:35,970 --> 00:06:40,080
+Just change this back to be a value of zero and it won't affect that.
+

@@ -1,0 +1,232 @@
+1
+00:00:03,060 --> 00:00:03,670
+Hello.
+
+2
+00:00:03,690 --> 00:00:07,710
+In this next lecture, we're going to be setting up the logic for our mushroom blueprint.
+
+3
+00:00:08,010 --> 00:00:13,650
+If you open up the mushroom blueprint and head over to the event graph, we can delete event.
+
+4
+00:00:13,660 --> 00:00:17,800
+We can play an event active again, an overlap and into free space.
+
+5
+00:00:17,820 --> 00:00:23,130
+If you right click and look for add custom event and call this handle rotation.
+
+6
+00:00:24,000 --> 00:00:25,140
+So authentic.
+
+7
+00:00:25,140 --> 00:00:29,340
+Every frame we're going to be making sure our mushroom is facing our player character.
+
+8
+00:00:29,460 --> 00:00:33,600
+So over the authentic drag and look for handle rotation.
+
+9
+00:00:34,410 --> 00:00:35,880
+I'm just going to close this.
+
+10
+00:00:36,150 --> 00:00:42,600
+And if we head back to our Scantron blueprint, if you remember, when we handle the damage for Scantron,
+
+11
+00:00:42,600 --> 00:00:46,780
+we get the location of the actor that damaged it, which is our player character.
+
+12
+00:00:46,800 --> 00:00:48,650
+We get our authentic location.
+
+13
+00:00:48,660 --> 00:00:53,850
+Then we use this node called get unit direction, and it is value is less than zero.
+
+14
+00:00:54,270 --> 00:00:57,150
+That basically means our player character is in front of our enemy.
+
+15
+00:00:57,150 --> 00:00:59,700
+And so we want our enemy to face our player character.
+
+16
+00:00:59,730 --> 00:01:02,390
+We're going to use this node, but run it every single frame.
+
+17
+00:01:02,400 --> 00:01:05,340
+So our mushroom is always facing our player character.
+
+18
+00:01:05,340 --> 00:01:12,180
+So if we head back to our mushroom beep and we'll have handle rotation just right click and it will
+
+19
+00:01:12,180 --> 00:01:13,470
+get there.
+
+20
+00:01:13,470 --> 00:01:14,160
+Character.
+
+21
+00:01:15,240 --> 00:01:15,720
+And tow truck.
+
+22
+00:01:15,720 --> 00:01:16,070
+Okay.
+
+23
+00:01:16,080 --> 00:01:24,470
+And we'll get actor location then we just want to right click and get actor location and drive away
+
+24
+00:01:24,510 --> 00:01:32,850
+and forget unit director and hiccup two to hit then off the return value just right click and look for
+
+25
+00:01:32,850 --> 00:01:40,140
+split structure pin and drag off the return value from x and check to see if this is less than zero.
+
+26
+00:01:43,040 --> 00:01:47,090
+If this condition is true, that basically means our player character is facing towards the right of
+
+27
+00:01:47,090 --> 00:01:47,410
+us.
+
+28
+00:01:47,420 --> 00:01:50,180
+So we want our mushroom to be facing towards the right.
+
+29
+00:01:50,450 --> 00:01:53,900
+So I'm going to hook up from hand of rotation into here.
+
+30
+00:01:55,440 --> 00:02:02,160
+Then in order to make our mushroom face the right, we can just right click and look for set actor rotation
+
+31
+00:02:02,820 --> 00:02:03,410
+and hook up.
+
+32
+00:02:03,420 --> 00:02:04,140
+True to here.
+
+33
+00:02:04,860 --> 00:02:09,600
+If this is false, that means our player character is facing towards the left of us and so we want our
+
+34
+00:02:09,600 --> 00:02:10,949
+mushroom to face the left.
+
+35
+00:02:11,160 --> 00:02:12,180
+I'll just copy this.
+
+36
+00:02:13,150 --> 00:02:17,380
+And under false in Z per value of 180.
+
+37
+00:02:17,770 --> 00:02:21,940
+And just so that you can visually see what I mean off of the handle rotation, just drag.
+
+38
+00:02:21,970 --> 00:02:22,320
+Okay.
+
+39
+00:02:22,330 --> 00:02:26,620
+And look for print string and hook up X to here.
+
+40
+00:02:27,160 --> 00:02:32,530
+Now if I go to compile close this and I'm just going to drag in my mushroom here.
+
+41
+00:02:33,490 --> 00:02:36,550
+So I put my player character in Enemy on Layer 20.
+
+42
+00:02:36,640 --> 00:02:38,950
+So I put my mushroom on Layer 20.
+
+43
+00:02:40,260 --> 00:02:42,060
+And I'm just going to move my player character.
+
+44
+00:02:42,060 --> 00:02:47,790
+So he starts here and if I go play, we can see it's currently print stringing the value one.
+
+45
+00:02:48,120 --> 00:02:50,100
+So if I open up my mushroom blueprint.
+
+46
+00:02:51,200 --> 00:02:54,250
+The value one is clearly greater than the value zero.
+
+47
+00:02:54,260 --> 00:02:56,380
+So the condition for this branch is false.
+
+48
+00:02:56,390 --> 00:02:59,000
+So we make our mushroom face towards the left.
+
+49
+00:02:59,450 --> 00:03:01,880
+However, if I just jump over my mushroom.
+
+50
+00:03:03,950 --> 00:03:05,870
+This value becomes negative one.
+
+51
+00:03:06,380 --> 00:03:07,880
+And if I go back to my mushroom blueprint.
+
+52
+00:03:07,970 --> 00:03:10,260
+So negative one is clearly less than zero.
+
+53
+00:03:10,280 --> 00:03:11,930
+So that means this condition is true.
+
+54
+00:03:11,960 --> 00:03:14,870
+So we make our mushroom face towards our player character.
+
+55
+00:03:15,350 --> 00:03:18,650
+So if I just close this and go back to my mushroom game.
+
+56
+00:03:19,010 --> 00:03:21,830
+Now, our mushroom is always going to face our player character.
+
+57
+00:03:22,610 --> 00:03:25,740
+The next thing we're going to do is make it so our mushroom can be damaged.
+
+58
+00:03:25,760 --> 00:03:27,290
+Like our skeleton enemy.
+

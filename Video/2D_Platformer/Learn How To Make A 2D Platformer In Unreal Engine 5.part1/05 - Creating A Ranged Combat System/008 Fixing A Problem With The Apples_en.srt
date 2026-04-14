@@ -1,0 +1,140 @@
+1
+00:00:03,280 --> 00:00:03,960
+Hello.
+
+2
+00:00:03,969 --> 00:00:08,350
+In this next lecture, we need to fix a couple of problems with our apple projector.
+
+3
+00:00:08,380 --> 00:00:15,190
+If I go play and I shoot my apple projector at the mushroom enemy, my mushroom enemy will be damaged
+
+4
+00:00:15,190 --> 00:00:17,930
+when the apple projector hits its box curtain.
+
+5
+00:00:17,950 --> 00:00:19,480
+That's obviously incorrect.
+
+6
+00:00:19,480 --> 00:00:20,800
+So we need to fix it.
+
+7
+00:00:21,400 --> 00:00:29,650
+So in order to do that, if we open up our mushroom enemy and select the box, if we go over to Collision
+
+8
+00:00:29,650 --> 00:00:35,320
+Presets, we can see that the object type is set to a world dynamic and its collision presets are overlap
+
+9
+00:00:35,320 --> 00:00:36,340
+or dynamic.
+
+10
+00:00:36,850 --> 00:00:44,530
+If I go over to my apple projector and select its fair, its collision free text or other app or dynamic
+
+11
+00:00:44,530 --> 00:00:46,960
+and its object type is also well dynamic.
+
+12
+00:00:47,110 --> 00:00:53,830
+This means my apple projector is overlapping this box and when it does, it damages my player character.
+
+13
+00:00:54,010 --> 00:01:01,820
+So in my apple projector under Collision Presets, change it to be custom and then set it to a ignores
+
+14
+00:01:01,840 --> 00:01:03,040
+wild dynamic.
+
+15
+00:01:03,770 --> 00:01:06,160
+I mushroom beeps box is wild dynamic.
+
+16
+00:01:06,160 --> 00:01:12,490
+So by doing this our apple will now ignore the box in our mushroom character like a compile play.
+
+17
+00:01:12,490 --> 00:01:19,000
+And now if I shoot my apple projectile it ignores the box and it will only hit the enemy mushroom character.
+
+18
+00:01:19,880 --> 00:01:20,480
+Nice.
+
+19
+00:01:20,530 --> 00:01:21,010
+Okay.
+
+20
+00:01:21,020 --> 00:01:25,910
+So I think my mushroom projectile attack damaged my player character multiple times.
+
+21
+00:01:27,220 --> 00:01:30,970
+In order to fix that, let's go back to our mushroom protractor.
+
+22
+00:01:33,710 --> 00:01:39,020
+And after we apply damage, just drag off here and look for do once.
+
+23
+00:01:39,380 --> 00:01:44,270
+That way this can only damage us once, so we're going to compile and save that.
+
+24
+00:01:45,750 --> 00:01:48,960
+There's one more thing I want to fix about my range enemy.
+
+25
+00:01:48,990 --> 00:01:52,800
+If I go play and I go up and attack my range enemy.
+
+26
+00:01:54,040 --> 00:01:56,990
+Is still going to try and attack me even when it's getting damaged.
+
+27
+00:01:57,010 --> 00:02:04,540
+So to prevent that, if I go back to my mushroom blueprint whenever I damage my enemy, I launch them
+
+28
+00:02:04,540 --> 00:02:05,170
+up in the air.
+
+29
+00:02:05,920 --> 00:02:10,960
+So I'm going to make it so that if my mushroom is in the air, it can't try and attack me.
+
+30
+00:02:11,140 --> 00:02:18,070
+So if we just drag off this is that and look for the OR Boolean, and then if I drag in my character
+
+31
+00:02:18,070 --> 00:02:21,880
+movement and drag and the ball is falling.
+
+32
+00:02:22,150 --> 00:02:26,080
+So if my character is in the air, they're not going to be able to try and attack me.
+
+33
+00:02:26,440 --> 00:02:29,830
+So I just hook this up here and go compile and go play.
+
+34
+00:02:30,690 --> 00:02:36,780
+That way I should be able to constantly attack my range enemy because before it's kind of hard to damage
+
+35
+00:02:36,780 --> 00:02:38,880
+the enemy if it's always attacking you.
+

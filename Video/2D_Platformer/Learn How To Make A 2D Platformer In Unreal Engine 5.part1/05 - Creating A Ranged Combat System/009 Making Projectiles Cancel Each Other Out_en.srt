@@ -1,0 +1,144 @@
+1
+00:00:03,230 --> 00:00:09,290
+The next thing we're going to do is make it to our apple and project our if they collide with each other,
+
+2
+00:00:09,290 --> 00:00:10,650
+they're going to destroy each other.
+
+3
+00:00:10,670 --> 00:00:12,590
+Right now, they kind of just ignore each other.
+
+4
+00:00:12,710 --> 00:00:16,100
+It'll be kind of cool if when they both hit each other, they both get destroyed.
+
+5
+00:00:16,340 --> 00:00:20,850
+So in order to achieve this effect, if we just open up our Apple product to.
+
+6
+00:00:22,190 --> 00:00:28,370
+And currently we've made it so that if our apple hit something which has a type called enemy will destroy
+
+7
+00:00:28,370 --> 00:00:28,580
+it.
+
+8
+00:00:28,610 --> 00:00:33,620
+So in order to make it so that when my apple hits the projectile, it gets destroyed.
+
+9
+00:00:33,830 --> 00:00:39,350
+I want us to go over to our projectile blueprint and select it and add a tag.
+
+10
+00:00:40,090 --> 00:00:42,270
+Only to add a tag called Project Projectile.
+
+11
+00:00:43,800 --> 00:00:51,240
+And then if we head back to our Apple blueprint, just drag off of actor and look for actor as tag.
+
+12
+00:00:51,420 --> 00:00:54,240
+And here on the tag, look for projectile.
+
+13
+00:00:55,820 --> 00:01:00,680
+So the first thing we're going to do is check to see if the actor that we overlap has the enemy tag.
+
+14
+00:01:00,740 --> 00:01:06,020
+If it doesn't, we're going to check to see if the actor that we overlapped has the projectile tag.
+
+15
+00:01:06,530 --> 00:01:10,850
+If that is true, then we're going to destroy this actor to just wrap up here.
+
+16
+00:01:11,450 --> 00:01:12,140
+Whoops.
+
+17
+00:01:12,320 --> 00:01:15,350
+So just drag up here and look for destroy actor.
+
+18
+00:01:17,240 --> 00:01:23,300
+And then after we've done that, we're going to destroy this actor to look for destroy actor and then
+
+19
+00:01:23,300 --> 00:01:25,010
+go compile and save.
+
+20
+00:01:25,040 --> 00:01:30,230
+So now I go play and through my apple when the mushroom goes is projectile.
+
+21
+00:01:30,290 --> 00:01:31,700
+It should cancel each other out.
+
+22
+00:01:33,730 --> 00:01:34,060
+Whoops.
+
+23
+00:01:34,320 --> 00:01:35,520
+Looks like nothing happened.
+
+24
+00:01:35,520 --> 00:01:41,340
+And I think I know the reason why we just made it so that the apple ignore anything with the collision
+
+25
+00:01:41,340 --> 00:01:42,540
+while dynamic.
+
+26
+00:01:42,750 --> 00:01:49,320
+If I go to my projector and set the sphere, its collision is probably, well, dynamic.
+
+27
+00:01:49,530 --> 00:01:50,460
+So let's go down.
+
+28
+00:01:50,550 --> 00:01:51,160
+Go here.
+
+29
+00:01:51,180 --> 00:01:51,630
+Yep.
+
+30
+00:01:51,630 --> 00:01:53,190
+It's collision is well dynamic.
+
+31
+00:01:53,460 --> 00:01:56,760
+So in order to get around this, I'm just going to change this.
+
+32
+00:01:56,760 --> 00:02:02,190
+So I go custom and I'm going to change this object type to be, well, static.
+
+33
+00:02:02,310 --> 00:02:04,650
+And now I go compile and play.
+
+34
+00:02:06,620 --> 00:02:07,580
+And treat my protector.
+
+35
+00:02:07,580 --> 00:02:09,979
+When he shoots his, they cancel each other out.
+
+36
+00:02:10,340 --> 00:02:11,090
+Nice.
+

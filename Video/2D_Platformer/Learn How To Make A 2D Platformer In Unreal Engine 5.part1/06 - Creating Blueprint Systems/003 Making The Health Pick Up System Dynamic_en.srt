@@ -1,0 +1,152 @@
+1
+00:00:03,150 --> 00:00:03,900
+Hello.
+
+2
+00:00:03,930 --> 00:00:10,440
+In this next lecture, I want to update my health pick up so it's a bit more dynamic if we open it up.
+
+3
+00:00:11,790 --> 00:00:15,750
+And go over to here where we give our player character one piece of health.
+
+4
+00:00:15,780 --> 00:00:19,050
+Just right click on this value and promote it to a variable.
+
+5
+00:00:19,140 --> 00:00:21,240
+Just cool this health to give.
+
+6
+00:00:22,830 --> 00:00:28,980
+Then if we just make this instance editable and go compile and change this value to B two.
+
+7
+00:00:29,670 --> 00:00:36,960
+Now if I go compile and just close this, if I set my heart in the world, we can see that the default
+
+8
+00:00:36,990 --> 00:00:39,600
+health to give is to to navigate play.
+
+9
+00:00:40,260 --> 00:00:44,400
+And let's say I get damaged three times, my heart should heal me.
+
+10
+00:00:44,400 --> 00:00:45,690
+Two pieces of health.
+
+11
+00:00:49,960 --> 00:00:53,680
+Although when I pick up the heart, I am given two pieces of health.
+
+12
+00:00:53,710 --> 00:00:55,720
+Although the heart does not reflect this.
+
+13
+00:00:55,720 --> 00:00:57,490
+So we need to update our heart.
+
+14
+00:00:57,520 --> 00:01:02,830
+That way it can handle if the character receives multiple pieces of health at once.
+
+15
+00:01:02,920 --> 00:01:08,470
+So in order to do that, if we go back to our widget blueprint of the player HUD.
+
+16
+00:01:09,650 --> 00:01:11,150
+And go over to the graph.
+
+17
+00:01:12,410 --> 00:01:19,100
+And if we just select the show Heart custom event, we want to go to add new input and just call this
+
+18
+00:01:19,100 --> 00:01:19,730
+number.
+
+19
+00:01:22,780 --> 00:01:25,810
+Then we're going to change this variable type to be an integer.
+
+20
+00:01:26,830 --> 00:01:30,550
+And we just want to right click and look forward to for loop node.
+
+21
+00:01:32,500 --> 00:01:36,220
+Hook up number to last index and hook this up to for loop.
+
+22
+00:01:36,610 --> 00:01:41,980
+Then under the first index, just type in one and hook this up to loop body.
+
+23
+00:01:42,610 --> 00:01:48,430
+So the idea here is if we pick up two pieces of health, then we're going to make this number two and
+
+24
+00:01:48,430 --> 00:01:52,420
+it will run this for loop twice and then this will add two hearts to our screen.
+
+25
+00:01:52,600 --> 00:01:55,330
+So now go compile and go back to my health.
+
+26
+00:01:55,330 --> 00:01:55,960
+Pick up.
+
+27
+00:01:57,300 --> 00:02:00,000
+Under the so hot customer event, we can see this number.
+
+28
+00:02:00,420 --> 00:02:02,460
+We just want to drag in our health to give.
+
+29
+00:02:03,430 --> 00:02:04,270
+And just wrap up here.
+
+30
+00:02:04,300 --> 00:02:05,830
+I look forward to it.
+
+31
+00:02:07,050 --> 00:02:09,449
+And this will convert the float into an integer.
+
+32
+00:02:09,690 --> 00:02:15,840
+Then if we just hook this up here and go compile and go play, we can test this out.
+
+33
+00:02:15,960 --> 00:02:18,630
+So let me get damaged twice.
+
+34
+00:02:19,420 --> 00:02:20,790
+I got damaged three times.
+
+35
+00:02:22,700 --> 00:02:24,850
+And let's say I pick up this help.
+
+36
+00:02:25,000 --> 00:02:26,650
+It should fill up two hearts.
+
+37
+00:02:27,070 --> 00:02:29,950
+So I picked up the heart and it filled up two hearts.
+
+38
+00:02:29,950 --> 00:02:33,700
+So I just wanted to add that to make the health pick up a bit more dynamic.
+

@@ -1,0 +1,68 @@
+1
+00:00:03,230 --> 00:00:03,920
+Hello.
+
+2
+00:00:04,070 --> 00:00:10,190
+In this next lecture, I'm going to go over some websites I'd like to use to find cool 2D assets for
+
+3
+00:00:10,190 --> 00:00:11,060
+my games.
+
+4
+00:00:11,570 --> 00:00:13,640
+The first one is Itch.io.
+
+5
+00:00:13,670 --> 00:00:19,190
+To find assets on this website, go to browse games, then go game development and then select assets.
+
+6
+00:00:19,520 --> 00:00:22,970
+You can then filter by tag by what type of assets you want to find.
+
+7
+00:00:23,000 --> 00:00:29,960
+So if I go to DD, it's only going to show me to the assets and I can filter by more things such as
+
+8
+00:00:29,960 --> 00:00:32,299
+free on sale or paid.
+
+9
+00:00:32,810 --> 00:00:37,730
+So let's scroll down H to IO has loads of cool 2D free assets.
+
+10
+00:00:37,760 --> 00:00:41,510
+The other website I like to use is open game or org.
+
+11
+00:00:41,990 --> 00:00:48,020
+We can just go browse and select 2D art and everything on this website is completely free.
+
+12
+00:00:48,970 --> 00:00:51,850
+Again, I think it has like hundreds of free assets that you can use.
+
+13
+00:00:52,570 --> 00:00:56,980
+And the final place you can find two RD assets is the marketplace.
+
+14
+00:00:57,010 --> 00:01:03,600
+There aren't too many two RD assets on the marketplace, but the awesome I know graphic tune studio,
+
+15
+00:01:03,610 --> 00:01:09,010
+they've created a bunch of two RD assets and I think there are a couple more, but there aren't really
+
+16
+00:01:09,010 --> 00:01:10,570
+as many on the marketplace.
+
+17
+00:01:10,570 --> 00:01:14,320
+But there are loads on Instagram and open game on the org.
+

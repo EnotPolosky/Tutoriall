@@ -1,0 +1,232 @@
+1
+00:00:03,180 --> 00:00:03,770
+Hello.
+
+2
+00:00:03,780 --> 00:00:08,880
+In this next lecture, we're going to make it to our Planck actor also has their own project artwork
+
+3
+00:00:09,060 --> 00:00:10,230
+to get started.
+
+4
+00:00:10,290 --> 00:00:15,750
+Head over to the Warrior animation folder and just create a new folder and call this apple.
+
+5
+00:00:19,390 --> 00:00:24,100
+Then head inside here and then briefly close on your engine and attached.
+
+6
+00:00:24,100 --> 00:00:27,610
+In this course, I'm going to make sure to include this image of an apple.
+
+7
+00:00:27,640 --> 00:00:29,950
+Just select it and drag it into this folder.
+
+8
+00:00:31,060 --> 00:00:32,409
+Once you've done that, just right.
+
+9
+00:00:32,409 --> 00:00:35,960
+Click on this image and apply paper to the settings.
+
+10
+00:00:35,980 --> 00:00:39,160
+Then right click and go spray actions and create a sprite.
+
+11
+00:00:39,850 --> 00:00:44,260
+Next, if we head back to our player character folder, let's create our Apple projectile.
+
+12
+00:00:44,290 --> 00:00:50,380
+If I just right click and Go Blueprint class, select an actor and call this apple projectile underscore
+
+13
+00:00:50,420 --> 00:00:51,130
+beep.
+
+14
+00:00:54,140 --> 00:00:59,690
+And if we open it up under components, go ahead and look for a paper sprite.
+
+15
+00:01:01,280 --> 00:01:08,070
+With this selected water source, select the apple that we just imported and scroll down and make it
+
+16
+00:01:08,070 --> 00:01:08,990
+a collision preset.
+
+17
+00:01:09,350 --> 00:01:10,280
+No collision.
+
+18
+00:01:12,110 --> 00:01:16,130
+My apple is a bit small, so if we just scroll up and scale it up to three.
+
+19
+00:01:17,330 --> 00:01:20,490
+Now, I don't have any cool flipbook animations for my apple.
+
+20
+00:01:20,510 --> 00:01:25,520
+So to add a cool effect, let's go add a look for rotating movement.
+
+21
+00:01:27,230 --> 00:01:31,450
+If I just select this and then go simulate, you'll see that my apple is rotating.
+
+22
+00:01:31,460 --> 00:01:35,240
+So we only use this component to make my apple rotate.
+
+23
+00:01:35,660 --> 00:01:38,550
+If we go to Z, just put a value of zero here.
+
+24
+00:01:38,570 --> 00:01:44,660
+So my apple will no longer rotate in the z axis and in Y per value of -180.
+
+25
+00:01:45,230 --> 00:01:46,400
+And then go simulate.
+
+26
+00:01:46,700 --> 00:01:49,670
+And that will make it look like the apple is rotating forwards.
+
+27
+00:01:49,910 --> 00:01:52,520
+You can play around with these values if you want to get a different value.
+
+28
+00:01:52,670 --> 00:01:57,320
+If I made this something like -600, then it's going to rotate a lot faster.
+
+29
+00:01:57,710 --> 00:02:00,620
+But I'm happy with -180.
+
+30
+00:02:02,170 --> 00:02:05,680
+Okay, Next, let's go ahead and look for a fake liver.
+
+31
+00:02:07,550 --> 00:02:10,100
+Make this decision around our apple.
+
+32
+00:02:11,030 --> 00:02:13,370
+So decrease its size a bit.
+
+33
+00:02:14,030 --> 00:02:17,760
+And then finally, we need to add some projectile movement to our apple.
+
+34
+00:02:17,780 --> 00:02:21,680
+So let's go ahead and look for projectile movement.
+
+35
+00:02:21,980 --> 00:02:25,880
+And under initial and max speed, I'm going to have a value of 1000.
+
+36
+00:02:29,300 --> 00:02:32,180
+And in the details, I'm going to make sure it's not affected by gravity.
+
+37
+00:02:32,180 --> 00:02:33,320
+So I'm look for.
+
+38
+00:02:34,220 --> 00:02:37,280
+Projectile gravity scale and put this to zero.
+
+39
+00:02:39,110 --> 00:02:41,530
+Next if we select our sphere cousin.
+
+40
+00:02:43,100 --> 00:02:46,640
+And scroll down and go on component again over that.
+
+41
+00:02:46,760 --> 00:02:52,820
+We're going to make it so that if this actor overlaps another actor which has a particular tag, we're
+
+42
+00:02:52,820 --> 00:02:54,080
+going to apply damage to them.
+
+43
+00:02:54,080 --> 00:03:02,000
+So other actor but for has tag this one actor has tag and under tag type in enemy.
+
+44
+00:03:03,390 --> 00:03:04,920
+If this condition is true.
+
+45
+00:03:05,800 --> 00:03:08,440
+And we're going to apply damage to the other actor.
+
+46
+00:03:08,670 --> 00:03:12,370
+There's a struggle here and look for apply damage.
+
+47
+00:03:13,030 --> 00:03:15,100
+The amount of damage we're going to do is going to be one.
+
+48
+00:03:16,410 --> 00:03:18,690
+And then we're going to destroy this actor.
+
+49
+00:03:18,720 --> 00:03:21,420
+So drag ahead and look for destroy actor.
+
+50
+00:03:22,860 --> 00:03:28,200
+Then go compile and we want to go to our skeleton blueprint and our mushroom blueprint.
+
+51
+00:03:28,710 --> 00:03:29,910
+So let me just find this.
+
+52
+00:03:31,010 --> 00:03:35,320
+And we're going to give them the tag of enemy to give an extra attack.
+
+53
+00:03:35,330 --> 00:03:42,710
+Select it here and then under details, look for tag and then we can go advanced, add a new tag and
+
+54
+00:03:42,710 --> 00:03:45,690
+just click this add element and type in the tag.
+
+55
+00:03:45,710 --> 00:03:49,970
+So type in enemy and we'll do the same thing for my mushroom blueprint.
+
+56
+00:03:50,390 --> 00:03:51,680
+So I go here.
+
+57
+00:03:52,010 --> 00:03:58,310
+So the mushroom itself under details, look for tag, add a new tag and I'll cool this enemy.
+
+58
+00:03:59,570 --> 00:04:01,640
+We can now compile and save this.
+

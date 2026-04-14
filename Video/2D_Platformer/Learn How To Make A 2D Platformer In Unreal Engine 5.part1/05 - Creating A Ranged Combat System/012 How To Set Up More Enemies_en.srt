@@ -1,0 +1,268 @@
+1
+00:00:03,130 --> 00:00:03,810
+Hello.
+
+2
+00:00:03,820 --> 00:00:08,830
+In this next lecture, I'm going to go over how we can add another enemy character.
+
+3
+00:00:08,860 --> 00:00:14,620
+So let's say I want to add another enemy, although I want it to use different animations.
+
+4
+00:00:14,800 --> 00:00:16,160
+In order to do that.
+
+5
+00:00:16,180 --> 00:00:18,520
+Let's first head back to our skin tone blueprint.
+
+6
+00:00:20,070 --> 00:00:22,470
+And we need to organize a few things.
+
+7
+00:00:22,470 --> 00:00:26,790
+So under variables we can put our variables into categories.
+
+8
+00:00:27,210 --> 00:00:32,340
+I want you to select this movement direction, variable and under category.
+
+9
+00:00:32,640 --> 00:00:35,070
+Just call this do not edit.
+
+10
+00:00:37,900 --> 00:00:44,200
+And then I want you to drag the Is that Bible and drag it under the do not edit.
+
+11
+00:00:44,840 --> 00:00:47,480
+Do the same with the enemy health bar.
+
+12
+00:00:49,020 --> 00:00:50,370
+And with the attack mode.
+
+13
+00:00:51,670 --> 00:00:53,110
+And with the attack event.
+
+14
+00:00:54,110 --> 00:00:55,670
+And do the same with the max health.
+
+15
+00:00:57,090 --> 00:00:58,800
+And the enemy damaged.
+
+16
+00:01:01,530 --> 00:01:04,769
+Okay, that should leave us with three variables to edit.
+
+17
+00:01:04,769 --> 00:01:07,710
+Wait time Max Warp speed and health.
+
+18
+00:01:08,370 --> 00:01:14,490
+I want us to go over to the jump nodes and just right click on this jump name and promote it to our
+
+19
+00:01:14,490 --> 00:01:19,620
+rival and cool this damaged jump mode.
+
+20
+00:01:20,940 --> 00:01:25,500
+Just compile this and make sure it is damaged or whatever it's called.
+
+21
+00:01:26,360 --> 00:01:31,430
+Then I want you to go to the second jump node, right click and promote it.
+
+22
+00:01:31,430 --> 00:01:32,180
+Terrible.
+
+23
+00:01:32,300 --> 00:01:33,500
+And call this death.
+
+24
+00:01:34,890 --> 00:01:35,520
+Trump made.
+
+25
+00:01:37,810 --> 00:01:45,460
+Then finally, I want you to go over to the attack template and just right click and promote the terrible
+
+26
+00:01:45,580 --> 00:01:48,940
+and call this attack jump node.
+
+27
+00:01:49,850 --> 00:01:57,200
+Ben, I'm willing to put all these rebels in a category called edit, so pull this edit and then I'll
+
+28
+00:01:57,200 --> 00:01:59,990
+move all the other variables to this category.
+
+29
+00:02:02,870 --> 00:02:05,420
+Once you've done this, just go compile and say.
+
+30
+00:02:06,410 --> 00:02:13,490
+And then right click on this content beep and look for create chart Blueprint class.
+
+31
+00:02:14,120 --> 00:02:21,950
+And we can just call this mini enemy underscore to.
+
+32
+00:02:22,770 --> 00:02:24,810
+And we just double click and hand side here.
+
+33
+00:02:25,380 --> 00:02:29,670
+There are only a couple of things I need to change in order to get this working with a different Sprite
+
+34
+00:02:29,910 --> 00:02:35,460
+as this melee enemy underscore, two is going to inherit all the blueprints of our original scan.
+
+35
+00:02:36,840 --> 00:02:40,830
+The first thing we need to change is the sprite survive a different sprite or just change it.
+
+36
+00:02:41,070 --> 00:02:47,640
+And then we need to go to animation component and change this to be the animation blueprint of the character.
+
+37
+00:02:48,770 --> 00:02:54,770
+Then if we just let army the enemy too, we don't need to edit anything in the do not edit section.
+
+38
+00:02:55,130 --> 00:02:58,280
+However, in the edit section we can change the wait time.
+
+39
+00:02:58,280 --> 00:03:00,110
+So this is how long our enemy will wait.
+
+40
+00:03:00,110 --> 00:03:04,010
+When it hits a wall or an edge, we can change it, speed its health.
+
+41
+00:03:04,100 --> 00:03:10,970
+And the reason we promoted this damage jump node death, jump node and attach upload is because if we
+
+42
+00:03:10,970 --> 00:03:19,190
+make another animation blueprint for a different 2D character, instead of jumping to whatever we call
+
+43
+00:03:19,190 --> 00:03:21,640
+it in the Scantron, you may name it something differently.
+
+44
+00:03:21,650 --> 00:03:25,880
+So here is where you can replace it and type it with something.
+
+45
+00:03:25,880 --> 00:03:30,620
+If you named it something differently, if you named it exactly the same in your other character, you
+
+46
+00:03:30,620 --> 00:03:32,000
+wouldn't need to change the variables here.
+
+47
+00:03:32,000 --> 00:03:33,190
+But just in case you do.
+
+48
+00:03:33,200 --> 00:03:35,630
+That's why we promoted this to a variable.
+
+49
+00:03:35,810 --> 00:03:41,840
+We can do the exact same thing for our ranged enemy, so let's set it up so that it can be easily cloned
+
+50
+00:03:41,840 --> 00:03:43,290
+and we can make more copies of it.
+
+51
+00:03:43,310 --> 00:03:49,250
+So if I just close this, go to my mushroom blueprint folder, open it up.
+
+52
+00:03:49,700 --> 00:03:58,700
+And if we just go over here to the Widget blueprint and under category, let's create a new category
+
+53
+00:03:58,700 --> 00:04:01,130
+and call it Do not edit.
+
+54
+00:04:02,170 --> 00:04:08,050
+We can move the enemy damage to the edit section, then we can just select health.
+
+55
+00:04:08,880 --> 00:04:12,570
+And we can put this in the category of edit.
+
+56
+00:04:14,400 --> 00:04:18,269
+And just move max health to edit and just move.
+
+57
+00:04:18,300 --> 00:04:20,190
+Is that to do not edit?
+
+58
+00:04:21,450 --> 00:04:24,990
+Then we go over to the jump nodes inside of our range enemy.
+
+59
+00:04:25,480 --> 00:04:30,600
+Sort of right click on this, promote it to a variable and call it ranged attack.
+
+60
+00:04:32,360 --> 00:04:37,400
+We can right click on this, promote it to rebel and call that.
+
+61
+00:04:38,430 --> 00:04:39,270
+Damaged.
+
+62
+00:04:41,250 --> 00:04:46,050
+We can right click on this, promote it to a Bible and call it death.
+
+63
+00:04:48,580 --> 00:04:55,180
+And then if you want to make your enemy use a different projectile, we can just right click on this.
+
+64
+00:04:55,780 --> 00:04:58,000
+Permit it to travel and call it projectile.
+
+65
+00:05:02,120 --> 00:05:04,940
+And just move all of these variables to the edit section.
+
+66
+00:05:11,770 --> 00:05:18,010
+And now you'd easily be able to create a chart blueprint Class of the Mushroom and create more ranged
+
+67
+00:05:18,010 --> 00:05:18,820
+characters.
+

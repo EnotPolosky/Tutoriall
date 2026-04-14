@@ -1,0 +1,296 @@
+1
+00:00:03,040 --> 00:00:03,640
+Hello.
+
+2
+00:00:03,670 --> 00:00:08,440
+The next thing we're going to do is set up some jumping and falling animations for our player character.
+
+3
+00:00:08,770 --> 00:00:14,140
+If we head over to the Warrior animation source, I want us to create a new animation sequence.
+
+4
+00:00:14,500 --> 00:00:20,590
+And if you just click F2 with the animation selected, I will allow you to quickly rename it.
+
+5
+00:00:20,950 --> 00:00:22,570
+I'm just going to call this one jumping.
+
+6
+00:00:24,970 --> 00:00:31,570
+And on the animation data, just like the jumping animation and create a new animation sequence and
+
+7
+00:00:31,570 --> 00:00:33,280
+call this one pulling.
+
+8
+00:00:36,360 --> 00:00:41,090
+And on the animation data, select the falling flipbook intro.
+
+9
+00:00:41,160 --> 00:00:44,670
+Save this and head over to our Warrior Animation blueprint.
+
+10
+00:00:46,200 --> 00:00:47,930
+We can just break the link here somewhere.
+
+11
+00:00:47,940 --> 00:00:49,530
+Right click and go break link.
+
+12
+00:00:50,390 --> 00:00:54,020
+And I'm just going to right click and look for new state machine.
+
+13
+00:00:54,650 --> 00:00:56,060
+And I got from here to here.
+
+14
+00:00:56,090 --> 00:01:00,470
+So inside this new state machine, I'm going to handle all the animations for my player character.
+
+15
+00:01:01,070 --> 00:01:04,099
+I just wanted to showcase this earlier.
+
+16
+00:01:04,430 --> 00:01:08,060
+We can copy this as we're going to head inside here.
+
+17
+00:01:08,540 --> 00:01:09,680
+And out.
+
+18
+00:01:09,680 --> 00:01:16,550
+We just want to go up here and look for Animation State just like this and call this the idle slash
+
+19
+00:01:17,120 --> 00:01:17,720
+run.
+
+20
+00:01:18,550 --> 00:01:23,290
+State, we can double click and head inside here and just paste what we copied.
+
+21
+00:01:23,710 --> 00:01:25,030
+And just hook this up here.
+
+22
+00:01:25,510 --> 00:01:30,130
+So the reason we're having this inside here is it just makes it, it cleaner and it'll make it a bit
+
+23
+00:01:30,130 --> 00:01:34,300
+easier when we add stuff like jumping and other animations later on.
+
+24
+00:01:34,570 --> 00:01:37,540
+So I'm just going to go back to my atom graph and delete this.
+
+25
+00:01:39,310 --> 00:01:40,960
+We can head back to our new state machine.
+
+26
+00:01:41,560 --> 00:01:46,150
+So we set up all happen when our character is either standing still or running.
+
+27
+00:01:46,270 --> 00:01:50,080
+Now I'm going to set up what happens when my character is jumping, start falling.
+
+28
+00:01:50,590 --> 00:01:55,690
+So initially our character is going to be in the run state in order to enter the German state.
+
+29
+00:01:55,780 --> 00:02:01,150
+We can just drag off here for Animation State and just pull the state jump.
+
+30
+00:02:03,950 --> 00:02:09,289
+Head inside here and just right click and for the play jumping animation.
+
+31
+00:02:11,780 --> 00:02:18,560
+So this little idle run Toronto jumping represents what's going to need to happen in order for our character
+
+32
+00:02:18,560 --> 00:02:20,420
+to enter this dynamic animation state.
+
+33
+00:02:20,870 --> 00:02:22,550
+Just double click and head inside here.
+
+34
+00:02:23,150 --> 00:02:29,900
+So in order for our characters to enter the jumping state, we can drag in our player reference and
+
+35
+00:02:29,900 --> 00:02:32,570
+just drag up here and look for is falling.
+
+36
+00:02:33,690 --> 00:02:34,770
+And hook us up.
+
+37
+00:02:34,980 --> 00:02:39,120
+So if our character is appalling, then they're going to enter the jumping stage.
+
+38
+00:02:42,070 --> 00:02:46,480
+From our jumping state, our player character is going to then enter their fooling state to just drag
+
+39
+00:02:46,480 --> 00:02:50,560
+a player and for animation states and call this full.
+
+40
+00:02:52,610 --> 00:02:56,120
+So click inside here and just right click for play.
+
+41
+00:02:57,020 --> 00:02:57,530
+Work.
+
+42
+00:02:59,630 --> 00:03:05,870
+So in order for our character to enter the fooling state, we can drag in our player BP, and we want
+
+43
+00:03:05,870 --> 00:03:06,800
+to get their velocity.
+
+44
+00:03:10,170 --> 00:03:11,400
+All this time.
+
+45
+00:03:11,730 --> 00:03:17,130
+We want to break back to free apps and won't be checking their velocity in the Z axis.
+
+46
+00:03:17,610 --> 00:03:22,350
+So if our characters velocity in the Z axis is ever less than.
+
+47
+00:03:23,300 --> 00:03:23,800
+Zero.
+
+48
+00:03:24,020 --> 00:03:26,390
+That basically means our character is falling down.
+
+49
+00:03:26,600 --> 00:03:30,870
+If our character is ever falling down, then we want them to be doing that falling animation.
+
+50
+00:03:30,890 --> 00:03:32,690
+So from here into here.
+
+51
+00:03:33,860 --> 00:03:39,080
+Then to get from our folding back to our idle slash run track snood and hook up here.
+
+52
+00:03:40,620 --> 00:03:44,880
+If all play a character is ever in the working state, then we'll make it.
+
+53
+00:03:44,880 --> 00:03:51,750
+So they go back to their walking slash idle animation so we can just drag off for is walking.
+
+54
+00:03:54,370 --> 00:03:55,930
+And from here into here.
+
+55
+00:03:57,620 --> 00:04:01,340
+And now I could compile those this and go play.
+
+56
+00:04:02,460 --> 00:04:06,340
+If I jump out to be in the jumping and then go to that fooling state when they're fooling.
+
+57
+00:04:06,350 --> 00:04:10,220
+So I'm just going to increase my characters jump so a bit more clear.
+
+58
+00:04:11,990 --> 00:04:14,240
+Some good here for Trump.
+
+59
+00:04:15,340 --> 00:04:17,620
+And make something like 1200.
+
+60
+00:04:18,810 --> 00:04:22,680
+And add some debug so you can see the character's velocity in the z axis.
+
+61
+00:04:23,350 --> 00:04:27,030
+So I'm just going to right click and print.
+
+62
+00:04:28,210 --> 00:04:31,090
+Spring and hike up see into here.
+
+63
+00:04:31,360 --> 00:04:33,610
+So you can see our velocity in the Z axis.
+
+64
+00:04:33,970 --> 00:04:36,340
+And hit this up here and just go compile.
+
+65
+00:04:37,000 --> 00:04:38,140
+So we're going to play.
+
+66
+00:04:38,590 --> 00:04:41,020
+Currently my z axis is here.
+
+67
+00:04:41,110 --> 00:04:42,220
+If I initially jump.
+
+68
+00:04:42,250 --> 00:04:44,200
+Then becomes a positive value.
+
+69
+00:04:44,590 --> 00:04:46,450
+As I fall down, it becomes a negative value.
+
+70
+00:04:46,480 --> 00:04:50,350
+So when my character is velocity in the z axis becomes a negative value.
+
+71
+00:04:50,380 --> 00:04:52,420
+We enter the falling animation stage.
+
+72
+00:04:53,360 --> 00:04:54,620
+Who's going to remove that?
+
+73
+00:04:54,980 --> 00:04:57,080
+That's hopefully you should now understand that.
+
+74
+00:04:58,920 --> 00:05:02,130
+And with that, we have set up some jumping animations for our player character.
+

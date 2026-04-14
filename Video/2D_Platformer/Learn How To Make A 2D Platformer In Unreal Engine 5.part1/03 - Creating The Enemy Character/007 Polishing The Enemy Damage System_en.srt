@@ -1,0 +1,476 @@
+1
+00:00:03,230 --> 00:00:03,880
+Hello.
+
+2
+00:00:03,890 --> 00:00:06,650
+In this next lecture, we're going to update our enemy a bit.
+
+3
+00:00:06,800 --> 00:00:12,290
+Currently, right now, if I hit my enemy, it will just play damage animation and that's all We're
+
+4
+00:00:12,290 --> 00:00:16,250
+going to make it so that whenever we have our enemy, our enemy will be launched back in the direction
+
+5
+00:00:16,250 --> 00:00:16,910
+that we hit it.
+
+6
+00:00:17,060 --> 00:00:21,830
+And if, for example, I hit my enemy from behind, the enemy will turn around and face me.
+
+7
+00:00:21,980 --> 00:00:28,370
+So in order to set that up, if we head back to our player blueprint and go to Earth as applied damage,
+
+8
+00:00:28,520 --> 00:00:31,580
+we just want to drag off damage closer and type in self.
+
+9
+00:00:32,030 --> 00:00:38,690
+So the reason we're doing this, if we go back to our sand and beep and go to our event, any damage,
+
+10
+00:00:38,690 --> 00:00:41,840
+we can now reference the damage which damages our Scampton.
+
+11
+00:00:42,440 --> 00:00:47,150
+So we're going to get the location of our damage closer and the location of our Scampton, and then
+
+12
+00:00:47,150 --> 00:00:50,400
+we'll use that information to determine where our Scampton should face.
+
+13
+00:00:50,480 --> 00:00:55,340
+So if we just drag off damage closer and look forward, get actor location.
+
+14
+00:00:56,060 --> 00:01:03,920
+Ben, if we just right click and we'll get actor location and track up here and forget unit director
+
+15
+00:01:04,580 --> 00:01:05,920
+plug in here to two.
+
+16
+00:01:05,930 --> 00:01:11,480
+So we're going to be getting the unit direction of our damage closer to our ask antennas.
+
+17
+00:01:11,810 --> 00:01:16,610
+And we just want to right click it and split the structure and we're only concerned with the value in
+
+18
+00:01:16,610 --> 00:01:17,570
+the x axis.
+
+19
+00:01:18,020 --> 00:01:22,430
+I want us to just right click and look for print string so you can visually see something.
+
+20
+00:01:23,300 --> 00:01:24,860
+Look up X into here.
+
+21
+00:01:25,850 --> 00:01:29,390
+And focus up into health and this into here.
+
+22
+00:01:29,750 --> 00:01:32,450
+Now, if I go compile and I go play.
+
+23
+00:01:33,140 --> 00:01:36,890
+If I hit my enemy from behind, it's going to print shrink a positive value.
+
+24
+00:01:36,920 --> 00:01:40,700
+If I hit my enemy from behind, then it's going to print shrink a negative value.
+
+25
+00:01:40,700 --> 00:01:41,840
+So you can see it was minus one.
+
+26
+00:01:42,940 --> 00:01:44,950
+And like in front of it I hit it will be one.
+
+27
+00:01:45,550 --> 00:01:46,540
+Using this.
+
+28
+00:01:46,660 --> 00:01:50,650
+We're going to update our enemies movement direction whenever we have them.
+
+29
+00:01:50,860 --> 00:01:58,270
+So what of this return value x If we just drag up here and look for less than if this value is ever
+
+30
+00:01:58,270 --> 00:01:59,190
+less than one?
+
+31
+00:01:59,200 --> 00:02:04,810
+That means we are currently in front of the enemy and we want our enemy to continue facing us.
+
+32
+00:02:04,990 --> 00:02:08,530
+So if I go back here and just drag up here and look for select.
+
+33
+00:02:10,600 --> 00:02:16,150
+So if this is true, we're just on the right level on this value and change the pen type to be a float.
+
+34
+00:02:16,270 --> 00:02:18,370
+And we want this to have a true value of one.
+
+35
+00:02:19,420 --> 00:02:21,040
+If its value is ever greater than zero.
+
+36
+00:02:21,070 --> 00:02:22,630
+That means we're currently behind the enemy.
+
+37
+00:02:22,930 --> 00:02:24,170
+The enemy to turn around.
+
+38
+00:02:24,190 --> 00:02:27,580
+So if this condition is false, we want this to have a value of minus one.
+
+39
+00:02:28,150 --> 00:02:32,800
+Then we just want to delete this print string and I'm going to delete the notes here.
+
+40
+00:02:32,950 --> 00:02:35,340
+And we're just going to update our enemies movement direction.
+
+41
+00:02:35,350 --> 00:02:38,860
+So we just drag this in here and set it and hook this up here.
+
+42
+00:02:39,780 --> 00:02:43,110
+I'm going to collect these notes here and I'm just going to move everything back a bit.
+
+43
+00:02:44,780 --> 00:02:52,010
+And to make it cleaner, I'm going to drag in my house and look for less than or equal and hook us up
+
+44
+00:02:52,010 --> 00:02:52,460
+here.
+
+45
+00:02:54,130 --> 00:02:56,410
+So now we go compile and go play.
+
+46
+00:02:56,820 --> 00:03:00,790
+If I hit my enemy from here, it should turn around and face me so we can see the enemy down around
+
+47
+00:03:01,060 --> 00:03:01,480
+me.
+
+48
+00:03:01,540 --> 00:03:03,010
+I'm just going to jump over them.
+
+49
+00:03:03,340 --> 00:03:03,890
+Hit them.
+
+50
+00:03:03,910 --> 00:03:05,230
+They'll turn around and face me.
+
+51
+00:03:05,260 --> 00:03:06,610
+If I hit them from this direction.
+
+52
+00:03:06,610 --> 00:03:09,400
+They should continue staying where they are and try and face me.
+
+53
+00:03:09,520 --> 00:03:10,360
+Nice.
+
+54
+00:03:10,990 --> 00:03:15,310
+The next thing we're going to do is make it so that whenever we hit our enemy and it still has help,
+
+55
+00:03:15,310 --> 00:03:18,160
+we're going to launch our enemy back in the direction that we hit them.
+
+56
+00:03:18,160 --> 00:03:20,980
+So false.
+
+57
+00:03:21,100 --> 00:03:24,610
+I want you to just drag up here and look for a launch character.
+
+58
+00:03:25,580 --> 00:03:26,150
+Just check.
+
+59
+00:03:26,180 --> 00:03:27,610
+X, Y, and Z, Right.
+
+60
+00:03:27,620 --> 00:03:32,630
+So that we replace our characters velocity with the values here and right click here and look for split
+
+61
+00:03:32,630 --> 00:03:32,990
+structure.
+
+62
+00:03:32,990 --> 00:03:41,150
+PIN in Z have a value of something like 150 and in X basically going to use the value here and just
+
+63
+00:03:41,150 --> 00:03:46,430
+multiply it by a negative number so that we launch our enemy in the opposite direction of where it was.
+
+64
+00:03:46,430 --> 00:03:49,130
+Here someone put a value of -800.
+
+65
+00:03:49,580 --> 00:03:51,650
+And hook us up to x.
+
+66
+00:03:51,920 --> 00:03:57,500
+Now if I click compile, close this and go play and I hit my enemy, they'll be launched back in the
+
+67
+00:03:57,500 --> 00:03:58,430
+opposite direction.
+
+68
+00:03:58,820 --> 00:04:00,800
+Although, as you can see, this kind of breaks.
+
+69
+00:04:00,800 --> 00:04:02,570
+One of the systems that we made earlier.
+
+70
+00:04:02,780 --> 00:04:06,260
+When I hit my enemy, it will no longer turn around and face me.
+
+71
+00:04:06,860 --> 00:04:10,040
+And that is because if I just go back to my skin improvement.
+
+72
+00:04:10,610 --> 00:04:15,440
+Earlier we made this blueprint which says detect if the content is on the edge of the world.
+
+73
+00:04:15,890 --> 00:04:19,790
+When we launch our enemy up in the air, this variable becomes false.
+
+74
+00:04:19,790 --> 00:04:24,470
+So then it triggers this and makes my enemy move it in the opposite direction just so you can see what
+
+75
+00:04:24,470 --> 00:04:24,800
+I mean.
+
+76
+00:04:24,800 --> 00:04:30,320
+I'm going to turn this on for full duration to compile and close this.
+
+77
+00:04:30,530 --> 00:04:32,930
+So I go play and I hit my enemy.
+
+78
+00:04:34,100 --> 00:04:34,930
+It's kind of hard to see.
+
+79
+00:04:34,940 --> 00:04:38,330
+So I'm going to actually launch my enemy in the air a bit more.
+
+80
+00:04:38,540 --> 00:04:40,580
+Something like 300.
+
+81
+00:04:41,700 --> 00:04:44,460
+And I'm going to expand my map so he doesn't fall off.
+
+82
+00:04:45,120 --> 00:04:46,790
+If I go play, I lost my enemy.
+
+83
+00:04:47,490 --> 00:04:52,710
+We can see that it becomes false because the line trace isn't hang anything.
+
+84
+00:04:52,710 --> 00:04:55,370
+So make my enemy move in the opposite direction.
+
+85
+00:04:55,380 --> 00:05:01,160
+In order to fix this, whenever my enemy is damaged, we're going to set a boolean variable to be true.
+
+86
+00:05:01,170 --> 00:05:05,040
+So create a new variable and call it enemy damaged.
+
+87
+00:05:07,400 --> 00:05:10,430
+And whenever our enemy is damaged, we're going to set this trouble to be true.
+
+88
+00:05:15,050 --> 00:05:16,010
+Took this up here.
+
+89
+00:05:16,520 --> 00:05:19,940
+And then after this, you won't have a variable delay.
+
+90
+00:05:20,600 --> 00:05:24,170
+So the way a variable delay will work is it kind of works the same as a normal delay.
+
+91
+00:05:24,200 --> 00:05:27,530
+However, if this node is called again, then it will stop the retrievable delay.
+
+92
+00:05:27,650 --> 00:05:29,270
+So we won't have a value of one.
+
+93
+00:05:29,870 --> 00:05:36,320
+And after one second we will tell the game that we should set the enemy damage variable to be false.
+
+94
+00:05:37,280 --> 00:05:44,870
+Then on here on handle movement, we're only going to handle our movement if our enemy is not dead or.
+
+95
+00:05:46,610 --> 00:05:47,840
+Enemy is not damaged.
+
+96
+00:05:50,350 --> 00:05:52,320
+Or if our enemy is not falling.
+
+97
+00:05:52,330 --> 00:05:57,140
+So if we just react in character movement and fall is falling.
+
+98
+00:05:58,530 --> 00:05:59,670
+And look this up here.
+
+99
+00:06:02,680 --> 00:06:06,970
+So now if I go compile and go play, I'm just going to remove that line trace.
+
+100
+00:06:09,100 --> 00:06:10,150
+To compile.
+
+101
+00:06:11,720 --> 00:06:13,500
+So now I go play and I hit my enemy.
+
+102
+00:06:13,520 --> 00:06:16,850
+I'll be launched up in the air and then face me if I hit it from this direction.
+
+103
+00:06:16,920 --> 00:06:18,800
+We lost away, but I'll still try and face me.
+
+104
+00:06:19,250 --> 00:06:20,330
+I can jump over them.
+
+105
+00:06:21,320 --> 00:06:23,720
+At the end, we'll be locked away and then try and face me.
+
+106
+00:06:24,050 --> 00:06:28,730
+So with this, we just polish up our enemy a bit, so it's a bit more satisfying when we hit and damage
+
+107
+00:06:28,730 --> 00:06:29,330
+our enemy.
+
+108
+00:06:31,610 --> 00:06:33,280
+I also gave my enemy a bit more help.
+
+109
+00:06:33,290 --> 00:06:35,230
+That's why I was not tired after three hits.
+
+110
+00:06:35,240 --> 00:06:40,010
+One more thing, because when I launched my Scampton, I noticed them back in the air and they launched
+
+111
+00:06:40,010 --> 00:06:40,760
+quite far.
+
+112
+00:06:41,090 --> 00:06:44,350
+This was make sure to apply some friction to them when they're in the air.
+
+113
+00:06:44,360 --> 00:06:50,450
+So under character movement in details, look for lateral friction and just put a value here.
+
+114
+00:06:50,480 --> 00:06:55,160
+I'm going to put 2.5, so there's a bit of friction when they're falling through the air, so they're
+
+115
+00:06:55,160 --> 00:06:55,880
+going to play.
+
+116
+00:06:56,740 --> 00:06:57,340
+Hit them.
+
+117
+00:06:57,370 --> 00:07:00,820
+They're not launched as far back, and I think that's a bit better.
+
+118
+00:07:01,000 --> 00:07:04,570
+You can play around with the values that you want to launch them back and the lateral friction, but
+
+119
+00:07:04,570 --> 00:07:06,220
+I'm going to leave mine at those values.
+

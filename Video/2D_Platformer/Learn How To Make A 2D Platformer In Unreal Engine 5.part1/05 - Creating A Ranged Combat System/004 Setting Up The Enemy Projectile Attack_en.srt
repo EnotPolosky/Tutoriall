@@ -1,0 +1,268 @@
+1
+00:00:03,070 --> 00:00:03,730
+Hello.
+
+2
+00:00:03,760 --> 00:00:08,810
+We are now ready to set up our mushrooms range projectile attack to get started.
+
+3
+00:00:08,830 --> 00:00:12,860
+If you head over to the mushroom blueprint folder, just right click and go.
+
+4
+00:00:12,880 --> 00:00:17,020
+Blueprint class, select an actor and just call this projectile.
+
+5
+00:00:18,570 --> 00:00:19,880
+Underscore BP.
+
+6
+00:00:21,030 --> 00:00:22,200
+If we open it up.
+
+7
+00:00:23,060 --> 00:00:26,720
+We will go to components and go ahead and look for paper flipbook.
+
+8
+00:00:27,780 --> 00:00:33,600
+With the paper Philip book selected under for the book Look for the Mushroom project that we just made,
+
+9
+00:00:33,750 --> 00:00:35,400
+and I think it's kind of small.
+
+10
+00:00:35,460 --> 00:00:37,410
+So with the anchor checked.
+
+11
+00:00:37,560 --> 00:00:39,570
+Increase its size to something like five.
+
+12
+00:00:40,230 --> 00:00:43,800
+Then I want you to go ahead and look for sphere collision.
+
+13
+00:00:45,650 --> 00:00:50,120
+Now this collision will represent the collision that all projectiles are going to have.
+
+14
+00:00:50,150 --> 00:00:50,900
+Just move it.
+
+15
+00:00:50,900 --> 00:00:55,750
+So it kind of fits around your flipbook and we can adjust it sphere radius here.
+
+16
+00:00:56,030 --> 00:00:59,210
+I'm to make it a bit smaller so it just fits around my flipbook.
+
+17
+00:01:00,300 --> 00:01:06,180
+If you want more precise movement when you're moving around an object, what we can do is go here under
+
+18
+00:01:06,180 --> 00:01:08,040
+set position, grid, snap value.
+
+19
+00:01:08,070 --> 00:01:12,120
+And if I'm making something like one, I'm going to have much more precise movement when I move my sphere.
+
+20
+00:01:13,070 --> 00:01:17,210
+Okay, So next we need to be able to make sure that our projectile can move.
+
+21
+00:01:17,240 --> 00:01:20,900
+So if we go to add and look for projectile movement.
+
+22
+00:01:22,260 --> 00:01:23,290
+This will make it to our project.
+
+23
+00:01:23,290 --> 00:01:27,730
+I can move here under projectile and initial and max speed.
+
+24
+00:01:27,750 --> 00:01:30,270
+We can control the speed that our projectile will move.
+
+25
+00:01:30,390 --> 00:01:36,420
+If I put a value of something like 500 here and a value of 1000 here, it will mean my projectile will
+
+26
+00:01:36,420 --> 00:01:41,440
+start with an initial speed of 500 and then it will work its way up to a speed of 1000.
+
+27
+00:01:41,460 --> 00:01:44,910
+So you can do that in your project to increase gradually over time.
+
+28
+00:01:44,910 --> 00:01:47,380
+But I want my projectile to always be the same speed.
+
+29
+00:01:47,400 --> 00:01:50,670
+So under both of these values and we'll have a value of 1000.
+
+30
+00:01:52,040 --> 00:01:56,120
+If we click the simulation button, it's going to simulate how a projectile is going to move.
+
+31
+00:01:56,300 --> 00:02:01,490
+Right now, it kind of falls to the ground, and that is because by default, our projectile is affected
+
+32
+00:02:01,490 --> 00:02:02,360
+by gravity.
+
+33
+00:02:02,510 --> 00:02:04,820
+I don't want mine to be affected by gravity.
+
+34
+00:02:04,940 --> 00:02:11,810
+So if I just let my projectile movement and go over to the details, if I look for gravity under projectile
+
+35
+00:02:11,810 --> 00:02:14,300
+gravity scale, I'm going to change this to P zero.
+
+36
+00:02:14,450 --> 00:02:17,420
+And that will mean my projectile will not be affected by gravity.
+
+37
+00:02:17,960 --> 00:02:19,570
+Now, if I go back to my paperclip.
+
+38
+00:02:20,630 --> 00:02:21,770
+So let me just find it.
+
+39
+00:02:22,810 --> 00:02:24,190
+Okay, so I found it.
+
+40
+00:02:24,190 --> 00:02:28,420
+If I just clicked simulate my projectile should now just move in a straight line.
+
+41
+00:02:30,310 --> 00:02:31,000
+Most.
+
+42
+00:02:32,090 --> 00:02:32,680
+Okay.
+
+43
+00:02:32,680 --> 00:02:37,750
+So the next thing we need to do is make it so that whenever this project overlaps or play a character,
+
+44
+00:02:37,750 --> 00:02:38,740
+it will damage them.
+
+45
+00:02:38,890 --> 00:02:43,690
+So if we set the sphere and scroll down and go to on component, we can overlap.
+
+46
+00:02:44,080 --> 00:02:49,080
+When something overlaps their sphere, we're going to check to see if it was equal to the player character.
+
+47
+00:02:49,090 --> 00:02:51,910
+So a track of other actor and more equal.
+
+48
+00:02:52,600 --> 00:02:56,500
+And then I'm going to right click and I get player character.
+
+49
+00:02:58,150 --> 00:03:00,880
+If this is true, it's almost like a branch.
+
+50
+00:03:03,600 --> 00:03:05,250
+Then I'm going to get my PAC actor.
+
+51
+00:03:05,340 --> 00:03:06,840
+I'm going to fly down a storm.
+
+52
+00:03:11,080 --> 00:03:12,940
+Then I'm going to get my flipbook.
+
+53
+00:03:14,600 --> 00:03:20,290
+And we're going to set the flipbook animation to be the projectile being destroyed.
+
+54
+00:03:20,300 --> 00:03:23,030
+So this one mushroom projectile explode.
+
+55
+00:03:26,130 --> 00:03:32,850
+We then going to get our paper flip book again and get the flip book left.
+
+56
+00:03:32,880 --> 00:03:35,310
+This will get how long the animation is.
+
+57
+00:03:36,570 --> 00:03:41,280
+And after we get how long the animation is, we're going to destroy our flipbook.
+
+58
+00:03:41,460 --> 00:03:44,670
+So I just drag up here and look for destroy actor.
+
+59
+00:03:44,790 --> 00:03:48,250
+So when our player actor overlaps, it's there.
+
+60
+00:03:48,270 --> 00:03:50,190
+We apply one damage to them.
+
+61
+00:03:50,190 --> 00:03:51,510
+So I've got to put down chair.
+
+62
+00:03:52,480 --> 00:03:57,510
+So on the base damage, but one then went off to change to the mushroom explode flipbook.
+
+63
+00:03:57,640 --> 00:03:59,530
+We'll get how long the flip occurs.
+
+64
+00:04:00,130 --> 00:04:03,130
+After it's finished playing, we'll then destroy this actor.
+
+65
+00:04:03,460 --> 00:04:08,790
+So if I just go compile and close this, the next thing we're going to do is make it run.
+
+66
+00:04:08,830 --> 00:04:12,010
+Our player character gets within a certain radius of our enemy.
+
+67
+00:04:12,190 --> 00:04:13,930
+It will start shooting projectiles.
+

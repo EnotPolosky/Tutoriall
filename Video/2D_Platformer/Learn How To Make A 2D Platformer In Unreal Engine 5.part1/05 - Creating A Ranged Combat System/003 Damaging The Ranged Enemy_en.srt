@@ -1,0 +1,560 @@
+1
+00:00:03,040 --> 00:00:03,710
+Hello.
+
+2
+00:00:03,730 --> 00:00:08,830
+The next thing we need to do is make it to a placard that can damage and kill our mushroom character.
+
+3
+00:00:09,220 --> 00:00:14,680
+If we head over to the Skeleton blueprint and open them up, the way we damage our mushroom is going
+
+4
+00:00:14,680 --> 00:00:17,110
+to be the exact way we damage on our skin tone.
+
+5
+00:00:17,200 --> 00:00:23,380
+So to save a bit of time, if we just copy all the notes here and then head over to the mushroom and
+
+6
+00:00:23,380 --> 00:00:27,910
+just paste them here, then go compile some things I'm going to transfer over.
+
+7
+00:00:27,910 --> 00:00:29,590
+So we're going to fix that now.
+
+8
+00:00:30,430 --> 00:00:34,240
+So for the health, just right click on this and create a health variable.
+
+9
+00:00:34,660 --> 00:00:36,700
+Then go compile and make it through.
+
+10
+00:00:36,700 --> 00:00:39,250
+The mushroom starts with five health.
+
+11
+00:00:40,590 --> 00:00:43,350
+For the enemy to just delete this.
+
+12
+00:00:44,650 --> 00:00:50,020
+Then just connect this and for the enemy damage, just right click and create this to a variable.
+
+13
+00:00:50,440 --> 00:00:56,520
+We can delete this set movement direction because for my range on me, I always want to face my character
+
+14
+00:00:56,530 --> 00:00:57,850
+and we've already set that up.
+
+15
+00:00:58,210 --> 00:00:59,680
+So I'll just hook this up here.
+
+16
+00:01:02,390 --> 00:01:04,160
+Then if we just go compile again.
+
+17
+00:01:05,040 --> 00:01:06,390
+I'm going to right click on this.
+
+18
+00:01:06,390 --> 00:01:09,180
+Is that viable and create the is that variable?
+
+19
+00:01:10,300 --> 00:01:15,880
+And for the time being, just disconnect this widget so you can select the open and select the target
+
+20
+00:01:15,880 --> 00:01:17,230
+to disconnect a node.
+
+21
+00:01:18,160 --> 00:01:19,390
+And just go compile.
+
+22
+00:01:20,310 --> 00:01:26,190
+Okay, before we do anything else, if we head over to the handle rotation and just delete this print
+
+23
+00:01:26,190 --> 00:01:26,670
+string.
+
+24
+00:01:27,480 --> 00:01:30,330
+And over at the hand of our station, we're going to have a branch.
+
+25
+00:01:30,420 --> 00:01:33,330
+We're only going to handle the rotation of our mushroom.
+
+26
+00:01:33,450 --> 00:01:37,650
+If they are not dead so under condition, Dragon is dead.
+
+27
+00:01:38,190 --> 00:01:42,060
+And as long as this condition is well, we'll handle our mushrooms rotation.
+
+28
+00:01:42,830 --> 00:01:46,440
+Next, we need to create a separate health bar for our mushroom character.
+
+29
+00:01:46,460 --> 00:01:49,580
+Some compile save and close this.
+
+30
+00:01:50,090 --> 00:01:55,280
+Then if we head over to the Widget Blueprint folder and just let the enemy health bar press control
+
+31
+00:01:55,280 --> 00:01:58,320
+C and control V and just rename this.
+
+32
+00:01:58,340 --> 00:02:00,640
+I call this all ranged enemy health bar.
+
+33
+00:02:05,570 --> 00:02:06,950
+Then, if we hadn't sat here.
+
+34
+00:02:08,979 --> 00:02:10,100
+I go to the golf?
+
+35
+00:02:11,390 --> 00:02:18,350
+Although this time just delete the scanned and reference and delete the variable here and create a new
+
+36
+00:02:18,350 --> 00:02:22,350
+variable and call this mushroom reference under variable type.
+
+37
+00:02:22,370 --> 00:02:27,230
+I'm going to look for the mushroom beep and set an object reference.
+
+38
+00:02:28,220 --> 00:02:29,660
+I'm just going to delete the notes here.
+
+39
+00:02:31,180 --> 00:02:33,370
+And then we go compile.
+
+40
+00:02:34,330 --> 00:02:35,220
+In my mushroom.
+
+41
+00:02:35,230 --> 00:02:39,550
+I didn't have a health variable, so I'm going to create a new rival and call it mass health.
+
+42
+00:02:40,710 --> 00:02:42,090
+And undesirable type.
+
+43
+00:02:42,120 --> 00:02:43,740
+I'm going to change this to be a flute.
+
+44
+00:02:44,430 --> 00:02:45,750
+Then we can play.
+
+45
+00:02:46,260 --> 00:02:47,700
+So right click for event.
+
+46
+00:02:47,730 --> 00:02:48,420
+We can play.
+
+47
+00:02:48,910 --> 00:02:49,650
+Then we can play.
+
+48
+00:02:49,680 --> 00:02:53,760
+I'm going to tell the game to set my max health to be whatever my health is.
+
+49
+00:02:53,880 --> 00:02:55,230
+So drag in the health.
+
+50
+00:02:55,470 --> 00:02:56,730
+And hook this up here.
+
+51
+00:02:57,960 --> 00:03:04,410
+If we compile and save this again and go over to our Range Enemy helper, we can now drag in mushroom
+
+52
+00:03:04,410 --> 00:03:07,350
+reference and get its health.
+
+53
+00:03:08,490 --> 00:03:11,800
+And we just want to divide this value by its max health.
+
+54
+00:03:11,820 --> 00:03:14,640
+So to drag and max health.
+
+55
+00:03:15,450 --> 00:03:17,640
+Connecting it here and then to here.
+
+56
+00:03:18,570 --> 00:03:20,610
+So now my mushroom character can have a health bar.
+
+57
+00:03:20,820 --> 00:03:22,590
+Or just compile and save this.
+
+58
+00:03:22,890 --> 00:03:26,970
+Then head over to my mushroom and I'll go add and the full widget.
+
+59
+00:03:29,280 --> 00:03:36,390
+All the space we're going to select screen and for the widget we want to select the ranged enemy helper.
+
+60
+00:03:37,990 --> 00:03:40,310
+Actually, you just changed this back to be world.
+
+61
+00:03:40,330 --> 00:03:45,010
+Just that I can visually see it and then rotate it so it looks correct.
+
+62
+00:03:45,010 --> 00:03:46,840
+So rotate it 90 degrees.
+
+63
+00:03:46,840 --> 00:03:49,300
+So that's how I want it to look in my own world.
+
+64
+00:03:49,570 --> 00:03:51,190
+Then I'm going to change it back to screen.
+
+65
+00:03:52,380 --> 00:03:54,360
+Then we head back to our event graph.
+
+66
+00:03:55,290 --> 00:04:00,630
+We want to track in widget, travel up here and get widget.
+
+67
+00:04:01,790 --> 00:04:05,360
+And from here we can up on the full course to ranged enemy.
+
+68
+00:04:08,440 --> 00:04:11,980
+And would promote this to available as we're going to reference this later.
+
+69
+00:04:13,240 --> 00:04:16,990
+Now I can come down here and then I'm going to hook up the widget.
+
+70
+00:04:18,050 --> 00:04:19,459
+And I'll hook up the widget here.
+
+71
+00:04:20,810 --> 00:04:22,160
+And we can go compile.
+
+72
+00:04:22,940 --> 00:04:29,150
+And the final thing we need to do is just drag in our as ranged enemy for reference, and we'll just
+
+73
+00:04:29,150 --> 00:04:31,750
+call the update whenever our enemy is damaged.
+
+74
+00:04:31,760 --> 00:04:36,950
+So call update helper and just make sure to plug this after we see our enemies health.
+
+75
+00:04:41,900 --> 00:04:44,610
+Okay, so now we can go compile and save.
+
+76
+00:04:44,640 --> 00:04:50,250
+There's one more thing we need to do to finish setting up the system, and that is to make the animations
+
+77
+00:04:50,250 --> 00:04:51,960
+inside of our mushroom animation.
+
+78
+00:04:52,590 --> 00:05:00,780
+So if we close this and go over to our mushroom animation blueprint, let's go to our new state machine
+
+79
+00:05:00,780 --> 00:05:03,690
+and just right click and look for jump.
+
+80
+00:05:03,990 --> 00:05:09,210
+We'll call this first jump node damaged and we're going to fire this node whenever our enemy is damaged.
+
+81
+00:05:09,360 --> 00:05:15,120
+So I'm just going to drag off here and look for animation state or select the state and rename this.
+
+82
+00:05:16,670 --> 00:05:17,660
+Take damage.
+
+83
+00:05:18,580 --> 00:05:25,180
+If I head inside here, I'm going to right click and play, take damage and just hook this up here.
+
+84
+00:05:26,470 --> 00:05:32,230
+And we'll connect this new to here in order to transition from my take damage to my idle state.
+
+85
+00:05:32,260 --> 00:05:36,100
+I'm going to head inside here, right click and the four time remaining.
+
+86
+00:05:37,210 --> 00:05:38,170
+Take damage.
+
+87
+00:05:38,200 --> 00:05:43,510
+And when the time remaining of this animation is less than 0.10, allow my mushroom to transition back
+
+88
+00:05:43,510 --> 00:05:45,370
+to its normal animation.
+
+89
+00:05:45,490 --> 00:05:51,160
+So look for less on the value of 0.1 and then we will hook this up here.
+
+90
+00:05:52,850 --> 00:05:55,750
+We're not going to create another node for when our mushroom dies.
+
+91
+00:05:55,760 --> 00:05:56,780
+Some of the right click.
+
+92
+00:05:56,830 --> 00:05:59,930
+Look for Trump and I'll call it mushroom death.
+
+93
+00:06:04,020 --> 00:06:09,090
+We can track Ock for animation and all this die.
+
+94
+00:06:10,590 --> 00:06:13,530
+If we hadn't sat here, we're going to play our mushroom DI animation.
+
+95
+00:06:13,530 --> 00:06:16,530
+So we'll play mushroom di.
+
+96
+00:06:18,940 --> 00:06:23,740
+Then we're going to drag off this animation and look for animation state and call this dead body.
+
+97
+00:06:25,530 --> 00:06:32,040
+If we had inside here, we're going to right click and we'll play that body and we'll just hook us up
+
+98
+00:06:32,040 --> 00:06:35,450
+here in order to transition to this animation.
+
+99
+00:06:35,460 --> 00:06:39,990
+We're going to wait for this animation to be less than 0.1 seconds before it's finished playing.
+
+100
+00:06:40,020 --> 00:06:45,540
+So we head inside here, right click and look for time remaining mushroom die.
+
+101
+00:06:46,170 --> 00:06:48,480
+We can drag up here and up for less than.
+
+102
+00:06:49,270 --> 00:06:50,890
+And put 0.1.
+
+103
+00:06:50,890 --> 00:06:55,780
+So when this animation has less than 0.1 seconds left, play will enter this animation state.
+
+104
+00:06:56,890 --> 00:07:03,010
+And now, if I head back to my BP here under the jump to Node, we need to make sure that everything
+
+105
+00:07:03,010 --> 00:07:03,910
+is spelled correctly.
+
+106
+00:07:04,000 --> 00:07:05,620
+So I call it damage.
+
+107
+00:07:05,620 --> 00:07:07,040
+So that's exactly the same.
+
+108
+00:07:07,060 --> 00:07:10,120
+I don't need to change it for when it dies.
+
+109
+00:07:11,440 --> 00:07:12,840
+I need it differently in the mushroom one.
+
+110
+00:07:12,850 --> 00:07:15,520
+So I call the mushroom death.
+
+111
+00:07:15,520 --> 00:07:16,720
+Someone copy this.
+
+112
+00:07:17,790 --> 00:07:18,930
+And just paste it here.
+
+113
+00:07:21,060 --> 00:07:24,940
+And I can go compile and I think I'll set up damage from my mushroom.
+
+114
+00:07:24,960 --> 00:07:28,350
+So I'm just going to close this and test this all out so it can play.
+
+115
+00:07:29,830 --> 00:07:32,920
+OC It looks like there are some issues.
+
+116
+00:07:33,890 --> 00:07:35,390
+So let's see.
+
+117
+00:07:36,080 --> 00:07:40,220
+So it looks like it's having problem referencing the mushroom ref.
+
+118
+00:07:41,630 --> 00:07:43,760
+So it's fading to reference the mushroom roof.
+
+119
+00:07:43,970 --> 00:07:51,340
+So if I go back to my mushroom blueprint here, after we create the enemy health reference, that's
+
+120
+00:07:51,350 --> 00:07:51,690
+a struggle.
+
+121
+00:07:52,080 --> 00:07:54,950
+And set mushroom reference.
+
+122
+00:07:56,460 --> 00:08:01,290
+And if we just shrug off it and look for self and connect this, we do here.
+
+123
+00:08:01,710 --> 00:08:02,550
+And one more thing.
+
+124
+00:08:02,550 --> 00:08:04,300
+I don't want my health part to show.
+
+125
+00:08:04,320 --> 00:08:05,570
+And I sat down with my enemy.
+
+126
+00:08:05,580 --> 00:08:12,060
+So we just let the widget and other details, if we look for visibility and just uncheck visible and
+
+127
+00:08:12,060 --> 00:08:14,520
+now go compile and go play.
+
+128
+00:08:15,480 --> 00:08:18,720
+If I turn into my enemy, you see it's health ball and it's launched back.
+
+129
+00:08:19,320 --> 00:08:24,630
+So there's actually one more thing I need to do, and that is give my mushroom some lateral friction
+
+130
+00:08:24,630 --> 00:08:26,180
+so it doesn't really fly through the air.
+
+131
+00:08:26,190 --> 00:08:28,650
+So I'm going to look for friction.
+
+132
+00:08:30,170 --> 00:08:32,330
+And here is fueling lateral friction.
+
+133
+00:08:33,330 --> 00:08:34,990
+And I put a value of 2.5.
+
+134
+00:08:34,990 --> 00:08:36,100
+I thought that worked well.
+
+135
+00:08:36,580 --> 00:08:38,679
+And now I can go compile play.
+
+136
+00:08:40,299 --> 00:08:42,100
+And now I can tell it to my mushroom character.
+
+137
+00:08:42,130 --> 00:08:44,080
+Let's just kill them to make sure everything works.
+
+138
+00:08:45,230 --> 00:08:46,040
+So I kill them.
+
+139
+00:08:46,070 --> 00:08:50,670
+They do that death animation and then it shows that dead body and then it disappears after 3 seconds.
+
+140
+00:08:50,690 --> 00:08:53,040
+So with this, we can now damage and hurt our mushroom.
+

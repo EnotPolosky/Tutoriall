@@ -1,0 +1,336 @@
+1
+00:00:03,040 --> 00:00:03,640
+Hello.
+
+2
+00:00:03,670 --> 00:00:06,580
+Next, we're going to add some controls to our player blueprint.
+
+3
+00:00:07,000 --> 00:00:08,170
+If we open it up.
+
+4
+00:00:09,520 --> 00:00:12,010
+I actually think that I made the camera a bit too close to my back.
+
+5
+00:00:12,490 --> 00:00:18,100
+So let's bring it on and maybe have a value of 1000 just so it's a bit further back.
+
+6
+00:00:18,860 --> 00:00:20,990
+Next if we head over to the graph.
+
+7
+00:00:21,910 --> 00:00:27,460
+Here's where we're going to write most of the code for how we control and how our cattle will behave.
+
+8
+00:00:28,210 --> 00:00:31,360
+We're want to do it just right click and look for jump.
+
+9
+00:00:32,000 --> 00:00:35,050
+So if you remember earlier, we made an actual mapping jump.
+
+10
+00:00:35,140 --> 00:00:36,160
+So it should be here.
+
+11
+00:00:36,160 --> 00:00:38,050
+Input, action, event jump.
+
+12
+00:00:38,140 --> 00:00:39,220
+Just select it.
+
+13
+00:00:40,350 --> 00:00:43,110
+And then just right click and look for move, Right.
+
+14
+00:00:45,130 --> 00:00:48,190
+So earlier we made an impact assessment called MOVE, Right.
+
+15
+00:00:48,460 --> 00:00:49,450
+Just select it.
+
+16
+00:00:49,720 --> 00:00:53,800
+So we'll make it so that when we press the jump on accountable jump and when we press the move right
+
+17
+00:00:53,830 --> 00:00:55,660
+on our character, move towards the right.
+
+18
+00:00:55,720 --> 00:00:58,990
+And using this node will also make it so our player character will move towards the left.
+
+19
+00:00:59,040 --> 00:01:00,190
+We press the left button.
+
+20
+00:01:00,730 --> 00:01:05,410
+So in order to make our character jump, when we press the jump down, we can just drag up here and
+
+21
+00:01:05,410 --> 00:01:06,900
+look for the jump node.
+
+22
+00:01:08,290 --> 00:01:11,500
+And this will just automatically make our player react to a jump up in the air.
+
+23
+00:01:12,010 --> 00:01:14,230
+When we release this one, you just want to drive off here.
+
+24
+00:01:15,250 --> 00:01:16,420
+Stop jumping.
+
+25
+00:01:18,040 --> 00:01:22,720
+And this will make it so our character will stop jumping next in order to make our player character
+
+26
+00:01:22,720 --> 00:01:28,840
+move towards the right or the left, we can just drag up here and add movement input.
+
+27
+00:01:29,760 --> 00:01:33,630
+So here, underwater action will determine where our character will move.
+
+28
+00:01:34,020 --> 00:01:35,790
+We're working with a 2D game.
+
+29
+00:01:36,150 --> 00:01:39,330
+And if we just go to the viewport and I set my sprite.
+
+30
+00:01:40,730 --> 00:01:43,730
+And I'm going to go to select and translate objects.
+
+31
+00:01:44,840 --> 00:01:46,340
+I'm just going to click this red arrow.
+
+32
+00:01:46,850 --> 00:01:49,820
+And as you can see, the value will move in the x axis.
+
+33
+00:01:49,850 --> 00:01:54,230
+So in order to the game or player character is always going to be moving in the x axis.
+
+34
+00:01:54,650 --> 00:02:01,250
+Because of this in our bank graph here under one direction, we just want this to have a value of one.
+
+35
+00:02:02,320 --> 00:02:03,880
+Then here on the scale value.
+
+36
+00:02:04,770 --> 00:02:08,250
+Just track off this access value and look for print string.
+
+37
+00:02:09,770 --> 00:02:10,340
+Oops.
+
+38
+00:02:10,370 --> 00:02:12,560
+So just right click and break the link here.
+
+39
+00:02:13,100 --> 00:02:14,570
+And I've got access to here.
+
+40
+00:02:15,790 --> 00:02:16,900
+Access to you here.
+
+41
+00:02:17,320 --> 00:02:23,080
+So if you remember earlier, we made it so that when we press the right one or the DD key, the access
+
+42
+00:02:23,080 --> 00:02:24,190
+value will be one.
+
+43
+00:02:24,310 --> 00:02:29,110
+And this will just make it so our character will move positively in the x direction.
+
+44
+00:02:29,500 --> 00:02:35,290
+However, we made it so that when we press the left button or the A button, this x value will be negative
+
+45
+00:02:35,290 --> 00:02:35,710
+one.
+
+46
+00:02:35,950 --> 00:02:39,460
+And that will just make it so our character will move negatively in the x axis.
+
+47
+00:02:39,670 --> 00:02:42,100
+So now we can just test our controls work.
+
+48
+00:02:42,130 --> 00:02:46,060
+So I'm going to go compile, close this and go play.
+
+49
+00:02:47,180 --> 00:02:48,070
+And spacebar.
+
+50
+00:02:48,110 --> 00:02:49,940
+My cat will jump by.
+
+51
+00:02:49,970 --> 00:02:50,640
+Press the right one.
+
+52
+00:02:50,660 --> 00:02:52,010
+My cat will move toward the right.
+
+53
+00:02:52,280 --> 00:02:54,710
+If I press the left hand, my character will move towards the left.
+
+54
+00:02:55,100 --> 00:02:58,250
+I just want to go over a couple more settings that we can do with the jump.
+
+55
+00:02:58,280 --> 00:03:03,590
+So if you wanted to play a character, to jump higher or you could do is go to character movement and
+
+56
+00:03:03,590 --> 00:03:05,570
+under details look for jump.
+
+57
+00:03:06,790 --> 00:03:10,250
+Velocity and it's here jumps the velocity.
+
+58
+00:03:10,270 --> 00:03:12,610
+If I made something like 600.
+
+59
+00:03:13,360 --> 00:03:14,410
+And go compile.
+
+60
+00:03:15,010 --> 00:03:18,430
+When my character jumps in the air or jump a lot higher.
+
+61
+00:03:19,730 --> 00:03:21,960
+And you wanted the play of character to have multiple jumps.
+
+62
+00:03:21,960 --> 00:03:25,400
+So right now our character can only jump once and then they can't jump again.
+
+63
+00:03:25,640 --> 00:03:29,210
+If you wanted to change that, you're going to play up.
+
+64
+00:03:29,480 --> 00:03:32,310
+And here on the jump, you're going to change the max jump count.
+
+65
+00:03:32,330 --> 00:03:33,980
+So I made this one like two.
+
+66
+00:03:34,980 --> 00:03:37,590
+Now my pet cat will be able to jump twice.
+
+67
+00:03:39,430 --> 00:03:44,380
+And if you want to make it so that the longer I hold the space bar on the high, my character is going
+
+68
+00:03:44,380 --> 00:03:44,920
+to jump.
+
+69
+00:03:45,250 --> 00:03:47,710
+We can do that with this handy little setting here.
+
+70
+00:03:47,860 --> 00:03:52,270
+So if we go to our BP currently, you can see jump Max whole time.
+
+71
+00:03:52,270 --> 00:03:54,370
+So I made this look like one.
+
+72
+00:03:54,550 --> 00:03:57,520
+I won't be able to hold my trombone for up to one second.
+
+73
+00:03:57,520 --> 00:04:02,080
+And as long as I'm holding the space pop band, my character will continuously move up.
+
+74
+00:04:02,740 --> 00:04:05,710
+So I'll showcase what I mean by go play.
+
+75
+00:04:05,710 --> 00:04:07,000
+And I just tap the jump off.
+
+76
+00:04:07,150 --> 00:04:08,980
+I just jump like that and then come back down.
+
+77
+00:04:09,010 --> 00:04:11,200
+However, if I hold my space bar one.
+
+78
+00:04:12,190 --> 00:04:13,720
+It's going to hold that jump and put.
+
+79
+00:04:15,700 --> 00:04:22,270
+But if you don't want to have that dynamic jump, then you can just set the jump Max count to be a value
+
+80
+00:04:22,270 --> 00:04:22,900
+of zero.
+
+81
+00:04:23,320 --> 00:04:24,890
+That's what we have to stop jumping.
+
+82
+00:04:24,910 --> 00:04:31,390
+If you have the jump max whole time above zero, then you need to ensure that you have the stop jumping.
+
+83
+00:04:31,420 --> 00:04:35,800
+And if you just leave it at zero, you don't really need to stop jumping around, but we'll just leave
+
+84
+00:04:35,800 --> 00:04:36,340
+it there.
+

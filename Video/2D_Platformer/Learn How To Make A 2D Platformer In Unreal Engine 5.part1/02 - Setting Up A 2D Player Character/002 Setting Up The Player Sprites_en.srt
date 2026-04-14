@@ -1,0 +1,288 @@
+1
+00:00:03,450 --> 00:00:04,140
+Hello.
+
+2
+00:00:04,170 --> 00:00:09,480
+The next thing we're going to do is set up a2d character that we can play all game, as I will need
+
+3
+00:00:09,480 --> 00:00:14,190
+to briefly close on our engine and attached in this course, I'm going to provide some assets that we're
+
+4
+00:00:14,190 --> 00:00:15,820
+going to be using to make our game.
+
+5
+00:00:15,840 --> 00:00:21,090
+I want you to download them, open up your content and make sure the content folder is selected and
+
+6
+00:00:21,090 --> 00:00:25,980
+find this photo called individual Sprites and just let and drag it into your Unreal Engine project.
+
+7
+00:00:27,000 --> 00:00:30,960
+This one for a bunch of sprites that we're going to be using when we set up our 2D character.
+
+8
+00:00:32,549 --> 00:00:36,190
+So in our project, we're going to be referencing the content draw quite a lot.
+
+9
+00:00:36,210 --> 00:00:42,180
+So to save some time, I want to go to Window and go content browser and just let content browser one
+
+10
+00:00:42,180 --> 00:00:44,820
+and this one just make sure that our content browser is always there.
+
+11
+00:00:45,120 --> 00:00:50,100
+If you don't want it there, then you can just delete it and press control space to quickly open up
+
+12
+00:00:50,100 --> 00:00:52,310
+your connector or just click it here.
+
+13
+00:00:52,320 --> 00:00:58,140
+But I kind of like having it there, so I'm just going to add it local window, corner browser and just
+
+14
+00:00:58,140 --> 00:00:59,820
+like content browser one to make sure it's always there.
+
+15
+00:01:00,330 --> 00:01:04,140
+Then with all these images selected to save time, just set them all.
+
+16
+00:01:05,040 --> 00:01:08,220
+So I'm holding shift and setting a lost image.
+
+17
+00:01:08,370 --> 00:01:12,600
+Right click on them and go spray actions and apply paper to texture settings.
+
+18
+00:01:12,630 --> 00:01:16,000
+This will just make it so that all the images that we imported are now clear.
+
+19
+00:01:16,020 --> 00:01:21,090
+Sometimes if we import an image and don't use apply paper, 3D texture things, sometimes they can be
+
+20
+00:01:21,090 --> 00:01:21,900
+a bit fuzzy.
+
+21
+00:01:22,380 --> 00:01:27,510
+I want us to select the individual sprite powder and I'm just going to right click and rename this to
+
+22
+00:01:27,510 --> 00:01:29,430
+be our Warrior animations.
+
+23
+00:01:30,140 --> 00:01:35,770
+So we're going to be setting up a 2D character and they're going to have many different animations.
+
+24
+00:01:35,780 --> 00:01:40,190
+Although to start with, we're going to give our character a couple of basic animations and those are
+
+25
+00:01:40,190 --> 00:01:46,750
+going to be an auto animation of running animation, a jumping animation attachment animation and a
+
+26
+00:01:46,760 --> 00:01:47,960
+wall sliding animation.
+
+27
+00:01:48,140 --> 00:01:51,800
+So I want you to head over to the video animation folder.
+
+28
+00:01:52,670 --> 00:01:54,260
+So this one is called Idol.
+
+29
+00:01:55,790 --> 00:01:59,000
+And I want you to select all the images.
+
+30
+00:01:59,950 --> 00:02:03,670
+And right click and go spreadsheet and go create Sprite.
+
+31
+00:02:04,540 --> 00:02:09,009
+Now that we've created a Sprite out of all these images, we can turn them into a flipbook, which will
+
+32
+00:02:09,009 --> 00:02:10,270
+kind of play an animation.
+
+33
+00:02:10,509 --> 00:02:12,580
+So to do that, so that's the first, right?
+
+34
+00:02:12,730 --> 00:02:17,950
+And then the last right there, just right click on the first one and go create flipbook and just call
+
+35
+00:02:17,950 --> 00:02:19,090
+this warrior idol.
+
+36
+00:02:19,990 --> 00:02:21,790
+No, I don't click on him inside her.
+
+37
+00:02:22,240 --> 00:02:25,480
+As we can see, it's put all the sprites together into this flipbook.
+
+38
+00:02:25,900 --> 00:02:32,110
+So first it's going to play us our Warrior One Sprite, then our Warrior two Sprite, then our Warrior
+
+39
+00:02:32,170 --> 00:02:34,810
+three, one, then a warrior for one, and so on.
+
+40
+00:02:35,020 --> 00:02:40,660
+If you want to change how fast a place this we can go over to here Sprite where it says frames per second.
+
+41
+00:02:40,660 --> 00:02:44,560
+And if I made something like one, then it's going to happen very slowly.
+
+42
+00:02:44,590 --> 00:02:46,130
+Or I made this something like 60.
+
+43
+00:02:46,150 --> 00:02:47,770
+Then it's going to be very, very fast.
+
+44
+00:02:47,770 --> 00:02:50,020
+So you just use that to adjust the speed of the flip.
+
+45
+00:02:50,530 --> 00:02:52,390
+I'm just going to make mine eight.
+
+46
+00:02:52,420 --> 00:02:55,720
+I think that works pretty well and we can just close this.
+
+47
+00:02:56,410 --> 00:03:01,540
+Next, I want to close this folder and I want us to head over to the working folder.
+
+48
+00:03:02,580 --> 00:03:02,850
+Sorry.
+
+49
+00:03:02,850 --> 00:03:03,750
+It's called running.
+
+50
+00:03:03,780 --> 00:03:07,070
+So we just, um, head over to the run folder, and we're going to do the same thing.
+
+51
+00:03:07,080 --> 00:03:11,520
+So set all the images right click, go for fractions and create Sprite.
+
+52
+00:03:12,270 --> 00:03:18,330
+Then I set all the sprites right click and go create Flipbook, and we can just call this word run.
+
+53
+00:03:19,680 --> 00:03:22,710
+Then I won't ask to head over to the dash folder.
+
+54
+00:03:23,130 --> 00:03:24,300
+We'll do the same thing.
+
+55
+00:03:24,330 --> 00:03:27,470
+I'll set all the images right Click Sprite actions.
+
+56
+00:03:27,480 --> 00:03:28,290
+Create Sprite.
+
+57
+00:03:29,290 --> 00:03:31,000
+Then I will select all the sprites.
+
+58
+00:03:31,660 --> 00:03:33,550
+Right click and create a flipbook.
+
+59
+00:03:35,230 --> 00:03:37,520
+Then we will head over to the jumping order.
+
+60
+00:03:37,540 --> 00:03:38,710
+So this one jump.
+
+61
+00:03:39,650 --> 00:03:41,360
+I will select all the images.
+
+62
+00:03:41,450 --> 00:03:44,180
+Right click Square actions and create Sprite.
+
+63
+00:03:44,750 --> 00:03:47,970
+Then I'll settle the sprites again and create a flipbook.
+
+64
+00:03:47,990 --> 00:03:49,970
+So you should be getting pretty used to this now.
+
+65
+00:03:50,630 --> 00:03:52,310
+We need to go to the folding folder.
+
+66
+00:03:53,090 --> 00:03:53,900
+Do the same thing.
+
+67
+00:03:53,900 --> 00:03:58,130
+So we'll settle the images, right click Sprite actions and create Sprite.
+
+68
+00:03:59,390 --> 00:04:01,880
+And then was that all these sprites and create a flipbook.
+
+69
+00:04:02,870 --> 00:04:07,160
+And then finally, we just need to head over to the wall sliding folder.
+
+70
+00:04:08,530 --> 00:04:10,120
+And slept all these images.
+
+71
+00:04:10,450 --> 00:04:17,620
+Right click fractions and create Sprite and then we'll create a flipbook of all these sprites.
+
+72
+00:04:18,100 --> 00:04:22,690
+So now we have set up all the animations that our character is going to use in this first section.
+

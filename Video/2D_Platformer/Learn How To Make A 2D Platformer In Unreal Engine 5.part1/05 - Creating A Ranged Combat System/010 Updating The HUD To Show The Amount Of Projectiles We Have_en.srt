@@ -1,0 +1,384 @@
+1
+00:00:03,240 --> 00:00:07,810
+In this next lecture, we're going to give our player character a limited amount of apples.
+
+2
+00:00:07,830 --> 00:00:11,940
+Right now, if I just spend the XP, I can spawn as many apples as I want.
+
+3
+00:00:12,120 --> 00:00:15,690
+We're going to make it so our player character has a limited amount of apples.
+
+4
+00:00:15,960 --> 00:00:23,010
+So if we go back to our player blueprint, I want us to create a new variable and call it apples.
+
+5
+00:00:24,630 --> 00:00:26,370
+Make this verbal type of an integer.
+
+6
+00:00:26,850 --> 00:00:31,050
+Then if you create another variable and call it Macs apples.
+
+7
+00:00:32,610 --> 00:00:39,780
+I then wanted to compile and under Mac apples type in 30 or the maximum amount of apples that you want
+
+8
+00:00:39,780 --> 00:00:41,040
+your player character to have.
+
+9
+00:00:41,310 --> 00:00:47,400
+I'm just going to have this be 30 then under apples type in the number of apples on your player character
+
+10
+00:00:47,400 --> 00:00:48,450
+to start off with.
+
+11
+00:00:48,600 --> 00:00:50,100
+I'm going to type in five.
+
+12
+00:00:51,820 --> 00:00:55,330
+Next, we're only going to make our pick out to spoon an apple.
+
+13
+00:00:55,360 --> 00:00:56,920
+If they have enough apples.
+
+14
+00:00:56,920 --> 00:01:02,890
+So to do this, if we're dragging our apples and if we get apples and we need to check that this is
+
+15
+00:01:02,890 --> 00:01:08,590
+greater than zero, because if this is greater than zero, that means we have some apples to throw that
+
+16
+00:01:08,590 --> 00:01:12,220
+struggle here and look for branch and connect all these nodes.
+
+17
+00:01:15,240 --> 00:01:19,980
+So if we have more than zero apples, we'll spawn an apple after we spin an apple.
+
+18
+00:01:20,010 --> 00:01:22,320
+We need to tell the game that we have one less apple.
+
+19
+00:01:22,590 --> 00:01:28,950
+So in order to do this, we can just drag in our apples, look for apples, and just drag up here.
+
+20
+00:01:29,020 --> 00:01:34,350
+Look for decrement, hit, decrement, and we'll basically subtract the number of apples that we have
+
+21
+00:01:34,350 --> 00:01:35,100
+by one.
+
+22
+00:01:35,550 --> 00:01:40,320
+Then if we drag in our apples and look for apples and just connect this all here.
+
+23
+00:01:44,870 --> 00:01:47,360
+So now I go compile and go play.
+
+24
+00:01:47,750 --> 00:01:50,200
+I should be able to spawn by apples.
+
+25
+00:01:50,210 --> 00:01:51,330
+So let's test this out.
+
+26
+00:01:51,350 --> 00:01:54,470
+One, two, three, four, five.
+
+27
+00:01:55,070 --> 00:01:57,980
+So I can only five apples and then I'm apples.
+
+28
+00:01:58,490 --> 00:02:02,840
+So currently it's kind of hard for the player to tell how many apples they have.
+
+29
+00:02:03,080 --> 00:02:09,169
+So if we go back to our player, HUD, so if we go to the Widget blueprint and to the player HUD, we're
+
+30
+00:02:09,169 --> 00:02:15,820
+basically going to create a HUD which will show them our apples that our player character has under
+
+31
+00:02:15,830 --> 00:02:16,370
+pallet.
+
+32
+00:02:16,400 --> 00:02:20,110
+Look for a vertical box and just drag this somewhere in here.
+
+33
+00:02:21,580 --> 00:02:24,040
+Then I want you to look for a horizontal box.
+
+34
+00:02:27,550 --> 00:02:30,130
+And just drag and place this inside the vertical box.
+
+35
+00:02:31,510 --> 00:02:33,760
+Next, I want you to look for an image.
+
+36
+00:02:34,800 --> 00:02:37,620
+And just drag this image inside the horizontal box.
+
+37
+00:02:38,280 --> 00:02:43,590
+And then if you just select the image and make the image, the apple image that we imported earlier.
+
+38
+00:02:44,820 --> 00:02:47,970
+You can adjust the size of the image by changing the image size here.
+
+39
+00:02:48,240 --> 00:02:50,610
+I think it's it's a decent size.
+
+40
+00:02:50,610 --> 00:02:51,630
+So I'm just going to leave it.
+
+41
+00:02:52,380 --> 00:02:58,350
+Then if we look for some text and drag three pieces of text into the horizontal box.
+
+42
+00:03:02,460 --> 00:03:03,140
+Okay.
+
+43
+00:03:03,150 --> 00:03:07,610
+Once you've done that, select the first text and just call this apples.
+
+44
+00:03:09,460 --> 00:03:12,970
+Make sure this is available, is checked all the second text.
+
+45
+00:03:13,000 --> 00:03:14,920
+Just make it say the slash.
+
+46
+00:03:15,920 --> 00:03:19,130
+And then for this third text, call this max apples.
+
+47
+00:03:20,840 --> 00:03:24,010
+Make sure is aware of what is checked next.
+
+48
+00:03:24,130 --> 00:03:32,140
+If we head over to the graph and go over to the for loop section after this loop has finished running,
+
+49
+00:03:32,230 --> 00:03:35,080
+we are going to drag in our apples test.
+
+50
+00:03:35,620 --> 00:03:39,820
+Get this apple stacks and just drag copy and look for set text.
+
+51
+00:03:40,420 --> 00:03:45,940
+And we want this one set text and we're going to make this text, say the amount of apples that our
+
+52
+00:03:45,940 --> 00:03:46,990
+player character has.
+
+53
+00:03:47,080 --> 00:03:49,920
+So earlier we made a reference to our player character.
+
+54
+00:03:49,930 --> 00:03:51,430
+So dragging that reference.
+
+55
+00:03:52,330 --> 00:03:54,520
+And get them out Apple but they have.
+
+56
+00:03:55,330 --> 00:03:59,050
+So, look, we'll get apples and just hook this up here.
+
+57
+00:03:59,230 --> 00:04:01,000
+Then hook up completed.
+
+58
+00:04:01,690 --> 00:04:07,990
+After we do this, we're going to drag in our Mac's apples and just set the text of this.
+
+59
+00:04:09,670 --> 00:04:14,100
+And we'll set the text of this to be the maximum of apples that my player character has.
+
+60
+00:04:14,110 --> 00:04:20,470
+So I'll just drag in my player character reference again and get the maximum apples that they have.
+
+61
+00:04:21,910 --> 00:04:23,320
+And then hook this up here.
+
+62
+00:04:24,100 --> 00:04:25,450
+Then connect these two notes.
+
+63
+00:04:27,110 --> 00:04:29,210
+I'm just going to move this as a bit messy.
+
+64
+00:04:31,900 --> 00:04:37,510
+Then I want you to right click and add custom event and call this update.
+
+65
+00:04:37,910 --> 00:04:38,650
+Apple's.
+
+66
+00:04:39,730 --> 00:04:42,120
+And then connect this to the set text.
+
+67
+00:04:42,420 --> 00:04:45,910
+And basically, one of our character throws an apple.
+
+68
+00:04:45,930 --> 00:04:47,400
+We're going to call the update.
+
+69
+00:04:47,400 --> 00:04:49,920
+Apple's in our player widget blueprint.
+
+70
+00:04:50,280 --> 00:04:52,260
+So if we go back to our player blueprint.
+
+71
+00:04:53,880 --> 00:04:55,820
+After we set them out.
+
+72
+00:04:55,830 --> 00:04:58,560
+Apples that struck in our heart reference.
+
+73
+00:04:59,470 --> 00:05:02,380
+And called the update Apple's custom event.
+
+74
+00:05:06,710 --> 00:05:13,580
+So if I could compile and play on my screen, we can see I have five out of 30 apples and if I throw
+
+75
+00:05:13,580 --> 00:05:18,770
+one, my taps will update 294932951.
+
+76
+00:05:19,130 --> 00:05:21,980
+So my apple image looks kind of off.
+
+77
+00:05:22,160 --> 00:05:26,750
+So we go back to our player hard and just delete this image.
+
+78
+00:05:27,600 --> 00:05:31,380
+And with our vertical box and in the palette.
+
+79
+00:05:31,410 --> 00:05:33,540
+Let's look for another vertical box.
+
+80
+00:05:36,000 --> 00:05:43,050
+And if we just look for an image and just track it into our vertical box and for the image, select
+
+81
+00:05:43,050 --> 00:05:43,980
+the apple.
+
+82
+00:05:44,820 --> 00:05:46,110
+Just adjust it.
+
+83
+00:05:46,950 --> 00:05:49,590
+X and Y values with the value you're happy with.
+
+84
+00:05:57,090 --> 00:05:57,700
+Okay.
+
+85
+00:05:57,720 --> 00:05:59,550
+And I'm going to try and position my apple.
+
+86
+00:05:59,550 --> 00:06:01,230
+So it's kind of aligned with my text.
+
+87
+00:06:01,950 --> 00:06:06,770
+And if I go compile and play, I think that looks a bit better.
+
+88
+00:06:06,780 --> 00:06:11,100
+I'm also going to adjust my heart image because I think they're a bit big.
+
+89
+00:06:11,280 --> 00:06:16,110
+So if we go back to our heart blueprint, I'm just going to decrease it size.
+
+90
+00:06:18,910 --> 00:06:22,550
+And then let's let our heart empty and make it the same size.
+
+91
+00:06:22,570 --> 00:06:24,220
+So my hot fall is 51.
+
+92
+00:06:24,430 --> 00:06:27,190
+I'm just going to make it 51 by 51.
+
+93
+00:06:27,760 --> 00:06:29,880
+And I'll make this half empty.
+
+94
+00:06:29,890 --> 00:06:32,200
+51 by 51.
+
+95
+00:06:33,700 --> 00:06:35,770
+I never go compile and play.
+
+96
+00:06:36,250 --> 00:06:38,770
+My heart are a bit smaller, but I prefer that.
+

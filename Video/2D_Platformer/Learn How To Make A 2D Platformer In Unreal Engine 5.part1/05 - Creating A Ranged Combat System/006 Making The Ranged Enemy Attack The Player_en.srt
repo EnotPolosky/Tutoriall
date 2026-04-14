@@ -1,0 +1,404 @@
+1
+00:00:03,170 --> 00:00:03,820
+Hello.
+
+2
+00:00:03,830 --> 00:00:08,270
+In this next lecture, we're going to make it so our mushroom character can actually fire and shoot
+
+3
+00:00:08,270 --> 00:00:08,810
+projectiles.
+
+4
+00:00:08,810 --> 00:00:11,390
+Our player character to get started.
+
+5
+00:00:11,510 --> 00:00:17,420
+Open up the mushroom animation source and set the mushroom range Attack animation.
+
+6
+00:00:18,410 --> 00:00:25,160
+So at this particular frame frame seven, I'm going have my mushroom launches projectile at the player
+
+7
+00:00:25,160 --> 00:00:25,820
+character.
+
+8
+00:00:25,910 --> 00:00:30,650
+So if we just right click and look for ADD, notify and select new notify.
+
+9
+00:00:30,770 --> 00:00:33,830
+And I'll just call this ranged attacks.
+
+10
+00:00:34,190 --> 00:00:39,200
+Next, if we just close this and go over to our mushroom animation blueprint.
+
+11
+00:00:40,140 --> 00:00:43,140
+In some free space, just right click and jump mode.
+
+12
+00:00:44,040 --> 00:00:45,390
+And call this attack.
+
+13
+00:00:47,240 --> 00:00:53,810
+And just drag up here and set animation state and I'm just going to call this my mushroom attack.
+
+14
+00:00:56,390 --> 00:01:03,140
+And if we double click and hence out it just right click and look for the play range attack animation.
+
+15
+00:01:03,800 --> 00:01:10,610
+So play much of the range attack or just hook this up here, then put this up to the idle.
+
+16
+00:01:10,880 --> 00:01:15,650
+So in order to transition from our mushroom attack back to our idol, we'll wait for this animation
+
+17
+00:01:15,650 --> 00:01:16,530
+to finish playing.
+
+18
+00:01:16,550 --> 00:01:19,550
+So I will just right click for time remaining.
+
+19
+00:01:20,580 --> 00:01:27,210
+And so that mushroom attack, if it is less than 0.1, we'll enter our transition again.
+
+20
+00:01:27,420 --> 00:01:30,510
+Next, if we head over to our mushroom blueprint.
+
+21
+00:01:31,710 --> 00:01:34,200
+Open it up and go over to the viewport tab.
+
+22
+00:01:35,210 --> 00:01:37,640
+And just go ahead and look for a scene.
+
+23
+00:01:38,730 --> 00:01:41,640
+Just rename us our spawn point.
+
+24
+00:01:42,240 --> 00:01:45,090
+And this is going to be where we spawn our projectile.
+
+25
+00:01:45,510 --> 00:01:47,940
+Just go over to select and translate objects.
+
+26
+00:01:49,160 --> 00:01:52,190
+And move this where you want the mushroom to spawn its projectile.
+
+27
+00:01:52,340 --> 00:01:53,330
+So I'm going to move it.
+
+28
+00:01:53,330 --> 00:01:55,010
+So it's kind of.
+
+29
+00:01:56,040 --> 00:01:57,060
+Right in front of its head.
+
+30
+00:01:57,060 --> 00:01:58,080
+So around here.
+
+31
+00:01:58,740 --> 00:02:02,550
+Next, I want you to go ahead and look for box collision.
+
+32
+00:02:04,150 --> 00:02:09,880
+And just move this box in front of our mushroom and make it quite wide in the x axis.
+
+33
+00:02:11,680 --> 00:02:16,180
+So something like this is fun and I'm going to make it quite tool in the Z axis as well.
+
+34
+00:02:18,420 --> 00:02:21,530
+And we'll make it so that one of our player character overlaps this box.
+
+35
+00:02:21,540 --> 00:02:26,460
+Our mushroom will start firing projectiles at them just so that we can see this box in our game.
+
+36
+00:02:26,490 --> 00:02:30,690
+And the details I'm going to look for hidden in game and neither unchecked.
+
+37
+00:02:32,310 --> 00:02:32,580
+Next.
+
+38
+00:02:32,580 --> 00:02:35,940
+If I scroll down and I go on component, we can overlap.
+
+39
+00:02:36,270 --> 00:02:40,980
+We can check to see if the other actor which entered this box is equal to my player character.
+
+40
+00:02:41,400 --> 00:02:44,100
+So look for equal and just get my player character.
+
+41
+00:02:47,490 --> 00:02:48,780
+If this condition is true.
+
+42
+00:02:48,780 --> 00:02:49,980
+So I look for a branch.
+
+43
+00:02:52,790 --> 00:02:58,010
+Then I'm going to just drag through and set a timer by event.
+
+44
+00:02:59,510 --> 00:03:05,030
+I'm not going to promote this to travel because when my Range Enemy attacks, it's just going to always
+
+45
+00:03:05,030 --> 00:03:06,830
+continue attacking no matter what.
+
+46
+00:03:07,310 --> 00:03:15,260
+So of of time put one and just check this looping box, then drag in our event and look for add custom
+
+47
+00:03:15,260 --> 00:03:19,310
+event and we'll call this mushroom attack.
+
+48
+00:03:21,270 --> 00:03:27,450
+And what this customer will do first will drag in our animation component and get our an instance.
+
+49
+00:03:28,690 --> 00:03:32,020
+And from here we'll cool our jump to node or chop to Node.
+
+50
+00:03:33,240 --> 00:03:34,410
+And the jump name.
+
+51
+00:03:34,410 --> 00:03:36,150
+I think I called it just a pack.
+
+52
+00:03:36,750 --> 00:03:37,840
+But let me check.
+
+53
+00:03:37,860 --> 00:03:39,480
+So I call that attack.
+
+54
+00:03:40,420 --> 00:03:43,180
+So here, under a Trump name, I'm going to attack.
+
+55
+00:03:43,870 --> 00:03:48,370
+And then the final thing we need to do is make the event which will spawned the projectile.
+
+56
+00:03:48,700 --> 00:03:54,760
+So if we just right click and add custom event and call it spawn projectile.
+
+57
+00:03:56,330 --> 00:04:01,880
+And when we file this note, we're going to drag up it and spawn actor prop cars.
+
+58
+00:04:02,390 --> 00:04:06,200
+The actor we're going to spawn is going to be the projectile that we made earlier.
+
+59
+00:04:07,420 --> 00:04:08,530
+And where we're going to spoon it.
+
+60
+00:04:08,530 --> 00:04:10,540
+Just right click on Swarm Transform.
+
+61
+00:04:10,580 --> 00:04:11,980
+Look for split structure pin.
+
+62
+00:04:12,820 --> 00:04:17,120
+And for the location, we just want to get wherever our spawn point is.
+
+63
+00:04:17,140 --> 00:04:21,310
+So just drag us in and we'll get world location.
+
+64
+00:04:22,160 --> 00:04:28,200
+And connect that into your location and pull the rotation so our projectiles wound in the correct rotation.
+
+65
+00:04:28,220 --> 00:04:31,340
+Just right click and we'll get actor rotation.
+
+66
+00:04:32,590 --> 00:04:33,730
+And hook us up here.
+
+67
+00:04:33,910 --> 00:04:36,460
+And for scale, we can just leave this at one, one, one.
+
+68
+00:04:36,760 --> 00:04:41,810
+There's one more thing we need to do, and that is head back to our mushroom animation program and go
+
+69
+00:04:41,810 --> 00:04:43,750
+over to the range attack.
+
+70
+00:04:44,260 --> 00:04:50,260
+And when we call this notifier, we want to drag off our mushroom and call the range attack custom event
+
+71
+00:04:50,260 --> 00:04:57,250
+that we just made sort of shrug off here and look for spawn projectile and connect this here and go
+
+72
+00:04:57,250 --> 00:05:01,510
+compile Now that close this and I go play.
+
+73
+00:05:02,480 --> 00:05:06,150
+And I walked into that box, the mushrooms would start firing projectiles at me.
+
+74
+00:05:06,170 --> 00:05:07,250
+So I go here.
+
+75
+00:05:08,090 --> 00:05:11,150
+They'll attack, they'll shoot me, and then I get damaged.
+
+76
+00:05:11,180 --> 00:05:11,930
+Nice.
+
+77
+00:05:14,540 --> 00:05:15,100
+Okay.
+
+78
+00:05:15,150 --> 00:05:16,120
+And one more thing.
+
+79
+00:05:16,130 --> 00:05:21,660
+If you wanted to adjust how fast it explodes the projectiles, you could change the time here.
+
+80
+00:05:21,680 --> 00:05:25,490
+So if I made something like 0.7, it's going to fire a lot faster.
+
+81
+00:05:25,610 --> 00:05:31,280
+Although one thing to keep in mind if you do this is we need to make sure that our mushroom attack emission
+
+82
+00:05:31,280 --> 00:05:33,650
+gets to the point where it fires the projectile.
+
+83
+00:05:33,680 --> 00:05:36,290
+So you may need to play around to get a value that you're happy with.
+
+84
+00:05:36,320 --> 00:05:36,840
+Hello.
+
+85
+00:05:36,860 --> 00:05:39,260
+So that's actually one more thing I forgot to do.
+
+86
+00:05:39,380 --> 00:05:44,570
+If I go play and I run into this box, my enemy will start shooting projectiles at me.
+
+87
+00:05:44,600 --> 00:05:49,700
+However, if I kill them, so I'm just going to kill my mushroom, it will still continue shooting at
+
+88
+00:05:49,700 --> 00:05:51,020
+us, even though it's dead.
+
+89
+00:05:51,170 --> 00:05:53,630
+So if we go back to our mushroom enemy.
+
+90
+00:05:57,530 --> 00:06:02,000
+And before we do the mushroom attack, let's just check that our mushroom is not dead.
+
+91
+00:06:02,180 --> 00:06:03,530
+If we go Branch.
+
+92
+00:06:04,560 --> 00:06:08,130
+And the condition of this grant is going to be that the mushroom is dead.
+
+93
+00:06:08,310 --> 00:06:12,540
+So if my mushroom is not dead, then we'll fire a projectile.
+
+94
+00:06:12,780 --> 00:06:15,360
+However, if my mushroom is dead, then we're going to do nothing.
+
+95
+00:06:15,570 --> 00:06:19,070
+So with that, we have finished the mushroom range enemy.
+
+96
+00:06:19,080 --> 00:06:21,240
+And whilst I'm here, I'm just going to come over the notes.
+
+97
+00:06:21,480 --> 00:06:23,940
+So I'll just comment this attack.
+
+98
+00:06:26,020 --> 00:06:28,790
+I will come at this event.
+
+99
+00:06:28,830 --> 00:06:30,970
+Begin play set up.
+
+100
+00:06:32,370 --> 00:06:34,500
+And I will just comment this.
+
+101
+00:06:34,620 --> 00:06:35,880
+Handle rotation.
+

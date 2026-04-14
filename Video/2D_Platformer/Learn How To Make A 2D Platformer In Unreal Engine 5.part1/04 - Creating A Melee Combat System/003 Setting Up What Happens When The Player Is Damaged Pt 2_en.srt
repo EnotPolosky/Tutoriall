@@ -1,0 +1,136 @@
+1
+00:00:03,070 --> 00:00:05,500
+The final thing to do is make it to my backyard.
+
+2
+00:00:05,540 --> 00:00:07,600
+It can be damaged if we open up our.
+
+3
+00:00:07,870 --> 00:00:08,500
+BP.
+
+4
+00:00:09,490 --> 00:00:10,450
+In some free space.
+
+5
+00:00:10,450 --> 00:00:18,130
+If we right click or lock for event, any damage event, any damage will get them out to my player house
+
+6
+00:00:18,280 --> 00:00:21,670
+and we'll subtract it by the amount of damage that they took.
+
+7
+00:00:21,670 --> 00:00:22,900
+So hopefully it's up here.
+
+8
+00:00:23,380 --> 00:00:24,370
+Then we'll tell the game.
+
+9
+00:00:24,400 --> 00:00:27,190
+That is our new health, so our Dragon health and set it.
+
+10
+00:00:30,390 --> 00:00:37,310
+Then in order to make sure our placard accurately shows now that we now have, I am going to trek up
+
+11
+00:00:37,320 --> 00:00:39,240
+here and look for for loop.
+
+12
+00:00:42,000 --> 00:00:48,510
+And for the last index of this, we basically want to get the amount of damage that we've taken and
+
+13
+00:00:48,510 --> 00:00:49,590
+look for communicate.
+
+14
+00:00:50,100 --> 00:00:54,120
+This will convert it into an integer and hook this up to loss index.
+
+15
+00:00:54,660 --> 00:00:59,070
+On the first index, we just want to change this from one because arrays are counting from the number
+
+16
+00:00:59,070 --> 00:01:04,140
+zero and for how many damage I took, I'm going to drag in my HUD reference.
+
+17
+00:01:05,260 --> 00:01:09,730
+And called the damage or however many damage my player character took.
+
+18
+00:01:09,880 --> 00:01:11,470
+So if I hook up, nobody to hear.
+
+19
+00:01:12,260 --> 00:01:17,930
+And then just to quickly test this out in some free space, I'm going to right click and look for one.
+
+20
+00:01:19,270 --> 00:01:22,270
+And when I press the one button, I'm going to apply damage.
+
+21
+00:01:23,270 --> 00:01:26,810
+And I'm going to play damage to myself, so I'll drag up in myself.
+
+22
+00:01:27,820 --> 00:01:28,570
+Whoops.
+
+23
+00:01:28,900 --> 00:01:31,180
+So drink up here and look for self.
+
+24
+00:01:32,030 --> 00:01:32,660
+Get reference to.
+
+25
+00:01:32,660 --> 00:01:39,050
+So on the base damage, let's change this to be one and forget, play and go play.
+
+26
+00:01:40,010 --> 00:01:41,710
+I have four hearts, but press one.
+
+27
+00:01:41,720 --> 00:01:42,840
+One of them is removed.
+
+28
+00:01:42,860 --> 00:01:45,290
+If I press one again, the second one will be removed.
+
+29
+00:01:45,530 --> 00:01:46,730
+And let's just test that.
+
+30
+00:01:46,730 --> 00:01:48,530
+This works for multiple damage.
+
+31
+00:01:48,560 --> 00:01:49,700
+If I put two here.
+
+32
+00:01:50,650 --> 00:01:54,370
+I could compile and I could play to how it should be removed.
+
+33
+00:01:54,370 --> 00:01:56,840
+So I press one too hot, too removed.
+
+34
+00:01:56,860 --> 00:02:00,370
+So with that, we set up a system where we can remove our hearts.
+

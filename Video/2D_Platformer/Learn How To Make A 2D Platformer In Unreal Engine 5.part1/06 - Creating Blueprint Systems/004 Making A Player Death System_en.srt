@@ -1,0 +1,192 @@
+1
+00:00:03,100 --> 00:00:03,910
+Hello.
+
+2
+00:00:04,090 --> 00:00:07,030
+In this next lecture, we're going to create a death system.
+
+3
+00:00:07,030 --> 00:00:11,140
+So if our player character loses all their hearts, we're going to make them die.
+
+4
+00:00:12,040 --> 00:00:18,280
+If we first go over to our Warrior animation folder and look for the death folder.
+
+5
+00:00:19,350 --> 00:00:25,530
+Once you're here, set all the images right click and go Sprite actions and create a Sprite.
+
+6
+00:00:26,530 --> 00:00:33,340
+Then if we set all the sprites and right click and go create flipbook and we can just call this warrior
+
+7
+00:00:33,340 --> 00:00:34,090
+death.
+
+8
+00:00:34,300 --> 00:00:40,630
+Next, if we go over to our player character folder and find the warrior animation source.
+
+9
+00:00:41,590 --> 00:00:45,820
+We want to create a new animation sequence and just call this death.
+
+10
+00:00:47,370 --> 00:00:51,630
+And under the animation data, look for the flipbook that we just made.
+
+11
+00:00:55,360 --> 00:00:56,650
+And go save.
+
+12
+00:00:57,310 --> 00:01:01,450
+We can close this and open up our Warrior Animation blueprint.
+
+13
+00:01:03,000 --> 00:01:05,250
+And head over to the new state machine.
+
+14
+00:01:05,430 --> 00:01:10,440
+And we just want to right click and create a job node and call this death.
+
+15
+00:01:12,630 --> 00:01:18,870
+Then we can just rack off here and look for animation state and we're going to call this die.
+
+16
+00:01:20,170 --> 00:01:27,310
+Lot to head inside here and look for the play death animation that we just made and connect this into
+
+17
+00:01:27,310 --> 00:01:27,760
+here.
+
+18
+00:01:28,510 --> 00:01:34,750
+Select the death animation and just uncheck loop animation because I don't want this animation to loop
+
+19
+00:01:34,750 --> 00:01:35,590
+once you play it.
+
+20
+00:01:35,620 --> 00:01:36,970
+We're not going to play it again.
+
+21
+00:01:38,630 --> 00:01:41,360
+Then we can go compile and save.
+
+22
+00:01:41,630 --> 00:01:44,850
+And if we head over to our player character.
+
+23
+00:01:44,900 --> 00:01:46,370
+Open up our player blueprint.
+
+24
+00:01:47,440 --> 00:01:50,420
+And go over to the event any damage node.
+
+25
+00:01:50,440 --> 00:01:56,320
+So after we damage our player character and play a screen check and then update our player HUD, we're
+
+26
+00:01:56,320 --> 00:01:59,440
+going to check to see if our player has more than zero health.
+
+27
+00:01:59,650 --> 00:02:02,620
+If they don't, then we're going to kill our player character.
+
+28
+00:02:02,800 --> 00:02:11,200
+So if we drag in our health and we want to check to see if this value is less than or equal to zero.
+
+29
+00:02:11,290 --> 00:02:16,420
+So just drag off here and look for Branch and hook up from completed into here.
+
+30
+00:02:16,540 --> 00:02:18,550
+If that is true, then we're going to kill our player.
+
+31
+00:02:18,820 --> 00:02:22,010
+And when we kill our player, we're going to disable that input.
+
+32
+00:02:22,030 --> 00:02:26,320
+So if you just right click and lock for disable input.
+
+33
+00:02:27,180 --> 00:02:33,690
+And then we right click and forget player, controller and hook this up to the player controller.
+
+34
+00:02:34,940 --> 00:02:38,060
+And this will just make it so our player character can't move in the game.
+
+35
+00:02:38,720 --> 00:02:45,980
+After we do this, we want to drag in our animation component and get the animation instance, and from
+
+36
+00:02:45,980 --> 00:02:48,620
+here we want to call the jump to load.
+
+37
+00:02:49,220 --> 00:02:51,530
+And I think we called it die.
+
+38
+00:02:52,450 --> 00:02:53,560
+So I call it death.
+
+39
+00:02:53,770 --> 00:02:57,040
+So here under Trump name, I'm going to type in death.
+
+40
+00:02:58,140 --> 00:03:01,020
+And we just want to hook up, just able input into here.
+
+41
+00:03:02,680 --> 00:03:07,090
+And then finally, just so that this doesn't repeat, if we're attacked again, when we have normal
+
+42
+00:03:07,090 --> 00:03:11,350
+health, we want to just drag up here and look forward to once.
+
+43
+00:03:12,530 --> 00:03:14,900
+Just going to move with these notes as it's a bit messy.
+
+44
+00:03:17,980 --> 00:03:20,850
+And now I can go compile and go play.
+
+45
+00:03:21,310 --> 00:03:27,700
+So let's say I let the scan turn damaged me or times I should die and then play my death animation.
+
+46
+00:03:30,250 --> 00:03:30,490
+Okay.
+
+47
+00:03:30,490 --> 00:03:30,810
+Nice.
+
+48
+00:03:30,820 --> 00:03:34,630
+So I died and I place the death animation.
+

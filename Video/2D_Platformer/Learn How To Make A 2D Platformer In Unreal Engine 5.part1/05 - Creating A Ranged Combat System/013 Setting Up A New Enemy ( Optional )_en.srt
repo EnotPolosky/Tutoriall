@@ -1,0 +1,632 @@
+1
+00:00:03,210 --> 00:00:03,980
+Hello.
+
+2
+00:00:03,990 --> 00:00:10,800
+In this next lecture, we're going to go over the process of adding our own custom enemy character.
+
+3
+00:00:10,830 --> 00:00:16,500
+In the last lecture, we made a Child Blueprint class, which inherits all the main components of our
+
+4
+00:00:16,500 --> 00:00:17,490
+skeleton enemy.
+
+5
+00:00:17,490 --> 00:00:22,950
+In this lecture, we'll make it so that this blueprint uses the animations of whatever enemy that you
+
+6
+00:00:22,950 --> 00:00:23,820
+want to set up.
+
+7
+00:00:23,820 --> 00:00:28,800
+So to get started, you want to create a new folder for the custom enemy that you want to use.
+
+8
+00:00:28,800 --> 00:00:34,170
+So I'm just going to go create a new folder and I'm going to call this folder goblin, because the enemy
+
+9
+00:00:34,170 --> 00:00:36,120
+that I'm going to add is going to be a goblin.
+
+10
+00:00:36,360 --> 00:00:38,310
+Then we just want to head inside this folder.
+
+11
+00:00:38,670 --> 00:00:45,120
+Okay, So I imported five animations for my new enemy, The animations that you need to make sure that
+
+12
+00:00:45,120 --> 00:00:51,420
+your enemy has is one animation of your enemy attacking an animation of your enemy dying, an animation
+
+13
+00:00:51,420 --> 00:00:56,910
+of your enemy in its idle animation, an animation of your enemy running and an animation of your enemy
+
+14
+00:00:56,910 --> 00:00:57,960
+taking damage.
+
+15
+00:00:58,380 --> 00:01:05,370
+Once you've got all those animations, create a new folder for each of them and then extract the animations
+
+16
+00:01:05,370 --> 00:01:08,490
+inside these images and create them into flip books.
+
+17
+00:01:08,490 --> 00:01:10,500
+So I'm just going to go through the process now.
+
+18
+00:01:10,500 --> 00:01:14,610
+It's the exact same thing that we did for the skeleton and the mushroom enemy.
+
+19
+00:01:15,240 --> 00:01:21,030
+Okay, so I created a folder for each of my animations and made a flipbook for each of the animations.
+
+20
+00:01:21,600 --> 00:01:26,910
+Once you've done that inside of your new enemy folder, just create a new folder and cool the split
+
+21
+00:01:26,910 --> 00:01:27,510
+books.
+
+22
+00:01:28,540 --> 00:01:33,880
+And make sure to put each animation folder inside of this folder just to keep things organized.
+
+23
+00:01:37,290 --> 00:01:43,140
+Then once you've done that right click and go new folder and just pull this animations.
+
+24
+00:01:43,920 --> 00:01:50,130
+Then if you hadn't saw it here, you want to right click and go Paper Z and select animation source
+
+25
+00:01:50,310 --> 00:01:55,650
+and just call this the Goblin or whatever your enemy is called animation source.
+
+26
+00:01:57,000 --> 00:02:04,230
+Then if we open it up, you want to go add new new animation sequence and cool this first one attack.
+
+27
+00:02:05,050 --> 00:02:08,770
+So this can be the animation of your enemy attacking.
+
+28
+00:02:08,800 --> 00:02:11,920
+So for me, it's called Goblin attack.
+
+29
+00:02:12,400 --> 00:02:17,200
+Then I'm going to add another one and I'm just going to call this one idle.
+
+30
+00:02:17,410 --> 00:02:19,540
+And this will be my goblin idol.
+
+31
+00:02:27,950 --> 00:02:31,820
+Then there was one for my enemy running.
+
+32
+00:02:31,820 --> 00:02:33,520
+So this one running.
+
+33
+00:02:33,530 --> 00:02:37,820
+And here I will select the goblin run.
+
+34
+00:02:38,920 --> 00:02:41,560
+Then now one for the enemy taking damage.
+
+35
+00:02:41,560 --> 00:02:44,170
+So I'll just call this take damage.
+
+36
+00:02:45,060 --> 00:02:49,740
+And here under animation, I will look for the goblin, take damage.
+
+37
+00:02:50,310 --> 00:02:53,830
+And then there's one for the enemy dying.
+
+38
+00:02:53,850 --> 00:02:56,370
+So I'll just go this die.
+
+39
+00:02:57,200 --> 00:02:58,850
+And here are the animation data.
+
+40
+00:02:58,850 --> 00:03:01,310
+I'll look for Goblin die.
+
+41
+00:03:01,370 --> 00:03:04,800
+So now we have all the animations for our Copeland enemy.
+
+42
+00:03:04,820 --> 00:03:06,980
+We can save this and close this.
+
+43
+00:03:07,190 --> 00:03:11,400
+Then if you just right click and go Paper CD and select paper.
+
+44
+00:03:11,420 --> 00:03:12,820
+CD Animation Blueprint.
+
+45
+00:03:12,830 --> 00:03:19,940
+We want to select the Goblin animation source and just call this the Goblin or whatever your enemy is
+
+46
+00:03:19,940 --> 00:03:23,090
+called Animation Blueprint.
+
+47
+00:03:23,540 --> 00:03:30,070
+Then if you actually go over to the scan folder and to the blueprints folder and just move this Miller
+
+48
+00:03:30,170 --> 00:03:33,650
+enemy underscore two to the goblin folder.
+
+49
+00:03:36,370 --> 00:03:41,200
+And just right click and create a new folder and just cool this blueprint.
+
+50
+00:03:42,740 --> 00:03:45,140
+And then I'm going to move this inside this folder.
+
+51
+00:03:45,590 --> 00:03:49,790
+And just right click and rename this the problem.
+
+52
+00:03:50,780 --> 00:03:51,380
+Enemy.
+
+53
+00:03:52,040 --> 00:03:58,130
+And then if you go over to the animation folder, open up the animation blueprint for the new enemy.
+
+54
+00:03:58,700 --> 00:04:02,630
+Then right click and look, forget owning actor.
+
+55
+00:04:03,290 --> 00:04:09,620
+And we just want to drag up here a look for cast for the Goblin Enemy or whatever.
+
+56
+00:04:09,620 --> 00:04:10,670
+You name the blueprint.
+
+57
+00:04:13,540 --> 00:04:19,720
+Benge was right click on its value, permit it to a variable and we can just call this all goblin reference.
+
+58
+00:04:21,000 --> 00:04:27,420
+And then if you go over to the animation graph, we want to right click and look for new state machine
+
+59
+00:04:27,750 --> 00:04:29,280
+and connect this into here.
+
+60
+00:04:30,240 --> 00:04:35,700
+So initially all of our the first thing we're going to do is create a new animation state.
+
+61
+00:04:35,970 --> 00:04:40,170
+And we can just call this our idle slash run state.
+
+62
+00:04:40,770 --> 00:04:46,710
+And if we head inside here, then if we just drag in our copying reference and what we want to do is
+
+63
+00:04:46,710 --> 00:04:48,960
+get the velocity of this.
+
+64
+00:04:50,490 --> 00:04:54,440
+From here, we can drag off and get the back to length.
+
+65
+00:04:55,890 --> 00:05:02,370
+And then if we just dry off and we want to check to see if its value is not equal to zero.
+
+66
+00:05:02,370 --> 00:05:05,550
+So if this value is not equal to zero, that means our goblin is moving.
+
+67
+00:05:05,550 --> 00:05:07,170
+And so we'll play the running animation.
+
+68
+00:05:07,170 --> 00:05:10,290
+If this is false, then we'll play the Goblin Auto animation.
+
+69
+00:05:10,440 --> 00:05:18,180
+So if you just right click and look for select animations by ball and hook this up here and animation
+
+70
+00:05:18,180 --> 00:05:25,350
+into here for the false animation, we just right click and look for play Idol and connect this into
+
+71
+00:05:25,350 --> 00:05:31,530
+here and for the tree animation we just want to right click and for play running and connect this into
+
+72
+00:05:31,530 --> 00:05:31,950
+here.
+
+73
+00:05:32,850 --> 00:05:39,000
+Then if we go back to the new state machine, we just want to right click and go create jump node and
+
+74
+00:05:39,000 --> 00:05:41,550
+just call this attack event.
+
+75
+00:05:42,920 --> 00:05:46,820
+And when we call the detachment, we are going to create a new animation state.
+
+76
+00:05:46,910 --> 00:05:50,150
+And this will be when the goblin is attacking.
+
+77
+00:05:50,150 --> 00:05:51,640
+So it's attacking.
+
+78
+00:05:51,650 --> 00:05:57,620
+And if we head inside here, we just want to play the attack animation for the goblin.
+
+79
+00:05:58,790 --> 00:06:00,260
+And if we go out of this.
+
+80
+00:06:01,470 --> 00:06:03,270
+If we create another jump node.
+
+81
+00:06:03,270 --> 00:06:08,790
+So I'm going to right click and go create jump node and let's just call this damaged.
+
+82
+00:06:10,100 --> 00:06:17,960
+Then if we drag from this jump node and go create new animation state and just call this take damage,
+
+83
+00:06:18,440 --> 00:06:22,400
+and if we head inside here, we want to right click and look for the.
+
+84
+00:06:23,730 --> 00:06:24,870
+Damage animations.
+
+85
+00:06:25,410 --> 00:06:26,500
+So select it.
+
+86
+00:06:26,520 --> 00:06:27,720
+Connect it in here.
+
+87
+00:06:28,560 --> 00:06:34,440
+And then if you connect from the take damage to the item slash run and head inside here and in order
+
+88
+00:06:34,440 --> 00:06:39,000
+to transition from our take damage back to our idle slash front animation, we're going to right click
+
+89
+00:06:39,000 --> 00:06:41,400
+and look for time remaining.
+
+90
+00:06:41,400 --> 00:06:44,580
+And we want this one time remaining of whatever your animation is called.
+
+91
+00:06:44,760 --> 00:06:54,630
+And when this is less than, let's say, 0.1, we will connect this into here and enter the animation.
+
+92
+00:06:54,630 --> 00:06:59,010
+Then if we right click again and go create jump node and call this death.
+
+93
+00:07:00,030 --> 00:07:05,940
+Then drag up here and go animation state and we can just call this the die.
+
+94
+00:07:06,210 --> 00:07:10,880
+And if we hit inside here, right click and look for Play Your Death animation.
+
+95
+00:07:10,890 --> 00:07:13,590
+So I called my play Die and Connect it into here.
+
+96
+00:07:13,710 --> 00:07:19,380
+And then one thing I realized that I didn't do with the other animations if we just let this play die
+
+97
+00:07:19,380 --> 00:07:22,230
+animation, we can just uncheck this loop animation.
+
+98
+00:07:22,230 --> 00:07:27,180
+That way, when it plays this animation, it's just going to end at the last frame of this animation
+
+99
+00:07:27,180 --> 00:07:30,390
+in the other animation blueprint that I made.
+
+100
+00:07:31,050 --> 00:07:35,580
+So for example, in the Skeleton one, I made it so we transition into this dead body animation.
+
+101
+00:07:36,180 --> 00:07:41,700
+But I realized we can just make sure that this is unchecked and then it will just leave it on the last
+
+102
+00:07:41,700 --> 00:07:43,020
+frame of the animation.
+
+103
+00:07:43,020 --> 00:07:45,450
+And then there's one more thing you want to do.
+
+104
+00:07:45,450 --> 00:07:52,740
+If you just close this and open up your goblin animation tools and go over to the TAC animation and
+
+105
+00:07:52,740 --> 00:07:55,680
+basically just before your enemy attacks.
+
+106
+00:07:55,680 --> 00:08:01,500
+Just so for me, it's around frame six, just right click and go add notify.
+
+107
+00:08:01,740 --> 00:08:04,980
+And we're going to go new notify and just call this attack.
+
+108
+00:08:06,220 --> 00:08:11,410
+And then if you go back to the Goblin animation blueprint, we should see the attack notify here and
+
+109
+00:08:11,410 --> 00:08:14,550
+then drag in the Goblin reference and forget Goblin reference.
+
+110
+00:08:14,560 --> 00:08:21,580
+I'm just going to close this and go back to my Goblin blueprint because its parent class is the skeleton
+
+111
+00:08:21,580 --> 00:08:22,210
+beep.
+
+112
+00:08:22,450 --> 00:08:27,040
+That basically means it will inherit all the blueprints inside of the scans and blueprint and inside
+
+113
+00:08:27,040 --> 00:08:28,000
+of the skeleton blueprint.
+
+114
+00:08:28,000 --> 00:08:33,760
+We call this a custom event which will do a line trace and try and damage anything which is hit by this
+
+115
+00:08:33,760 --> 00:08:35,799
+line trace inside of our goblin.
+
+116
+00:08:35,799 --> 00:08:41,830
+Whenever it reaches this animation, we are going to reference that custom event inside of the skeleton
+
+117
+00:08:41,830 --> 00:08:42,530
+blueprint.
+
+118
+00:08:42,549 --> 00:08:48,010
+And because this is a chart of the scans and blueprint, we can reference all the nodes and custom events
+
+119
+00:08:48,010 --> 00:08:49,300
+inside this phantom blueprint.
+
+120
+00:08:49,300 --> 00:08:52,390
+So over here, drag off and look for attack.
+
+121
+00:08:53,080 --> 00:08:56,020
+And this will call the attack inside of the Scantron beep.
+
+122
+00:08:56,050 --> 00:08:59,110
+And we can just connect this here and then go compile.
+
+123
+00:08:59,530 --> 00:09:03,250
+Then there's one final thing we need to do, and that is set up the common enemy.
+
+124
+00:09:03,250 --> 00:09:09,700
+So if I just open it up and just select the sprite, the first thing I'm going to do is change this
+
+125
+00:09:09,700 --> 00:09:11,860
+to be the goblin item.
+
+126
+00:09:12,430 --> 00:09:17,620
+And I'm actually just going to move this capsule radius that kind of fits the goblin a bit better.
+
+127
+00:09:18,190 --> 00:09:23,080
+Okay, next I'm going to scroll down and select the animation component, and we just want to select
+
+128
+00:09:23,080 --> 00:09:25,630
+the Goblin animation blueprint that we just made.
+
+129
+00:09:25,900 --> 00:09:28,780
+And then if you go over to the enemy itself.
+
+130
+00:09:29,430 --> 00:09:31,400
+We want to just close this.
+
+131
+00:09:31,410 --> 00:09:37,620
+We want to go over to the edit section and you'll see three nodes damage, jump node, death, jump
+
+132
+00:09:37,620 --> 00:09:39,150
+node and attack jump node.
+
+133
+00:09:39,480 --> 00:09:45,480
+And if you go back to your enemy animation blueprint, you basically want to get the name or whatever
+
+134
+00:09:45,480 --> 00:09:49,100
+you call these jump nodes and make sure that they align with these.
+
+135
+00:09:49,110 --> 00:09:55,320
+So for the damage jump node, whenever my goblin enters its damaged animation, we call this damage
+
+136
+00:09:55,320 --> 00:09:55,720
+drop node.
+
+137
+00:09:55,740 --> 00:09:59,430
+So make sure this is spelt correctly and has the same value here.
+
+138
+00:09:59,430 --> 00:10:03,210
+So I don't need to change that for the death one in this.
+
+139
+00:10:03,480 --> 00:10:06,300
+I just called it death as well and put the attack event.
+
+140
+00:10:07,320 --> 00:10:10,350
+Yeah, I just call that attack event so I don't need to change any of these.
+
+141
+00:10:10,350 --> 00:10:12,900
+But let's say you name this like.
+
+142
+00:10:13,590 --> 00:10:18,390
+Dying then here under a Trump node, make sure that's spelt correctly.
+
+143
+00:10:19,160 --> 00:10:21,070
+Okay, so now we can test out this new enemy.
+
+144
+00:10:21,090 --> 00:10:24,030
+Let's just go compile save close this.
+
+145
+00:10:24,210 --> 00:10:29,370
+Then if I drag in my goblin enemy, I'm going to move them to layer 20, because that's the layer that
+
+146
+00:10:29,370 --> 00:10:30,300
+I'm currently on.
+
+147
+00:10:30,990 --> 00:10:31,980
+And let's just go play.
+
+148
+00:10:33,330 --> 00:10:36,250
+My goblin will do its normal walking animation.
+
+149
+00:10:36,270 --> 00:10:37,590
+You said jump in front of it.
+
+150
+00:10:37,740 --> 00:10:40,050
+It should recognize me and then start attacking me.
+
+151
+00:10:40,200 --> 00:10:40,980
+I can attack it.
+
+152
+00:10:40,980 --> 00:10:41,850
+So attack it.
+
+153
+00:10:41,850 --> 00:10:44,370
+And then I'll do its damage animation.
+
+154
+00:10:44,760 --> 00:10:45,780
+And let's say I kill it.
+
+155
+00:10:47,430 --> 00:10:49,630
+Then the goblin will die and play death animation.
+
+156
+00:10:49,650 --> 00:10:52,320
+And with that, we have set up a new enemy.
+
+157
+00:10:52,320 --> 00:10:55,020
+So you could basically do that process to add more enemies.
+
+158
+00:10:55,020 --> 00:10:58,080
+And it would be the exact same process to add arranged enemy.
+

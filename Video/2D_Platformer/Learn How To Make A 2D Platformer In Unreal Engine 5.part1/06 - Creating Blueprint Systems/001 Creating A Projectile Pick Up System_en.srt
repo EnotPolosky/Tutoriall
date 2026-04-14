@@ -1,0 +1,344 @@
+1
+00:00:03,260 --> 00:00:04,050
+Hello.
+
+2
+00:00:04,070 --> 00:00:07,950
+In this next section, we're going to create a bunch of blueprint systems.
+
+3
+00:00:07,970 --> 00:00:11,490
+The first blueprint system we're going to create is an Apple pickup.
+
+4
+00:00:11,510 --> 00:00:17,180
+So we're going to make it so our player character can pick up and collect more apples in the game to
+
+5
+00:00:17,180 --> 00:00:18,050
+get started.
+
+6
+00:00:18,080 --> 00:00:21,170
+I want us to create a new folder and call it items.
+
+7
+00:00:23,480 --> 00:00:30,470
+Ben, if we head inside here, if we just right click and Go Blueprint class, select an actor and call
+
+8
+00:00:30,470 --> 00:00:31,910
+this Apple pickup.
+
+9
+00:00:36,550 --> 00:00:38,020
+If we open it up.
+
+10
+00:00:38,930 --> 00:00:39,950
+Under component.
+
+11
+00:00:39,980 --> 00:00:42,080
+Go ad and look for papers.
+
+12
+00:00:42,080 --> 00:00:42,530
+Right.
+
+13
+00:00:44,170 --> 00:00:51,820
+Will the Sprite select the apple that we imported a while ago and scroll down and under Collision Presets
+
+14
+00:00:51,820 --> 00:00:53,410
+set it to has no collision.
+
+15
+00:00:53,860 --> 00:00:55,030
+If we scroll back up.
+
+16
+00:00:55,270 --> 00:00:58,060
+Under scale, I'm going to see my apple up.
+
+17
+00:00:58,090 --> 00:01:00,220
+So it's three in the x, Y and Z.
+
+18
+00:01:00,990 --> 00:01:04,290
+Then do we go ad and look for staycation?
+
+19
+00:01:07,280 --> 00:01:08,780
+Make it fit around your apple.
+
+20
+00:01:12,490 --> 00:01:18,760
+Once you've done that with this sphere selected, if we scroll down and go to on component, we can
+
+21
+00:01:18,760 --> 00:01:22,030
+overlap and on component we can overlap.
+
+22
+00:01:22,450 --> 00:01:28,900
+If we just drag off our actor and look for cost to play a beep or whatever your character is called,
+
+23
+00:01:29,200 --> 00:01:33,010
+whenever our player character overlaps this, we're going to cost to them.
+
+24
+00:01:33,010 --> 00:01:38,290
+And this cost will allow us to reference any variable or customer event inside of our player character.
+
+25
+00:01:38,560 --> 00:01:41,650
+Just right click on this and promote it to a variable.
+
+26
+00:01:41,980 --> 00:01:48,610
+So the first thing we're going to do if our player actor overlaps this Apple box is check to see if
+
+27
+00:01:48,610 --> 00:01:50,650
+they have the maximum amount of apples.
+
+28
+00:01:50,800 --> 00:01:53,310
+If they don't, then we're going to give them some apples.
+
+29
+00:01:53,320 --> 00:01:56,020
+If they do, then we're going to give them no apples.
+
+30
+00:01:56,020 --> 00:02:02,800
+So if we just drag off our player reference and get the amount of apples that they have.
+
+31
+00:02:04,910 --> 00:02:10,800
+We're going to check to see if this is equal to the maximum amount of apples that they have.
+
+32
+00:02:10,820 --> 00:02:14,450
+So if we just drag a here and look, we'll get max apples.
+
+33
+00:02:16,760 --> 00:02:18,230
+And if this is true.
+
+34
+00:02:18,260 --> 00:02:20,150
+So I'll drive up here and look for brunch.
+
+35
+00:02:21,110 --> 00:02:24,620
+That means my poor character has all the apples that they can hold.
+
+36
+00:02:24,650 --> 00:02:26,480
+So we're going to do nothing.
+
+37
+00:02:26,960 --> 00:02:32,750
+However, if this is false, that means my character can hold and store some more apples.
+
+38
+00:02:33,410 --> 00:02:35,570
+If that's the case, we're going to give them some more apples.
+
+39
+00:02:35,600 --> 00:02:41,780
+So to do that, we can drag in our player, BP, and drag up here and get apples.
+
+40
+00:02:45,130 --> 00:02:47,200
+And if we just try and look for ADD.
+
+41
+00:02:48,220 --> 00:02:53,230
+And I'm going to give my character five apples every time they collect an apple.
+
+42
+00:02:54,210 --> 00:02:56,520
+You can make this whatever value you want.
+
+43
+00:02:57,560 --> 00:03:01,460
+And then we can just drag up here and look for set apples.
+
+44
+00:03:04,250 --> 00:03:11,180
+And connect us into here and connect us and you folks, after our player character collects the apple,
+
+45
+00:03:11,210 --> 00:03:13,100
+we're going to destroy this actor.
+
+46
+00:03:13,100 --> 00:03:15,950
+So if I just drag up here and destroy.
+
+47
+00:03:16,310 --> 00:03:16,600
+So.
+
+48
+00:03:17,740 --> 00:03:19,570
+There's one more thing we need to do, though.
+
+49
+00:03:19,930 --> 00:03:23,050
+Let's say my character has 29 apples.
+
+50
+00:03:23,380 --> 00:03:28,600
+If they go over and now pick up an apple, they're now going to have 34 apples.
+
+51
+00:03:29,050 --> 00:03:33,970
+In order to prevent this, because I made my player character have a maximum amount of apples of 30.
+
+52
+00:03:34,060 --> 00:03:35,950
+What we can do is add a clamp.
+
+53
+00:03:36,100 --> 00:03:42,370
+So if I just drag up here and look for cramp integer and pick up the return value into here.
+
+54
+00:03:44,280 --> 00:03:45,380
+Under the minimum value.
+
+55
+00:03:45,480 --> 00:03:46,470
+Just put one.
+
+56
+00:03:47,440 --> 00:03:53,560
+And under the maximum value, we can drag off the player BP, and get the maximum amount of apples.
+
+57
+00:03:54,950 --> 00:04:00,110
+This comp will ensure that this value can only be as high as the value inside of here.
+
+58
+00:04:00,410 --> 00:04:02,160
+So we put the value as 30.
+
+59
+00:04:02,180 --> 00:04:08,930
+So even if my player character has a 29 apples and they pick up an apple which gives them five, they'll
+
+60
+00:04:08,930 --> 00:04:14,660
+still only be given 30 apples because we set up a clamp which limits the amount of maximum apple that
+
+61
+00:04:14,660 --> 00:04:15,410
+they can hold.
+
+62
+00:04:15,860 --> 00:04:19,190
+So we can compile and test this all out.
+
+63
+00:04:19,430 --> 00:04:23,720
+If I close this and I'm going to drag it in my apple pick up.
+
+64
+00:04:24,550 --> 00:04:26,890
+I'll put it on the -20.
+
+65
+00:04:27,690 --> 00:04:29,130
+I think that's why I put everything.
+
+66
+00:04:29,880 --> 00:04:31,590
+And if I could play.
+
+67
+00:04:32,480 --> 00:04:33,630
+So I have five apples.
+
+68
+00:04:33,790 --> 00:04:34,800
+If I collect this.
+
+69
+00:04:36,390 --> 00:04:39,220
+I have ten apples, but it's not updated on my UI.
+
+70
+00:04:39,240 --> 00:04:43,470
+So there's one more thing I need to do if I go back to my apple pickup.
+
+71
+00:04:45,390 --> 00:04:51,300
+After we tell the game that we have some more apples before we destroy our actor, we can then drag
+
+72
+00:04:51,300 --> 00:04:53,460
+in our as player BP reference.
+
+73
+00:04:53,730 --> 00:04:59,550
+And if you remember in our player character, we made this variable called HUD reference.
+
+74
+00:05:00,030 --> 00:05:07,200
+In my Apple pickup, we can drag up it and look for HUD reference and get HUD reference, and then we
+
+75
+00:05:07,200 --> 00:05:09,990
+can call the update apples.
+
+76
+00:05:09,990 --> 00:05:13,050
+And this will just update the mouth apples on my HUD.
+
+77
+00:05:13,050 --> 00:05:14,970
+So show the correct values.
+
+78
+00:05:14,970 --> 00:05:17,130
+And now if I just connect all these nodes.
+
+79
+00:05:18,850 --> 00:05:20,680
+And go compile and save.
+
+80
+00:05:21,560 --> 00:05:28,880
+Now, if I go play and I collect this apple, I should now have ten apples and my HUD will also update.
+
+81
+00:05:29,900 --> 00:05:34,790
+If I gave my character, let's say, dirty apples and start off with.
+
+82
+00:05:37,250 --> 00:05:38,180
+And I go play.
+
+83
+00:05:39,450 --> 00:05:43,740
+If I try and overlap this, this apple will still remain because I still have some apples.
+
+84
+00:05:43,830 --> 00:05:49,680
+If, say I throw away one of my apples, I now have 29 and I cannot pick up this apple.
+
+85
+00:05:50,620 --> 00:05:51,790
+Nice with this.
+
+86
+00:05:51,790 --> 00:05:53,350
+We have made an apple pickup.
+

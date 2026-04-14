@@ -1,0 +1,584 @@
+1
+00:00:03,020 --> 00:00:03,750
+Hello.
+
+2
+00:00:03,770 --> 00:00:09,680
+In this next lecture, we're going to go over how to make our enemy attack and damage our player character.
+
+3
+00:00:09,920 --> 00:00:14,900
+To get started, let's head over to our skeleton animation source.
+
+4
+00:00:15,380 --> 00:00:20,570
+And I want you to create a new animation sequence and just call this Scampton attack.
+
+5
+00:00:20,960 --> 00:00:26,570
+Then under animation data set the Scampton attack flipbook and just zoom out a bit.
+
+6
+00:00:27,110 --> 00:00:34,400
+Now we're going to make it attack similar to how all player character attacks frame at the frame where
+
+7
+00:00:34,400 --> 00:00:37,400
+the Scampton is going to play a character with the sword.
+
+8
+00:00:37,820 --> 00:00:40,830
+We are going to add an enemy notifier.
+
+9
+00:00:40,850 --> 00:00:47,150
+So right click and select add notify new notify and call this Scampton.
+
+10
+00:00:47,180 --> 00:00:48,950
+Actually call this enemy attack.
+
+11
+00:00:49,160 --> 00:00:54,320
+Then if we just close this, then if we head over to Oscar into an animation blueprint.
+
+12
+00:00:55,220 --> 00:00:59,200
+We're going to use a jump to Node whenever our Stanton attacks our player character.
+
+13
+00:00:59,210 --> 00:01:04,310
+So if we just right click and go jump and call this attack event.
+
+14
+00:01:05,430 --> 00:01:09,180
+And I want to take a minute or drag off here and go to an animation state.
+
+15
+00:01:09,360 --> 00:01:13,770
+This animation state will be the skeleton attacking soda stores attack.
+
+16
+00:01:15,170 --> 00:01:20,540
+And if we hadn't said, Here I am going to play the skeleton attacking animation.
+
+17
+00:01:20,570 --> 00:01:22,490
+So this one plays Kelly attack.
+
+18
+00:01:22,730 --> 00:01:24,080
+And I hope this up here.
+
+19
+00:01:24,410 --> 00:01:28,940
+Then if we head back to our new state machine, drag from attack to our idle slash walk.
+
+20
+00:01:28,970 --> 00:01:33,770
+So in order to go from our attacking back to our normal state, we're going to wait for our attacking
+
+21
+00:01:33,770 --> 00:01:35,000
+animation to be over.
+
+22
+00:01:35,030 --> 00:01:41,480
+So just right click and a four time remaining skeleton attack and off the return value.
+
+23
+00:01:41,510 --> 00:01:45,140
+We'll check to see if this is less than 0.1.
+
+24
+00:01:45,290 --> 00:01:48,320
+And if this is true, then we'll go back to our normal state.
+
+25
+00:01:48,410 --> 00:01:51,860
+So we just hook this up here and then go compile.
+
+26
+00:01:52,250 --> 00:01:54,920
+Next, let's go to our skeleton blueprint.
+
+27
+00:01:59,080 --> 00:01:59,890
+Open it up.
+
+28
+00:02:00,370 --> 00:02:08,229
+And I want you to go over to the viewport, and I want you to go ahead and look for a box collision.
+
+29
+00:02:11,620 --> 00:02:12,580
+So that's it.
+
+30
+00:02:12,790 --> 00:02:14,770
+Now move this box in front of us.
+
+31
+00:02:14,880 --> 00:02:19,420
+And then we're basically going to make it that whenever our player character enters this box.
+
+32
+00:02:19,460 --> 00:02:21,520
+Oscar is going to try and attack them.
+
+33
+00:02:21,850 --> 00:02:22,830
+It's a bit small.
+
+34
+00:02:22,840 --> 00:02:26,590
+So using the box extent, let's just increase the size of our box.
+
+35
+00:02:26,590 --> 00:02:29,230
+So increase it in the Z so it's a bit taller.
+
+36
+00:02:31,050 --> 00:02:34,050
+And also increase it in the X, so it's a bit thicker.
+
+37
+00:02:35,670 --> 00:02:37,560
+Just so that we can see this in the game.
+
+38
+00:02:37,560 --> 00:02:41,080
+But demonstration purposes with the box selected.
+
+39
+00:02:41,100 --> 00:02:46,080
+I'm going to go to details and look for hidden and just uncheck hidden and game.
+
+40
+00:02:46,080 --> 00:02:46,500
+That way.
+
+41
+00:02:46,500 --> 00:02:48,330
+I'm going to see this box when I'm in my game.
+
+42
+00:02:48,870 --> 00:02:55,230
+Then if we just close this and scroll down, I won't need to go to on component begin overlap.
+
+43
+00:02:55,560 --> 00:03:01,020
+So this on component can overlap will basically fire when something enters this box.
+
+44
+00:03:01,140 --> 00:03:04,770
+When something enters this box, we're going to check to see if it's the player character.
+
+45
+00:03:04,770 --> 00:03:07,710
+So all other actor look for equal.
+
+46
+00:03:08,400 --> 00:03:11,580
+And we're going to be checking to see if this is equal to our player character.
+
+47
+00:03:11,610 --> 00:03:14,970
+So just right click and forget player character.
+
+48
+00:03:19,140 --> 00:03:22,800
+Then it was a struggle paying off a branch and hook us up.
+
+49
+00:03:22,890 --> 00:03:27,320
+So if I'll play a character that does enter in this box, then we're going to tell the game that our
+
+50
+00:03:27,330 --> 00:03:29,370
+Stanton is entering attack mode.
+
+51
+00:03:29,370 --> 00:03:33,570
+So create a new variable and call it attack mode.
+
+52
+00:03:34,470 --> 00:03:38,280
+And when this happens, we're going to set attack mode to be true.
+
+53
+00:03:39,600 --> 00:03:42,600
+To just put up here and check out one more thing.
+
+54
+00:03:42,690 --> 00:03:45,350
+We just scroll out and go over to our handle movement.
+
+55
+00:03:45,360 --> 00:03:49,060
+When our Scantron is attacking our player character, I don't want it to move.
+
+56
+00:03:49,080 --> 00:03:55,710
+So under the handle movement, add another condition to the OR and it's simply going to be the attack
+
+57
+00:03:55,710 --> 00:03:56,700
+note that we just made.
+
+58
+00:03:56,850 --> 00:03:59,160
+So our attack mode and hook us up here.
+
+59
+00:04:00,970 --> 00:04:04,760
+Okay, So after we tell the game, the captain is in attack mode.
+
+60
+00:04:04,780 --> 00:04:09,040
+We are going to tell the game that we should play the skin tone attacking animation.
+
+61
+00:04:09,520 --> 00:04:12,510
+So the way we're going to do that is by using a timer.
+
+62
+00:04:12,520 --> 00:04:16,660
+So if we just drag up here and course set timer by event.
+
+63
+00:04:17,700 --> 00:04:18,760
+And of the Return Valley.
+
+64
+00:04:18,779 --> 00:04:23,670
+Just right click and promote this terrible and call this attack event.
+
+65
+00:04:24,930 --> 00:04:30,660
+On the time, just check one and just check this looping box, just drag off this event and therefore
+
+66
+00:04:30,660 --> 00:04:34,770
+add custom event and call the tone attack.
+
+67
+00:04:35,250 --> 00:04:39,390
+So the way this custom event will work is every one second is going to file this event.
+
+68
+00:04:39,810 --> 00:04:46,350
+And what we're going to do is just drag in our animation component, drag up here and look for an instance.
+
+69
+00:04:47,070 --> 00:04:50,760
+And from here, we'll drag off and look for the jump to Node.
+
+70
+00:04:51,150 --> 00:04:54,620
+And we're going to jump to, oh, forget what it's called.
+
+71
+00:04:54,630 --> 00:04:56,280
+So I call it attack event.
+
+72
+00:04:56,490 --> 00:05:01,800
+So just copy this and paste this here and then connect this into here.
+
+73
+00:05:02,220 --> 00:05:08,610
+So every one second will pull the jump to node attack event and this will make my scan delay the attack
+
+74
+00:05:08,610 --> 00:05:09,360
+animation.
+
+75
+00:05:09,690 --> 00:05:13,950
+So I actually never set up what will happen when my skeleton attacks.
+
+76
+00:05:14,160 --> 00:05:17,820
+It's going to be very similar to our player VP where we made it attack.
+
+77
+00:05:17,850 --> 00:05:24,210
+So here where we basically get our out as location, we get a couple of units in front of them and then
+
+78
+00:05:24,210 --> 00:05:25,950
+we do a line trace for objects.
+
+79
+00:05:26,100 --> 00:05:28,740
+If we hit something, we then apply damage to it.
+
+80
+00:05:28,920 --> 00:05:31,020
+I'm just going to do this again in the skeleton.
+
+81
+00:05:31,290 --> 00:05:34,470
+I'm just going to redo it just to get familiar with the nodes.
+
+82
+00:05:34,500 --> 00:05:39,840
+So if we just right click and add custom event and we'll call this attack.
+
+83
+00:05:41,410 --> 00:05:43,990
+When this is called, we're going to do a line trace.
+
+84
+00:05:44,880 --> 00:05:46,170
+Four objects.
+
+85
+00:05:47,060 --> 00:05:48,080
+Whether this is going to start.
+
+86
+00:05:48,080 --> 00:05:50,930
+We're going to right click and we'll get actor location.
+
+87
+00:05:52,430 --> 00:05:54,710
+Whether it will end or just right click and forget.
+
+88
+00:05:54,830 --> 00:05:56,420
+Actor Forward Victor.
+
+89
+00:05:58,250 --> 00:05:59,810
+And we'll just drag up here.
+
+90
+00:05:59,840 --> 00:06:00,980
+And look for multiply.
+
+91
+00:06:02,130 --> 00:06:05,170
+And we just right click here and break the split structure pin.
+
+92
+00:06:05,190 --> 00:06:07,050
+We will put a value in the x.
+
+93
+00:06:07,500 --> 00:06:09,150
+I'm going to put 100.
+
+94
+00:06:09,330 --> 00:06:12,600
+So we'll check 100 units in front of us in the forward vector.
+
+95
+00:06:12,720 --> 00:06:14,220
+And we're just going to add this.
+
+96
+00:06:16,640 --> 00:06:18,620
+And this will be our ending location.
+
+97
+00:06:19,560 --> 00:06:22,250
+The type of object we're going to be looking for is going to be a --.
+
+98
+00:06:22,260 --> 00:06:27,690
+So if we just drag up here for make array and let's just select pawn.
+
+99
+00:06:28,910 --> 00:06:32,750
+Then if we just drag off our hit or break hit result.
+
+100
+00:06:34,100 --> 00:06:39,530
+We can check that the actor is equal to a black actor from rock and roll equal.
+
+101
+00:06:40,840 --> 00:06:44,620
+And here I'm going to look at player character.
+
+102
+00:06:45,600 --> 00:06:48,540
+If this is true, by the way, there's a shortcut.
+
+103
+00:06:48,540 --> 00:06:51,570
+You can just click B and left click and branch.
+
+104
+00:06:51,750 --> 00:06:52,860
+If that is true.
+
+105
+00:06:53,750 --> 00:06:55,780
+We will apply damage to them.
+
+106
+00:06:55,790 --> 00:06:59,420
+So just drag up here and look for apply damage.
+
+107
+00:07:00,190 --> 00:07:04,420
+The massive damage I'm going to do is going to be won and we'll just hook up through to here.
+
+108
+00:07:05,330 --> 00:07:06,830
+I'm going to compile this.
+
+109
+00:07:07,370 --> 00:07:14,030
+Then head back to my Scranton animation blueprint and go over to the receive notify enemy attack.
+
+110
+00:07:14,210 --> 00:07:20,870
+When we call this 95 and I'm going to drag in my skin beep, and I'm going to call the attack customer
+
+111
+00:07:21,140 --> 00:07:22,070
+that just made.
+
+112
+00:07:24,270 --> 00:07:28,140
+We can just go compile and go back to our scans and beep.
+
+113
+00:07:28,470 --> 00:07:34,320
+So if our player character enters this box, the Scantron will continually attack him.
+
+114
+00:07:34,800 --> 00:07:39,750
+However, if our player character stops and leaves this box, we need to make our skeleton stop attacking
+
+115
+00:07:39,750 --> 00:07:41,460
+and go back to his normal behavior.
+
+116
+00:07:41,580 --> 00:07:47,190
+So I'm going to select this box, scroll down and go to one component and over that.
+
+117
+00:07:48,760 --> 00:07:51,010
+And I'm just going to move this here.
+
+118
+00:07:52,680 --> 00:07:54,180
+On component and overlap.
+
+119
+00:07:54,210 --> 00:07:56,570
+We're going to check to see if our player character has left our box.
+
+120
+00:07:56,580 --> 00:07:58,020
+So look for equal.
+
+121
+00:07:58,800 --> 00:08:00,660
+And here, I'll just copy this.
+
+122
+00:08:02,850 --> 00:08:08,130
+So if the other actor is able to play a character and it leaves our box, we're going to have a branch.
+
+123
+00:08:10,010 --> 00:08:13,660
+And we'll tell the game that we should turn off the attack mode.
+
+124
+00:08:13,670 --> 00:08:16,760
+So look for attack mode and make sure it's untrue.
+
+125
+00:08:17,030 --> 00:08:20,850
+And then to stop this custom event, we're going to clear this event.
+
+126
+00:08:20,870 --> 00:08:23,480
+We can do that by just dragging in this variable.
+
+127
+00:08:24,510 --> 00:08:29,850
+And looking for clear and invalidate timeout by handler and this will stop the custom event.
+
+128
+00:08:30,150 --> 00:08:33,330
+And now I have compile and go play.
+
+129
+00:08:33,360 --> 00:08:34,659
+We can test this all out.
+
+130
+00:08:34,679 --> 00:08:36,480
+So let me jump in front of my enemy.
+
+131
+00:08:37,140 --> 00:08:39,549
+If I stand, that should attack me to.
+
+132
+00:08:39,570 --> 00:08:40,720
+It does this animation.
+
+133
+00:08:40,740 --> 00:08:41,460
+It does a line trace.
+
+134
+00:08:41,460 --> 00:08:43,450
+It hits me and I get damaged.
+
+135
+00:08:43,470 --> 00:08:45,420
+If I leave, then we will stop attacking.
+
+136
+00:08:45,420 --> 00:08:46,500
+And then we'll do it.
+
+137
+00:08:46,500 --> 00:08:47,580
+No normal walking stuff.
+
+138
+00:08:48,150 --> 00:08:51,430
+So with that, our enemy can attack and damage our player character.
+
+139
+00:08:51,450 --> 00:08:52,270
+Pretty cool.
+
+140
+00:08:52,290 --> 00:08:53,100
+One more thing.
+
+141
+00:08:53,100 --> 00:08:56,100
+I just want to comment on my notes before everything gets a bit messy.
+
+142
+00:08:56,130 --> 00:09:02,130
+So off of here, I'm going to come on and call this handle damage.
+
+143
+00:09:04,990 --> 00:09:09,100
+I am going to direct this over here.
+
+144
+00:09:09,910 --> 00:09:13,180
+And I'm going to come on this handle attack system.
+
+145
+00:09:16,850 --> 00:09:17,230
+Okay.
+
+146
+00:09:17,240 --> 00:09:18,500
+That's all for this lecture.
+

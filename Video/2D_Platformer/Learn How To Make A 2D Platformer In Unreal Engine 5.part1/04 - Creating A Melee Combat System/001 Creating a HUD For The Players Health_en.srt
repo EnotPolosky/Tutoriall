@@ -1,0 +1,564 @@
+1
+00:00:03,040 --> 00:00:03,620
+Hello.
+
+2
+00:00:03,640 --> 00:00:09,190
+In this next lecture, we're going to go over how to create a dynamic helper for player character to
+
+3
+00:00:09,190 --> 00:00:09,940
+get started.
+
+4
+00:00:09,940 --> 00:00:15,190
+If we head over to the images folder and then briefly close on our engine and attached in the lecture
+
+5
+00:00:15,190 --> 00:00:19,690
+of this course, I'm going to make sure to include these two images, just select them and then drag
+
+6
+00:00:19,690 --> 00:00:20,920
+them into Unreal Engine.
+
+7
+00:00:22,070 --> 00:00:26,920
+Once you've done that to make the images clear so that both of them and then right click scratchings
+
+8
+00:00:26,930 --> 00:00:29,240
+and apply paper to the texture settings.
+
+9
+00:00:30,940 --> 00:00:32,960
+So we're going to create a dynamic health bar.
+
+10
+00:00:32,980 --> 00:00:37,390
+So if I play a character has five pieces of health, then we're going to share five parts on our screen.
+
+11
+00:00:37,600 --> 00:00:40,960
+So in order to create the system, we'll create two widget blueprints.
+
+12
+00:00:40,990 --> 00:00:42,760
+The first one is just going to be of the heart.
+
+13
+00:00:42,790 --> 00:00:46,180
+So if we right click and go user interface as that widget blueprint.
+
+14
+00:00:46,980 --> 00:00:48,240
+I just call this hot.
+
+15
+00:00:49,700 --> 00:00:51,110
+Underscore budget blueprint.
+
+16
+00:00:52,190 --> 00:00:53,540
+Then if we head inside here.
+
+17
+00:00:54,670 --> 00:00:59,320
+The go to palette and look for canvas panel and just drag this into our designer.
+
+18
+00:01:00,010 --> 00:01:01,780
+Then we will look for an image.
+
+19
+00:01:04,060 --> 00:01:05,620
+And under the brush.
+
+20
+00:01:05,620 --> 00:01:10,600
+We just want to look for the heart full image that we just imported and adjust its size.
+
+21
+00:01:10,600 --> 00:01:11,800
+So it looks kind of normal.
+
+22
+00:01:12,640 --> 00:01:13,390
+Not to happy with it.
+
+23
+00:01:13,390 --> 00:01:16,740
+Just move it to the top left corner and under details.
+
+24
+00:01:16,750 --> 00:01:18,520
+Just give this name of hot.
+
+25
+00:01:19,300 --> 00:01:19,660
+Oh.
+
+26
+00:01:21,840 --> 00:01:24,900
+Then I need you to just right click and duplicate this image.
+
+27
+00:01:25,600 --> 00:01:27,800
+So make sure it's in the exact same position.
+
+28
+00:01:27,820 --> 00:01:32,680
+So my first heart is in position 12 position Y.
+
+29
+00:01:32,710 --> 00:01:36,070
+So I'm just going to make sure the second heart is in the exact same position.
+
+30
+00:01:37,320 --> 00:01:38,130
+12.
+
+31
+00:01:39,920 --> 00:01:40,850
+24.
+
+32
+00:01:42,200 --> 00:01:43,440
+Ben with the second image.
+
+33
+00:01:43,460 --> 00:01:45,440
+Select the heart empty.
+
+34
+00:01:46,340 --> 00:01:48,000
+Then just cool this image.
+
+35
+00:01:48,030 --> 00:01:48,710
+Heart.
+
+36
+00:01:49,230 --> 00:01:49,880
+Empty.
+
+37
+00:01:51,310 --> 00:01:53,830
+And under the Z order, make it minus one.
+
+38
+00:01:54,160 --> 00:01:56,800
+So whatever has the highest order will be turned on top.
+
+39
+00:01:56,830 --> 00:02:01,270
+So the idea here is when I play a character, has a piece of health that will be represented by this
+
+40
+00:02:01,270 --> 00:02:01,840
+heart.
+
+41
+00:02:01,960 --> 00:02:06,940
+However, if I play a character loses one of their health, then the heart will hide and we'll show
+
+42
+00:02:06,940 --> 00:02:10,930
+this heart empty image so that it's clear to the player that they've lost a piece of health.
+
+43
+00:02:11,350 --> 00:02:15,770
+So just turn this on and make sure that the heart fall is on top of the heart empty image.
+
+44
+00:02:15,790 --> 00:02:19,390
+Once you've done that, you can just click, compile and save and then close this.
+
+45
+00:02:20,610 --> 00:02:24,280
+Next, we will create another widget, which is going to be our player's HUD.
+
+46
+00:02:24,300 --> 00:02:26,880
+So if we just right click and go user interface.
+
+47
+00:02:27,090 --> 00:02:32,010
+So Widget Blueprint cast and this time call it Player HUD underscore Widget Blueprint.
+
+48
+00:02:32,890 --> 00:02:36,160
+If we open up our player hard, we're going to make this hard.
+
+49
+00:02:36,190 --> 00:02:40,270
+Show them out that my player character has in the palette.
+
+50
+00:02:40,300 --> 00:02:46,600
+If we look for a canvas panel and just drag it in, then I want you to look for a wrap box and just
+
+51
+00:02:46,600 --> 00:02:49,030
+drag it in and make it look something like mine.
+
+52
+00:02:50,150 --> 00:02:56,900
+So the idea here is early on we made this hot and one hot represents one piece of health.
+
+53
+00:02:57,050 --> 00:03:02,420
+So in our player hot, if our player character has five pieces of health, then we're going to spawn
+
+54
+00:03:02,420 --> 00:03:04,530
+five hearts inside of this wrap box.
+
+55
+00:03:04,550 --> 00:03:07,760
+But first, we need to give our player character some health.
+
+56
+00:03:07,940 --> 00:03:11,390
+So if I just close this and give it to my player character.
+
+57
+00:03:12,970 --> 00:03:14,070
+In the bare bones tab.
+
+58
+00:03:14,080 --> 00:03:16,630
+Let's create a new variable and call it health.
+
+59
+00:03:18,900 --> 00:03:26,030
+We'll make this variable type float and in the value we want it to be three.
+
+60
+00:03:26,040 --> 00:03:29,910
+So this will mean my character starts the game off with three pieces of health.
+
+61
+00:03:30,330 --> 00:03:36,880
+Just go compile and we go back to our player because we gave our player character three pieces of health.
+
+62
+00:03:36,900 --> 00:03:41,520
+That means when we start the game, I want this wrap box to spawn in three Hots, which will represent
+
+63
+00:03:41,520 --> 00:03:43,360
+my play characters, three pieces of health.
+
+64
+00:03:43,380 --> 00:03:50,550
+So in order to do that, we can head over to the graph and right click and look for event construct
+
+65
+00:03:51,180 --> 00:03:52,920
+and the bean construct which will fire.
+
+66
+00:03:52,920 --> 00:03:57,820
+As soon as this heart is spawned on our screen, we're going to get reference to my player character.
+
+67
+00:03:57,840 --> 00:04:02,340
+So to do that, if we right click and look, we'll get player character.
+
+68
+00:04:03,150 --> 00:04:09,570
+And from here, if we drag off for cost to play a beep or whatever your character is called.
+
+69
+00:04:10,600 --> 00:04:11,890
+And just hook us up here.
+
+70
+00:04:12,580 --> 00:04:17,260
+I'm going to right click on this and promote it to travel in case we need to reference this later.
+
+71
+00:04:17,800 --> 00:04:20,690
+Then we'll get the help that my player has.
+
+72
+00:04:20,709 --> 00:04:27,400
+So if you look at health, then we just want to drag up this value and look for true indicates.
+
+73
+00:04:28,180 --> 00:04:33,190
+So this trinket will convert this blue marble into an integer variable.
+
+74
+00:04:33,280 --> 00:04:38,200
+And the reason we're doing this is the next node that we're going to be using only works with integers.
+
+75
+00:04:38,200 --> 00:04:40,300
+So we need to convert our health variable.
+
+76
+00:04:40,900 --> 00:04:44,230
+After this, we'll just right click and look for for loop.
+
+77
+00:04:45,530 --> 00:04:49,650
+And so like this one, and pick up this return value until the last index.
+
+78
+00:04:49,670 --> 00:04:54,740
+So the way this four loop note will work is it will fire how many times my last index is.
+
+79
+00:04:54,740 --> 00:04:59,240
+So if my last index is five, then this four loop node is going to fire five times.
+
+80
+00:04:59,540 --> 00:05:06,620
+However, on the first index we just need to put a value of one because if I leave this at zero and
+
+81
+00:05:06,620 --> 00:05:11,690
+let's say my player character has five pieces of health because this for loop will start zero, this
+
+82
+00:05:11,690 --> 00:05:13,190
+will actually fire six times.
+
+83
+00:05:13,190 --> 00:05:17,840
+So for that reason, we need to make sure that our four loop starts at a value of one so that our four
+
+84
+00:05:17,840 --> 00:05:19,430
+loop will actually be accurate.
+
+85
+00:05:19,640 --> 00:05:21,260
+Next, we can hook this up.
+
+86
+00:05:22,650 --> 00:05:23,400
+Then?
+
+87
+00:05:23,430 --> 00:05:26,040
+Well, how many help my poor character has?
+
+88
+00:05:26,100 --> 00:05:28,380
+We're going to spawn in this hot widget blueprint.
+
+89
+00:05:30,120 --> 00:05:31,710
+Into our right box.
+
+90
+00:05:31,710 --> 00:05:35,880
+So on the right box, just cool this hot box.
+
+91
+00:05:36,760 --> 00:05:38,710
+And make sure it is available.
+
+92
+00:05:39,920 --> 00:05:44,420
+Then off of our phone, you just drag off and we'll create widget.
+
+93
+00:05:45,420 --> 00:05:47,230
+And under the widget course.
+
+94
+00:05:47,250 --> 00:05:47,640
+Let the.
+
+95
+00:05:48,900 --> 00:05:54,870
+Then want to drag in a hot box and a hot box and just drag up here and look for add child to wrap box
+
+96
+00:05:55,050 --> 00:05:57,120
+and hook up the return value into here.
+
+97
+00:05:57,420 --> 00:05:58,560
+And this and here.
+
+98
+00:05:58,590 --> 00:06:04,420
+And this will create a hardware blueprint and then add it to our hot box later on in our game.
+
+99
+00:06:04,440 --> 00:06:06,810
+We're going to be making a demo system.
+
+100
+00:06:06,810 --> 00:06:09,860
+And when we make a demo system, we're going to hide our hearts.
+
+101
+00:06:09,870 --> 00:06:12,530
+So we need to create a reference to each of our hearts.
+
+102
+00:06:12,540 --> 00:06:14,910
+In order to do that, we're going to create an array.
+
+103
+00:06:15,090 --> 00:06:19,920
+So if we create a new variable and just call this hot reference.
+
+104
+00:06:20,870 --> 00:06:24,560
+And inside of this heart reference, we're going to keep a reference of each heart that we spawn.
+
+105
+00:06:24,710 --> 00:06:31,220
+So under variable type, look for heart widget, blueprint and set object reference.
+
+106
+00:06:31,550 --> 00:06:34,760
+Then under here, just like this to be array.
+
+107
+00:06:34,910 --> 00:06:36,980
+So an array can hold multiple variables.
+
+108
+00:06:37,550 --> 00:06:42,230
+If I just go compile and go down and just add a bunch of elements.
+
+109
+00:06:42,380 --> 00:06:44,340
+My array can hold multiple values.
+
+110
+00:06:44,360 --> 00:06:46,310
+So that's why we're making an array.
+
+111
+00:06:47,500 --> 00:06:51,400
+After we sworn in, our heart was driven in order to create a reference of it.
+
+112
+00:06:51,400 --> 00:06:56,110
+We're going to drag in our heart reference variable and just drag or add.
+
+113
+00:06:57,010 --> 00:07:00,160
+And just connect the return value into here and listen to here.
+
+114
+00:07:00,610 --> 00:07:03,910
+And this will keep a reference of the heart that we want inside of this array.
+
+115
+00:07:04,210 --> 00:07:05,890
+And then we can just hook this up here.
+
+116
+00:07:06,220 --> 00:07:08,410
+Next, if we head back to our player, BP.
+
+117
+00:07:09,860 --> 00:07:10,760
+And some free space.
+
+118
+00:07:10,760 --> 00:07:15,580
+If we just right click and look for event, we can play, event we can play.
+
+119
+00:07:15,590 --> 00:07:16,700
+We're going to create a widget.
+
+120
+00:07:18,700 --> 00:07:20,740
+And that which is going to be our player hot.
+
+121
+00:07:21,280 --> 00:07:23,670
+We're going to reference this HUD later on.
+
+122
+00:07:23,680 --> 00:07:29,320
+So on the return body promote this to available and call this third reference.
+
+123
+00:07:30,430 --> 00:07:32,970
+Then after we've done this, we want to add this to our viewport.
+
+124
+00:07:32,980 --> 00:07:34,780
+So look for add to viewport.
+
+125
+00:07:36,670 --> 00:07:37,990
+Then we can go compile.
+
+126
+00:07:38,530 --> 00:07:42,910
+And now if I go play, I should spawn in the game with three hearts.
+
+127
+00:07:42,910 --> 00:07:44,950
+So I spend in the game and I have three hearts.
+
+128
+00:07:45,610 --> 00:07:51,190
+If you want to change the distance between each heart, what we can do is go back to our player heart.
+
+129
+00:07:52,110 --> 00:07:56,520
+And by I set the rap box in the search for padding.
+
+130
+00:07:57,440 --> 00:08:02,240
+And I can change the padding in the x and y value of something like 200.
+
+131
+00:08:02,510 --> 00:08:05,690
+Then each heart is going to be 200 units away from each other.
+
+132
+00:08:05,690 --> 00:08:08,690
+So I go compile and go play All my heart.
+
+133
+00:08:08,690 --> 00:08:09,540
+I've spaced away.
+
+134
+00:08:09,560 --> 00:08:12,800
+So I just thought I'd tell you that in case you wanted to do that.
+
+135
+00:08:12,800 --> 00:08:14,210
+But I'm going to leave mine at zero.
+
+136
+00:08:15,230 --> 00:08:19,070
+Another compile play by play character has three hots.
+
+137
+00:08:19,310 --> 00:08:21,740
+If I was to change my player's health to be something like.
+
+138
+00:08:23,130 --> 00:08:23,610
+For.
+
+139
+00:08:23,640 --> 00:08:26,130
+Then I'm going spoon in the game with four hearts.
+
+140
+00:08:27,130 --> 00:08:28,060
+Nice with that.
+
+141
+00:08:28,060 --> 00:08:30,760
+We have our health bar set up.
+

@@ -1,0 +1,440 @@
+1
+00:00:03,160 --> 00:00:03,830
+Hello.
+
+2
+00:00:03,850 --> 00:00:09,010
+In this next lecture, we're going to go over how to create Arranged Enemy, which will shoot projectiles
+
+3
+00:00:09,010 --> 00:00:11,470
+at the player character from a safe location.
+
+4
+00:00:11,500 --> 00:00:16,000
+So to get started, I'm going to create a new folder and call it mushroom.
+
+5
+00:00:18,560 --> 00:00:24,740
+Then head inside this folder and briefly close on your engine attached in the lecture for this course,
+
+6
+00:00:24,740 --> 00:00:29,420
+I'm going to make sure to include this file called Mushroom so that all the images inside of it and
+
+7
+00:00:29,420 --> 00:00:30,920
+just drag this into this folder.
+
+8
+00:00:32,490 --> 00:00:37,980
+Once you've done that, select all the images right click and go expressions and apply paper to texture
+
+9
+00:00:37,980 --> 00:00:38,670
+settings.
+
+10
+00:00:39,330 --> 00:00:42,000
+I then want you to create a folder for each of the animations.
+
+11
+00:00:43,260 --> 00:00:46,920
+Once you've done that, move each image to its respected folder.
+
+12
+00:00:47,160 --> 00:00:49,630
+First, let's go over how to set up the range attack.
+
+13
+00:00:49,650 --> 00:00:55,680
+If we head inside this folder, I'm going to set the range attack image and go expressions extract right
+
+14
+00:00:55,890 --> 00:00:57,570
+and go to grid.
+
+15
+00:00:58,230 --> 00:01:02,850
+Then under cell width per value of 150 and extract.
+
+16
+00:01:04,030 --> 00:01:09,190
+Then I'm going to set all the sprites right click and go create a flipbook and we can just pull this
+
+17
+00:01:09,190 --> 00:01:11,440
+mushroom ranged attack.
+
+18
+00:01:13,470 --> 00:01:18,780
+Then if you just select the product outright, right click and go Spy actions and extract sprites.
+
+19
+00:01:19,590 --> 00:01:21,600
+Go to auto and select grid.
+
+20
+00:01:22,490 --> 00:01:26,990
+Then on to sell with if you put 50 and just go extract.
+
+21
+00:01:27,890 --> 00:01:31,340
+And for this project, I'll write the first four images.
+
+22
+00:01:31,430 --> 00:01:36,200
+Right click and go create a flipbook and call this mushroom projectile.
+
+23
+00:01:38,610 --> 00:01:40,020
+So this is the flipbook.
+
+24
+00:01:40,020 --> 00:01:42,540
+We're going to show it of our mushroom when it's shooting its projectile.
+
+25
+00:01:43,140 --> 00:01:48,960
+Then for the last four frames of the mushroom projectile, select them and just go right click, create
+
+26
+00:01:48,960 --> 00:01:52,560
+flipbook and call this mushroom projectile explode.
+
+27
+00:01:52,860 --> 00:01:58,080
+So when our mushroom projectile hit something, we're going to make it play this explosion flipbook.
+
+28
+00:01:59,310 --> 00:02:03,000
+Okay, So now I'm going to create the other animations for my mushroom.
+
+29
+00:02:03,030 --> 00:02:06,640
+It's going to be exactly the same as how we created the animations for the Scantron.
+
+30
+00:02:06,660 --> 00:02:11,550
+So if you want to skip ahead, I understand, although I'm still going to do it, I'll put a timestamp
+
+31
+00:02:11,550 --> 00:02:13,320
+somewhere on the screen if you want to skip ahead.
+
+32
+00:02:13,710 --> 00:02:16,530
+So first of all, I'm going to start with the take here animation.
+
+33
+00:02:16,560 --> 00:02:21,240
+I'll go into this folder and just right click and go explore actions and extract sprites.
+
+34
+00:02:21,870 --> 00:02:28,770
+Under Sprite trick mode, I'm going go grid and change the cell width to be 150 and we can extract the
+
+35
+00:02:28,770 --> 00:02:29,370
+sprites.
+
+36
+00:02:29,850 --> 00:02:34,350
+I'll set all of them right click and go create a flipbook and I'll call this mushroom.
+
+37
+00:02:36,570 --> 00:02:36,970
+Hit.
+
+38
+00:02:37,860 --> 00:02:41,850
+Then if I just double click, I remember last time it was very quick.
+
+39
+00:02:41,850 --> 00:02:47,550
+So under frames per second I would make the six just so it's a bit slower when we hit our mushroom.
+
+40
+00:02:48,870 --> 00:02:56,250
+Next, if we go to the idle folder, right click spy actions and extract rights under threat extract
+
+41
+00:02:56,250 --> 00:02:56,610
+mode.
+
+42
+00:02:56,640 --> 00:03:00,330
+I'm going to go ahead and change this to 150.
+
+43
+00:03:01,170 --> 00:03:04,560
+Go extract and offset for the sprites.
+
+44
+00:03:04,590 --> 00:03:08,940
+Right click and create a flipbook and I'll call this mushroom idol.
+
+45
+00:03:10,720 --> 00:03:15,100
+Then if we head over to death, I'm going to right click Spray Actions.
+
+46
+00:03:15,130 --> 00:03:18,120
+Extract Sprite's under sprite extract mode.
+
+47
+00:03:18,130 --> 00:03:21,360
+I'll go grid and and set width.
+
+48
+00:03:21,370 --> 00:03:22,900
+I'll change this to be 150.
+
+49
+00:03:23,860 --> 00:03:24,820
+Go extract.
+
+50
+00:03:25,360 --> 00:03:29,000
+And I'm going to let all the sprites create flipbook.
+
+51
+00:03:29,070 --> 00:03:30,280
+I'll call this mushroom.
+
+52
+00:03:31,450 --> 00:03:31,960
+Yes.
+
+53
+00:03:32,590 --> 00:03:38,590
+Then I'm going to select the last bright right click and call this mushroom dead body.
+
+54
+00:03:41,880 --> 00:03:45,480
+Next, I'm going to create a new photo and just call it flip books.
+
+55
+00:03:45,480 --> 00:03:47,400
+So I right click and go new folder.
+
+56
+00:03:47,730 --> 00:03:49,920
+And I call this flip books.
+
+57
+00:03:50,310 --> 00:03:55,710
+Then if we just let all the animation folders and just move them into this folder just to keep everything
+
+58
+00:03:55,710 --> 00:03:56,460
+organized.
+
+59
+00:03:59,890 --> 00:04:03,010
+Then I'm going to create a new folder and call this animations.
+
+60
+00:04:05,090 --> 00:04:10,760
+And if we hadn't sat here next, if we just right click and look for Peoples CD and select animation
+
+61
+00:04:10,760 --> 00:04:14,240
+source, just cool this mushroom animation source.
+
+62
+00:04:15,500 --> 00:04:17,839
+Then if we double click and head inside here.
+
+63
+00:04:19,410 --> 00:04:22,260
+Hanukkah Avenue and select new animation sequence.
+
+64
+00:04:22,260 --> 00:04:25,170
+And I will call the first one Mushroom Idol.
+
+65
+00:04:25,800 --> 00:04:27,420
+And here on the animation data.
+
+66
+00:04:27,450 --> 00:04:29,280
+I'm going to select my mushroom idol.
+
+67
+00:04:29,850 --> 00:04:35,940
+Then if we go add new new animation sequence and I'm cool, the second one, Mushroom.
+
+68
+00:04:36,120 --> 00:04:37,050
+Take damage.
+
+69
+00:04:38,380 --> 00:04:41,500
+And other animation data will suck the mushroom hit.
+
+70
+00:04:42,220 --> 00:04:43,570
+Then I'm going to add new.
+
+71
+00:04:44,020 --> 00:04:47,500
+And I'm going to add the mushroom range to attack.
+
+72
+00:04:49,180 --> 00:04:52,210
+And I'm going to set the mushroom ranged attack animation.
+
+73
+00:04:52,960 --> 00:04:57,760
+Then I go add new new animation sequence and I call this mushroom die.
+
+74
+00:04:58,780 --> 00:05:01,450
+And I'm going to tell you mushroom death.
+
+75
+00:05:02,410 --> 00:05:07,900
+Then I'm going to add new, new animation sequence and I'll call this mushroom dead body.
+
+76
+00:05:09,460 --> 00:05:11,920
+And I also like the mushroom dead body.
+
+77
+00:05:12,280 --> 00:05:14,680
+Then we can just save this and close this.
+
+78
+00:05:17,100 --> 00:05:17,790
+Next.
+
+79
+00:05:17,790 --> 00:05:22,470
+I want us to just right click and create a new folder and call this blueprint.
+
+80
+00:05:24,190 --> 00:05:31,840
+And if we hadn't sat here and Right Click and Go Blueprint class and all classes, look for Paper Z.
+
+81
+00:05:33,450 --> 00:05:34,270
+Select a.
+
+82
+00:05:35,220 --> 00:05:36,840
+And just cool this mushroom.
+
+83
+00:05:38,370 --> 00:05:39,950
+Underscore BP.
+
+84
+00:05:40,620 --> 00:05:42,210
+And if we hadn't sat here.
+
+85
+00:05:43,910 --> 00:05:44,640
+Under Sprite.
+
+86
+00:05:44,660 --> 00:05:47,630
+I'm just going to set my mushroom idle.
+
+87
+00:05:49,330 --> 00:05:52,340
+And I'm going to make my mushroom character fit inside this capsule.
+
+88
+00:05:52,370 --> 00:05:53,260
+So I'll make it like.
+
+89
+00:05:53,960 --> 00:05:54,560
+By.
+
+90
+00:05:56,500 --> 00:05:57,970
+And that is looking good.
+
+91
+00:05:58,570 --> 00:06:05,340
+Finally, if we just close this and go back to our animation folder, just right click and go Paper
+
+92
+00:06:05,350 --> 00:06:09,160
+Z and select Paper Z animation blueprint.
+
+93
+00:06:09,190 --> 00:06:16,570
+This time we want to set the mushroom animation source and I'm going to call this mushroom and beep.
+
+94
+00:06:17,140 --> 00:06:23,410
+If we hadn't sat here and I went on end, we just want to right click and forget owning actor.
+
+95
+00:06:25,420 --> 00:06:28,600
+And a struggle paying the full costs to mushroom.
+
+96
+00:06:28,630 --> 00:06:35,350
+BP hook up event into here and right click on it and promote it to a variable so you can reference it
+
+97
+00:06:35,350 --> 00:06:35,950
+later.
+
+98
+00:06:36,250 --> 00:06:37,630
+We can go compile.
+
+99
+00:06:38,380 --> 00:06:43,300
+And if we go over to our graph, I'm just going to right click create a new state machine.
+
+100
+00:06:44,500 --> 00:06:45,460
+Pick us up here.
+
+101
+00:06:45,670 --> 00:06:48,730
+Head inside here and out.
+
+102
+00:06:48,730 --> 00:06:52,090
+I'm going to look for animation set, and I'll call this idol.
+
+103
+00:06:54,150 --> 00:06:57,410
+Then if we head inside here, I'm going to play the mushroom.
+
+104
+00:06:57,420 --> 00:06:57,960
+I do.
+
+105
+00:07:00,140 --> 00:07:01,940
+I'll compile and save everything.
+
+106
+00:07:02,210 --> 00:07:03,590
+And then if I go back to my machine.
+
+107
+00:07:03,590 --> 00:07:09,260
+BP And under animation component, let's just make sure if using the mushroom animation blueprint so
+
+108
+00:07:09,260 --> 00:07:10,790
+it's like mushroom and beep.
+
+109
+00:07:11,000 --> 00:07:14,510
+So now we set up the base importing of our mushroom character.
+
+110
+00:07:14,510 --> 00:07:18,410
+In the next lecture, we'll code it so our mushroom can attack our player from a safe distance.
+

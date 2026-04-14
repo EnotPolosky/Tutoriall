@@ -1,0 +1,264 @@
+1
+00:00:03,130 --> 00:00:03,820
+Hello.
+
+2
+00:00:03,850 --> 00:00:07,450
+The next thing we're going to do is set up the animations for our player character.
+
+3
+00:00:07,540 --> 00:00:12,040
+If we just right click and create a new folder and just call this animations.
+
+4
+00:00:13,430 --> 00:00:20,360
+And head inside it, then right click and go to Paper Z and go to animation source.
+
+5
+00:00:20,780 --> 00:00:25,040
+Just call this R Warrior animation source.
+
+6
+00:00:26,740 --> 00:00:28,360
+Just quick and open it up.
+
+7
+00:00:28,540 --> 00:00:31,090
+So this is part of the plugin that we installed.
+
+8
+00:00:31,150 --> 00:00:36,490
+This animation source, we're going to basically use this to store all the animations that we want associated
+
+9
+00:00:36,490 --> 00:00:38,530
+with our 2D player character.
+
+10
+00:00:39,550 --> 00:00:44,200
+Put aside Prasa and go new, then select new animation sequence.
+
+11
+00:00:45,730 --> 00:00:49,720
+Right click on this animation sequence and just pull this runner.
+
+12
+00:00:52,140 --> 00:00:56,430
+Then under animation data set the run flipbook.
+
+13
+00:00:58,350 --> 00:01:01,260
+Then click add new new animation sequence.
+
+14
+00:01:01,620 --> 00:01:01,830
+Cool.
+
+15
+00:01:01,830 --> 00:01:02,390
+This one.
+
+16
+00:01:02,400 --> 00:01:02,970
+It'll.
+
+17
+00:01:04,019 --> 00:01:06,200
+And let the idle flipbook.
+
+18
+00:01:09,140 --> 00:01:11,020
+We're going to add some more animations later.
+
+19
+00:01:11,030 --> 00:01:13,520
+But for now, these are all the animations that we need.
+
+20
+00:01:13,820 --> 00:01:16,130
+Click, save and close this.
+
+21
+00:01:17,030 --> 00:01:22,550
+Then right click and go People's ID and select the People's ID Animation Blueprint.
+
+22
+00:01:23,150 --> 00:01:27,770
+It's going to ask us what animation tools we want to use, just like the warrior animation source that
+
+23
+00:01:27,770 --> 00:01:31,940
+we just made and just call this a Warrior Z animation blueprint.
+
+24
+00:01:32,570 --> 00:01:34,120
+And then we'll click an open up.
+
+25
+00:01:35,170 --> 00:01:39,880
+If you are familiar with unreal engines, normal animation blueprints for 3D characters.
+
+26
+00:01:39,880 --> 00:01:42,680
+This is kind of similar for those for 2D characters.
+
+27
+00:01:42,700 --> 00:01:43,990
+If you're not, don't worry.
+
+28
+00:01:43,990 --> 00:01:46,600
+I'm going to explain everything I do as I go along.
+
+29
+00:01:46,960 --> 00:01:52,900
+So currently we're going to start in the event graph and they're going to be two nodes, event tech
+
+30
+00:01:52,900 --> 00:01:54,360
+and event on INT.
+
+31
+00:01:54,370 --> 00:01:58,960
+So this event on end will run as soon as the game starts.
+
+32
+00:01:59,170 --> 00:02:03,160
+So a bit on end, we're going to create a reference to our player VP.
+
+33
+00:02:03,640 --> 00:02:08,110
+In order to do this, just right click and forget owning.
+
+34
+00:02:09,270 --> 00:02:11,910
+Let's get opening act.
+
+35
+00:02:12,030 --> 00:02:18,420
+So this one, people did get opening act and this will be able to get a reference to the player character
+
+36
+00:02:18,420 --> 00:02:27,180
+that we're playing guess just track of here and a full course to play a BP and hook us into here Just
+
+37
+00:02:27,180 --> 00:02:30,630
+right click on this player, beep and convert it to a variable.
+
+38
+00:02:32,290 --> 00:02:35,680
+This will allow us to reference our character later on.
+
+39
+00:02:36,340 --> 00:02:39,250
+Next, I want you to head over to the animation graph.
+
+40
+00:02:40,290 --> 00:02:43,290
+Andrew Impey as paper BP.
+
+41
+00:02:44,620 --> 00:02:47,470
+Track of it and get velocity.
+
+42
+00:02:51,780 --> 00:02:55,440
+And I want you to strike a fair and full break.
+
+43
+00:02:55,770 --> 00:02:56,130
+To.
+
+44
+00:02:57,100 --> 00:03:00,340
+And of of the x and for not equal.
+
+45
+00:03:01,470 --> 00:03:08,340
+So if my character's velocity in the x axis is not equal to zero, we're going to make it so our player
+
+46
+00:03:08,340 --> 00:03:13,050
+character will play a certain animation to just drag up here and a full blend.
+
+47
+00:03:14,030 --> 00:03:14,450
+This one.
+
+48
+00:03:14,450 --> 00:03:15,890
+Select animations by Bull.
+
+49
+00:03:16,960 --> 00:03:18,730
+And hook up animation to here.
+
+50
+00:03:19,030 --> 00:03:24,340
+So if our characters velocity is not equal to zero, then we're going to play the running animation
+
+51
+00:03:24,340 --> 00:03:26,020
+if that means our player character is running.
+
+52
+00:03:26,140 --> 00:03:29,080
+So we just right click and play run.
+
+53
+00:03:30,270 --> 00:03:33,540
+And we're referencing the run that we made in this animation source.
+
+54
+00:03:33,960 --> 00:03:35,220
+And we can hook this up here.
+
+55
+00:03:35,550 --> 00:03:38,550
+And under post, we can just drag up here and play.
+
+56
+00:03:41,040 --> 00:03:42,410
+And we're going to go compile.
+
+57
+00:03:43,110 --> 00:03:49,110
+Then if we head over to our play app in order to make it, use this Warner Z animation blueprint to
+
+58
+00:03:49,110 --> 00:03:51,060
+select this animation component.
+
+59
+00:03:51,600 --> 00:03:59,070
+And here, under an instant class, set the Warrior Z animation blueprint and just go compile and we
+
+60
+00:03:59,070 --> 00:04:00,720
+can just close this and go play.
+
+61
+00:04:01,760 --> 00:04:06,980
+And if I move, my velocity is greater than zero and the x axis, my character will do that running
+
+62
+00:04:06,980 --> 00:04:07,580
+animation.
+
+63
+00:04:07,640 --> 00:04:10,280
+So with this, we have set up a running animation for our character.
+
+64
+00:04:10,400 --> 00:04:14,890
+If I just stand still, am I velocity is equal to zero, then I'll do my animation.
+
+65
+00:04:14,900 --> 00:04:16,310
+So nice with this.
+
+66
+00:04:16,310 --> 00:04:18,740
+We set up some basic animations for our player character.
+

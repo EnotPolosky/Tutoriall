@@ -1,0 +1,132 @@
+1
+00:00:03,190 --> 00:00:03,969
+Hello.
+
+2
+00:00:03,969 --> 00:00:08,840
+In this lecture, I want to go over how to add future controls to the game.
+
+3
+00:00:08,860 --> 00:00:11,100
+I recorded this course in action.
+
+4
+00:00:11,110 --> 00:00:12,220
+5.0.
+
+5
+00:00:12,250 --> 00:00:18,940
+Since then, Unreal Engine 5.1 has released, which made a major update to how unreal Engine handles
+
+6
+00:00:18,940 --> 00:00:20,890
+controls in future videos.
+
+7
+00:00:20,890 --> 00:00:21,910
+On this course.
+
+8
+00:00:21,910 --> 00:00:27,300
+When I set up systems like dashing and attacking, I'll use the old way of adding controls.
+
+9
+00:00:27,310 --> 00:00:30,510
+It still works, although the system is deprecated.
+
+10
+00:00:30,520 --> 00:00:36,460
+So in this video I want to show you how to set up new controls in the new version of Unreal Engine,
+
+11
+00:00:36,460 --> 00:00:41,530
+and you can use this video as a reference on how to add new controls to the game.
+
+12
+00:00:41,950 --> 00:00:46,990
+So let's say we want to add a new control for whenever the player character is dashing.
+
+13
+00:00:46,990 --> 00:00:53,440
+What we do is go over to the input folder, go over to actions, and then right click and go input,
+
+14
+00:00:53,440 --> 00:00:54,940
+select input action.
+
+15
+00:00:54,940 --> 00:00:59,020
+Then call this I a whatever you want the new control to be.
+
+16
+00:00:59,020 --> 00:01:01,450
+So I want to set up a new control for dashing.
+
+17
+00:01:01,450 --> 00:01:03,550
+So I'll call this a dash.
+
+18
+00:01:04,330 --> 00:01:11,200
+Then if I go over to the input folder and go over to IMC default and I'm going to go create new mapping.
+
+19
+00:01:11,230 --> 00:01:18,520
+I'll select the dash and then let's say I want to make it so that whenever the player presses the Z
+
+20
+00:01:18,520 --> 00:01:23,560
+one dash, so I look for Z, I can then go save close this.
+
+21
+00:01:23,560 --> 00:01:29,620
+And if I go back to my player character blueprint in order to code the dashing y, I do it just right
+
+22
+00:01:29,620 --> 00:01:35,860
+click and go dash and we want to select enhance action event I dash.
+
+23
+00:01:36,310 --> 00:01:42,100
+And then what you do is we'd have the code for how to set up the dashing you'd want to connect from
+
+24
+00:01:42,100 --> 00:01:47,680
+started into whatever the code for the dashing is you don't want to use triggered because triggered
+
+25
+00:01:47,680 --> 00:01:51,670
+basically runs as long as the player character is holding down the key.
+
+26
+00:01:51,790 --> 00:01:54,640
+We only use started for using one of events.
+
+27
+00:01:54,640 --> 00:02:01,000
+So if say for example, the player character presses the Z onto dash, you want to hook this up to start
+
+28
+00:02:01,000 --> 00:02:02,140
+it that way.
+
+29
+00:02:02,140 --> 00:02:03,490
+It only occurs once.
+
+30
+00:02:03,490 --> 00:02:07,780
+If it's on trigger, then it will continuously occur as long as that key is held down.
+
+31
+00:02:07,780 --> 00:02:12,130
+So use the started when adding one off event and for the rest of the course.
+
+32
+00:02:12,130 --> 00:02:14,680
+When we set up new controls, we only use one of events.
+
+33
+00:02:14,680 --> 00:02:16,750
+So you can just hook this up to start it.
+
