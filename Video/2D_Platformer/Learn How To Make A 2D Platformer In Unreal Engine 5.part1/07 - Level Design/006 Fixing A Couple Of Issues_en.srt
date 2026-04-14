@@ -1,0 +1,268 @@
+1
+00:00:03,250 --> 00:00:03,900
+Hello.
+
+2
+00:00:03,910 --> 00:00:08,650
+In this next lecture, I'm going to go over how to fix the problems that I mentioned in the previous
+
+3
+00:00:08,650 --> 00:00:09,290
+lecture.
+
+4
+00:00:09,310 --> 00:00:12,970
+So the first problem was the apple and the enemy projector.
+
+5
+00:00:13,000 --> 00:00:15,130
+It just overlaps with our level.
+
+6
+00:00:15,280 --> 00:00:21,850
+In order to fix this, let's first select our level and under search workflow attack and then go create
+
+7
+00:00:21,850 --> 00:00:24,010
+new tag and cool this level.
+
+8
+00:00:24,820 --> 00:00:30,130
+We're going to make it so that if our project are something with the level tag, it will become destroyed.
+
+9
+00:00:30,340 --> 00:00:32,439
+Let's first start off with our apple.
+
+10
+00:00:32,619 --> 00:00:37,840
+If we open up the Apple product, our blueprint, we made it so that if anything with the tag enemy
+
+11
+00:00:37,840 --> 00:00:41,080
+overlaps, if we apply damage to it and then destroy the actor.
+
+12
+00:00:41,470 --> 00:00:43,990
+We're going to add some nodes to this blueprint.
+
+13
+00:00:43,990 --> 00:00:48,130
+So if we just drag off the actor, look for actor as tag.
+
+14
+00:00:48,700 --> 00:00:50,920
+And if an actor has a tag, which is level.
+
+15
+00:00:51,980 --> 00:00:56,090
+Or enemy, then we're going to apply diamonds to it and then destroy our own actor.
+
+16
+00:00:56,240 --> 00:01:03,620
+So if we look for all bullion and just connect this into hair and that's into hair, then we can go
+
+17
+00:01:03,620 --> 00:01:04,310
+compile.
+
+18
+00:01:05,459 --> 00:01:08,610
+Next if we find our mushroom projectile.
+
+19
+00:01:10,810 --> 00:01:11,470
+We made it.
+
+20
+00:01:11,470 --> 00:01:14,830
+So if the motion projector overlaps our player character.
+
+21
+00:01:14,860 --> 00:01:15,980
+We do do once.
+
+22
+00:01:16,000 --> 00:01:20,500
+Then we apply damage to our player character and then make the mushroom to its mushroom, destroy the
+
+23
+00:01:20,500 --> 00:01:21,200
+animation.
+
+24
+00:01:21,220 --> 00:01:22,240
+Then we destroy it.
+
+25
+00:01:22,660 --> 00:01:29,230
+So if they overlap something which is not equal to our black actor, we want to drag off other actor
+
+26
+00:01:29,230 --> 00:01:31,400
+and check to see if it overlaps our level.
+
+27
+00:01:31,420 --> 00:01:34,060
+So look for actor as tag.
+
+28
+00:01:35,000 --> 00:01:35,630
+For the attack.
+
+29
+00:01:35,630 --> 00:01:40,430
+We have to type in level and then we want to drag off here and look for Branch.
+
+30
+00:01:41,430 --> 00:01:47,730
+Just connect folks into here and then true into the set flip book, because we don't want to damage
+
+31
+00:01:47,730 --> 00:01:48,770
+our player character.
+
+32
+00:01:48,780 --> 00:01:53,820
+If this fear overlaps the level, we can go compile and just test that.
+
+33
+00:01:53,820 --> 00:01:54,770
+This all works.
+
+34
+00:01:54,780 --> 00:01:55,890
+So if I go play.
+
+35
+00:01:57,180 --> 00:01:59,060
+And I threw my apple up the world.
+
+36
+00:01:59,070 --> 00:02:02,820
+It gets destroyed when the enemy projectile hits the world, it becomes destroyed.
+
+37
+00:02:03,420 --> 00:02:05,370
+And with this, we have fixed the first issue.
+
+38
+00:02:05,760 --> 00:02:10,320
+The second issue is that my player character is no longer getting a screen check effect when they get
+
+39
+00:02:10,320 --> 00:02:10,919
+damaged.
+
+40
+00:02:11,430 --> 00:02:13,800
+To fix this, if we go back to our player blueprint.
+
+41
+00:02:15,390 --> 00:02:20,400
+Whenever I play a character that becomes damaged, we play this world camera shake and we made the outer
+
+42
+00:02:20,400 --> 00:02:22,590
+radius of this 1100.
+
+43
+00:02:22,590 --> 00:02:27,600
+But because I increased the spring arm of my camera, I made the camera much further away.
+
+44
+00:02:27,690 --> 00:02:32,040
+So we need to increase the outer radius so it can still reach our camera.
+
+45
+00:02:32,220 --> 00:02:36,390
+Let's type in 1500, then go to play.
+
+46
+00:02:37,390 --> 00:02:38,980
+And now I've become damaged.
+
+47
+00:02:39,210 --> 00:02:40,870
+Okay, so I don't think that I was far enough.
+
+48
+00:02:40,870 --> 00:02:44,290
+So if I increase this to something like 1900.
+
+49
+00:02:45,120 --> 00:02:45,900
+I could play.
+
+50
+00:02:46,770 --> 00:02:50,660
+When I become damaged, we can see we have the screen camera effect.
+
+51
+00:02:50,670 --> 00:02:55,500
+So depending on your distance from the camera, you may need to play around with this value again.
+
+52
+00:02:56,350 --> 00:03:01,000
+But then finally, when our tone died, it could still attack me.
+
+53
+00:03:01,000 --> 00:03:07,930
+So we open up a skeleton blueprint and I'm just going to decrease its health because I gave mine a lot
+
+54
+00:03:07,930 --> 00:03:08,530
+of health.
+
+55
+00:03:08,650 --> 00:03:10,330
+Some of it get poor.
+
+56
+00:03:13,110 --> 00:03:16,410
+Then we go over to the custom event scanner to attack.
+
+57
+00:03:16,980 --> 00:03:18,960
+If our scanner is dead.
+
+58
+00:03:18,960 --> 00:03:19,900
+So I'll look for that.
+
+59
+00:03:19,920 --> 00:03:20,790
+Is that viable?
+
+60
+00:03:20,880 --> 00:03:23,440
+Then we're not going to allow our skeleton to attack.
+
+61
+00:03:23,460 --> 00:03:25,530
+So I drag up it and look for Branch.
+
+62
+00:03:28,160 --> 00:03:30,170
+And if this is true, then we'll do nothing.
+
+63
+00:03:30,200 --> 00:03:36,550
+However, if this is false, then we'll allow our scantling to attack so I can go compile play.
+
+64
+00:03:37,070 --> 00:03:39,290
+And now if I attack my skeleton.
+
+65
+00:03:40,330 --> 00:03:42,190
+They should not be able to attack me when it dies.
+
+66
+00:03:43,830 --> 00:03:45,530
+Okay, nice with this.
+
+67
+00:03:45,540 --> 00:03:47,970
+We have fixed all the issues that I wanted to fix.
+

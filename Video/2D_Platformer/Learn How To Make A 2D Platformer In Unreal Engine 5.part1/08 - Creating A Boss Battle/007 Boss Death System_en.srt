@@ -1,0 +1,176 @@
+1
+00:00:03,200 --> 00:00:03,800
+Hello.
+
+2
+00:00:03,830 --> 00:00:07,670
+In this lecture, we're going to make it so that we can kill our boss.
+
+3
+00:00:07,850 --> 00:00:10,280
+If we open up the boss animation blueprint.
+
+4
+00:00:10,850 --> 00:00:15,560
+And in some free space, right click and go, jump and just call this jump node.
+
+5
+00:00:15,560 --> 00:00:16,190
+Die.
+
+6
+00:00:18,400 --> 00:00:19,720
+And just drive off here.
+
+7
+00:00:19,750 --> 00:00:23,740
+I look for animation state and just call this our boss die.
+
+8
+00:00:25,580 --> 00:00:30,320
+If we head inside here, right click and find the post die animation.
+
+9
+00:00:32,350 --> 00:00:35,440
+And just connect it into here and select it.
+
+10
+00:00:35,620 --> 00:00:40,810
+And just make sure to uncheck loop animation as we don't want this animation to loop.
+
+11
+00:00:41,110 --> 00:00:44,830
+We can then compile this and go over to our boss blueprint.
+
+12
+00:00:45,520 --> 00:00:51,130
+Now, if we attack our boss and it has helped less than or equal to zero, we'll tell the game that
+
+13
+00:00:51,130 --> 00:00:52,180
+our boss is dead.
+
+14
+00:00:52,210 --> 00:00:58,330
+So our drag in this is dead and set it and just make sure to check it and connect true into here.
+
+15
+00:00:58,720 --> 00:01:03,430
+When our boss is dead, we're going to stop its movement and or make it so it can't attack the player
+
+16
+00:01:03,430 --> 00:01:04,060
+character.
+
+17
+00:01:04,269 --> 00:01:12,160
+So if I go over to event tech, I'm going to delete this and instead I'm going to have a branch and
+
+18
+00:01:12,160 --> 00:01:14,020
+the condition is going to be is dead.
+
+19
+00:01:15,150 --> 00:01:17,970
+As long as this is false, then my boss will move.
+
+20
+00:01:20,390 --> 00:01:28,460
+If I go over to my boss attacking with the condition, we can't just drag up here and look for or boolean
+
+21
+00:01:29,120 --> 00:01:31,040
+and just drag in is dead.
+
+22
+00:01:31,250 --> 00:01:36,260
+So if my boss is damaged or dead, it's not going to attack our player character.
+
+23
+00:01:37,910 --> 00:01:38,630
+Okay.
+
+24
+00:01:38,660 --> 00:01:41,840
+After we do this, we're going to call a jump to Node.
+
+25
+00:01:41,960 --> 00:01:43,220
+So just copy us.
+
+26
+00:01:45,210 --> 00:01:48,270
+And with the jump name I called mine Di.
+
+27
+00:01:50,610 --> 00:01:53,430
+Then after a delay of, let's say.
+
+28
+00:01:54,310 --> 00:01:57,550
+2 seconds, we can destroy our boss.
+
+29
+00:01:57,550 --> 00:02:03,970
+So drag off it and look for destroyed actor and just go compile to make this easy for me.
+
+30
+00:02:04,120 --> 00:02:06,310
+I'm just going to give my boss three health.
+
+31
+00:02:06,730 --> 00:02:09,789
+So under variable, under default value.
+
+32
+00:02:09,820 --> 00:02:14,380
+I'm going to change this to be three and go compile and close this.
+
+33
+00:02:14,830 --> 00:02:17,200
+I'm just going to design my boss map a bit more.
+
+34
+00:02:17,230 --> 00:02:22,090
+So if we go to the item folder and just drag in a platform.
+
+35
+00:02:23,100 --> 00:02:27,300
+Or leave it to layer 20, because that's where all my boss and player character is.
+
+36
+00:02:27,600 --> 00:02:31,590
+And I place a platform here and a platform at the edge here.
+
+37
+00:02:32,950 --> 00:02:36,190
+In case the player wants to jump on them so they could play.
+
+38
+00:02:36,550 --> 00:02:37,960
+I should now be able to kill my boss.
+
+39
+00:02:39,650 --> 00:02:41,300
+So human health.
+
+40
+00:02:43,580 --> 00:02:48,320
+Okay, so my boss died, and then I played the Boss death animation, and then my boss was destroyed.
+
+41
+00:02:48,680 --> 00:02:50,150
+So maybe that was a bit easy.
+
+42
+00:02:50,150 --> 00:02:52,640
+So maybe I should adjust some of the settings of the boss.
+
+43
+00:02:52,640 --> 00:02:56,720
+But basically, our boss can now die in the game.
+
+44
+00:02:56,720 --> 00:02:58,580
+It would have more help, though, to be fair.
+

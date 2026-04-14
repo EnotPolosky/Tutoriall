@@ -1,0 +1,372 @@
+1
+00:00:03,140 --> 00:00:03,820
+Hello.
+
+2
+00:00:03,830 --> 00:00:08,119
+In this next lecture, we're going to set up some of the blueprints for our boss character.
+
+3
+00:00:08,360 --> 00:00:15,560
+If we open them up and select the sprite and just make the source flipbook, our boss, Edo Animation.
+
+4
+00:00:19,440 --> 00:00:21,340
+Now our post is kind of small.
+
+5
+00:00:21,360 --> 00:00:23,490
+So I'm going to scale them up a bit.
+
+6
+00:00:24,030 --> 00:00:25,770
+I'll make this seven.
+
+7
+00:00:27,270 --> 00:00:31,290
+Then we want to make sure our bus fits within our capsule collision.
+
+8
+00:00:31,350 --> 00:00:35,340
+So I'm going to adjust it a bit or make it a bit wider.
+
+9
+00:00:36,720 --> 00:00:37,770
+I think that's good.
+
+10
+00:00:38,340 --> 00:00:45,120
+Next, if we select our animation component, make sure our boss uses the boss animation blueprint.
+
+11
+00:00:46,400 --> 00:00:50,960
+And if we head over to the land graph, we're ready to start coding our boss.
+
+12
+00:00:51,580 --> 00:00:56,960
+Okay, so the first thing we're going to do is make sure our boss character is always facing our player
+
+13
+00:00:56,960 --> 00:00:57,710
+character.
+
+14
+00:00:58,310 --> 00:01:01,760
+To save a bit of time, we can go to our mushroom blueprint.
+
+15
+00:01:04,879 --> 00:01:08,410
+And we can copy this handle rotation bit here.
+
+16
+00:01:08,420 --> 00:01:10,130
+So I'm going to copy these nodes.
+
+17
+00:01:10,900 --> 00:01:12,880
+And just pace them inside of my boss.
+
+18
+00:01:13,540 --> 00:01:14,380
+Then event.
+
+19
+00:01:14,830 --> 00:01:17,200
+I'm going to cool the handle rotation.
+
+20
+00:01:17,230 --> 00:01:20,110
+That way my boss will always be facing my player character.
+
+21
+00:01:20,260 --> 00:01:29,460
+So I drive up here and look for handle rotation and just right click on this is that and create a verbal
+
+22
+00:01:29,470 --> 00:01:32,080
+as later will be setting up a death system for our boss.
+
+23
+00:01:32,110 --> 00:01:36,610
+Now that we've handled the rotation for our boss, the next thing we're going to do is handle the movement
+
+24
+00:01:36,610 --> 00:01:37,450
+for our boss.
+
+25
+00:01:37,810 --> 00:01:44,260
+If we just drag off here and look for add movement input, under what direction?
+
+26
+00:01:44,260 --> 00:01:45,610
+Per value of one.
+
+27
+00:01:46,500 --> 00:01:50,190
+We want our boss to always move in the direction of our player character.
+
+28
+00:01:50,250 --> 00:01:57,900
+In order to do that, we can just do a quick calculation if we right click and forget player character.
+
+29
+00:02:00,640 --> 00:02:01,570
+And a struggle here.
+
+30
+00:02:01,600 --> 00:02:04,330
+And we'll get back to location.
+
+31
+00:02:05,320 --> 00:02:13,000
+When we right click and look or get actor location of our boss and just travel here and subtract.
+
+32
+00:02:13,990 --> 00:02:15,340
+And connect these nodes.
+
+33
+00:02:16,470 --> 00:02:19,410
+If we then do struggle here, I look for normalized.
+
+34
+00:02:19,740 --> 00:02:22,170
+So I'm going to explain what this does in a second.
+
+35
+00:02:22,200 --> 00:02:27,520
+But right now, it's just going to be easier to show you then if we just right click and look for split
+
+36
+00:02:27,870 --> 00:02:30,270
+pin and connect X into here.
+
+37
+00:02:30,690 --> 00:02:36,600
+So what we're doing is getting our location and subtracting it from our positive location.
+
+38
+00:02:37,110 --> 00:02:41,810
+Then we normalize this value and this was our post the correct direction to move in.
+
+39
+00:02:41,820 --> 00:02:43,140
+So let's go compile.
+
+40
+00:02:43,170 --> 00:02:46,120
+We'll just test this out and I'll explain this afterwards.
+
+41
+00:02:46,140 --> 00:02:49,230
+So I close this and drag in my boss.
+
+42
+00:02:51,640 --> 00:02:53,380
+I'm going to move them to their 20.
+
+43
+00:02:55,620 --> 00:02:57,540
+And we can just test this all out.
+
+44
+00:02:58,050 --> 00:03:00,970
+My boss is going to move towards me if I jump over them.
+
+45
+00:03:00,990 --> 00:03:03,180
+Then the boss will turn around and move towards me.
+
+46
+00:03:03,420 --> 00:03:04,060
+Nice.
+
+47
+00:03:04,080 --> 00:03:06,570
+Our boss will always move towards our player character.
+
+48
+00:03:06,840 --> 00:03:09,420
+So I'm not going to explain the notes inside of her.
+
+49
+00:03:09,540 --> 00:03:15,480
+If we open up our boss blueprint, what this normalise will do is convert this value to a magnitude
+
+50
+00:03:15,480 --> 00:03:16,050
+of one.
+
+51
+00:03:16,080 --> 00:03:19,200
+So if I just right click on this value and break the link here.
+
+52
+00:03:20,530 --> 00:03:28,360
+And right click and go spit trippin and just drag off X and look for print string and connect this node
+
+53
+00:03:28,360 --> 00:03:30,820
+into here and this into here.
+
+54
+00:03:32,510 --> 00:03:34,640
+If I could compile and play.
+
+55
+00:03:35,690 --> 00:03:43,160
+We can see this value is -1158 when I'm on this side and if I jump over the box, this body becomes
+
+56
+00:03:43,160 --> 00:03:45,110
+a positive value, although it's very high.
+
+57
+00:03:46,000 --> 00:03:51,130
+When we connect this value into the normalize, this normalize will basically make sure that this value
+
+58
+00:03:51,130 --> 00:03:57,380
+converts to a magnitude of one, and that will just get the direction of whatever my character is in.
+
+59
+00:03:57,400 --> 00:04:02,140
+So if I just break the link here and recombine the structure.
+
+60
+00:04:05,940 --> 00:04:10,500
+And hook up X into here and go compile and play.
+
+61
+00:04:11,430 --> 00:04:17,510
+We can see the value is minus around -0.99, which is kind of minus one.
+
+62
+00:04:17,519 --> 00:04:19,800
+And that will tell our boss to move towards the left.
+
+63
+00:04:20,339 --> 00:04:25,500
+And if I just jump over the boss, this value will become positive and we can see it's around 0.9.
+
+64
+00:04:25,550 --> 00:04:27,600
+This will tell our boss to move towards the right.
+
+65
+00:04:27,960 --> 00:04:34,530
+So because this value is between minus one and one, it allows our boss to move in the left or the right.
+
+66
+00:04:34,740 --> 00:04:40,490
+If we were to just use the values here, it may be a bit strange because normally when we use ADD movement
+
+67
+00:04:40,530 --> 00:04:43,170
+input, we use values of one or minus one.
+
+68
+00:04:43,200 --> 00:04:47,850
+If you remember in our play a character, when we hold the right button, we make the same value one.
+
+69
+00:04:47,940 --> 00:04:50,730
+And when we hold the left one, we make the scale minus one.
+
+70
+00:04:50,880 --> 00:04:56,430
+So by using a normalize, it kind of just helps convert this value to a magnitude of one, which helps
+
+71
+00:04:56,430 --> 00:04:57,330
+our boss move.
+
+72
+00:04:57,480 --> 00:04:59,190
+Hopefully that now makes sense to you.
+
+73
+00:04:59,220 --> 00:05:04,020
+While we're using this, we can just delete these nodes and connect this into here.
+
+74
+00:05:04,740 --> 00:05:09,130
+And the final thing we're going to do, I'm going to make it to my boss is flying.
+
+75
+00:05:09,150 --> 00:05:14,340
+So if we go to character movement and go to details, look for walking.
+
+76
+00:05:14,880 --> 00:05:18,720
+And by default, our character's normal mode is walking.
+
+77
+00:05:18,840 --> 00:05:20,670
+Just change this to be flying.
+
+78
+00:05:21,420 --> 00:05:23,160
+And then look for fly.
+
+79
+00:05:24,290 --> 00:05:28,790
+And just make sure this is checked and that will just ensure our boss can fly.
+
+80
+00:05:29,180 --> 00:05:32,300
+And now, if I go compile and close this.
+
+81
+00:05:33,460 --> 00:05:35,230
+Move up here and go play.
+
+82
+00:05:35,860 --> 00:05:37,240
+My boss is in the air.
+
+83
+00:05:37,720 --> 00:05:38,410
+Nice.
+
+84
+00:05:38,830 --> 00:05:43,510
+There's one more thing I want to do, and that is constrain my boss's movement to the Z axis.
+
+85
+00:05:43,540 --> 00:05:45,460
+That way they can't move up.
+
+86
+00:05:45,760 --> 00:05:48,190
+So if we just select our boss.
+
+87
+00:05:49,570 --> 00:05:50,890
+Good character movement.
+
+88
+00:05:51,310 --> 00:05:52,960
+And look for constrain.
+
+89
+00:05:54,270 --> 00:05:56,250
+And just check and train the plane.
+
+90
+00:05:56,610 --> 00:05:59,190
+And for the plane constraint, select Z.
+
+91
+00:05:59,430 --> 00:06:02,460
+And that will just make it so our boss can't move up or down.
+
+92
+00:06:02,460 --> 00:06:08,160
+So you kind of find like an area just a bit above the pack actor because that's where we want our boss
+
+93
+00:06:08,160 --> 00:06:08,760
+to be.
+

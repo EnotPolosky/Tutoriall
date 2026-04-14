@@ -1,0 +1,376 @@
+1
+00:00:03,250 --> 00:00:04,010
+Hello.
+
+2
+00:00:04,030 --> 00:00:09,070
+In this next lecture, we're going to go over how to create a main menu for our two D game.
+
+3
+00:00:09,100 --> 00:00:15,550
+To get started, go to the Widget Blueprint folder and right click and go User Interface Widget Blueprint.
+
+4
+00:00:16,530 --> 00:00:19,640
+Bullets widget our main menu underscore widget blueprint.
+
+5
+00:00:21,310 --> 00:00:22,870
+Then if we open this up.
+
+6
+00:00:23,980 --> 00:00:26,440
+And on the palette, look for a canvas panel.
+
+7
+00:00:27,300 --> 00:00:29,430
+Drag this canvas panel into the designer.
+
+8
+00:00:29,910 --> 00:00:32,189
+Then look for some text.
+
+9
+00:00:32,610 --> 00:00:35,070
+And drag it to the center of our screen.
+
+10
+00:00:35,160 --> 00:00:37,440
+Make sure we anchor it to the center of our screen.
+
+11
+00:00:37,800 --> 00:00:41,350
+And just make this text whatever you want to call the game.
+
+12
+00:00:41,370 --> 00:00:45,270
+So I'm going to call this my 2D action platformer game.
+
+13
+00:00:46,050 --> 00:00:47,720
+Let's increase the size of our text.
+
+14
+00:00:47,730 --> 00:00:52,170
+So if I go to font and go over to size, I'll make this 100.
+
+15
+00:00:53,450 --> 00:00:56,120
+And let's just expand this box to bits around our text.
+
+16
+00:00:59,360 --> 00:01:01,860
+Next, we're going to create some menu items.
+
+17
+00:01:01,880 --> 00:01:03,860
+So we're going to create a start button.
+
+18
+00:01:03,860 --> 00:01:07,760
+And when we click this button, it's going to open up all the levels that we have in our game.
+
+19
+00:01:07,850 --> 00:01:12,260
+And we'll also create a quit button so we can quit our main menu and exit this game.
+
+20
+00:01:12,890 --> 00:01:15,770
+If we go to palette and look for a vertical box.
+
+21
+00:01:17,130 --> 00:01:19,410
+This and place this beneath our text.
+
+22
+00:01:20,370 --> 00:01:23,610
+And make sure to also anchor this to the bottom left of the screen.
+
+23
+00:01:24,480 --> 00:01:26,610
+Then in the product, look for a button.
+
+24
+00:01:27,510 --> 00:01:29,640
+Track two of these into the vertical box.
+
+25
+00:01:32,950 --> 00:01:39,070
+Next, look for some text and track two pieces of text on top of the buttons.
+
+26
+00:01:44,380 --> 00:01:46,300
+Make this first taxi start.
+
+27
+00:01:49,290 --> 00:01:51,360
+And make the second text say quit.
+
+28
+00:01:54,270 --> 00:01:59,580
+Then if we set the first one, I'm just going to go through padding and add a padding of 50.
+
+29
+00:02:00,210 --> 00:02:02,850
+Just so that there's a bit of a gap between our buttons.
+
+30
+00:02:03,150 --> 00:02:06,750
+Then I'm going to select both buttons and increase the size of the text a bit.
+
+31
+00:02:06,930 --> 00:02:09,060
+So I'll make it 40.
+
+32
+00:02:11,250 --> 00:02:12,750
+And we just move this down a bit.
+
+33
+00:02:14,400 --> 00:02:18,750
+The next thing we're going to do is make it so that when we click the start button, it's going to show
+
+34
+00:02:18,750 --> 00:02:21,420
+us all the levels that we have inside of our game.
+
+35
+00:02:21,570 --> 00:02:24,780
+If we go to the palette and look for our horizontal box.
+
+36
+00:02:26,380 --> 00:02:33,930
+Track this into the center of our canvas panel and then look for a button and drag this button inside
+
+37
+00:02:33,940 --> 00:02:35,140
+the horizontal box.
+
+38
+00:02:35,500 --> 00:02:39,460
+Then look for some text and drag this text inside of the button.
+
+39
+00:02:40,000 --> 00:02:44,560
+Just select this text and let's make it say level one.
+
+40
+00:02:46,470 --> 00:02:50,920
+So they go to content and then I'm going to type in level one.
+
+41
+00:02:50,940 --> 00:02:54,150
+We're going to make it so that when we click on this button, it will take us to level one.
+
+42
+00:02:54,450 --> 00:02:57,450
+Let's also make sure to just anchor this to the middle of our screen.
+
+43
+00:03:00,400 --> 00:03:07,930
+Then if we go to search, look for visible and by default we're going to make this hidden in game and
+
+44
+00:03:07,930 --> 00:03:11,830
+we'll make it so that when we click the stop on, we'll make this box visible.
+
+45
+00:03:13,660 --> 00:03:14,500
+One last thing.
+
+46
+00:03:14,500 --> 00:03:19,870
+Just select this box and check this is variable one and just call this level box.
+
+47
+00:03:20,560 --> 00:03:23,530
+Then go back to the palette and look for a button.
+
+48
+00:03:24,440 --> 00:03:28,610
+Track it in and place it on the bottom right corner of our screen.
+
+49
+00:03:31,100 --> 00:03:32,900
+Then look for some text.
+
+50
+00:03:33,860 --> 00:03:35,660
+I track this text inside of the button.
+
+51
+00:03:36,200 --> 00:03:38,540
+Then just make this text say go back.
+
+52
+00:03:38,960 --> 00:03:42,050
+So if I go to my content, I'll make you say go.
+
+53
+00:03:42,900 --> 00:03:48,210
+Back and make sure this is available and pull this off the back button.
+
+54
+00:03:48,960 --> 00:03:52,890
+And also make sure that the visibility is hidden by default.
+
+55
+00:03:53,250 --> 00:03:56,430
+So look for visibility and just make sure this is hidden.
+
+56
+00:03:56,910 --> 00:04:00,990
+And then finally, let's make sure to anchor this to the bottom right corner of our screen.
+
+57
+00:04:01,050 --> 00:04:04,860
+That way, when we show this HUD on our screen, the button will be there.
+
+58
+00:04:05,220 --> 00:04:06,030
+Hello.
+
+59
+00:04:06,210 --> 00:04:10,350
+The next thing we're going to do is add some functionality to our buttons.
+
+60
+00:04:10,710 --> 00:04:18,029
+If we just select this box, check this is variable one and rename this main menu box.
+
+61
+00:04:20,630 --> 00:04:21,290
+Okay.
+
+62
+00:04:21,290 --> 00:04:25,150
+So the first bond we're going to give functionality is the start button.
+
+63
+00:04:25,160 --> 00:04:28,820
+If you select it, scroll down and go on clicked.
+
+64
+00:04:29,660 --> 00:04:35,630
+When we click on this button, we're going to drag in our go back button and our level box, and we're
+
+65
+00:04:35,630 --> 00:04:38,130
+going to make it so that we can see these buttons.
+
+66
+00:04:38,150 --> 00:04:45,230
+So if we just drag off here and look for set visibility and make sure that this is set to visible and
+
+67
+00:04:45,230 --> 00:04:50,210
+just connect the go back button to Target, when we click on this button, we're going to make it so
+
+68
+00:04:50,210 --> 00:04:52,010
+that we can see both of these elements.
+
+69
+00:04:52,810 --> 00:04:58,250
+After we do this, we're going to drag in our main menu box and we'll make it so that we can't see this.
+
+70
+00:04:58,270 --> 00:05:07,270
+So if we drag up here and look for set visibility and under visible change, this to be hidden and then
+
+71
+00:05:07,270 --> 00:05:08,140
+connect this node.
+
+72
+00:05:09,670 --> 00:05:12,340
+The next button will set up is going to be the quick button.
+
+73
+00:05:12,370 --> 00:05:15,700
+If we select it, scroll down and go on clicked.
+
+74
+00:05:15,820 --> 00:05:18,730
+When we click, this button will quit our game and close it.
+
+75
+00:05:19,030 --> 00:05:22,990
+To do that, just drag up here and look for the quick game note.
+
+76
+00:05:23,530 --> 00:05:26,380
+This will automatically make our game close and quit.
+
+77
+00:05:27,510 --> 00:05:29,980
+Next, let's set up our level one.
+
+78
+00:05:30,000 --> 00:05:33,240
+If we select it and scroll down and go on clicked.
+
+79
+00:05:33,510 --> 00:05:37,040
+When we click on this button, we're going to open up our main level.
+
+80
+00:05:37,050 --> 00:05:42,970
+So if we drag up here and look for open level by name and type in the name of your level.
+
+81
+00:05:42,990 --> 00:05:45,090
+So I name mine level one.
+
+82
+00:05:45,330 --> 00:05:47,550
+So here I'm going to type in level one.
+
+83
+00:05:49,090 --> 00:05:51,640
+Make sure it's spelt correctly, otherwise it won't work.
+
+84
+00:05:52,380 --> 00:05:56,510
+Then if we go to our go back button, scroll down and go on clicked.
+
+85
+00:05:56,520 --> 00:05:57,990
+When we click the go back button.
+
+86
+00:05:58,080 --> 00:06:00,510
+We're going to do the opposite of what we do here.
+
+87
+00:06:00,600 --> 00:06:02,820
+So I'm going to copy all these notes.
+
+88
+00:06:04,010 --> 00:06:05,000
+And pace them here.
+
+89
+00:06:06,290 --> 00:06:11,500
+So this time we're going to make it through the go back button and the level box are no longer visible.
+
+90
+00:06:11,510 --> 00:06:16,210
+So set them to be hidden and then we'll make it so that we can see the main menu box.
+
+91
+00:06:16,220 --> 00:06:23,780
+So change this to be visible and then go to the designer and we can click, compile and save.
+
+92
+00:06:24,320 --> 00:06:24,890
+Okay.
+
+93
+00:06:24,920 --> 00:06:27,140
+With this we have created our main menu.
+
+94
+00:06:27,170 --> 00:06:31,550
+The next thing we need to do is make it so our main menu can appear in a level.
+

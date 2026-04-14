@@ -1,0 +1,208 @@
+1
+00:00:03,100 --> 00:00:03,820
+Hello.
+
+2
+00:00:04,000 --> 00:00:10,270
+In this next lecture, I'm going to go over the other method that we can use to create a 2D background,
+
+3
+00:00:10,270 --> 00:00:12,430
+and that is to use a tar map.
+
+4
+00:00:12,580 --> 00:00:18,880
+A tar map will allow us to stack these images on top of one another and create a cool looking background
+
+5
+00:00:19,060 --> 00:00:24,460
+to create a tar map, Right click and go paper to DH, then select tar map.
+
+6
+00:00:24,790 --> 00:00:27,040
+Cool this AR background to map.
+
+7
+00:00:29,050 --> 00:00:34,200
+In order to make our images work the tarmac, we need to convert them into tile sets.
+
+8
+00:00:34,240 --> 00:00:36,130
+But that is very easy to do.
+
+9
+00:00:36,340 --> 00:00:41,260
+If we just set all these three images right click and go separate actions.
+
+10
+00:00:41,380 --> 00:00:43,540
+Then select create to offset.
+
+11
+00:00:43,660 --> 00:00:46,180
+This will make a tile set for each of the images.
+
+12
+00:00:46,660 --> 00:00:53,380
+Next, if we open up our background tile map and underactive tile set, just select background one.
+
+13
+00:00:54,070 --> 00:00:56,260
+I'm now going to go over how to use this tool.
+
+14
+00:00:56,290 --> 00:00:58,150
+So currently we have this grid.
+
+15
+00:00:58,570 --> 00:01:02,680
+If I go over to my background, one to set and select any square.
+
+16
+00:01:03,520 --> 00:01:10,510
+Then if I go back to my grid, I can paint with my left mouse button anywhere on the square and or paint
+
+17
+00:01:10,510 --> 00:01:11,770
+the color that I've selected.
+
+18
+00:01:11,770 --> 00:01:16,300
+So maybe I'll select here and then I can paint this part of the cube, this color.
+
+19
+00:01:18,010 --> 00:01:24,520
+If, say, I wanted to remove a square, I can go to erase and then select anywhere in my tar map.
+
+20
+00:01:26,030 --> 00:01:31,850
+If I wanted to fill my time up with one color, I can select anywhere here, then go to the fill tool
+
+21
+00:01:32,180 --> 00:01:34,490
+and select and I'll fill my whole grid.
+
+22
+00:01:35,120 --> 00:01:41,240
+If we want to adjust the size of this, we can go to map width and map out the Now make the map width
+
+23
+00:01:41,240 --> 00:01:41,810
+ten.
+
+24
+00:01:42,660 --> 00:01:47,670
+And the map might six because those are the exact dimensions of this image.
+
+25
+00:01:48,210 --> 00:01:54,720
+Then if we just select this whole image and go to paint and just paint this image in this box, once
+
+26
+00:01:54,720 --> 00:01:58,440
+you've done this just right, click on this layer and rename it back.
+
+27
+00:01:59,630 --> 00:02:04,420
+Now, the reason we're naming this back is because this is going to be our back layer.
+
+28
+00:02:04,430 --> 00:02:08,389
+And if we just go here, we can add another layer on top of this layer.
+
+29
+00:02:08,630 --> 00:02:11,690
+Right click on this layer and rename it our middle.
+
+30
+00:02:14,940 --> 00:02:22,350
+Then if we go to active offset, change this to be background two and select all of this image and then
+
+31
+00:02:22,350 --> 00:02:24,670
+paste it on here with middle selected.
+
+32
+00:02:24,690 --> 00:02:29,820
+So now we have placed this tar map on top of our back tar map.
+
+33
+00:02:30,930 --> 00:02:32,300
+We're going to add one more layer.
+
+34
+00:02:32,310 --> 00:02:36,000
+So we go add new layer and just rename this front.
+
+35
+00:02:39,910 --> 00:02:46,660
+Then if we go to active toolset and select the background three to offset, just select everything and
+
+36
+00:02:46,660 --> 00:02:47,890
+then paste it here.
+
+37
+00:02:48,250 --> 00:02:52,150
+And now we've added this background on top of our other two layers.
+
+38
+00:02:52,600 --> 00:02:56,270
+If you want to move around the order of the layers, just select one.
+
+39
+00:02:56,290 --> 00:03:01,150
+So if I take this front layer and then click this button, it will send this layer towards the back.
+
+40
+00:03:02,620 --> 00:03:07,630
+If I want to move it forward, I can click this bring forward arrow and this will move it forward.
+
+41
+00:03:08,110 --> 00:03:09,110
+Okay, nice.
+
+42
+00:03:09,130 --> 00:03:12,980
+With this, we have created a tower map which has multiple layers.
+
+43
+00:03:13,000 --> 00:03:14,560
+If we just close this.
+
+44
+00:03:15,320 --> 00:03:17,480
+And we can't delete this sprite.
+
+45
+00:03:18,080 --> 00:03:21,970
+And instead drag in our background and scale it up.
+
+46
+00:03:21,980 --> 00:03:24,020
+So make it 70.
+
+47
+00:03:25,600 --> 00:03:28,570
+And just position this behind our player character.
+
+48
+00:03:29,050 --> 00:03:33,340
+I'm actually going to scale this to 140 as it's not big enough.
+
+49
+00:03:33,790 --> 00:03:36,070
+I'm going to create two copies of this.
+
+50
+00:03:37,630 --> 00:03:39,520
+And just place the second one here.
+
+51
+00:03:40,280 --> 00:03:41,510
+And now I go play.
+
+52
+00:03:42,170 --> 00:03:46,010
+I have this cool 2D background with multiple layers.
+

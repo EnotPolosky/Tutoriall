@@ -1,0 +1,156 @@
+1
+00:00:03,170 --> 00:00:03,890
+Hello.
+
+2
+00:00:04,010 --> 00:00:09,080
+In this next section of the course, we're going to go over how to create a boss battle.
+
+3
+00:00:09,350 --> 00:00:13,910
+The first thing we're going to do is create a new level where we're going to fight our boss.
+
+4
+00:00:14,030 --> 00:00:23,150
+So if we go to file and go new level, select basic, then go create, then save this level and save
+
+5
+00:00:23,150 --> 00:00:24,500
+it inside of our level folder.
+
+6
+00:00:24,800 --> 00:00:26,750
+I just call this our boss map.
+
+7
+00:00:27,740 --> 00:00:31,250
+Next, let's design a new toolset for our boss level.
+
+8
+00:00:31,280 --> 00:00:37,970
+So I'm going to go to my task order and right click and go people to the top map.
+
+9
+00:00:38,210 --> 00:00:40,700
+And I'll just call this my boss, Tom.
+
+10
+00:00:42,730 --> 00:00:44,050
+If we open it up.
+
+11
+00:00:45,170 --> 00:00:46,250
+And go to active.
+
+12
+00:00:46,250 --> 00:00:48,060
+Toss that and set the toss.
+
+13
+00:00:48,060 --> 00:00:48,200
+Set.
+
+14
+00:00:48,230 --> 00:00:48,860
+Toss it.
+
+15
+00:00:49,970 --> 00:00:52,640
+I'm just going to adjust my map with something like.
+
+16
+00:00:53,390 --> 00:00:54,500
+22.
+
+17
+00:00:54,950 --> 00:00:56,750
+And I'll make my map height.
+
+18
+00:00:57,520 --> 00:00:57,970
+Ten.
+
+19
+00:00:58,600 --> 00:01:01,870
+I may need to change these later, but for now we'll have these values.
+
+20
+00:01:02,170 --> 00:01:04,560
+I'm then going to make my tall width and my tall height.
+
+21
+00:01:04,569 --> 00:01:05,440
+16.
+
+22
+00:01:07,610 --> 00:01:08,360
+Next.
+
+23
+00:01:08,360 --> 00:01:12,560
+I'm just going to drag in this platform and place it on the ground.
+
+24
+00:01:12,770 --> 00:01:16,730
+I'm now just going to quickly design an arena for my boss level.
+
+25
+00:01:30,060 --> 00:01:35,150
+Okay, So this is the map that I'm going to have for my boss level Make something similar to this.
+
+26
+00:01:35,160 --> 00:01:36,950
+We don't want to do designed.
+
+27
+00:01:36,960 --> 00:01:38,820
+We just kind of want an arena.
+
+28
+00:01:39,620 --> 00:01:44,960
+Then we can close this and go add go basic and select player start.
+
+29
+00:01:46,010 --> 00:01:53,060
+If we go to the wild settings, go to the game mode and make sure it's our two D game mode and place
+
+30
+00:01:53,060 --> 00:01:56,360
+our boss tor map behind our paper character.
+
+31
+00:01:56,960 --> 00:01:59,870
+Okay, so I'm just going to expand the size of this.
+
+32
+00:02:00,170 --> 00:02:03,620
+I'll make it 13 and delete my law.
+
+33
+00:02:04,250 --> 00:02:05,620
+And I'll just make it to my player.
+
+34
+00:02:05,630 --> 00:02:08,960
+Character fits within this tone map.
+
+35
+00:02:10,250 --> 00:02:12,110
+So I think this is a good size.
+
+36
+00:02:12,560 --> 00:02:16,460
+If we go back to level one and just copy and paste the background here.
+
+37
+00:02:19,020 --> 00:02:23,640
+So I'm just going to copy this and paste this background in my bus map.
+
+38
+00:02:25,280 --> 00:02:29,990
+I'm just going to adjust my Bus Tom app so that there is a bit more ground.
+
+39
+00:02:37,920 --> 00:02:42,000
+Okay, so now we have finished designing the arena for our boss level.
+

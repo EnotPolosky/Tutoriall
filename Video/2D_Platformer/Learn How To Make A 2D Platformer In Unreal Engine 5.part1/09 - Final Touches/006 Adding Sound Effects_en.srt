@@ -1,0 +1,280 @@
+1
+00:00:03,150 --> 00:00:03,840
+Hello.
+
+2
+00:00:03,840 --> 00:00:11,000
+In this next lecture, I'm going to go over how to add sound and sound effects to our game to get started.
+
+3
+00:00:11,010 --> 00:00:15,120
+If we right click and create a new folder and call this sounds.
+
+4
+00:00:16,540 --> 00:00:17,470
+Head inside here.
+
+5
+00:00:18,970 --> 00:00:22,060
+And then briefly close on our engine attached.
+
+6
+00:00:22,060 --> 00:00:27,400
+In this lecture, I'm going to make sure to include all these sound files, drag and move them into
+
+7
+00:00:27,400 --> 00:00:28,300
+Unreal Engine.
+
+8
+00:00:29,780 --> 00:00:32,200
+We're now ready to set up our sounds.
+
+9
+00:00:32,210 --> 00:00:34,430
+So we're in level one.
+
+10
+00:00:34,430 --> 00:00:38,120
+So in level one, I'm going to make it play this background music.
+
+11
+00:00:38,210 --> 00:00:45,350
+In order to do that, we can go here and go open up a blueprint, right click and go event picking,
+
+12
+00:00:45,350 --> 00:00:47,960
+play and event being in play.
+
+13
+00:00:47,960 --> 00:00:49,730
+We're going to play sound to DH.
+
+14
+00:00:50,920 --> 00:00:57,010
+And for the sound so that the end game music and go compile and save.
+
+15
+00:00:57,250 --> 00:01:00,640
+And now if I play level one, it should play that pattern.
+
+16
+00:01:03,700 --> 00:01:06,430
+So when I was in level one, it played that music.
+
+17
+00:01:06,520 --> 00:01:10,610
+If you have your own music, you could simply just replace this with your own song.
+
+18
+00:01:10,630 --> 00:01:12,970
+And now on that level, you play the sound.
+
+19
+00:01:14,180 --> 00:01:15,020
+Right now.
+
+20
+00:01:15,020 --> 00:01:18,200
+If I let that song play through, it would only play the song once.
+
+21
+00:01:18,230 --> 00:01:24,830
+If you want music to loop inside of your game, head inside that sound and just make sure you check
+
+22
+00:01:24,830 --> 00:01:25,910
+this looping box.
+
+23
+00:01:25,910 --> 00:01:28,550
+And when the song ends, it will just play it again.
+
+24
+00:01:29,270 --> 00:01:31,790
+We can just save this and close this.
+
+25
+00:01:32,300 --> 00:01:35,810
+The next thing I'm going to go over is how to add some sound effects.
+
+26
+00:01:35,900 --> 00:01:40,040
+We can make the game play a certain sound effect whenever we pick up a coin.
+
+27
+00:01:40,670 --> 00:01:43,700
+You may have noticed I have for coin sound effects.
+
+28
+00:01:43,820 --> 00:01:48,950
+What we can do is make it randomly play one of those sounds where my player character picks up a coin.
+
+29
+00:01:49,370 --> 00:01:50,630
+In order to do that.
+
+30
+00:01:50,660 --> 00:01:54,890
+We can right click and go sound and select sound cue.
+
+31
+00:01:55,400 --> 00:01:58,130
+Just call this my random coin.
+
+32
+00:02:00,430 --> 00:02:05,860
+If we open it up and then just briefly close this tab.
+
+33
+00:02:07,010 --> 00:02:09,830
+And if we just select these four sounds.
+
+34
+00:02:11,240 --> 00:02:12,590
+And drag them in here.
+
+35
+00:02:14,270 --> 00:02:16,220
+And it's going to say we play a coin.
+
+36
+00:02:16,220 --> 00:02:19,040
+One, two, three and four.
+
+37
+00:02:19,550 --> 00:02:27,380
+If I just drag off one of these outputs and look for random and just add three more inputs and connect
+
+38
+00:02:27,380 --> 00:02:28,400
+all these nodes.
+
+39
+00:02:31,530 --> 00:02:33,480
+I'll then connect the output to here.
+
+40
+00:02:34,080 --> 00:02:39,570
+And now if I go play Q it's going to pick one of these random sounds to play.
+
+41
+00:02:39,900 --> 00:02:41,310
+I'm just going to click this again.
+
+42
+00:02:41,820 --> 00:02:44,670
+And this time it played way Player Coin three.
+
+43
+00:02:44,700 --> 00:02:49,710
+So we can just use this if we have loads of sounds and you want to play one random sound effect.
+
+44
+00:02:50,100 --> 00:02:52,180
+Let's implement this into our coins.
+
+45
+00:02:52,200 --> 00:02:55,710
+So if I close this and slap my coin blueprint.
+
+46
+00:02:57,750 --> 00:03:04,170
+Whenever my player character overlaps it and picks it up, I am just going to move all these notes back.
+
+47
+00:03:05,610 --> 00:03:10,560
+And we are just going to drag up here and look for play sound at location.
+
+48
+00:03:11,430 --> 00:03:16,050
+The sound we're going to play is going to be the random coin that we just made and where we're going
+
+49
+00:03:16,050 --> 00:03:16,420
+to play it.
+
+50
+00:03:16,440 --> 00:03:22,080
+We can just right click and get actor location and connect this here.
+
+51
+00:03:22,740 --> 00:03:24,480
+I'll compile and save this.
+
+52
+00:03:25,670 --> 00:03:27,350
+And if I close this.
+
+53
+00:03:29,110 --> 00:03:33,250
+I'm just going to remove the music from playing and now I'm going to play.
+
+54
+00:03:33,550 --> 00:03:35,200
+And my player picks up a coin.
+
+55
+00:03:36,370 --> 00:03:37,870
+Play one of those sound effects.
+
+56
+00:03:40,300 --> 00:03:45,610
+I want to go over one last way that we can add sound effects to our game, and that is using the paper
+
+57
+00:03:45,610 --> 00:03:48,170
+Z and a notify system.
+
+58
+00:03:48,190 --> 00:03:50,980
+So we have this sword sound effect.
+
+59
+00:03:51,190 --> 00:03:55,870
+If I go over to my player card folder and to the animation folder.
+
+60
+00:03:56,140 --> 00:04:00,910
+And if I go over to the animation source, select the attack animation.
+
+61
+00:04:03,040 --> 00:04:13,120
+If we just go track and go at new notify track and go to around frame four, we can right click and
+
+62
+00:04:13,120 --> 00:04:16,149
+go add, notify and step play sound.
+
+63
+00:04:18,050 --> 00:04:23,990
+If I select the sound here, I can go to the details panel and set the sound that I want to play at
+
+64
+00:04:23,990 --> 00:04:25,400
+this specific frame.
+
+65
+00:04:25,520 --> 00:04:29,330
+And I'm going to select my sort sound.
+
+66
+00:04:29,870 --> 00:04:36,860
+So now, if I was to go play, when it reaches that frame in the animation, I'll play the small sound.
+
+67
+00:04:37,880 --> 00:04:42,110
+So let's pause this, save this, close this, and then go play.
+
+68
+00:04:42,710 --> 00:04:44,120
+And if I attack.
+
+69
+00:04:46,030 --> 00:04:50,740
+When I reached that specific plea to notify, he'll play the sound that I've assigned there.
+
+70
+00:04:51,220 --> 00:04:53,950
+So that's how you can add some sound effects to your game.
+

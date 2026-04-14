@@ -1,0 +1,304 @@
+1
+00:00:03,120 --> 00:00:03,800
+Hello.
+
+2
+00:00:03,810 --> 00:00:08,880
+In this next lecture, we're going to go over how to create platforms that the player can jump and stand
+
+3
+00:00:08,880 --> 00:00:09,240
+on.
+
+4
+00:00:09,390 --> 00:00:15,090
+To get started, go over to the image folder and briefly close on raw engine attached.
+
+5
+00:00:15,090 --> 00:00:20,310
+In this course lecture, I'm going to make sure to include these two images, platform one and platform
+
+6
+00:00:20,310 --> 00:00:23,940
+to select both of them and drag them into your folder.
+
+7
+00:00:24,420 --> 00:00:29,490
+Once you've done this, select both images and apply paper to the texture settings.
+
+8
+00:00:30,260 --> 00:00:36,740
+Then with both images selected, right click and go Sprite actions and go create Sprite.
+
+9
+00:00:37,550 --> 00:00:43,580
+Then if we go over to our item folder, we are going to create a new blueprint for our platform.
+
+10
+00:00:43,700 --> 00:00:50,900
+If we just right click and Go Blueprint class, select actor and call this platform underscore beep.
+
+11
+00:00:52,080 --> 00:00:53,430
+If we open this up.
+
+12
+00:00:55,210 --> 00:00:58,930
+Unlike opponent go ad and look for paper Sprite.
+
+13
+00:01:01,160 --> 00:01:06,380
+Under source spread look for platform one and just selector.
+
+14
+00:01:07,230 --> 00:01:08,310
+It's kind of small.
+
+15
+00:01:08,310 --> 00:01:09,540
+So under scale.
+
+16
+00:01:09,570 --> 00:01:11,490
+Make it have a size of eight.
+
+17
+00:01:14,280 --> 00:01:19,080
+So the way we're going to create this platform, my player character is going to be able to jump up
+
+18
+00:01:19,080 --> 00:01:20,370
+from underneath the platform.
+
+19
+00:01:20,370 --> 00:01:24,870
+And then when they jump and then on the platform, we're going to enable the collision of this platform
+
+20
+00:01:24,870 --> 00:01:26,610
+so my character can stand on it.
+
+21
+00:01:27,210 --> 00:01:31,860
+To make the system, we're going to need to go to add and look for box collision.
+
+22
+00:01:33,890 --> 00:01:38,030
+Place this collision kind of a bit above the platform.
+
+23
+00:01:38,920 --> 00:01:41,020
+And expand it in the x axis.
+
+24
+00:01:41,020 --> 00:01:44,920
+So the edges of the sprite match the box.
+
+25
+00:01:48,620 --> 00:01:54,860
+Just so that we can visually see our box in the game under details, look for hidden in game and just
+
+26
+00:01:54,860 --> 00:01:56,330
+make sure this is unchecked.
+
+27
+00:01:57,740 --> 00:02:06,500
+Now, if we just go over to the event graph and delete event activity, an overlap and event take event
+
+28
+00:02:06,500 --> 00:02:07,250
+we can play.
+
+29
+00:02:07,280 --> 00:02:08,780
+We're going to make it to our paper.
+
+30
+00:02:08,780 --> 00:02:10,220
+Sprite has no collision.
+
+31
+00:02:10,370 --> 00:02:15,440
+So if we drag in our papers right, drag up here and look for collision enabled.
+
+32
+00:02:15,890 --> 00:02:21,550
+And we want to select this one set collision enabled and make sure the new type is no collision.
+
+33
+00:02:21,560 --> 00:02:25,550
+So as soon as the game starts, we'll make our paper sprite type have no collision.
+
+34
+00:02:26,030 --> 00:02:31,560
+Then, if our player character overlaps this box, that basically means that on top of the platform.
+
+35
+00:02:31,580 --> 00:02:34,790
+And so we're going to enable the collision of this platform.
+
+36
+00:02:34,970 --> 00:02:39,020
+So if I scroll down and go to on component, we can overlap.
+
+37
+00:02:39,900 --> 00:02:46,110
+If this begins to overlap with another actor, if that actor is equal to our player character.
+
+38
+00:02:46,380 --> 00:02:48,810
+So I'm going to look for my player character.
+
+39
+00:02:51,660 --> 00:02:53,190
+Then we're going to do a brunch.
+
+40
+00:02:54,430 --> 00:02:56,920
+And enable the collision of our paper sprite.
+
+41
+00:02:57,070 --> 00:03:01,060
+So our drug in my paper Sprite and set its collision.
+
+42
+00:03:04,540 --> 00:03:09,190
+And I'll say it's collision to be collision enabled and just connect us into here.
+
+43
+00:03:10,010 --> 00:03:15,260
+If my player character ever leaves this platform, that kind of means that we should turn off the box
+
+44
+00:03:15,260 --> 00:03:18,870
+collision so that they can jump and land on this platform again.
+
+45
+00:03:18,890 --> 00:03:25,310
+So if I go back to my event graph and select the box, scroll down and go to UN component and overlap,
+
+46
+00:03:25,910 --> 00:03:27,740
+We can just copy all the notes here.
+
+47
+00:03:29,820 --> 00:03:30,810
+And face them here.
+
+48
+00:03:33,650 --> 00:03:36,060
+So when I play, I got to leave this platform.
+
+49
+00:03:36,080 --> 00:03:38,000
+We'll turn the collision of this off.
+
+50
+00:03:38,800 --> 00:03:41,470
+So we can compile and test this all out.
+
+51
+00:03:42,880 --> 00:03:44,860
+So I'm going to drag dragging my platform.
+
+52
+00:03:46,370 --> 00:03:50,090
+And we've got to lay out 20 maybe waxes.
+
+53
+00:03:51,530 --> 00:03:52,880
+And let's go play.
+
+54
+00:03:53,810 --> 00:03:57,230
+So if I jump up underneath the platform.
+
+55
+00:03:58,350 --> 00:04:02,880
+I kind of get stuck, so I'm going to actually place my box a bit higher.
+
+56
+00:04:05,850 --> 00:04:08,730
+So it looks like my plane got stuck when the collision was turning on.
+
+57
+00:04:08,790 --> 00:04:13,470
+So if we just move this a bit higher, this may take some experimentation.
+
+58
+00:04:14,700 --> 00:04:15,600
+So it could play.
+
+59
+00:04:16,600 --> 00:04:17,110
+I jump?
+
+60
+00:04:17,910 --> 00:04:18,339
+Okay.
+
+61
+00:04:18,339 --> 00:04:22,900
+So when I jumped and I got through, it turned the collision of this platform on.
+
+62
+00:04:23,080 --> 00:04:26,920
+If I go off this, I can do the same thing and do it again.
+
+63
+00:04:28,130 --> 00:04:29,840
+Okay, let's fix a couple of things.
+
+64
+00:04:29,870 --> 00:04:33,650
+It kind of looks a bit jittery when I initially land on the platform.
+
+65
+00:04:33,950 --> 00:04:36,110
+There are two ways I can fix this.
+
+66
+00:04:36,710 --> 00:04:39,290
+The first way is if I go over to my player blueprint.
+
+67
+00:04:40,660 --> 00:04:46,150
+And if we select the spring arm, scroll down and just enable this cam like.
+
+68
+00:04:46,910 --> 00:04:52,520
+If I go compile and play, the camera is now going to have a bit of a lagging effect to it, and this
+
+69
+00:04:52,520 --> 00:04:54,680
+will make it so things appear a bit smoother.
+
+70
+00:04:54,890 --> 00:04:59,930
+So now if I jump on this platform, you can see you didn't really notice that that that much.
+
+71
+00:05:01,490 --> 00:05:08,390
+The second way we can fix this is if I open up my platform blueprint and go over to the bit where we
+
+72
+00:05:08,390 --> 00:05:10,280
+enable creation for our paper spray.
+
+73
+00:05:10,730 --> 00:05:15,500
+Before we do this, we can have a short delay and that will kind of make things look a bit smoother.
+
+74
+00:05:15,800 --> 00:05:23,750
+So if I just drag up here and look forward today and just go compile now, let go play and I jump up
+
+75
+00:05:23,750 --> 00:05:26,790
+on this platform, it looks kind of smooth.
+
+76
+00:05:26,810 --> 00:05:30,740
+So now we have this platform that my player character can jump up from underneath.
+

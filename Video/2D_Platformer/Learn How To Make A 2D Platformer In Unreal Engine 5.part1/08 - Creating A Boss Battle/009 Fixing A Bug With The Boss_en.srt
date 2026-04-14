@@ -1,0 +1,60 @@
+1
+00:00:03,600 --> 00:00:04,320
+Hello.
+
+2
+00:00:04,350 --> 00:00:07,320
+There's one more thing we need to fix with our boss.
+
+3
+00:00:07,470 --> 00:00:08,640
+If I go play.
+
+4
+00:00:09,150 --> 00:00:13,900
+We made it so our boss will attack our player character every 2 to 4 seconds.
+
+5
+00:00:13,920 --> 00:00:17,370
+Although sometimes my boss can spam its attacks.
+
+6
+00:00:17,820 --> 00:00:20,190
+I'll showcase a clip of this happening now.
+
+7
+00:00:23,890 --> 00:00:25,680
+The reason why this is happening.
+
+8
+00:00:25,690 --> 00:00:31,990
+If we go over to the Boss blueprint, when we make our boss jump to the attack node.
+
+9
+00:00:32,380 --> 00:00:38,950
+If I go to the Boss animation blueprint and open up the Boss attack, if I select this boss attack,
+
+10
+00:00:38,950 --> 00:00:44,710
+sometimes this animation is looping and when this animation loops, it'll make my boss attack sometimes
+
+11
+00:00:44,710 --> 00:00:46,590
+twice, sometimes three times.
+
+12
+00:00:46,600 --> 00:00:50,500
+So in order to fix it, just make sure this is left unchecked.
+
+13
+00:00:50,530 --> 00:00:53,110
+Then go compile and go play.
+
+14
+00:00:53,380 --> 00:00:58,450
+And now our boss should only attack our player character every 2 to 4 seconds, and that issue should
+
+15
+00:00:58,450 --> 00:00:59,770
+not occur anymore.
+

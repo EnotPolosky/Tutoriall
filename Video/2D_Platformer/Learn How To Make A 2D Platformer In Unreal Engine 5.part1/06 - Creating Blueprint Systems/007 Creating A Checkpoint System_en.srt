@@ -1,0 +1,256 @@
+1
+00:00:03,210 --> 00:00:03,860
+Hello.
+
+2
+00:00:03,870 --> 00:00:08,280
+In this next lecture, we're going to go over how to add a checkpoint system.
+
+3
+00:00:08,550 --> 00:00:15,360
+To get started, if we go over to our items folder, just right click and create a new folder and call
+
+4
+00:00:15,360 --> 00:00:16,950
+this item images.
+
+5
+00:00:19,740 --> 00:00:26,090
+Head inside this folder and then briefly close on your engine and attached in this course lecture,
+
+6
+00:00:26,100 --> 00:00:28,650
+I'm going to make sure to include these two images.
+
+7
+00:00:28,800 --> 00:00:31,890
+Select them and drag both of them into Unreal Engine.
+
+8
+00:00:32,920 --> 00:00:39,730
+Then with both of them selected right click anchors, write actions and apply paper to detach the settings.
+
+9
+00:00:40,390 --> 00:00:46,350
+Then select the first right go sprite actions and extract sprites under here.
+
+10
+00:00:46,360 --> 00:00:49,440
+Change this to be grid and under the cell width.
+
+11
+00:00:49,450 --> 00:00:51,070
+Change this to be 16.
+
+12
+00:00:53,860 --> 00:00:58,450
+Then select any of those rights and just right click and make it a flipbook.
+
+13
+00:00:59,610 --> 00:01:05,280
+Next, we want to go to our campfire, right click Sprite actions and extract Sprite.
+
+14
+00:01:05,519 --> 00:01:09,480
+Change this to be grid and then change the cell width to be 16.
+
+15
+00:01:09,840 --> 00:01:11,100
+Then we'll go to extract.
+
+16
+00:01:12,240 --> 00:01:15,810
+If we then select all these sprites and create a flipbook.
+
+17
+00:01:16,260 --> 00:01:20,640
+So the idea here is our campfire is just going to look like this.
+
+18
+00:01:21,090 --> 00:01:24,840
+However, when our player character overlaps our campfire, we'll make it.
+
+19
+00:01:24,840 --> 00:01:25,530
+That's fire.
+
+20
+00:01:25,560 --> 00:01:28,320
+That way they know that they've updated their checkpoint.
+
+21
+00:01:29,220 --> 00:01:32,730
+The next thing we need to do is create our checkpoint blueprint.
+
+22
+00:01:32,880 --> 00:01:38,130
+So if we go back to our items, order right click and Go Blueprint class.
+
+23
+00:01:38,190 --> 00:01:40,740
+Select an actor and call this checkpoint.
+
+24
+00:01:40,770 --> 00:01:42,480
+Then if we open it up.
+
+25
+00:01:43,880 --> 00:01:44,750
+Under components.
+
+26
+00:01:44,930 --> 00:01:47,900
+I go ad and look for a paper flipbook.
+
+27
+00:01:49,570 --> 00:01:52,030
+And select the check point that we just made.
+
+28
+00:01:52,070 --> 00:01:53,620
+The unlit version.
+
+29
+00:01:54,770 --> 00:01:55,850
+It's kind of small.
+
+30
+00:01:55,850 --> 00:01:57,140
+So under scale.
+
+31
+00:01:57,320 --> 00:01:58,370
+Make it five.
+
+32
+00:01:58,790 --> 00:02:00,290
+This will just make it a bit bigger.
+
+33
+00:02:03,080 --> 00:02:07,130
+Then we want to go to add and look for a box collision.
+
+34
+00:02:08,789 --> 00:02:11,790
+And make this box collection fit around the paper flipbook.
+
+35
+00:02:11,790 --> 00:02:15,690
+So we can do that by playing around with the box extent values here.
+
+36
+00:02:15,810 --> 00:02:20,400
+So I make the Z a bit less and I also adjust it in the x axis.
+
+37
+00:02:21,630 --> 00:02:26,150
+You can also adjust the camera speed because it's very fast inside of here to something like one.
+
+38
+00:02:26,160 --> 00:02:28,290
+That way is a bit easier to move around in here.
+
+39
+00:02:29,570 --> 00:02:37,700
+After you've adjusted your box, go ahead and look for a scene and just call this respawn location.
+
+40
+00:02:37,790 --> 00:02:39,770
+Actually call the checkpoint location.
+
+41
+00:02:44,450 --> 00:02:49,230
+And just place this slightly above your checkpoint, then go to the box.
+
+42
+00:02:49,250 --> 00:02:53,060
+Scroll down and go to on component begin overlap.
+
+43
+00:02:53,720 --> 00:02:58,550
+And when this overlaps our player character, we're going to update that checkpoint location to be the
+
+44
+00:02:58,550 --> 00:02:59,840
+location of this.
+
+45
+00:03:00,050 --> 00:03:07,490
+So if we drag off other actor and pass to our player blueprint or whatever you call yours, then we
+
+46
+00:03:07,490 --> 00:03:10,250
+want to drag up here a look for set checkpoint.
+
+47
+00:03:11,520 --> 00:03:14,480
+And we're going to set the checkpoint to be wherever this is.
+
+48
+00:03:14,490 --> 00:03:19,320
+So if we drag this in and just drag up here and get what location?
+
+49
+00:03:20,500 --> 00:03:21,790
+And then connect this node here.
+
+50
+00:03:23,310 --> 00:03:27,600
+And then finally, we want to update our paper book to be the campfire lit.
+
+51
+00:03:27,630 --> 00:03:35,670
+So if I just drag in my paper flipbook drag up here and set flipbook and select the campfire one.
+
+52
+00:03:36,660 --> 00:03:38,190
+And then connect this into here.
+
+53
+00:03:38,580 --> 00:03:47,190
+So now if I go compile and save or close this and then drag my checkpoint to layer 20 on my y axis.
+
+54
+00:03:48,410 --> 00:03:49,250
+Let's move it here.
+
+55
+00:03:50,420 --> 00:03:52,400
+And actually, that's kind of a bad place.
+
+56
+00:03:52,400 --> 00:03:52,820
+But.
+
+57
+00:03:53,110 --> 00:03:53,230
+But.
+
+58
+00:03:53,240 --> 00:03:53,600
+Well.
+
+59
+00:03:53,780 --> 00:03:56,840
+So if I leave it here and I go past it.
+
+60
+00:03:58,020 --> 00:03:59,850
+I'm not going to let this enemy kill me.
+
+61
+00:03:59,850 --> 00:04:02,280
+And then I should respawn at that checkpoint.
+
+62
+00:04:03,970 --> 00:04:07,300
+So I die, and then I respawn at that checkpoint.
+
+63
+00:04:07,330 --> 00:04:08,050
+Nice.
+
+64
+00:04:08,080 --> 00:04:10,210
+So with this, we have set up a checkpoint system.
+

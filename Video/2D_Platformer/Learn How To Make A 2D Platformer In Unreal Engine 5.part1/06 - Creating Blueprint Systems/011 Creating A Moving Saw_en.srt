@@ -1,0 +1,132 @@
+1
+00:00:03,050 --> 00:00:03,690
+Hello.
+
+2
+00:00:03,710 --> 00:00:07,490
+In this next lecture, we're going to go over how to create a moving source.
+
+3
+00:00:07,700 --> 00:00:10,850
+It's going to behave very similarly to our moving platform.
+
+4
+00:00:11,000 --> 00:00:15,590
+Except if our player, character or our enemy touches it, that will come damaged.
+
+5
+00:00:15,740 --> 00:00:22,370
+To get started, go over to our item image folder and then close on our engine and drag in the source
+
+6
+00:00:22,400 --> 00:00:22,910
+image.
+
+7
+00:00:22,940 --> 00:00:24,860
+It will be attached in the course lecture.
+
+8
+00:00:26,810 --> 00:00:32,270
+Then if we apply paper to the texture settings to this and extract these sprites.
+
+9
+00:00:34,520 --> 00:00:39,290
+Under sprite extract mode, go grid and change the cell width to be 38.
+
+10
+00:00:41,600 --> 00:00:43,730
+Then if we let all these sprites.
+
+11
+00:00:46,040 --> 00:00:47,570
+And go create flipbook.
+
+12
+00:00:47,840 --> 00:00:49,670
+And I'm going to name this my sole.
+
+13
+00:00:51,020 --> 00:00:57,200
+And then if we head over to the item photo, right click on the immune platform and go duplicate and
+
+14
+00:00:57,200 --> 00:00:59,510
+call this our saw underscore BP.
+
+15
+00:01:01,590 --> 00:01:06,240
+If we open it up, we can delete everything inside of the event graph.
+
+16
+00:01:07,070 --> 00:01:11,630
+And go up to the viewport and we can delete the paper, sprite and the box.
+
+17
+00:01:11,960 --> 00:01:15,320
+Now we're just left with the interactive movement component.
+
+18
+00:01:15,620 --> 00:01:18,470
+If we go ahead and look for a paper flipbook.
+
+19
+00:01:19,680 --> 00:01:22,950
+And if we just look for the saw flipbook that we just made.
+
+20
+00:01:23,990 --> 00:01:25,990
+And I'm going to scale it up a bit.
+
+21
+00:01:26,010 --> 00:01:27,410
+Something like five.
+
+22
+00:01:29,620 --> 00:01:33,730
+And I'm going to go ad and look for sphere collision.
+
+23
+00:01:35,070 --> 00:01:36,030
+And make it fair.
+
+24
+00:01:36,030 --> 00:01:36,990
+And also.
+
+25
+00:01:37,750 --> 00:01:42,730
+Then if we scroll down and go to one component, we can overlap when anything overlaps.
+
+26
+00:01:42,820 --> 00:01:46,390
+So we're going to drive off here and look for apply damage.
+
+27
+00:01:46,840 --> 00:01:49,060
+And we're going to do one damage.
+
+28
+00:01:49,570 --> 00:01:52,270
+We can compile, save and close this.
+
+29
+00:01:52,910 --> 00:01:57,380
+Now, if I drag in my soul and move it to layer 20 in the Y.
+
+30
+00:01:58,990 --> 00:02:01,240
+I'm going to make my swing move up and down.
+
+31
+00:02:03,590 --> 00:02:06,860
+And let's give it a speed of three.
+
+32
+00:02:06,950 --> 00:02:11,840
+So now if I go play now, let's say I jump into the saw, I will become damaged.
+
+33
+00:02:11,870 --> 00:02:12,620
+Nice.
+

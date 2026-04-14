@@ -1,0 +1,24 @@
+1
+00:00:03,480 --> 00:00:05,430
+I want to show you one last thing.
+
+2
+00:00:05,580 --> 00:00:11,400
+If we go to our player blueprint and I go to one of the comment bubbles and select it.
+
+3
+00:00:11,760 --> 00:00:18,000
+If I go show Bubble one zoomed, it's going to show me what I call this comment when I'm zoomed out
+
+4
+00:00:18,000 --> 00:00:18,690
+from afar.
+
+5
+00:00:18,720 --> 00:00:21,830
+Because right now it's kind of hard to see why all these comments.
+
+6
+00:00:21,840 --> 00:00:26,670
+But if we just click this little box, then we can see what we call our comment from afar.
+

@@ -1,0 +1,260 @@
+1
+00:00:03,210 --> 00:00:03,860
+Hello.
+
+2
+00:00:03,870 --> 00:00:09,290
+In this lecture, we're going to go over how to export our game to get started.
+
+3
+00:00:09,300 --> 00:00:16,470
+You're going to go to edit and go to product settings, then go to maps and modes and go over to game
+
+4
+00:00:16,470 --> 00:00:17,520
+default map.
+
+5
+00:00:17,700 --> 00:00:22,950
+This game default map represents the first level that the player is going to see when they open up your
+
+6
+00:00:22,950 --> 00:00:23,520
+game.
+
+7
+00:00:23,880 --> 00:00:29,940
+We want this to be our main menu map, so select the main menu map and if you want you can change the
+
+8
+00:00:29,940 --> 00:00:31,200
+editor start up map.
+
+9
+00:00:31,440 --> 00:00:35,820
+This is going to be the first level that you see when you open up your Unreal project.
+
+10
+00:00:35,850 --> 00:00:40,620
+But now we can leave this at level one or you can change this to be another level if you want to.
+
+11
+00:00:41,220 --> 00:00:45,250
+We can close this and we are now ready to export our game.
+
+12
+00:00:45,270 --> 00:00:49,980
+Next, before we export our game, you may need to install Visual Studios.
+
+13
+00:00:50,220 --> 00:00:55,770
+I'll showcase a video now showing you what components of Visual Studios you need to install.
+
+14
+00:00:55,860 --> 00:01:01,650
+I think we need to install the game development with C++ and the Visual Studios installer, and when
+
+15
+00:01:01,650 --> 00:01:07,170
+you install with your studios, you want to make sure that you get to individual components and that
+
+16
+00:01:07,170 --> 00:01:11,450
+you have the NET SDK installed.
+
+17
+00:01:11,460 --> 00:01:12,720
+So let's look for NET here.
+
+18
+00:01:13,440 --> 00:01:16,440
+You should make sure that you've installed this NET SDK.
+
+19
+00:01:16,470 --> 00:01:20,670
+I didn't have this installed and when I tried to export my product, it basically had nothing inside
+
+20
+00:01:20,670 --> 00:01:21,060
+of it.
+
+21
+00:01:21,150 --> 00:01:21,820
+Okay.
+
+22
+00:01:21,840 --> 00:01:28,020
+Once you've installed those parts, you can go to platforms for Windows and select shipping.
+
+23
+00:01:28,810 --> 00:01:32,440
+Bingo platforms Windows and Go Package project.
+
+24
+00:01:32,500 --> 00:01:34,900
+It will ask you where you want to package your project.
+
+25
+00:01:34,930 --> 00:01:37,030
+I'm going to package mine on my desktop.
+
+26
+00:01:37,270 --> 00:01:41,590
+Just go select and then it'll begin to package your project.
+
+27
+00:01:42,080 --> 00:01:44,890
+Okay, so it looks like my project to export.
+
+28
+00:01:45,100 --> 00:01:48,880
+Let's go to show up at Lock to see what is wrong.
+
+29
+00:01:49,360 --> 00:01:55,890
+So it says the following files are set to be staged but contain restricted folder name Apple.
+
+30
+00:01:57,690 --> 00:01:58,430
+Okay.
+
+31
+00:01:58,450 --> 00:02:04,510
+I checked what this error means and I think we're not allowed to name this folder Apple because of the
+
+32
+00:02:04,510 --> 00:02:04,990
+company.
+
+33
+00:02:04,990 --> 00:02:05,430
+Apple.
+
+34
+00:02:05,440 --> 00:02:09,160
+So we need to find this folder and just rename it something else.
+
+35
+00:02:09,190 --> 00:02:11,920
+It's kind of silly, but let's just do it.
+
+36
+00:02:12,220 --> 00:02:19,090
+I have a folder called Apple, so if I go to my Warrior animation folder, I made this file called Apple.
+
+37
+00:02:19,390 --> 00:02:20,500
+Let's just rename it.
+
+38
+00:02:21,430 --> 00:02:22,240
+And call it.
+
+39
+00:02:23,030 --> 00:02:24,740
+Red fruit.
+
+40
+00:02:26,230 --> 00:02:35,080
+And we can then right click on our content folder to fix up redirects, go save and hopefully it will
+
+41
+00:02:35,080 --> 00:02:36,790
+package and export this time.
+
+42
+00:02:36,910 --> 00:02:39,220
+I'm just going to restart my Android engine project.
+
+43
+00:02:41,100 --> 00:02:41,690
+Okay.
+
+44
+00:02:41,700 --> 00:02:43,950
+So hopefully it exports this time.
+
+45
+00:02:44,160 --> 00:02:47,910
+I'm going to go platform's Windows package project.
+
+46
+00:02:48,030 --> 00:02:49,290
+I'll select my desktop.
+
+47
+00:02:49,470 --> 00:02:50,640
+And let's see.
+
+48
+00:02:51,750 --> 00:02:52,340
+Okay.
+
+49
+00:02:52,350 --> 00:02:56,550
+So it looks like that was the issue my project has exported.
+
+50
+00:02:57,160 --> 00:02:57,460
+Okay.
+
+51
+00:02:57,480 --> 00:03:01,320
+Once you export your project, it should be in this photo called Windows.
+
+52
+00:03:01,440 --> 00:03:05,340
+Now, if I double click and open this up, I should be able to play my game.
+
+53
+00:03:05,340 --> 00:03:08,430
+So it says to the action platformer I can go start.
+
+54
+00:03:08,550 --> 00:03:10,560
+And let me click on level one.
+
+55
+00:03:11,510 --> 00:03:12,860
+And know take me to level one.
+
+56
+00:03:12,980 --> 00:03:19,040
+I kind of cheated and put myself at the end, but I can go back and explore this level if I wanted to.
+
+57
+00:03:19,070 --> 00:03:20,370
+That's all for this course.
+
+58
+00:03:20,390 --> 00:03:21,740
+I hope you enjoy it.
+
+59
+00:03:21,920 --> 00:03:28,100
+If there are any more topics that you want me to cover, I can update this course later with the suggestions
+
+60
+00:03:28,100 --> 00:03:28,970
+of the viewers.
+
+61
+00:03:29,690 --> 00:03:30,500
+That's all.
+
+62
+00:03:30,730 --> 00:03:31,190
+Okay.
+
+63
+00:03:31,190 --> 00:03:36,980
+So I'm now going to go back in this project and comment all the blueprint and remove all the line traces
+
+64
+00:03:36,980 --> 00:03:38,060
+and boxes.
+
+65
+00:03:38,330 --> 00:03:42,710
+That way you can download the completed product and see everything if you want to.
+

@@ -1,0 +1,204 @@
+1
+00:00:03,080 --> 00:00:03,680
+Hello.
+
+2
+00:00:03,710 --> 00:00:08,540
+Next, I want to display the amount of life that my character has on our HUD.
+
+3
+00:00:08,810 --> 00:00:15,980
+So if we go over to the Widget Blueprint folder and go over to the images folder, then attached in
+
+4
+00:00:15,980 --> 00:00:17,420
+this course lecture file.
+
+5
+00:00:17,450 --> 00:00:19,930
+I'm going to make sure to include these two images.
+
+6
+00:00:19,940 --> 00:00:21,710
+Just drag both of them in.
+
+7
+00:00:22,580 --> 00:00:25,810
+You will see why we drag in the apple again in a second.
+
+8
+00:00:28,320 --> 00:00:33,480
+Then if we select both of the images, right click and go explore actions and apply paper to detect
+
+9
+00:00:33,480 --> 00:00:34,200
+the settings.
+
+10
+00:00:35,130 --> 00:00:41,790
+Then if we head over to the player hard and on the palette, look for a horizontal box.
+
+11
+00:00:42,900 --> 00:00:45,180
+And just drag this into this vegetable box.
+
+12
+00:00:45,940 --> 00:00:52,240
+Then look for an image and just track this into the horizontal box.
+
+13
+00:00:52,810 --> 00:00:57,460
+Then look for a piece of text and drag this into the same horizontal box.
+
+14
+00:00:58,460 --> 00:01:02,330
+Put the image, select the head image that we just imported.
+
+15
+00:01:02,540 --> 00:01:07,220
+Then in the x, just adjust it size until it looks a bit normal.
+
+16
+00:01:07,910 --> 00:01:09,470
+Then select the text.
+
+17
+00:01:09,830 --> 00:01:13,220
+And just check this is variable and call it lives.
+
+18
+00:01:14,640 --> 00:01:16,710
+Then if we go over to the graph.
+
+19
+00:01:18,030 --> 00:01:26,850
+After we tell the game to set our apples and Macs apples text, we want to drag in our life's text and
+
+20
+00:01:26,850 --> 00:01:32,140
+drag up here and look for set text and set this one, set, text, text.
+
+21
+00:01:32,430 --> 00:01:39,900
+We will then drag in our SE player VP reference and get them out of life so that they have and then
+
+22
+00:01:39,900 --> 00:01:43,020
+connect this into here and this into here.
+
+23
+00:01:43,290 --> 00:01:50,850
+So now if I go compile and play when I die, it should update my life to two.
+
+24
+00:01:55,470 --> 00:01:57,960
+Okay, so it didn't update my lives.
+
+25
+00:01:58,290 --> 00:02:02,370
+If I go back to my BP, we'll investigate What's wrong?
+
+26
+00:02:04,210 --> 00:02:08,139
+Okay, because I'm saying my life's after we show our HUD.
+
+27
+00:02:08,590 --> 00:02:13,390
+The game is not accurately showing the amount of lifestyle I have, so I'm actually just going to move
+
+28
+00:02:13,390 --> 00:02:16,270
+these nodes before we show our heart.
+
+29
+00:02:16,570 --> 00:02:22,330
+So if I just press out, it'll break the link here and here, and I'm just going to copy these notes.
+
+30
+00:02:23,300 --> 00:02:25,160
+And I'm going to move them to.
+
+31
+00:02:25,160 --> 00:02:31,250
+I set my health and then I set my lives, and then I'll just connect these nodes.
+
+32
+00:02:32,350 --> 00:02:34,900
+So now if I go compile and play.
+
+33
+00:02:36,230 --> 00:02:37,100
+And I die.
+
+34
+00:02:37,400 --> 00:02:39,440
+When I die, I should update my life's.
+
+35
+00:02:43,110 --> 00:02:45,660
+A guy died and then an update to my life's.
+
+36
+00:02:46,540 --> 00:02:53,110
+Next, if we go back to our layout and to the designer and just delete.
+
+37
+00:02:53,140 --> 00:02:53,830
+Actually, no.
+
+38
+00:02:53,920 --> 00:02:59,380
+So for this Apple image, the reason it looks kind of weird is if I just click the search one.
+
+39
+00:03:00,260 --> 00:03:01,670
+And go over to this apple.
+
+40
+00:03:02,130 --> 00:03:06,230
+It's because this apple, it has loads of invisible area that's taking up.
+
+41
+00:03:06,350 --> 00:03:09,170
+That's why I got to import a new apple image.
+
+42
+00:03:09,500 --> 00:03:15,900
+And if we just in the palette look for an image and just drag this into the first horizontal box and
+
+43
+00:03:15,900 --> 00:03:18,680
+just select these arrows and move the image to the start.
+
+44
+00:03:19,410 --> 00:03:20,170
+Put this image.
+
+45
+00:03:20,190 --> 00:03:26,670
+Select it and then select the new apple that I made us import and just increase.
+
+46
+00:03:26,670 --> 00:03:28,950
+It sets in the X until it looks normal.
+
+47
+00:03:30,180 --> 00:03:32,400
+And then we can delete this vertical box.
+
+48
+00:03:34,120 --> 00:03:35,110
+And one more thing.
+
+49
+00:03:35,140 --> 00:03:41,950
+If I just let this horizontal box and go to padding and on the bottom, if I put a value of like 20,
+
+50
+00:03:42,070 --> 00:03:48,010
+then there's going to be a bit of a gap between this box and this box and never go compile and play.
+
+51
+00:03:48,670 --> 00:03:51,310
+Visually, I think that just looks a bit better.
+

@@ -1,0 +1,200 @@
+1
+00:00:03,010 --> 00:00:03,780
+Hello.
+
+2
+00:00:03,790 --> 00:00:08,140
+In this next lecture, we're going to go over how to create some spikes.
+
+3
+00:00:08,140 --> 00:00:12,310
+If our player character overlaps these spikes, we're going to make them become damaged.
+
+4
+00:00:12,610 --> 00:00:17,950
+To get started, let's go over to the item folder and go over to the item image folder.
+
+5
+00:00:18,280 --> 00:00:24,250
+Then briefly close on our engine and attached In this lecture, I'm going to make sure to include these
+
+6
+00:00:24,250 --> 00:00:25,840
+images of some spikes.
+
+7
+00:00:26,020 --> 00:00:28,120
+Drag them into your Unreal project.
+
+8
+00:00:29,180 --> 00:00:36,590
+Then if we go over to our items folder, just right click on the checkpoint blueprint and duplicate
+
+9
+00:00:36,590 --> 00:00:38,330
+it and just cool this off.
+
+10
+00:00:38,360 --> 00:00:40,910
+Spikes underscore BP.
+
+11
+00:00:41,480 --> 00:00:43,250
+And if we open it up.
+
+12
+00:00:44,230 --> 00:00:48,730
+Go over to the viewport and select the paper flipbook.
+
+13
+00:00:49,300 --> 00:00:53,710
+We can just delete this and instead go ad and look for Sprite.
+
+14
+00:00:55,650 --> 00:00:56,660
+And on the sauce.
+
+15
+00:00:56,670 --> 00:00:57,180
+Right.
+
+16
+00:00:57,210 --> 00:00:59,610
+Select the spikes that we just imported.
+
+17
+00:01:02,870 --> 00:01:03,030
+Okay.
+
+18
+00:01:03,210 --> 00:01:04,480
+I think these are a good size.
+
+19
+00:01:04,500 --> 00:01:07,260
+Just make the box condition that around these spikes.
+
+20
+00:01:08,580 --> 00:01:14,040
+Then select us bright and just scroll down and make sure it has its collision.
+
+21
+00:01:14,040 --> 00:01:15,720
+AS No collision.
+
+22
+00:01:15,750 --> 00:01:18,180
+As by default, sprites will block everything.
+
+23
+00:01:18,690 --> 00:01:22,050
+We can just delete this checkpoint location as we don't need it.
+
+24
+00:01:22,740 --> 00:01:31,800
+Then if we go back to our event graph and just delete this set checkpoint and set up book and instead,
+
+25
+00:01:31,800 --> 00:01:37,220
+if our player character overlaps these works, we're going to just drag off them and look for apply
+
+26
+00:01:37,230 --> 00:01:44,220
+damage and we're going to apply one damage if our player character overlaps a spike and for the damage
+
+27
+00:01:44,220 --> 00:01:48,900
+causer, just drag up and look for self and then go compile.
+
+28
+00:01:49,990 --> 00:01:51,490
+So we can test this out.
+
+29
+00:01:51,730 --> 00:01:53,830
+I'm going to drag in my spike somewhere in my world.
+
+30
+00:01:55,530 --> 00:01:57,030
+Put them in their 20.
+
+31
+00:01:58,390 --> 00:01:59,560
+And if I could play.
+
+32
+00:02:00,670 --> 00:02:03,370
+If I walk into these bikes, I become damaged.
+
+33
+00:02:03,400 --> 00:02:04,190
+I kind of smell.
+
+34
+00:02:04,210 --> 00:02:05,800
+So let's make them a bit bigger.
+
+35
+00:02:07,490 --> 00:02:12,250
+So I'm going to select my pepper spray and I'll make it like four.
+
+36
+00:02:13,210 --> 00:02:17,620
+Lastly, let me get 2.5 and I'll just adjust my box.
+
+37
+00:02:23,360 --> 00:02:25,330
+Okay, so that looks a bit better.
+
+38
+00:02:25,340 --> 00:02:26,630
+So there are some spikes.
+
+39
+00:02:26,630 --> 00:02:28,670
+I go into them, I become damaged.
+
+40
+00:02:28,940 --> 00:02:30,740
+One more thing with your spikes.
+
+41
+00:02:30,740 --> 00:02:35,600
+Maybe you want it so that the enemies can actually be damaged by our spikes.
+
+42
+00:02:35,660 --> 00:02:38,450
+If that's the case, you can go over to your spikes.
+
+43
+00:02:38,870 --> 00:02:45,410
+And instead of just casting to the player character, we can just delete this and just drag other actor
+
+44
+00:02:45,410 --> 00:02:46,670
+and hook us up here.
+
+45
+00:02:47,120 --> 00:02:51,440
+So I actually think I'll do that if we go compile and save this.
+
+46
+00:02:51,920 --> 00:02:55,220
+If my enemy walks into the spike, it should now become damaged.
+
+47
+00:02:55,220 --> 00:02:59,330
+So if I go play and my enemy walks into it, it becomes damaged.
+
+48
+00:02:59,330 --> 00:03:01,340
+So maybe you want that, maybe you don't.
+
+49
+00:03:01,340 --> 00:03:06,710
+But for now, we can leave this as it kind of makes our game a bit more dynamic so I can hit my enemy
+
+50
+00:03:06,710 --> 00:03:09,290
+into a spike and then it will do like two damage.
+

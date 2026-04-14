@@ -1,0 +1,624 @@
+1
+00:00:03,150 --> 00:00:03,840
+Hello.
+
+2
+00:00:03,840 --> 00:00:08,580
+In this next lecture, we're going to go over how to create a level unlock system.
+
+3
+00:00:08,730 --> 00:00:12,420
+So by default, we'll make it to the player can play level one.
+
+4
+00:00:12,510 --> 00:00:17,580
+But in order to play level two with the boss, our player character is going to have to have beaten
+
+5
+00:00:17,620 --> 00:00:18,480
+level one.
+
+6
+00:00:18,900 --> 00:00:20,310
+To set up that system.
+
+7
+00:00:20,340 --> 00:00:24,270
+If we go over to our main menu widget blueprint.
+
+8
+00:00:25,430 --> 00:00:32,299
+And go to the designer, select the first button and copy it and then duplicate it again inside of this
+
+9
+00:00:32,299 --> 00:00:37,370
+level box and select the first button and add a padding of 50.
+
+10
+00:00:37,850 --> 00:00:41,120
+That way there's a bit of a gap at the padding in the right.
+
+11
+00:00:41,540 --> 00:00:45,020
+And if I just select this text, I'm going to call this level two.
+
+12
+00:00:45,710 --> 00:00:52,170
+And if we select this button and scroll down and go unclipped, we are only going to open the next level.
+
+13
+00:00:52,190 --> 00:00:57,950
+If our player has beaten level one, we can do that referencing the safe system that we just made.
+
+14
+00:00:58,070 --> 00:01:03,650
+So if we drag in the same ref, we want to drag up here and look for get levels.
+
+15
+00:01:04,800 --> 00:01:11,160
+I just drive up here and look for get a copy and we want to get a copy of level one and we want to check
+
+16
+00:01:11,160 --> 00:01:13,690
+to see the value of this Boolean drag.
+
+17
+00:01:13,730 --> 00:01:14,130
+Okay.
+
+18
+00:01:14,160 --> 00:01:15,150
+And look for Branch.
+
+19
+00:01:17,530 --> 00:01:20,410
+And if this is false, then we're going to do nothing.
+
+20
+00:01:20,650 --> 00:01:27,040
+However, if this is true, then we're going to open a level one aim and that level is going to be my
+
+21
+00:01:27,040 --> 00:01:27,780
+boss level.
+
+22
+00:01:27,790 --> 00:01:30,190
+So I call the boss map.
+
+23
+00:01:30,490 --> 00:01:33,190
+So here I'm going to type in boss map.
+
+24
+00:01:35,660 --> 00:01:41,540
+And now if I go compile and save, I'll only be able to open this level if I beat in level one.
+
+25
+00:01:42,080 --> 00:01:44,060
+If we go back to our player save.
+
+26
+00:01:44,810 --> 00:01:49,280
+I realized that I accidentally made it so that we've already beaten level one.
+
+27
+00:01:49,280 --> 00:01:56,870
+So if we just leave this unchecked and go compile and save, this isn't going to actually override the
+
+28
+00:01:56,870 --> 00:02:01,250
+save game that we just made because we've already told the save game that we've beaten number one.
+
+29
+00:02:01,460 --> 00:02:06,710
+So we need to delete our save game in order to delete a save game inside of Unreal Engine.
+
+30
+00:02:06,890 --> 00:02:10,789
+We can just right click and go show in Explorer.
+
+31
+00:02:11,330 --> 00:02:17,150
+This will open up our project in Windows mode and just go to whatever you call the project, so called
+
+32
+00:02:17,150 --> 00:02:23,510
+my action platformer and we're going to see this photo called Saved Head Inside here and then go to
+
+33
+00:02:23,510 --> 00:02:28,230
+save games, then go to the saved game folder here inside of this folder.
+
+34
+00:02:28,250 --> 00:02:31,310
+Unreal Engine is going to keep a log of all our saved games.
+
+35
+00:02:31,310 --> 00:02:33,050
+So I called my save game one.
+
+36
+00:02:33,170 --> 00:02:35,600
+Just select it and then go delete.
+
+37
+00:02:36,430 --> 00:02:40,720
+Then if we close this and if I go back to my main menu level.
+
+38
+00:02:42,330 --> 00:02:43,470
+I'll save everything.
+
+39
+00:02:44,730 --> 00:02:47,810
+And good play is going to create me a new set game.
+
+40
+00:02:47,820 --> 00:02:52,180
+And in my new save game, I made it so that I've not beaten level one.
+
+41
+00:02:52,200 --> 00:02:57,510
+So now if go, start and try and get level two, it's not going to open because I've not beaten never
+
+42
+00:02:57,510 --> 00:02:57,900
+one.
+
+43
+00:02:58,500 --> 00:03:02,070
+The next thing we need to do is make it so that we can beat level one.
+
+44
+00:03:02,400 --> 00:03:10,920
+If I just close this and go to the item folder and go over to the item image order and briefly close
+
+45
+00:03:10,920 --> 00:03:16,380
+on our engine and attached in this lecture, I'm going to make sure to include the sign error.
+
+46
+00:03:16,620 --> 00:03:18,840
+Just drag it into your Android engine project.
+
+47
+00:03:20,420 --> 00:03:27,290
+And just right click and go Sprite actions apply paper to DX and then create a Sprite out of this image.
+
+48
+00:03:28,770 --> 00:03:32,880
+Then if we go to our item folder, we're going to create a new blueprint.
+
+49
+00:03:33,480 --> 00:03:39,600
+If we just right click and Go Blueprint class, select actor and call this level unlock.
+
+50
+00:03:42,830 --> 00:03:44,330
+If we open this up.
+
+51
+00:03:45,450 --> 00:03:47,940
+And go ahead and look for a paper spread.
+
+52
+00:03:49,630 --> 00:03:52,360
+I'm going to select the sign that will just imported.
+
+53
+00:03:54,740 --> 00:03:57,950
+And I'm going to scale up a bit to a three.
+
+54
+00:03:58,980 --> 00:04:01,980
+And just make sure its collision is no collision.
+
+55
+00:04:02,700 --> 00:04:05,430
+And we're going to add a box collision around the sprite.
+
+56
+00:04:05,790 --> 00:04:07,410
+So look for box collision.
+
+57
+00:04:08,750 --> 00:04:10,700
+And make sure it fits around our papers.
+
+58
+00:04:10,700 --> 00:04:11,120
+Right.
+
+59
+00:04:13,080 --> 00:04:16,170
+Then we scroll down and go on the component.
+
+60
+00:04:16,170 --> 00:04:20,160
+We can overlap if this overlaps or play a blueprint.
+
+61
+00:04:20,339 --> 00:04:23,940
+So drag a player and the forecast to play a blueprint.
+
+62
+00:04:25,000 --> 00:04:28,570
+And we are going to drag up here and get that same reference.
+
+63
+00:04:28,600 --> 00:04:30,670
+So, look, forget play or save.
+
+64
+00:04:30,760 --> 00:04:35,500
+Then if we just drag up here and look for get levels.
+
+65
+00:04:36,380 --> 00:04:40,160
+I'm drug repair and look for a set array element.
+
+66
+00:04:40,910 --> 00:04:45,920
+Right click on this index and promote it to rebel and call it level number.
+
+67
+00:04:47,110 --> 00:04:52,450
+And make sure this is instance editable and just check this item and connect the nodes here.
+
+68
+00:04:52,780 --> 00:04:57,310
+So the idea here is we made this array which has loads of elements.
+
+69
+00:04:57,310 --> 00:04:59,260
+So it has an on one element too.
+
+70
+00:04:59,260 --> 00:05:01,300
+And if we want, we can add more elements.
+
+71
+00:05:01,480 --> 00:05:06,340
+When our play a character is in level one, we're going to type in one inside of this value.
+
+72
+00:05:06,370 --> 00:05:08,230
+And when I play a character beats this level.
+
+73
+00:05:08,260 --> 00:05:11,560
+We're going to set element one to be true.
+
+74
+00:05:11,590 --> 00:05:13,810
+That's why we just want to make sure this is checked.
+
+75
+00:05:14,170 --> 00:05:19,060
+And that's why we have this variable which will help us determine which element inside of this array
+
+76
+00:05:19,060 --> 00:05:19,990
+we should check.
+
+77
+00:05:20,230 --> 00:05:23,050
+So for level one, we'll set this to one and for level two.
+
+78
+00:05:23,080 --> 00:05:24,160
+We'll set this to two.
+
+79
+00:05:24,850 --> 00:05:27,540
+After we do this, we just need to make sure to save this.
+
+80
+00:05:27,550 --> 00:05:34,090
+So if we drag off here and look for safe game to slot and our slot name is one.
+
+81
+00:05:36,310 --> 00:05:38,920
+And then after we do this, we're going to have a delay.
+
+82
+00:05:41,130 --> 00:05:43,620
+Or let's say one second.
+
+83
+00:05:44,160 --> 00:05:46,410
+And then we are going to open them by name.
+
+84
+00:05:47,370 --> 00:05:52,710
+And then we can open the next level, just right click on this value, promote it to rebel and call
+
+85
+00:05:52,710 --> 00:05:53,550
+this level name.
+
+86
+00:05:54,380 --> 00:05:57,590
+I make an instance editor and go compile.
+
+87
+00:05:58,160 --> 00:06:04,520
+If I close this, if I go to the end of level one and I just place this level or not at the end of my
+
+88
+00:06:04,520 --> 00:06:05,120
+level.
+
+89
+00:06:05,150 --> 00:06:08,510
+So around here, I'll just move this to layer 20.
+
+90
+00:06:10,140 --> 00:06:12,950
+And it's actually very small.
+
+91
+00:06:12,960 --> 00:06:14,760
+So if we go back in here.
+
+92
+00:06:15,690 --> 00:06:18,270
+Let's scale it up so I'll make it ten.
+
+93
+00:06:21,930 --> 00:06:23,550
+Okay, that looks a bit better.
+
+94
+00:06:24,090 --> 00:06:30,510
+And under level number, type one and under level name will make it so that when we beat this level,
+
+95
+00:06:30,510 --> 00:06:32,070
+we're taken to the boss level.
+
+96
+00:06:32,280 --> 00:06:33,900
+So I called that boss map.
+
+97
+00:06:34,050 --> 00:06:37,560
+So here, under level name, I'm going to type in boss map.
+
+98
+00:06:39,280 --> 00:06:41,540
+And we can save this and test this out.
+
+99
+00:06:41,560 --> 00:06:46,000
+So if I go to my main menu, go save and go play.
+
+100
+00:06:46,890 --> 00:06:49,500
+Start and then try and click on level two.
+
+101
+00:06:49,530 --> 00:06:50,190
+I can't.
+
+102
+00:06:50,340 --> 00:06:53,850
+But if I click on level one, it will open and take me to that level.
+
+103
+00:06:54,270 --> 00:06:56,880
+I'm now just going to quickly get to the end of this level.
+
+104
+00:06:58,170 --> 00:06:58,880
+Okay.
+
+105
+00:06:58,890 --> 00:07:00,960
+So I made it to the end of my level.
+
+106
+00:07:00,990 --> 00:07:02,040
+When I go here.
+
+107
+00:07:03,000 --> 00:07:05,130
+And one second it's going to take me to level two.
+
+108
+00:07:05,550 --> 00:07:08,910
+And now I'm in level two and I should have unlocked level one.
+
+109
+00:07:08,940 --> 00:07:11,730
+So if I just pause this and go to my main menu.
+
+110
+00:07:12,270 --> 00:07:13,500
+I can now go start.
+
+111
+00:07:13,530 --> 00:07:14,700
+Then click level two.
+
+112
+00:07:15,510 --> 00:07:18,720
+Okay, so it looks like I have an error.
+
+113
+00:07:20,950 --> 00:07:27,460
+It says access non trying to read the safe reference in my main menu so look at branch.
+
+114
+00:07:28,680 --> 00:07:28,960
+Ah.
+
+115
+00:07:29,100 --> 00:07:29,610
+Okay.
+
+116
+00:07:29,640 --> 00:07:30,330
+Yes.
+
+117
+00:07:30,480 --> 00:07:31,380
+My fault.
+
+118
+00:07:31,620 --> 00:07:38,200
+Okay, so in my event construct, if our safe game does not exist, then we create the safe reference.
+
+119
+00:07:38,220 --> 00:07:41,780
+However, if our safe game does exist, then we don't do anything.
+
+120
+00:07:41,790 --> 00:07:43,560
+So we just need to create a safe reference.
+
+121
+00:07:43,590 --> 00:07:45,150
+If our save game does exist.
+
+122
+00:07:45,270 --> 00:07:53,010
+So if I just drag off true and not full load game from slot, the slot name is going to be one and then
+
+123
+00:07:53,010 --> 00:07:55,410
+I'm going to cost to my platform to save.
+
+124
+00:07:57,160 --> 00:08:02,170
+And then we can track and I'll save reference and set it and just connect the notes here.
+
+125
+00:08:02,920 --> 00:08:06,730
+That way, if I do have a save game, I'll create my save game reference.
+
+126
+00:08:07,540 --> 00:08:14,650
+So now if I go compile and play and I go to my main menu because I'd be in number one, I should be
+
+127
+00:08:14,650 --> 00:08:15,940
+able to open level two.
+
+128
+00:08:15,970 --> 00:08:20,620
+So if I select this, it will take me to level two and everything is working fine.
+
+129
+00:08:21,130 --> 00:08:24,530
+Let's do one more thing because our level two is kind of different.
+
+130
+00:08:24,550 --> 00:08:29,710
+Let's make it so when we beat the boss and level two, it will tell the game that we beat in level two.
+
+131
+00:08:30,190 --> 00:08:33,220
+If I go back to my boss blueprint.
+
+132
+00:08:34,970 --> 00:08:41,960
+If we just open up our blueprint before we destroy our boss, what we're going to do is just right click
+
+133
+00:08:42,169 --> 00:08:44,510
+and forget player character.
+
+134
+00:08:45,440 --> 00:08:48,410
+From here, we can cast to our player blueprint.
+
+135
+00:08:50,320 --> 00:08:53,260
+And from here we can get our Plan C reference.
+
+136
+00:08:53,440 --> 00:08:55,180
+So I look for get player save.
+
+137
+00:08:55,900 --> 00:08:58,780
+And from here I can look for get levels.
+
+138
+00:08:59,960 --> 00:09:04,010
+And then we can juggle, pay and look for a set array element.
+
+139
+00:09:04,610 --> 00:09:09,080
+And the index is going to be two because our boss is in level two.
+
+140
+00:09:09,110 --> 00:09:12,890
+If your boss is in a different level, then you can set this to be a different value.
+
+141
+00:09:13,460 --> 00:09:17,450
+We can just check this item box and connect the nodes here.
+
+142
+00:09:18,970 --> 00:09:21,410
+And then we just want to save this to our safe game.
+
+143
+00:09:21,430 --> 00:09:24,880
+So I drive up here and look for safe game to start.
+
+144
+00:09:25,180 --> 00:09:26,500
+The start is going to be one.
+
+145
+00:09:26,950 --> 00:09:31,300
+We can then hook this up here and destroy this actor.
+
+146
+00:09:32,720 --> 00:09:37,730
+And actually, instead of destroying this actor, we can go open up opening.
+
+147
+00:09:38,520 --> 00:09:41,040
+And then I'll take my player back to the main menu.
+
+148
+00:09:43,930 --> 00:09:52,540
+And now just to test this out, I'm going to give my boss one HP and go compile and I'm going to go
+
+149
+00:09:52,540 --> 00:09:53,410
+to level two.
+
+150
+00:09:53,740 --> 00:09:54,910
+Sorry, the boss map.
+
+151
+00:09:56,820 --> 00:09:58,830
+And I'm going to kill him quickly.
+
+152
+00:10:00,950 --> 00:10:01,870
+So I killed him.
+
+153
+00:10:01,880 --> 00:10:02,960
+He's destroyed.
+
+154
+00:10:02,960 --> 00:10:05,510
+And then it will take me to my main menu.
+
+155
+00:10:06,520 --> 00:10:07,780
+Okay with that?
+
+156
+00:10:07,780 --> 00:10:09,760
+We've created a level and not system.
+

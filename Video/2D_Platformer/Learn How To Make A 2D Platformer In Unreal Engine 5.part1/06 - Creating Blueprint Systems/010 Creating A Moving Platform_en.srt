@@ -1,0 +1,252 @@
+1
+00:00:03,070 --> 00:00:03,770
+Hello.
+
+2
+00:00:03,790 --> 00:00:08,200
+In this next lecture, we're going to go over how to create a moving platform.
+
+3
+00:00:08,290 --> 00:00:11,230
+To get started, just select our platform blueprint.
+
+4
+00:00:11,470 --> 00:00:13,420
+Right click and go duplicate.
+
+5
+00:00:13,540 --> 00:00:15,400
+And call this ah, moving platform.
+
+6
+00:00:15,700 --> 00:00:23,470
+If we just open this up and go over to components and go ahead and look for interrupt movement, this
+
+7
+00:00:23,470 --> 00:00:26,290
+will add a type of movement to our moving platform.
+
+8
+00:00:26,320 --> 00:00:32,049
+Just select it and go over to control and add two elements.
+
+9
+00:00:32,320 --> 00:00:35,560
+These control points basically represent the points that are moving.
+
+10
+00:00:35,560 --> 00:00:37,170
+Platform is going to move between.
+
+11
+00:00:37,180 --> 00:00:41,950
+So we've added two because we're going to have this moving platform move between two points.
+
+12
+00:00:42,370 --> 00:00:47,410
+Next, we want to go over to behavior type and just change this to be ping pong.
+
+13
+00:00:47,560 --> 00:00:53,160
+What this will basically mean is our moving platform will ping pong between these two control points.
+
+14
+00:00:53,170 --> 00:00:58,390
+So go to control point zero, then control point one, and then back to there and then back to one.
+
+15
+00:00:58,600 --> 00:01:05,080
+If I change this to something like one chop, what that basically mean is when I'm moving platform moves,
+
+16
+00:01:05,110 --> 00:01:08,350
+it will move from platforms to platform one and then just stop.
+
+17
+00:01:08,680 --> 00:01:12,670
+You can hover over each behavior type to see more about what it does.
+
+18
+00:01:12,850 --> 00:01:14,860
+But we want to work with the ping pong one.
+
+19
+00:01:15,550 --> 00:01:18,070
+Next, we want to create two new variables.
+
+20
+00:01:19,130 --> 00:01:19,270
+Cool.
+
+21
+00:01:19,270 --> 00:01:26,710
+This first one location one and undesirable type to be a vector because this variable is going to basically
+
+22
+00:01:26,710 --> 00:01:29,680
+represent where our moving platform is going to move.
+
+23
+00:01:30,520 --> 00:01:35,500
+Make sure that this variable is instance editable and you have show three D widget.
+
+24
+00:01:36,210 --> 00:01:39,360
+Then create another variable and call it location to.
+
+25
+00:01:40,340 --> 00:01:43,970
+Make sure it is also instance editable and show 3D widget.
+
+26
+00:01:44,600 --> 00:01:48,140
+Then we want to create a new variable and call this speed.
+
+27
+00:01:49,180 --> 00:01:55,960
+Change this barrel, type to be a flute and make this instance editable and then go compile.
+
+28
+00:01:56,290 --> 00:02:01,360
+So this bead is basically going to represent how long it takes for our moving platform to move between
+
+29
+00:02:01,360 --> 00:02:03,400
+location one and location two.
+
+30
+00:02:04,270 --> 00:02:09,850
+Finally, we want to head over to the construct and script and then drag in our interpreter movement
+
+31
+00:02:10,120 --> 00:02:13,390
+and just drag up here and look for set control points.
+
+32
+00:02:14,650 --> 00:02:16,710
+And there's one second point.
+
+33
+00:02:16,720 --> 00:02:20,410
+Just drag off this and look for make array.
+
+34
+00:02:21,760 --> 00:02:24,910
+Connect these nodes and then add two pins.
+
+35
+00:02:25,210 --> 00:02:26,410
+So zero and one.
+
+36
+00:02:27,130 --> 00:02:31,450
+Then just drag off the zero and look for make inter control point.
+
+37
+00:02:32,740 --> 00:02:35,650
+Then hook up on location one and connect there.
+
+38
+00:02:36,010 --> 00:02:37,750
+So I'll tell you what we've just done.
+
+39
+00:02:37,840 --> 00:02:43,240
+So we've just dragged in our to movement and we are manually setting the control points within it.
+
+40
+00:02:43,330 --> 00:02:48,070
+So we're making this first control point, our location one variable, and we're going to make the second
+
+41
+00:02:48,070 --> 00:02:50,050
+control point our location to variable.
+
+42
+00:02:50,140 --> 00:02:52,330
+So drag off one and look for me.
+
+43
+00:02:52,360 --> 00:02:56,200
+Enter to control point and drag and location to.
+
+44
+00:02:58,130 --> 00:03:02,240
+Finally to try and touch the movement and look for set duration.
+
+45
+00:03:03,610 --> 00:03:05,410
+And connect all speed variable.
+
+46
+00:03:07,910 --> 00:03:13,580
+So this will control how long it takes for our moving platform to move between location one and location
+
+47
+00:03:13,580 --> 00:03:14,060
+two.
+
+48
+00:03:14,390 --> 00:03:17,090
+We can now go compile and test this all out.
+
+49
+00:03:17,210 --> 00:03:23,030
+So if I scroll down, track in a moving platform and move it to layer 20.
+
+50
+00:03:24,360 --> 00:03:28,800
+I'm just going to delete my standard platform when I select my viewing platform.
+
+51
+00:03:28,860 --> 00:03:32,220
+We should see this three D gizmo called Location two.
+
+52
+00:03:32,640 --> 00:03:33,960
+Just move it anywhere.
+
+53
+00:03:33,960 --> 00:03:34,550
+So I'm going to move.
+
+54
+00:03:35,100 --> 00:03:35,850
+Let's see here.
+
+55
+00:03:37,060 --> 00:03:39,970
+Then let's look at one and let's say just leave it here.
+
+56
+00:03:41,330 --> 00:03:44,630
+Then if we go over to speed, let's make it two.
+
+57
+00:03:44,660 --> 00:03:47,120
+So take 2 seconds to move between these two points.
+
+58
+00:03:47,330 --> 00:03:49,340
+And now if I go play.
+
+59
+00:03:50,510 --> 00:03:55,940
+When I play my game, my platform is moving between those two points and I should be able to jump on
+
+60
+00:03:55,940 --> 00:03:56,210
+it.
+
+61
+00:03:57,220 --> 00:03:57,970
+Like this.
+
+62
+00:03:58,210 --> 00:03:58,870
+Nice.
+
+63
+00:03:58,870 --> 00:04:01,270
+With this, we have made our moving platform.
+

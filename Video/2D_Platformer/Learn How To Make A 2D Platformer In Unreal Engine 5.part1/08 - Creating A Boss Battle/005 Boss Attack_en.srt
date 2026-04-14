@@ -1,0 +1,336 @@
+1
+00:00:03,290 --> 00:00:03,960
+Hello.
+
+2
+00:00:03,980 --> 00:00:09,860
+In this next lecture, we're going to go over how to make our boss attack our player character with
+
+3
+00:00:09,860 --> 00:00:11,600
+a ranged projectile attack.
+
+4
+00:00:11,900 --> 00:00:19,590
+If we open up our boss blueprint and right click in some free space and look for event again players
+
+5
+00:00:20,300 --> 00:00:21,600
+and then they can play.
+
+6
+00:00:21,620 --> 00:00:24,200
+We're going to set a timer by event.
+
+7
+00:00:25,060 --> 00:00:31,870
+And just right click on this return buddy and promote it to a rival and call this boss attack event.
+
+8
+00:00:33,250 --> 00:00:41,290
+Check this looping box and for the time right click and go random float in range and for the minimum
+
+9
+00:00:41,290 --> 00:00:46,420
+value put two and for the max value, put four and just connect this to time.
+
+10
+00:00:46,570 --> 00:00:50,800
+So every 2 to 4 seconds will make our boss attack our player character.
+
+11
+00:00:51,430 --> 00:00:56,030
+Drag up this event and look for add custom event calls.
+
+12
+00:00:56,140 --> 00:00:59,230
+Play boss Attack animation.
+
+13
+00:01:01,340 --> 00:01:02,000
+Next.
+
+14
+00:01:02,000 --> 00:01:09,390
+If we just close this and go over to our Boss animation blueprint, we're going to create a jump node.
+
+15
+00:01:09,410 --> 00:01:15,260
+But whenever our boss attacks our player character, so if we right click and go jump and just call
+
+16
+00:01:15,260 --> 00:01:16,280
+this attack.
+
+17
+00:01:18,340 --> 00:01:21,400
+We can drag off and look for, Animation said.
+
+18
+00:01:21,880 --> 00:01:24,910
+And I'm just going to rename this to my boss attack.
+
+19
+00:01:27,560 --> 00:01:33,140
+We can head inside here and make this play our boss attack animation.
+
+20
+00:01:36,050 --> 00:01:38,630
+And if we connect from bots attack to idle.
+
+21
+00:01:39,020 --> 00:01:44,870
+Once our bots attack, animation has finished playing or enter our idle animation or head inside here
+
+22
+00:01:44,870 --> 00:01:52,280
+and right click and look for time remaining post-attack when the time remaining of this animation is
+
+23
+00:01:52,280 --> 00:01:59,030
+less than 0.0 1 seconds, I will transition back into my idle animation.
+
+24
+00:02:00,490 --> 00:02:02,770
+If we go back to our past blueprint.
+
+25
+00:02:03,610 --> 00:02:06,520
+We can now drag in our animation component.
+
+26
+00:02:07,360 --> 00:02:10,270
+And try and get, for instance.
+
+27
+00:02:10,990 --> 00:02:13,570
+And from here we can cool the jump to Node.
+
+28
+00:02:14,680 --> 00:02:15,720
+For the jump name.
+
+29
+00:02:15,720 --> 00:02:16,950
+I called it Attack.
+
+30
+00:02:18,340 --> 00:02:22,630
+And we can just connect this into here and go compile and play.
+
+31
+00:02:22,870 --> 00:02:26,650
+So every 2 to 4 seconds, my posture swing it sort.
+
+32
+00:02:27,470 --> 00:02:32,000
+The next thing we're going to do is make it so that when our boss swings, it sort of projectile will
+
+33
+00:02:32,000 --> 00:02:34,670
+spawn, which is aimed at our player character.
+
+34
+00:02:35,300 --> 00:02:43,790
+If we close this and go over to our boss animation source, find people, attack animation and go to
+
+35
+00:02:43,790 --> 00:02:50,980
+frame around here, frame three around here, we're going to right click and go add, notify new, notify
+
+36
+00:02:50,990 --> 00:02:53,030
+and call this boss attack.
+
+37
+00:02:53,960 --> 00:02:59,300
+So around this frame, we're going to call a custom event inside of our player character.
+
+38
+00:02:59,510 --> 00:03:04,730
+So if I right click and go add custom event and call this attack.
+
+39
+00:03:07,070 --> 00:03:14,810
+If we go over to the viewport, go ahead and look for a scene and just rename this to our projectile
+
+40
+00:03:14,810 --> 00:03:16,340
+spawn location.
+
+41
+00:03:17,760 --> 00:03:22,250
+And place this roughly around where our boss swings its sword in that animation.
+
+42
+00:03:22,260 --> 00:03:24,420
+So I think around here is fine.
+
+43
+00:03:26,040 --> 00:03:26,760
+Next.
+
+44
+00:03:26,760 --> 00:03:32,320
+If we go back to the Bancroft when we call this attack event, we're going to make our projectiles ball
+
+45
+00:03:32,340 --> 00:03:34,770
+location based or player character.
+
+46
+00:03:34,890 --> 00:03:37,950
+Then we're going to spawn a projectile at that location.
+
+47
+00:03:38,250 --> 00:03:45,120
+So in order to make this place our player character, we can right click and look for find, look at
+
+48
+00:03:45,120 --> 00:03:45,960
+rotation.
+
+49
+00:03:47,190 --> 00:03:49,340
+But the start just right click and look.
+
+50
+00:03:49,350 --> 00:03:58,380
+We'll get actor location and connect this into here for the target right click and look for get player
+
+51
+00:03:58,740 --> 00:03:59,460
+character.
+
+52
+00:04:00,150 --> 00:04:04,170
+From here we can drag up and get actor location.
+
+53
+00:04:06,700 --> 00:04:12,820
+So what this node will do is it'll get the location of our boss and the location of our player character.
+
+54
+00:04:12,940 --> 00:04:17,019
+And this return value will be a value pointed towards our player character.
+
+55
+00:04:17,320 --> 00:04:25,510
+So if we drag in our project hotspot location and drag up here and look for set world rotation and connect
+
+56
+00:04:25,510 --> 00:04:31,420
+this into here, this will make our projectile spawn location be facing towards our player character.
+
+57
+00:04:31,840 --> 00:04:36,970
+After we do this, we're going to drag and look for spawn actor from class.
+
+58
+00:04:37,540 --> 00:04:45,070
+And if we just briefly close this and go to our mushroom folder and find the mushroom project, I'll
+
+59
+00:04:45,400 --> 00:04:50,590
+just copy this and paste this again in our Boss Blueprint folder.
+
+60
+00:04:51,040 --> 00:04:54,310
+Right click and rename it our Boss project.
+
+61
+00:04:57,780 --> 00:05:05,790
+If we open it up and go to the viewport, set the paper flipbook and change it to be the sort flipbook
+
+62
+00:05:05,790 --> 00:05:07,110
+that we made earlier.
+
+63
+00:05:08,220 --> 00:05:14,700
+And I'm going to scale up a bit, so make it seven and also just adjust the sphere.
+
+64
+00:05:15,710 --> 00:05:18,050
+Then if we go over to the bank of.
+
+65
+00:05:18,920 --> 00:05:24,620
+And go to this bit where we make our projectile damage the player character and then explode.
+
+66
+00:05:25,250 --> 00:05:29,030
+For this we want to replace this with the saw explosion sprite.
+
+67
+00:05:29,270 --> 00:05:30,980
+So this one saw destroyed.
+
+68
+00:05:31,940 --> 00:05:35,750
+Then we can go compile and go back to our boss blueprint.
+
+69
+00:05:36,140 --> 00:05:38,720
+And this is the projectile that we're going to spawn.
+
+70
+00:05:40,320 --> 00:05:43,560
+So I look for both predictor and for the spawn transform.
+
+71
+00:05:43,920 --> 00:05:51,440
+Just track in our product, our sport location and drive up here and look for that world transform.
+
+72
+00:05:52,140 --> 00:05:56,070
+This will get the location, rotation and scale of this object.
+
+73
+00:05:58,690 --> 00:06:06,130
+And then if we just connect attack into here and go back to our animation blueprint, we can go over
+
+74
+00:06:06,130 --> 00:06:08,710
+to functions and set the boss attack.
+
+75
+00:06:09,130 --> 00:06:15,760
+Now, if I drag in my boss VP reference and drag off and call the attack customer event.
+
+76
+00:06:17,560 --> 00:06:22,100
+I go compile and save when my boss now swings its hoard.
+
+77
+00:06:22,120 --> 00:06:26,800
+It should spawn a projectile which is aiming towards the player character.
+
+78
+00:06:27,280 --> 00:06:28,210
+If I could play.
+
+79
+00:06:29,410 --> 00:06:31,270
+And let's test this out.
+
+80
+00:06:31,300 --> 00:06:36,100
+So the pot bellied Twinkie thought it's going to projectile, which is aimed towards me.
+
+81
+00:06:36,520 --> 00:06:42,100
+There's one more thing we need to do, and that is select our level and just give this the tag.
+
+82
+00:06:43,400 --> 00:06:47,360
+Of wool and the tag of level.
+
+83
+00:06:47,480 --> 00:06:51,590
+That way the projectile will collide with the walls of this level.
+
+84
+00:06:53,580 --> 00:06:58,440
+So if I could play it, my boss besides me, the projectile should still be destroyed.
+

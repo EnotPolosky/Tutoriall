@@ -1,0 +1,376 @@
+1
+00:00:03,050 --> 00:00:03,670
+Hello.
+
+2
+00:00:03,680 --> 00:00:08,840
+In this lecture, we're going to go over how to create a pause menu to get started.
+
+3
+00:00:08,930 --> 00:00:10,730
+Open up the Widget Blueprint folder.
+
+4
+00:00:11,120 --> 00:00:14,420
+Right click and go User Interface Widget Blueprint.
+
+5
+00:00:15,500 --> 00:00:15,950
+Cool this.
+
+6
+00:00:15,950 --> 00:00:16,160
+Ah.
+
+7
+00:00:16,160 --> 00:00:17,150
+Pause menu.
+
+8
+00:00:22,110 --> 00:00:23,250
+Once you've done this.
+
+9
+00:00:23,340 --> 00:00:28,350
+Open it up and go over to the palette and search for a canvas panel.
+
+10
+00:00:29,320 --> 00:00:30,970
+Direct us into our designer.
+
+11
+00:00:31,600 --> 00:00:33,580
+Then look for an image.
+
+12
+00:00:35,190 --> 00:00:41,850
+Drag this image into our canvass panel and just going to anchor and select this one, which will anchor
+
+13
+00:00:41,850 --> 00:00:43,320
+it across the whole of the screen.
+
+14
+00:00:43,650 --> 00:00:46,770
+And under offset, put zero in all the values.
+
+15
+00:00:49,490 --> 00:00:53,450
+Once you've done this, change the Z order of this to be minus one.
+
+16
+00:00:53,570 --> 00:00:56,510
+This will place the image behind anything that we put on top of it.
+
+17
+00:00:56,900 --> 00:01:01,160
+And if we go to color and opacity, change this to be black.
+
+18
+00:01:01,960 --> 00:01:05,860
+And change the alpha value to be something like 0.6.
+
+19
+00:01:05,890 --> 00:01:06,850
+That works well.
+
+20
+00:01:07,030 --> 00:01:07,670
+Then go.
+
+21
+00:01:07,690 --> 00:01:08,440
+Okay.
+
+22
+00:01:09,010 --> 00:01:11,380
+We're now ready to set up our pause menu.
+
+23
+00:01:11,740 --> 00:01:19,090
+If we go to the palette and look for a vertical box, track this in and place this in the center of
+
+24
+00:01:19,090 --> 00:01:19,810
+our screen.
+
+25
+00:01:20,620 --> 00:01:23,320
+Also, make sure to anchor this in the center of our screen.
+
+26
+00:01:24,390 --> 00:01:26,280
+Then look for a button.
+
+27
+00:01:28,380 --> 00:01:31,740
+And drag two buttons onto the vertical box.
+
+28
+00:01:35,000 --> 00:01:40,910
+Next, look for some text and drag one text on top of each button.
+
+29
+00:01:43,230 --> 00:01:47,010
+Select the first text and make it say resume.
+
+30
+00:01:50,110 --> 00:01:54,640
+We'll make it so that when we click this button and we pause our game, clicking this button will resume
+
+31
+00:01:54,640 --> 00:01:58,810
+our game and select the second text and make this a main menu.
+
+32
+00:01:59,260 --> 00:02:01,590
+We'll make it to that when the player clicks upon.
+
+33
+00:02:01,690 --> 00:02:07,810
+It will take them to the main menu, select the first button and just go to padding and add a padding
+
+34
+00:02:07,810 --> 00:02:10,810
+or 50 just so that there's a bit of a gap between them.
+
+35
+00:02:10,840 --> 00:02:12,910
+Then I'm going to select both text.
+
+36
+00:02:12,940 --> 00:02:16,420
+They're a bit small, so I'm going to make them a size 50.
+
+37
+00:02:20,010 --> 00:02:27,090
+Then if we go to our pilot dragon the text and anchor it to the top and make this a paused.
+
+38
+00:02:30,370 --> 00:02:34,030
+And I'm just going to increase the size of this to 100.
+
+39
+00:02:37,920 --> 00:02:40,200
+We can compile and save this.
+
+40
+00:02:40,350 --> 00:02:45,270
+So we're going to make sure that when we press a certain key in our game, it will open up its menu
+
+41
+00:02:45,270 --> 00:02:46,440
+and pause our game.
+
+42
+00:02:46,620 --> 00:02:55,560
+If we close this and go to edit and go to product settings, scroll down and look for input and go add
+
+43
+00:02:55,560 --> 00:02:56,160
+new action.
+
+44
+00:02:56,160 --> 00:02:56,730
+Mapping.
+
+45
+00:02:57,570 --> 00:02:59,070
+Call this or pause.
+
+46
+00:03:00,580 --> 00:03:03,430
+And for the key, I'm going to make it.
+
+47
+00:03:03,460 --> 00:03:06,160
+When I press the button, it will pull the game.
+
+48
+00:03:06,280 --> 00:03:09,130
+So scroll down and select the weapon.
+
+49
+00:03:09,610 --> 00:03:13,750
+We can now close this and go to all play a character blueprint.
+
+50
+00:03:16,070 --> 00:03:19,580
+And in some free space, right click and look for pause.
+
+51
+00:03:22,250 --> 00:03:25,190
+And so this one that we just made action event pause.
+
+52
+00:03:25,790 --> 00:03:29,870
+When we press this button, we're going to drag a fit and we'll create widget.
+
+53
+00:03:31,550 --> 00:03:34,640
+The widget we're going to create is going to be the pause menu that we just made.
+
+54
+00:03:35,240 --> 00:03:37,340
+Then we're going to add this to our viewport.
+
+55
+00:03:40,010 --> 00:03:45,950
+Now in order to make Apple's menu actually work, Let's go back to our pause menu and go to the graph.
+
+56
+00:03:46,810 --> 00:03:47,830
+A bank construct.
+
+57
+00:03:47,980 --> 00:03:51,640
+This will happen as soon as our pause menu is shown on our screen.
+
+58
+00:03:51,880 --> 00:03:55,450
+We're going to drive up here and look for set game paused.
+
+59
+00:03:55,810 --> 00:03:59,650
+Make sure to check this and this will just make it so our game is paused.
+
+60
+00:04:00,310 --> 00:04:05,980
+After we do this to make sure our player character can click on any one of these buttons, we're going
+
+61
+00:04:05,980 --> 00:04:14,050
+to right click and not forget player controller and drag up here and look for set show, mouse cursor.
+
+62
+00:04:14,500 --> 00:04:16,149
+And just make sure this is checked.
+
+63
+00:04:16,540 --> 00:04:18,850
+This will make it so we can see our mouse cursor.
+
+64
+00:04:19,360 --> 00:04:24,280
+Then if we drag off here and look for set input UI only.
+
+65
+00:04:25,170 --> 00:04:28,410
+And this will just make it so our controller is compatible with our main menu.
+
+66
+00:04:30,080 --> 00:04:34,280
+So this is what's going to happen when we open up our pause menu.
+
+67
+00:04:34,310 --> 00:04:37,070
+We're going to pause our game and then chew our mouse cursor.
+
+68
+00:04:37,670 --> 00:04:41,930
+Next, if we go back to the designer and select the resume button.
+
+69
+00:04:42,260 --> 00:04:44,300
+Scroll down and go unclipped.
+
+70
+00:04:44,810 --> 00:04:49,100
+When we click on this button, we're going to unpause and resume our game.
+
+71
+00:04:49,430 --> 00:04:57,620
+So if we drag off here and look for set game paused and just make sure this is unchecked, the next
+
+72
+00:04:57,620 --> 00:05:00,650
+thing we're going to do is hide our mouse cursor.
+
+73
+00:05:00,800 --> 00:05:02,420
+So I'm just going to copy this.
+
+74
+00:05:03,530 --> 00:05:11,690
+And if we drag off here and across that show mouse cursor and just leave this unchecked, then we need
+
+75
+00:05:11,690 --> 00:05:16,550
+to tell the player controller to go back into game mode so that we automatically possess our player
+
+76
+00:05:16,550 --> 00:05:17,210
+character.
+
+77
+00:05:17,300 --> 00:05:22,250
+So if we drive off here and look for a set input game only.
+
+78
+00:05:24,310 --> 00:05:28,450
+And then we need to make sure that our pause menu is no longer on the screen.
+
+79
+00:05:28,690 --> 00:05:33,910
+To do that, we can just drag off here and look for the remove from parent node.
+
+80
+00:05:34,180 --> 00:05:35,730
+This will make it to our pause menu.
+
+81
+00:05:35,740 --> 00:05:37,210
+It's removed from our screen.
+
+82
+00:05:37,690 --> 00:05:43,750
+If we go back to the designer and select the main menu and scroll down and go unclipped.
+
+83
+00:05:44,140 --> 00:05:48,040
+When we click this button, we are going to open our main menu level.
+
+84
+00:05:48,280 --> 00:05:50,440
+So go open level by name.
+
+85
+00:05:50,590 --> 00:05:53,170
+Then type in whatever you call your main menu level.
+
+86
+00:05:53,200 --> 00:05:53,650
+So I.
+
+87
+00:05:53,830 --> 00:05:55,510
+My main menu map.
+
+88
+00:05:58,350 --> 00:05:59,850
+And now we're going to compile.
+
+89
+00:06:00,060 --> 00:06:01,740
+We can test this all out.
+
+90
+00:06:01,950 --> 00:06:04,560
+So if I go play, I'm in my level one.
+
+91
+00:06:05,040 --> 00:06:09,990
+If I press the people that will show me my post screen, I can go resume and my menu.
+
+92
+00:06:10,230 --> 00:06:13,680
+If I click resume, it will resume my game and I can play it again.
+
+93
+00:06:14,250 --> 00:06:18,870
+If I press the menu again and go me menu, it will take me to my main menu.
+
+94
+00:06:19,350 --> 00:06:21,960
+So with this, we've created a pause menu.
+

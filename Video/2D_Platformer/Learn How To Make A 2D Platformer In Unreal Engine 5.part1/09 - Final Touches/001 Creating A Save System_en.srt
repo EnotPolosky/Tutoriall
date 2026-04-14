@@ -1,0 +1,296 @@
+1
+00:00:03,350 --> 00:00:04,019
+Hello.
+
+2
+00:00:04,040 --> 00:00:07,130
+In this next lecture, we're going to create a safe system.
+
+3
+00:00:07,250 --> 00:00:12,110
+With this safe system, we're going to be able to save things such as the amount of life that my character
+
+4
+00:00:12,110 --> 00:00:12,620
+has.
+
+5
+00:00:12,620 --> 00:00:15,620
+And we'll also be able to make a level unlock system with it.
+
+6
+00:00:15,950 --> 00:00:19,730
+So to get started, go to the player blueprint folder.
+
+7
+00:00:20,930 --> 00:00:25,670
+And Right Click and Go Blueprint class and look for a saved game.
+
+8
+00:00:26,510 --> 00:00:29,540
+Just select it and call this player save.
+
+9
+00:00:29,660 --> 00:00:31,640
+Once you've done that, open it up.
+
+10
+00:00:32,380 --> 00:00:35,830
+We're now going to create the variables that we want to save inside of our game.
+
+11
+00:00:36,250 --> 00:00:39,370
+So create a variable and call this life's.
+
+12
+00:00:40,710 --> 00:00:43,470
+And just change this verbal type to be a float.
+
+13
+00:00:44,010 --> 00:00:47,310
+Then create a new variable and call this coins.
+
+14
+00:00:48,150 --> 00:00:54,630
+Then create another variable and call it apples, then create one more variable and call this levels
+
+15
+00:00:55,290 --> 00:00:57,720
+and change this variable type to be a boolean.
+
+16
+00:00:58,760 --> 00:01:02,290
+And change this to be an array and go compile.
+
+17
+00:01:02,300 --> 00:01:04,670
+So you may have multiple levels in your game.
+
+18
+00:01:04,670 --> 00:01:06,070
+So we're making this an array.
+
+19
+00:01:06,080 --> 00:01:09,590
+That way we can hold and save the data of multiple levels.
+
+20
+00:01:10,550 --> 00:01:15,020
+Once you've done this, just close this, then go over to the main menu widget.
+
+21
+00:01:18,060 --> 00:01:22,820
+And because in our game, this main menu is going to be the first thing that our player character sees.
+
+22
+00:01:22,830 --> 00:01:25,910
+We're going to create our save game here next.
+
+23
+00:01:25,920 --> 00:01:31,710
+If we go over to the graph after a bank construct where we show our mouse cursor and set our player
+
+24
+00:01:31,710 --> 00:01:37,230
+controller to input mode UI only, we're going to check to see if we have a saved game.
+
+25
+00:01:37,350 --> 00:01:42,180
+We can do that by dragging over here and looking for Does save game exist?
+
+26
+00:01:42,660 --> 00:01:44,580
+First lot name type in one.
+
+27
+00:01:44,580 --> 00:01:49,140
+That's what we're going to call our save game and drag off the return value and look for Branch.
+
+28
+00:01:49,440 --> 00:01:52,860
+So we're going to check to see do we have a save game under slot?
+
+29
+00:01:52,860 --> 00:01:53,580
+Name one.
+
+30
+00:01:53,880 --> 00:01:56,460
+If we don't, then we're going to create a save game.
+
+31
+00:01:56,460 --> 00:01:58,740
+So look for create Save Game object.
+
+32
+00:01:59,010 --> 00:02:02,550
+And under the Save Game class, select what we called our save game.
+
+33
+00:02:02,550 --> 00:02:04,200
+So I called mine player save.
+
+34
+00:02:05,410 --> 00:02:11,260
+Then right click on this return body and promote it to a variable and call this RC reference.
+
+35
+00:02:12,510 --> 00:02:16,590
+But when we create a safe game for the first time, we're going to set the starting variables inside
+
+36
+00:02:16,590 --> 00:02:17,490
+of our set game.
+
+37
+00:02:17,580 --> 00:02:23,730
+If we go back to our player, save and select the lives under lives, type in three.
+
+38
+00:02:23,880 --> 00:02:27,510
+This is the amount of lives that I want my player character to start the game with.
+
+39
+00:02:27,900 --> 00:02:31,080
+And if I go to my apples, I'm going to make it to.
+
+40
+00:02:31,080 --> 00:02:33,450
+The player starts with five apples.
+
+41
+00:02:33,630 --> 00:02:39,180
+And if we go to levels, just go add new element and add three elements.
+
+42
+00:02:39,450 --> 00:02:41,460
+Just check zero and check one.
+
+43
+00:02:41,640 --> 00:02:44,680
+I'm going to be ignoring zero for one.
+
+44
+00:02:44,700 --> 00:02:49,250
+This basically will represent level one and by default we want level one to be unlocked.
+
+45
+00:02:49,260 --> 00:02:50,910
+So make sure this is checked.
+
+46
+00:02:51,480 --> 00:02:52,020
+Okay.
+
+47
+00:02:52,020 --> 00:02:59,280
+So after we create our safe game reference to track up here and for save game to slot and the slot name
+
+48
+00:02:59,310 --> 00:03:00,210
+type in one.
+
+49
+00:03:00,510 --> 00:03:02,640
+And this will create a save game under the slot.
+
+50
+00:03:02,650 --> 00:03:04,680
+Name one with all this data.
+
+51
+00:03:05,310 --> 00:03:09,990
+If we already have a save game, then we're going to do nothing so we can just leave this blank.
+
+52
+00:03:10,470 --> 00:03:14,910
+Next, if we compile this and save it, go over to our player blueprint.
+
+53
+00:03:16,670 --> 00:03:23,480
+Then if we open up our player blueprint and go over to Event Pick n Play event we can play.
+
+54
+00:03:23,480 --> 00:03:29,000
+We are going to reference all the variables inside of our shape and we'll make it so our player character
+
+55
+00:03:29,000 --> 00:03:31,190
+has the values from these variables.
+
+56
+00:03:32,080 --> 00:03:40,210
+So if we drag off event book and play book for load game from slot and put the slot name type in one.
+
+57
+00:03:41,430 --> 00:03:46,350
+Then drag off this return body and look for cost to play a same.
+
+58
+00:03:48,180 --> 00:03:52,890
+Just right click and promote this to variable as we'll be referencing this later.
+
+59
+00:03:53,690 --> 00:03:57,770
+And then from here, I'm just going to select everything and move it back a bit.
+
+60
+00:03:58,490 --> 00:04:02,090
+We are going to get the amount of lights that we have.
+
+61
+00:04:03,040 --> 00:04:09,640
+We will get them out apples that we have and we will get them out of coins that we have.
+
+62
+00:04:10,660 --> 00:04:17,620
+And then for player character, if we drag in their lives and look for set track in their coins and
+
+63
+00:04:17,620 --> 00:04:21,100
+look for set and track in their apples and look for set.
+
+64
+00:04:23,210 --> 00:04:25,460
+We can then connect all of these values here.
+
+65
+00:04:25,700 --> 00:04:27,480
+So if our lives are connected.
+
+66
+00:04:28,410 --> 00:04:31,980
+Bitcoins are connect here and the apples are connected.
+
+67
+00:04:33,510 --> 00:04:35,430
+And we can just connect all these notes.
+
+68
+00:04:39,740 --> 00:04:43,490
+And connect this into here and now.
+
+69
+00:04:43,490 --> 00:04:50,720
+If I could compile, save and close this, I'm going to go to my main menu level and save everything
+
+70
+00:04:51,350 --> 00:04:52,250
+if I go play.
+
+71
+00:04:52,790 --> 00:04:54,440
+It should create a save game for me.
+
+72
+00:04:54,500 --> 00:05:00,200
+And now if I go start and go to level one, I should start my game with five apples, three lives and
+
+73
+00:05:00,200 --> 00:05:00,970
+zero coins.
+
+74
+00:05:00,980 --> 00:05:04,370
+So it looks like my save game is working nice.
+

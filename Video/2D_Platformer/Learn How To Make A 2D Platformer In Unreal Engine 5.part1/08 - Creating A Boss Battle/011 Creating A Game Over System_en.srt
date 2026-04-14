@@ -1,0 +1,368 @@
+1
+00:00:03,280 --> 00:00:04,010
+Hello.
+
+2
+00:00:04,030 --> 00:00:08,650
+In this next lecture, we're going to go over how to create a game over screen.
+
+3
+00:00:08,650 --> 00:00:13,630
+So if our player character runs out of lights and they die, then we'll tell the player they got game
+
+4
+00:00:13,630 --> 00:00:14,290
+over.
+
+5
+00:00:14,620 --> 00:00:17,720
+But before we do that, we need to fix one thing.
+
+6
+00:00:17,740 --> 00:00:21,820
+So I updated my player character so they have one heart and one life.
+
+7
+00:00:21,910 --> 00:00:28,090
+And if they get hit and die and are on zero lives when they respawn, they'll just respawn in their
+
+8
+00:00:28,090 --> 00:00:29,040
+death animation.
+
+9
+00:00:29,050 --> 00:00:33,490
+So we need to fix this if we go over to our player's animation blueprint.
+
+10
+00:00:34,390 --> 00:00:39,940
+And go over to the bit where we transition from our player's death to the idle slash run animation.
+
+11
+00:00:40,210 --> 00:00:41,320
+Head inside here.
+
+12
+00:00:41,740 --> 00:00:46,960
+We made it so that if our player character has more than zero lives will transition them back from their
+
+13
+00:00:46,960 --> 00:00:49,330
+death to that idle such running animation.
+
+14
+00:00:49,360 --> 00:00:53,450
+The problem that is happening is my player character is respawning and they have zero lives.
+
+15
+00:00:53,470 --> 00:00:55,360
+And because it's not greater than zero.
+
+16
+00:00:56,220 --> 00:00:59,630
+They don't transition back into that idle run animation.
+
+17
+00:00:59,640 --> 00:01:02,790
+So in order to fix this, we're going to make a new system.
+
+18
+00:01:02,970 --> 00:01:09,450
+If we go to the player blueprint, create a new variable, and just call this respawn question mark.
+
+19
+00:01:11,010 --> 00:01:12,990
+When we respond, I'll play a character.
+
+20
+00:01:13,020 --> 00:01:15,150
+We're going to set this Boolean to be true.
+
+21
+00:01:15,660 --> 00:01:18,270
+So connect us node and make sure this is checked.
+
+22
+00:01:19,190 --> 00:01:23,930
+And if when we try to up back after they don't have more than zero lives, then we're going to set this
+
+23
+00:01:23,930 --> 00:01:27,270
+variable to be false and just connect this into here.
+
+24
+00:01:27,290 --> 00:01:33,470
+Then if we go into our characters animation blueprint and head inside here, just delete this life's
+
+25
+00:01:33,470 --> 00:01:37,490
+bit and instead just drag off here and get respawn.
+
+26
+00:01:38,300 --> 00:01:43,280
+And if this variable is true, then we'll make sure our character can transition from their death to
+
+27
+00:01:43,280 --> 00:01:45,180
+their idols that run animation.
+
+28
+00:01:45,200 --> 00:01:47,600
+So if I could compile and play.
+
+29
+00:01:51,810 --> 00:01:54,600
+Okay, so it looks like they failed to compile.
+
+30
+00:01:54,630 --> 00:01:58,950
+If we go to our plan blueprint, make sure to compile and then compile again.
+
+31
+00:01:58,950 --> 00:02:00,150
+And that should fix that.
+
+32
+00:02:00,700 --> 00:02:01,170
+Okay.
+
+33
+00:02:01,210 --> 00:02:07,050
+If we could play and my player character dies and is on zero lives, they should respawn with their
+
+34
+00:02:07,050 --> 00:02:09,210
+normal animations and everything working.
+
+35
+00:02:09,930 --> 00:02:15,120
+Okay, so the next thing we're going to do is make it so that if our player character dies when they're
+
+36
+00:02:15,120 --> 00:02:17,340
+on zero lives, they'll get game over.
+
+37
+00:02:17,670 --> 00:02:26,040
+If we close this and go over to our Widget Blueprint folder and right click and Go user Interface widget
+
+38
+00:02:26,040 --> 00:02:29,100
+Blueprint and just call this our game over widget.
+
+39
+00:02:32,840 --> 00:02:34,130
+If we open it up.
+
+40
+00:02:34,910 --> 00:02:39,200
+And in the palette, look for a canvas panel and just drag this in.
+
+41
+00:02:40,210 --> 00:02:45,880
+Then look for an image and just drag this into the canvas panel and make sure to anchor this across
+
+42
+00:02:45,880 --> 00:02:46,870
+the whole of our screen.
+
+43
+00:02:47,350 --> 00:02:50,290
+Under offset, I'm going to put zero in each of the values.
+
+44
+00:02:51,940 --> 00:02:56,860
+And I'm going to make the tint of this black and the alpha of this around 0.7.
+
+45
+00:02:57,860 --> 00:02:59,720
+Then if I look for some text.
+
+46
+00:03:01,570 --> 00:03:05,230
+And I'm going to drag this to the top center and also anchor it there.
+
+47
+00:03:05,890 --> 00:03:09,130
+And I'm going to make this text taxi game over.
+
+48
+00:03:11,590 --> 00:03:13,690
+And let's meet the size of this 100.
+
+49
+00:03:17,890 --> 00:03:19,660
+Then we look for a button.
+
+50
+00:03:21,280 --> 00:03:23,320
+And drag this into the center of the screen.
+
+51
+00:03:25,050 --> 00:03:26,430
+And also anchor it there.
+
+52
+00:03:27,560 --> 00:03:33,020
+We can look for some text and just track this text into the button and we'll make this button say,
+
+53
+00:03:33,020 --> 00:03:33,830
+retry.
+
+54
+00:03:36,880 --> 00:03:38,440
+And I'll just make this a bit bigger.
+
+55
+00:03:38,450 --> 00:03:39,820
+So something like 50.
+
+56
+00:03:40,860 --> 00:03:45,390
+And when we click on this button, so we select it, scroll down and go on clicked.
+
+57
+00:03:45,840 --> 00:03:48,000
+We are going to open level by name.
+
+58
+00:03:48,870 --> 00:03:52,200
+And I am going to open the main menu map.
+
+59
+00:03:52,560 --> 00:03:58,110
+So from that, my character can choose to play the level again or quit the game.
+
+60
+00:03:58,970 --> 00:04:03,200
+We can compile this and we want to go to a bank construct.
+
+61
+00:04:03,440 --> 00:04:09,040
+So when we show our game over screen, we want to show our mouse cursor.
+
+62
+00:04:09,050 --> 00:04:11,480
+That way the player character can click on this button.
+
+63
+00:04:11,750 --> 00:04:19,399
+So I'm going to right click and not forget player controller drag up here and it will set show mouse
+
+64
+00:04:19,399 --> 00:04:22,490
+cursor and make sure that I just leave this checked.
+
+65
+00:04:23,490 --> 00:04:27,240
+Then we'll just drive off here and look for set input mode.
+
+66
+00:04:27,980 --> 00:04:28,610
+UI.
+
+67
+00:04:28,640 --> 00:04:32,360
+Only that way our controller will be compatible with our menu.
+
+68
+00:04:32,870 --> 00:04:39,830
+And if we go back to the designer just to make this a bit more polished, we can add an animation when
+
+69
+00:04:39,830 --> 00:04:41,360
+we make this widget appear.
+
+70
+00:04:41,570 --> 00:04:48,470
+So if we go over to the animation tab, select, create new animation and call this game over animation.
+
+71
+00:04:48,650 --> 00:04:55,430
+Then if you select the canvas panel and go to animations and go track and just that the canvas panel,
+
+72
+00:04:55,790 --> 00:05:02,630
+because the canvas panel will include all of these elements, go track and select, render opacity.
+
+73
+00:05:03,380 --> 00:05:05,780
+Then under this value, put zero.
+
+74
+00:05:06,540 --> 00:05:09,330
+And click this little add new key.
+
+75
+00:05:09,660 --> 00:05:14,460
+So 0 seconds on our animation, we're going to make a whole widget invisible.
+
+76
+00:05:14,700 --> 00:05:21,570
+Then around one second we're going to make the render opacity one and just click add new key.
+
+77
+00:05:22,170 --> 00:05:28,680
+Over the course of one second, we're going to display our game over widget in order to make this animation
+
+78
+00:05:28,680 --> 00:05:32,040
+work and appear when we show this widget, head back to the graph.
+
+79
+00:05:32,750 --> 00:05:34,310
+And a bank construct.
+
+80
+00:05:34,340 --> 00:05:40,010
+After we do all of this, we will drag in our game over animation and just drag up here and look for
+
+81
+00:05:40,010 --> 00:05:41,480
+play animation.
+
+82
+00:05:43,150 --> 00:05:47,350
+And just connect this into here and this will automatically play our animation.
+
+83
+00:05:47,770 --> 00:05:51,040
+Now, if I just compile this and go over to my player blueprint.
+
+84
+00:05:52,880 --> 00:05:53,810
+If we respond.
+
+85
+00:05:53,810 --> 00:05:59,690
+An actor does not have more than zero lives, then we will just drag off here and look for quick widget.
+
+86
+00:06:00,870 --> 00:06:03,360
+Which it will create is going to be game over widget.
+
+87
+00:06:03,720 --> 00:06:06,270
+And then we will add this to our viewport.
+
+88
+00:06:08,680 --> 00:06:11,410
+I can then go compile and play.
+
+89
+00:06:12,390 --> 00:06:14,100
+And if I die now.
+
+90
+00:06:19,260 --> 00:06:22,110
+When I die and I'm out of life's, I get game over.
+
+91
+00:06:22,140 --> 00:06:23,430
+Then I'll say retry.
+
+92
+00:06:23,460 --> 00:06:29,190
+If I click this, it will take me to my main menu where I can then go, start and select all of my levels.
+

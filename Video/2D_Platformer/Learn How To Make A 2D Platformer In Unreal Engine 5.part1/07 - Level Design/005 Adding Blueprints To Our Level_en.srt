@@ -1,0 +1,228 @@
+1
+00:00:03,060 --> 00:00:03,660
+Hello.
+
+2
+00:00:03,690 --> 00:00:09,000
+So there's one more thing we need to do to finish designing our level, and that is to place the enemies
+
+3
+00:00:09,000 --> 00:00:11,880
+and the items that we've made in the previous lectures.
+
+4
+00:00:12,120 --> 00:00:18,270
+First, I'm going to place my enemies around my map, so I'm going to go to my scan folder and dragging
+
+5
+00:00:18,270 --> 00:00:19,650
+my scan to blueprint.
+
+6
+00:00:21,160 --> 00:00:24,440
+And make sure to put them in the same layer as our player character.
+
+7
+00:00:24,460 --> 00:00:26,950
+So for me, it's layer 20 and the Y axis.
+
+8
+00:00:27,790 --> 00:00:30,520
+And I'm going to place a couple skeletons around my map.
+
+9
+00:00:32,610 --> 00:00:36,090
+So I think updates from there and another one here.
+
+10
+00:00:37,590 --> 00:00:38,820
+And also one here.
+
+11
+00:00:40,120 --> 00:00:43,240
+And then finally, I'm going to play some mushroom enemies.
+
+12
+00:00:43,450 --> 00:00:47,170
+So I'm going to place one towards the end of the level here.
+
+13
+00:00:47,890 --> 00:00:49,270
+I'll move it to layer 20.
+
+14
+00:00:50,050 --> 00:00:53,410
+And let's just rotate them so they're facing the opposite direction.
+
+15
+00:00:53,890 --> 00:00:58,660
+So I can go here, select and rotate, and let's rotate them 180 degrees.
+
+16
+00:01:02,830 --> 00:01:06,580
+Let's also add a mushroom enemy.
+
+17
+00:01:08,180 --> 00:01:09,290
+Over here.
+
+18
+00:01:09,650 --> 00:01:10,170
+Okay.
+
+19
+00:01:10,220 --> 00:01:15,350
+I've added a lot of enemies, so let's add some health pickups in my level.
+
+20
+00:01:16,070 --> 00:01:20,570
+So I'll move this to 20 and.
+
+21
+00:01:21,700 --> 00:01:23,500
+We can add one here.
+
+22
+00:01:29,380 --> 00:01:32,440
+And we can add another one here.
+
+23
+00:01:33,630 --> 00:01:36,570
+And I'll add one final one here.
+
+24
+00:01:38,230 --> 00:01:41,530
+Okay, let's add some coins along our level.
+
+25
+00:01:43,840 --> 00:01:49,120
+By the way, a quick way to duplicate things inside an unreal engine is to select the object you want
+
+26
+00:01:49,120 --> 00:01:54,610
+to duplicate and then hold the open and then move it, and then that will quickly duplicate it.
+
+27
+00:01:54,640 --> 00:01:57,610
+So I'm going to do that to move some coins around my level.
+
+28
+00:02:00,580 --> 00:02:03,280
+Next, I'm going to add some checkpoints to my level.
+
+29
+00:02:03,520 --> 00:02:06,580
+So I'm going to add one here.
+
+30
+00:02:08,690 --> 00:02:10,340
+I'm only going to have one checkpoint.
+
+31
+00:02:10,970 --> 00:02:16,100
+And finally, let's add some spikes so we can add a spike here.
+
+32
+00:02:16,910 --> 00:02:22,130
+So I only have one spike and one checkpoint, but this is just to showcase me adding the different items.
+
+33
+00:02:22,250 --> 00:02:25,370
+And now let's go play and test out our level.
+
+34
+00:02:26,640 --> 00:02:27,660
+I can go play.
+
+35
+00:02:28,620 --> 00:02:30,120
+I made the first bit empty.
+
+36
+00:02:30,150 --> 00:02:32,100
+Then we have some cool coins to collect.
+
+37
+00:02:33,200 --> 00:02:34,880
+There's a skeleton over here.
+
+38
+00:02:35,060 --> 00:02:36,500
+I can attack him.
+
+39
+00:02:37,630 --> 00:02:38,560
+But I'm going to ask you a boy.
+
+40
+00:02:38,560 --> 00:02:38,770
+Don't.
+
+41
+00:02:38,800 --> 00:02:39,820
+I'll jump over him.
+
+42
+00:02:40,920 --> 00:02:43,890
+I can get this hot, but I feel out I work.
+
+43
+00:02:44,220 --> 00:02:47,560
+Oh, one more thing I've got to do to my level.
+
+44
+00:02:47,580 --> 00:02:54,990
+If we select it and go to search and look for tag and give this the tag of war, that way we'll be able
+
+45
+00:02:54,990 --> 00:02:57,270
+to walk slide on the walls of this level.
+
+46
+00:02:57,930 --> 00:03:02,400
+Ask a play and I'll quickly speed through to get to the bit I was at.
+
+47
+00:03:03,660 --> 00:03:07,110
+So I should be able to water it so I can water it in my level.
+
+48
+00:03:07,800 --> 00:03:08,460
+Nice.
+
+49
+00:03:09,740 --> 00:03:10,400
+Hello.
+
+50
+00:03:10,490 --> 00:03:13,730
+As I was playing my game, I noticed a couple of issues.
+
+51
+00:03:13,730 --> 00:03:16,910
+So the first one is the enemy's projectiles.
+
+52
+00:03:16,910 --> 00:03:20,240
+And also my projectiles don't have collision with the world.
+
+53
+00:03:21,110 --> 00:03:26,810
+The second issue is my player character no longer has a screen check effect when they become damaged.
+
+54
+00:03:26,900 --> 00:03:32,240
+And the third issue is with my scan as an enemy, it can still attack me even when it dies.
+
+55
+00:03:32,240 --> 00:03:33,770
+So let me kill my skeleton.
+
+56
+00:03:34,730 --> 00:03:38,540
+So as I scanned, it can come back and still attack me.
+
+57
+00:03:38,540 --> 00:03:40,760
+So we need to fix all those issues.
+

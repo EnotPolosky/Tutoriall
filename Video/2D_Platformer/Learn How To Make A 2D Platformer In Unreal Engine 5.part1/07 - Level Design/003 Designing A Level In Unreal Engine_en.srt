@@ -1,0 +1,440 @@
+1
+00:00:03,180 --> 00:00:03,840
+Hello.
+
+2
+00:00:04,110 --> 00:00:08,880
+In this next lecture, we're going to go over how to design our very first level.
+
+3
+00:00:09,000 --> 00:00:10,230
+To get started.
+
+4
+00:00:10,290 --> 00:00:15,210
+Select this task image and right click and go Sprite actions and create task that.
+
+5
+00:00:16,079 --> 00:00:17,010
+Open this up.
+
+6
+00:00:17,850 --> 00:00:21,420
+And if you slept anywhere on the tile set, you'll see the square.
+
+7
+00:00:21,720 --> 00:00:26,010
+Using the square, we can add collision to certain tiles on our Tulsa.
+
+8
+00:00:26,730 --> 00:00:31,180
+This square is quite big, so we can adjust the size of it by going through tile size.
+
+9
+00:00:31,200 --> 00:00:36,000
+And if I make this 16 by 16, this will adjust my square.
+
+10
+00:00:36,360 --> 00:00:42,510
+And if I select this block of my square and go add box, this is going to add some collision to this
+
+11
+00:00:42,510 --> 00:00:43,250
+tile map.
+
+12
+00:00:43,260 --> 00:00:48,150
+And later, when we design a level with the tar map, if asked to select the square, it's going to
+
+13
+00:00:48,150 --> 00:00:48,930
+have collision on it.
+
+14
+00:00:48,930 --> 00:00:54,480
+When I place it in my tile map, if we go over to colliding tiles and just click it, I'm going to add
+
+15
+00:00:54,480 --> 00:01:00,510
+some more collision to my tar map by selecting some squares and going add blocks and add blocks.
+
+16
+00:01:01,130 --> 00:01:06,050
+If you want to adjust the collision of a square, what you can do is select it, then go over to the
+
+17
+00:01:06,050 --> 00:01:12,350
+single editor and select this point on the square and move it down at this point and move it down.
+
+18
+00:01:13,100 --> 00:01:16,480
+This means that specific square is going to have this collision.
+
+19
+00:01:16,490 --> 00:01:19,310
+So you can do that if you want to get more precise collision.
+
+20
+00:01:19,310 --> 00:01:21,320
+But I'm just going to leave mine at the default.
+
+21
+00:01:21,560 --> 00:01:26,450
+Once you're happy with the colliding tiles that you've added, just go save and close this.
+
+22
+00:01:27,020 --> 00:01:32,180
+Then select the equals and just right click spread actions and make this a tile set.
+
+23
+00:01:32,600 --> 00:01:36,410
+We're not going to add any collision to this, but we're going to use this as background.
+
+24
+00:01:36,410 --> 00:01:40,550
+So maybe in our level we'll have some background trees, bushes and rocks.
+
+25
+00:01:40,910 --> 00:01:44,210
+We can close this and then we're going to create a new map.
+
+26
+00:01:44,360 --> 00:01:52,880
+So if we right click and go paper duty, set tile map and I'll call this level one, and if we double
+
+27
+00:01:52,880 --> 00:01:54,080
+click and open it up.
+
+28
+00:01:55,190 --> 00:01:57,530
+Let's select our asset.
+
+29
+00:01:58,590 --> 00:02:06,000
+And if I go to my map with let's make it something like 100 and let's make the map pie something like
+
+30
+00:02:06,120 --> 00:02:06,840
+15.
+
+31
+00:02:08,419 --> 00:02:10,130
+As the 15, maybe a bit high.
+
+32
+00:02:10,160 --> 00:02:11,540
+So I'll make it like ten.
+
+33
+00:02:12,140 --> 00:02:15,980
+So now I am going to set some tiles and place them around my map.
+
+34
+00:02:15,980 --> 00:02:18,860
+So if I select this whole square and then paste it here.
+
+35
+00:02:19,340 --> 00:02:20,330
+Oh, okay.
+
+36
+00:02:20,330 --> 00:02:22,880
+So it looks like there's a bit of a gap between each tile.
+
+37
+00:02:22,910 --> 00:02:26,390
+That is because under tile width and tile height, we need to change it.
+
+38
+00:02:26,390 --> 00:02:28,310
+So it is 16 by 16.
+
+39
+00:02:28,310 --> 00:02:29,960
+So it's the same as our tile set.
+
+40
+00:02:29,960 --> 00:02:37,100
+So if I go back to this and under tile width 16 and under tile height at 16 as well.
+
+41
+00:02:38,110 --> 00:02:40,000
+And we can see that makes it look a bit normal.
+
+42
+00:02:42,020 --> 00:02:43,580
+I'm just going to erase everything.
+
+43
+00:02:44,180 --> 00:02:47,030
+And now we're ready to design our level one.
+
+44
+00:02:47,270 --> 00:02:50,750
+So to start off with, I am going to have this edge.
+
+45
+00:02:51,770 --> 00:02:52,970
+And I'll just place it here.
+
+46
+00:02:53,270 --> 00:02:55,640
+And then we're going to have some cubes.
+
+47
+00:02:59,460 --> 00:03:01,350
+And then I'm going to block off this edge.
+
+48
+00:03:04,300 --> 00:03:05,260
+And quick tip.
+
+49
+00:03:05,290 --> 00:03:10,600
+If I just looked here and then go fill is now going to fill in all the area between here so you can
+
+50
+00:03:10,600 --> 00:03:14,740
+use the fill tool like that, then I'm going to have some steps.
+
+51
+00:03:16,220 --> 00:03:19,220
+So let me go back to my paint and I'll add some steps here.
+
+52
+00:03:20,080 --> 00:03:23,650
+Okay, I'm not going to do a quick timelapse of me designing this level.
+
+53
+00:04:32,040 --> 00:04:32,520
+Hello.
+
+54
+00:04:32,550 --> 00:04:36,690
+So I have finished designing my map so we can close this.
+
+55
+00:04:37,140 --> 00:04:38,970
+And then drag my title map.
+
+56
+00:04:39,690 --> 00:04:43,170
+It's kind of small, so let's make it 13 times bigger.
+
+57
+00:04:44,960 --> 00:04:48,710
+And make sure to position this in the same layer as our back actor.
+
+58
+00:04:48,740 --> 00:04:51,870
+So my player character is in layer 20 of the Y axis.
+
+59
+00:04:51,890 --> 00:04:55,010
+So I'm going to move my map to layer 20 off the y axis.
+
+60
+00:04:55,610 --> 00:04:58,940
+And just make sure your player character starts at the top of the map.
+
+61
+00:05:01,290 --> 00:05:04,770
+So I can go play and my map is looking pretty cool.
+
+62
+00:05:05,250 --> 00:05:10,050
+There's one more thing we can do for our map, and that is add some background effects for our map.
+
+63
+00:05:10,080 --> 00:05:13,140
+So if I close this and open up my level one.
+
+64
+00:05:14,040 --> 00:05:15,870
+Let's go add new layer.
+
+65
+00:05:16,720 --> 00:05:19,930
+And make sure that this layer is behind our layer one.
+
+66
+00:05:20,260 --> 00:05:26,500
+Then if we go and look for our deco style set and just select some trees.
+
+67
+00:05:27,260 --> 00:05:29,090
+Okay, so I can't select the whole tree.
+
+68
+00:05:29,300 --> 00:05:32,000
+So if we go to our deco tower set.
+
+69
+00:05:33,600 --> 00:05:38,370
+I make sure that our size is 16 by 16, because that's what we set it to in our time.
+
+70
+00:05:43,170 --> 00:05:46,200
+And if we go back, I can select some trees.
+
+71
+00:05:47,160 --> 00:05:51,960
+So I've already worked with this, but it's a good idea to place the trees one layer below the dirt
+
+72
+00:05:51,960 --> 00:05:54,780
+and make sure they are on the layer behind a layer one.
+
+73
+00:05:54,930 --> 00:05:59,340
+So if I position some trees like this and this and then go save.
+
+74
+00:06:00,060 --> 00:06:02,640
+And just to show you what I mean, if I could play.
+
+75
+00:06:03,400 --> 00:06:09,010
+We have some trees which are behind our level and it kind of looks cool when our player character walks
+
+76
+00:06:09,010 --> 00:06:10,150
+past these trees.
+
+77
+00:06:10,360 --> 00:06:14,650
+So I'm going to add some trees, bushes and rocks behind my level one.
+
+78
+00:06:14,800 --> 00:06:16,230
+So just do that now.
+
+79
+00:06:16,240 --> 00:06:21,340
+And if you want to have multiple layers, just add a new layer and we can have even more layers that
+
+80
+00:06:21,340 --> 00:06:21,740
+way.
+
+81
+00:06:21,760 --> 00:06:24,370
+Let's say I need my layer or behind my layer five.
+
+82
+00:06:24,850 --> 00:06:28,070
+I can have a tree behind a tree and it kind of looks quite cool.
+
+83
+00:06:28,220 --> 00:06:32,590
+So now position some trees, bushes and rocks in your level.
+
+84
+00:06:41,050 --> 00:06:44,410
+Okay, so I have finished doing that and now I go play.
+
+85
+00:06:46,070 --> 00:06:48,170
+We have designed our level one.
+
+86
+00:06:48,650 --> 00:06:54,890
+The Bushes look kind of a bit above the ground, so I may need to find a best model which kind of has
+
+87
+00:06:54,890 --> 00:06:56,490
+like it's a bit taller.
+
+88
+00:06:56,510 --> 00:06:58,570
+That way it look a bit better in my game.
+
+89
+00:06:58,580 --> 00:07:03,350
+But for now I think it's fine and I'm just going to delete this floor.
+
+90
+00:07:04,010 --> 00:07:07,130
+And that way it looks like my character, it's more in this level.
+
+91
+00:07:07,430 --> 00:07:08,780
+And then one more final touch.
+
+92
+00:07:08,870 --> 00:07:11,390
+I'm going to make my camera a bit more zoomed out.
+
+93
+00:07:11,390 --> 00:07:13,340
+So I go back to my player character.
+
+94
+00:07:13,790 --> 00:07:14,660
+Open them up.
+
+95
+00:07:16,120 --> 00:07:18,360
+Go to the viewport and slap my spring on.
+
+96
+00:07:19,280 --> 00:07:22,520
+That's increase its length to something like 2000.
+
+97
+00:07:22,550 --> 00:07:26,900
+You can play around with this, but I think the game will look a bit better if the camera is a bit further
+
+98
+00:07:26,900 --> 00:07:27,380
+away.
+
+99
+00:07:27,890 --> 00:07:33,290
+So something like this, I think that looks a bit better.
+
+100
+00:07:33,590 --> 00:07:38,030
+Maybe I need to make the map a bit smaller, but I can play around and adjust with that.
+
+101
+00:07:38,330 --> 00:07:38,840
+Okay.
+
+102
+00:07:38,840 --> 00:07:43,370
+So I reduce the size of my map to something like ten, and I think it looks a bit better.
+
+103
+00:07:43,610 --> 00:07:49,070
+And I'm also, if I go back to my level one map, I'm going to make the height something like 20.
+
+104
+00:07:49,160 --> 00:07:51,470
+And then I'm going to fill the bottom with.
+
+105
+00:07:52,810 --> 00:07:55,210
+This tile set that way.
+
+106
+00:07:55,240 --> 00:07:59,890
+It looks like mud underneath my player character because right now we just see the air and it looks
+
+107
+00:07:59,890 --> 00:08:00,540
+kind of weird.
+
+108
+00:08:00,550 --> 00:08:03,880
+So I'll go to layer one and I'm just going to fill this up with that.
+
+109
+00:08:09,100 --> 00:08:10,120
+So if I go play.
+
+110
+00:08:11,780 --> 00:08:14,360
+I think this looks a bit better.
+

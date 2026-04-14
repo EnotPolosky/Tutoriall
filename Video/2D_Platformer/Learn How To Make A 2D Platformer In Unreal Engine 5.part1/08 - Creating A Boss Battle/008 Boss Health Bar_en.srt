@@ -1,0 +1,240 @@
+1
+00:00:03,260 --> 00:00:03,920
+Hello.
+
+2
+00:00:04,190 --> 00:00:08,810
+In this next lecture, we're going to go over how to create a health bar for our boss.
+
+3
+00:00:09,170 --> 00:00:12,980
+If we just scroll down and go over to our Widget Blueprint folder.
+
+4
+00:00:13,520 --> 00:00:18,680
+Right click on the enemy health bar, duplicate it and call this our boss Health bar.
+
+5
+00:00:22,870 --> 00:00:30,970
+If we open this up and set the progress bar, go to style and make the background image our boss health
+
+6
+00:00:30,970 --> 00:00:35,500
+bar empty and make the film image our boss Health bar.
+
+7
+00:00:39,500 --> 00:00:40,190
+Now.
+
+8
+00:00:40,190 --> 00:00:42,560
+Oppo's health looks kind of weird.
+
+9
+00:00:42,770 --> 00:00:44,450
+It doesn't look like the image here.
+
+10
+00:00:44,480 --> 00:00:50,270
+If we scroll down and go to feel color and opacity, we can see it has this blue tint.
+
+11
+00:00:50,660 --> 00:00:55,220
+If we just change this to white, our boss helper will no longer have a tint anymore.
+
+12
+00:00:55,610 --> 00:00:56,960
+So just go, okay?
+
+13
+00:00:58,070 --> 00:01:04,599
+And then anchor this bar to the top of our screen and expand it across the top of our screen.
+
+14
+00:01:04,610 --> 00:01:06,620
+So I'm going to make my end up like this.
+
+15
+00:01:07,960 --> 00:01:11,260
+So position your post health bar somewhere like this.
+
+16
+00:01:11,260 --> 00:01:15,640
+Then go over to the graph and we can delete these nodes.
+
+17
+00:01:16,150 --> 00:01:22,180
+And if we actually go back to our boss blueprint, create a new variable and call this max elf.
+
+18
+00:01:25,290 --> 00:01:27,300
+And change this to be a float.
+
+19
+00:01:28,630 --> 00:01:32,350
+Then if we go to event, we can play, event we can play.
+
+20
+00:01:32,350 --> 00:01:37,870
+We are going to drag in our max health and set its value to be whatever our bosses health is.
+
+21
+00:01:37,960 --> 00:01:40,690
+So drag us in and connect these nodes here.
+
+22
+00:01:44,660 --> 00:01:48,470
+If we compile this and go back to our boss Health Widget blueprint.
+
+23
+00:01:49,740 --> 00:01:54,840
+And if we just delete this variable and create a new variable and call this boss.
+
+24
+00:01:55,880 --> 00:01:57,200
+And undesirable type.
+
+25
+00:01:57,350 --> 00:02:04,010
+Change this to be a boss blueprint, object, reference and just make sure this is instance editable
+
+26
+00:02:04,010 --> 00:02:05,450
+and expose on spawn.
+
+27
+00:02:06,330 --> 00:02:07,900
+You'll see why we do that in a second.
+
+28
+00:02:07,920 --> 00:02:12,060
+And if we just drag in our bus, drag up here and get the health.
+
+29
+00:02:14,060 --> 00:02:15,710
+And connect this into the first body.
+
+30
+00:02:16,570 --> 00:02:17,120
+And then drink.
+
+31
+00:02:17,120 --> 00:02:17,400
+Okay.
+
+32
+00:02:17,500 --> 00:02:18,970
+And get the metals.
+
+33
+00:02:20,410 --> 00:02:23,140
+And connect us into the second value here.
+
+34
+00:02:23,680 --> 00:02:31,390
+Then if we compile this and go back to our boss blueprint after we set our bosses max health, we're
+
+35
+00:02:31,390 --> 00:02:34,210
+going to drag up here and look for create widget.
+
+36
+00:02:35,270 --> 00:02:38,150
+The widget we're going to create is going to be the Boss health bar.
+
+37
+00:02:40,670 --> 00:02:44,300
+And for the boss because we made it's wearable expose on Swan.
+
+38
+00:02:44,660 --> 00:02:49,430
+When we're creating our boss health widget, we can determine the value of this wearable.
+
+39
+00:02:49,460 --> 00:02:51,530
+So drink up here and look for self.
+
+40
+00:02:52,690 --> 00:02:54,430
+Then right click on this value.
+
+41
+00:02:54,460 --> 00:02:58,510
+Promote it to a variable and call it our boss reference.
+
+42
+00:02:59,670 --> 00:03:01,920
+And then we're going to add this to our viewport.
+
+43
+00:03:01,950 --> 00:03:04,530
+So our drag and add to viewport.
+
+44
+00:03:06,370 --> 00:03:07,870
+And connect us into here.
+
+45
+00:03:09,120 --> 00:03:16,410
+Now, whenever our box is damaged, we're going to drag in our boss hard reference and call the Update
+
+46
+00:03:16,410 --> 00:03:17,130
+health bar.
+
+47
+00:03:17,580 --> 00:03:20,310
+And this will update our boss's health bar accordingly.
+
+48
+00:03:20,850 --> 00:03:22,710
+And we can just connect this into here.
+
+49
+00:03:23,970 --> 00:03:28,560
+And then finally, when we kill our boss, we're going to remove our health bar from our screen.
+
+50
+00:03:28,710 --> 00:03:34,800
+So I'll just drag in the boss reference and drag off there and look for remove from parent.
+
+51
+00:03:34,980 --> 00:03:37,860
+And this will remove the boss health bar when it dies.
+
+52
+00:03:39,660 --> 00:03:42,630
+And I'm just going to change my boss's health back to ten.
+
+53
+00:03:43,410 --> 00:03:48,120
+And now if I go compile and play, when I start my level, we can see my post as helper.
+
+54
+00:03:49,530 --> 00:03:51,460
+Whenever I attack my boss, it's helpless.
+
+55
+00:03:51,520 --> 00:03:52,500
+Should decrease.
+
+56
+00:03:52,590 --> 00:03:53,430
+So I'll take it.
+
+57
+00:03:53,880 --> 00:03:55,230
+Its health will decrease.
+
+58
+00:03:56,130 --> 00:03:58,340
+So when I kill my boss, it disappears.
+
+59
+00:03:58,350 --> 00:03:59,910
+And then the boss disappears.
+
+60
+00:04:00,420 --> 00:04:02,900
+With this, we have created our bosses health bar.
+

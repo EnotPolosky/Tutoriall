@@ -1,0 +1,168 @@
+1
+00:00:03,140 --> 00:00:03,780
+Hello.
+
+2
+00:00:03,800 --> 00:00:07,520
+In this next lecture, we're going to be fixing our player character's camera.
+
+3
+00:00:07,550 --> 00:00:08,630
+If I go play.
+
+4
+00:00:09,510 --> 00:00:10,770
+And just play my game.
+
+5
+00:00:10,890 --> 00:00:15,780
+Over time, you may have noticed the game gets lighter and lighter and it kind of makes things a bit
+
+6
+00:00:15,780 --> 00:00:18,280
+hard to see in order to fix this.
+
+7
+00:00:18,300 --> 00:00:20,340
+If we go over to our player blueprint.
+
+8
+00:00:21,680 --> 00:00:22,940
+And select the camera.
+
+9
+00:00:23,960 --> 00:00:26,120
+And go to details and look for brightness.
+
+10
+00:00:26,480 --> 00:00:28,940
+Just check min and max brightness.
+
+11
+00:00:29,240 --> 00:00:32,479
+The lower we make these values, the brighter the game is going to be.
+
+12
+00:00:32,479 --> 00:00:35,680
+And the higher we make these values, the darker the game is going to be.
+
+13
+00:00:35,690 --> 00:00:41,750
+So I make this 0.1 and this 0.1 and I go compile and play.
+
+14
+00:00:41,990 --> 00:00:44,090
+My game is going to look very, very bright.
+
+15
+00:00:44,360 --> 00:00:47,690
+However, if I make this look like two and two.
+
+16
+00:00:48,910 --> 00:00:51,430
+Then my game is going to have a normal level of brightness.
+
+17
+00:00:51,430 --> 00:00:55,570
+So this looks fine and it's not going to become brighter and brighter over time.
+
+18
+00:00:55,840 --> 00:00:58,540
+So with this, we fix our camera issue.
+
+19
+00:00:58,930 --> 00:00:59,730
+Hello, guys.
+
+20
+00:00:59,740 --> 00:01:02,930
+I want to show you another issue that you may be experiencing.
+
+21
+00:01:02,950 --> 00:01:04,599
+If I jump onto this platform.
+
+22
+00:01:05,440 --> 00:01:09,220
+Sometimes my character can become locked in their jumping animation.
+
+23
+00:01:09,520 --> 00:01:12,850
+I'm going to explain why this happens and how we can fix this.
+
+24
+00:01:12,970 --> 00:01:19,030
+So if we close this and go over to your character's animation blueprint, open it up.
+
+25
+00:01:19,450 --> 00:01:24,700
+Now we have a transition from our characters idols that run animation to their jumping animation.
+
+26
+00:01:24,970 --> 00:01:30,430
+So what's happening is my character is falling in the air and then they enter this jumping animation.
+
+27
+00:01:30,460 --> 00:01:36,760
+However, sometimes my character can land before they reach their falling animation, so they get locked
+
+28
+00:01:36,760 --> 00:01:41,830
+up in this jumping animation to fix this at a node from jumping to run.
+
+29
+00:01:41,950 --> 00:01:47,950
+And the condition for this, we just want to drag in our slap reference drag of here and look for is
+
+30
+00:01:47,950 --> 00:01:48,700
+walking.
+
+31
+00:01:50,540 --> 00:01:53,930
+And just connect this into here and go compile.
+
+32
+00:01:54,200 --> 00:01:57,080
+That should fix that issue and you shouldn't have it occur anymore.
+
+33
+00:01:57,230 --> 00:01:57,920
+Hello.
+
+34
+00:01:57,950 --> 00:02:00,480
+There's one more issue I want to fix with my camera.
+
+35
+00:02:00,500 --> 00:02:04,550
+If I could play since I adjusted my camera to be further away.
+
+36
+00:02:04,580 --> 00:02:09,199
+Everything looks kind of blurry, so my characters idol animation looks kind of blurry.
+
+37
+00:02:09,199 --> 00:02:11,370
+And if I move, everything kind of looks blurry.
+
+38
+00:02:11,370 --> 00:02:18,230
+And my player character, in order to fix this, go over to edit and set product settings and look for
+
+39
+00:02:18,230 --> 00:02:23,480
+anti then under anti analyzing method select fast or none.
+
+40
+00:02:23,750 --> 00:02:25,430
+I'm just going to select none.
+
+41
+00:02:25,670 --> 00:02:28,670
+And now I close this and go play.
+
+42
+00:02:29,150 --> 00:02:32,390
+My sprite should not look blurry and everything should look normal.
+

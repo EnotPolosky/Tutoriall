@@ -1,0 +1,464 @@
+1
+00:00:03,110 --> 00:00:03,890
+Hello.
+
+2
+00:00:04,040 --> 00:00:08,870
+In this next lecture, we're going to go over how to create a coin collect system.
+
+3
+00:00:09,020 --> 00:00:14,780
+We're also going to make it so if our player character collects 100 coins, they'll get an extra life.
+
+4
+00:00:14,960 --> 00:00:19,460
+To get started, go over to your player character blueprint and open them up.
+
+5
+00:00:20,290 --> 00:00:23,100
+Create a new variable and call it coins.
+
+6
+00:00:24,550 --> 00:00:29,290
+Make this variable afloat and then compile and close this.
+
+7
+00:00:30,520 --> 00:00:34,510
+In our game, we're going to visually display it map points that our player character has.
+
+8
+00:00:35,080 --> 00:00:41,560
+If we go to our item image folder briefly close on our engine and attached in this course lecture,
+
+9
+00:00:41,560 --> 00:00:49,810
+I'm going to include this coin image, drag it into your folder, then right click apply paper to detector
+
+10
+00:00:49,810 --> 00:00:50,530
+settings.
+
+11
+00:00:51,240 --> 00:00:54,900
+And then right click Sprite actions and extract sprites.
+
+12
+00:00:55,900 --> 00:00:57,910
+And change this to be grid.
+
+13
+00:01:00,670 --> 00:01:05,740
+And change the cell to be 16 and then go extract.
+
+14
+00:01:07,010 --> 00:01:11,210
+Then if we select all these sprites and make this a flipbook.
+
+15
+00:01:14,240 --> 00:01:16,520
+So this is going to be the image of our coin.
+
+16
+00:01:19,470 --> 00:01:22,050
+Next, let's go to our player hard.
+
+17
+00:01:23,740 --> 00:01:27,400
+And we're going to visually display the amount of coins that we have.
+
+18
+00:01:27,610 --> 00:01:30,520
+So I'm going to look for a horizontal box.
+
+19
+00:01:32,620 --> 00:01:33,880
+And track it in here.
+
+20
+00:01:35,350 --> 00:01:37,410
+For my second horizontal box.
+
+21
+00:01:37,420 --> 00:01:39,820
+Let's add a padding of toe to the bottom.
+
+22
+00:01:39,850 --> 00:01:41,410
+That way there's a bit of a gap.
+
+23
+00:01:42,010 --> 00:01:44,410
+Then in my palette for an image.
+
+24
+00:01:45,270 --> 00:01:48,000
+And our it into my third horizontal box.
+
+25
+00:01:49,900 --> 00:01:52,060
+Then I'm going to look for some text.
+
+26
+00:01:53,080 --> 00:01:55,450
+And I'll truck gets into the horizontal box.
+
+27
+00:01:56,650 --> 00:02:00,040
+For the image, select one of the coin sprites that we just made.
+
+28
+00:02:03,330 --> 00:02:06,510
+And expand it in the x axis until it looks a bit normal.
+
+29
+00:02:07,350 --> 00:02:09,630
+Then for this text block, select it.
+
+30
+00:02:09,900 --> 00:02:13,050
+And check this is variable and call this on coins.
+
+31
+00:02:14,590 --> 00:02:16,960
+Then if we go over to the graph.
+
+32
+00:02:18,090 --> 00:02:21,830
+After we set our lives, we're going to drag in our coins.
+
+33
+00:02:21,840 --> 00:02:28,230
+So if we look for the coins, text, drag it in and drag off it and look for set text.
+
+34
+00:02:29,440 --> 00:02:32,200
+And then if we check in, I'll play a beep reference.
+
+35
+00:02:33,280 --> 00:02:35,260
+And get them out of coins that they have.
+
+36
+00:02:37,340 --> 00:02:38,900
+And just connect this into here.
+
+37
+00:02:40,720 --> 00:02:44,530
+And then finally, right click and add custom event.
+
+38
+00:02:45,430 --> 00:02:47,280
+And this update points.
+
+39
+00:02:51,650 --> 00:02:55,760
+And we're going to call this custom event whenever our player character picks up a coin.
+
+40
+00:02:56,030 --> 00:03:02,690
+So if we compile and close this, the only thing left to do is create our COIN blueprint.
+
+41
+00:03:02,930 --> 00:03:09,650
+So if I go over to my item folder and I'm going to select my Apple pickup and just right click on it
+
+42
+00:03:09,650 --> 00:03:13,610
+and go duplicate and I'll call this my coin pickup.
+
+43
+00:03:14,580 --> 00:03:18,570
+Now, the only thing left to do is create a coin pick up blueprint.
+
+44
+00:03:18,690 --> 00:03:25,230
+So if we right Click and Go Blueprint class, select an actor and call this coin pickup underscore beep.
+
+45
+00:03:29,060 --> 00:03:34,520
+If we open it up and go ahead and look for a paper flipbook.
+
+46
+00:03:36,310 --> 00:03:37,030
+Well, the paperclip.
+
+47
+00:03:37,030 --> 00:03:39,730
+But it's not the coin that we just made.
+
+48
+00:03:40,440 --> 00:03:42,000
+And let's get it up a bit.
+
+49
+00:03:42,000 --> 00:03:43,550
+So something like, Oh.
+
+50
+00:03:45,500 --> 00:03:52,340
+Then go out and look for spare and select spare collision and make sure it fits around our coin.
+
+51
+00:03:53,210 --> 00:03:59,390
+Then if we scroll down and go to uncompetitive and overlap, uncompetitive and overlap, we're going
+
+52
+00:03:59,390 --> 00:04:02,000
+to cost to our player VP.
+
+53
+00:04:03,720 --> 00:04:06,690
+From here, we're going to get the amount of points that they have.
+
+54
+00:04:07,830 --> 00:04:15,180
+And if this value is ever equal to 100, so if our black actor has 100 points, we're going to give
+
+55
+00:04:15,180 --> 00:04:18,750
+our player character an extra life and then reset the amount of coins that they have.
+
+56
+00:04:19,240 --> 00:04:21,120
+So for Branch.
+
+57
+00:04:22,100 --> 00:04:23,300
+And connect this interview.
+
+58
+00:04:23,690 --> 00:04:28,940
+But before we do that, if, say, our player character has zero or under 100 points, then we're going
+
+59
+00:04:28,940 --> 00:04:31,160
+to increase the amount of coins that they have by one.
+
+60
+00:04:31,700 --> 00:04:35,030
+So I'm actually going to promote this to rebel.
+
+61
+00:04:37,260 --> 00:04:39,090
+And of reconnect all these notes here.
+
+62
+00:04:42,520 --> 00:04:47,230
+Then if I drag in my play a beep reference, I will get them out of coins that they have.
+
+63
+00:04:49,350 --> 00:04:49,630
+Track.
+
+64
+00:04:49,650 --> 00:04:50,090
+Okay.
+
+65
+00:04:50,460 --> 00:04:52,080
+And for at.
+
+66
+00:04:53,370 --> 00:04:53,940
+In the valley.
+
+67
+00:04:53,940 --> 00:04:58,500
+I'm going to get one and then we will drag up a lot for set points.
+
+68
+00:04:59,670 --> 00:05:01,260
+And just connect this and do here.
+
+69
+00:05:03,450 --> 00:05:11,580
+After we do this, we can drag off our BP and get our hard reference, and we will call the update point
+
+70
+00:05:11,580 --> 00:05:12,300
+text.
+
+71
+00:05:15,610 --> 00:05:21,280
+Now let's set up what will happen if my character cuts a coin when they have 100 coins.
+
+72
+00:05:21,700 --> 00:05:25,820
+The first thing we're going to do is make it so I'll play A character has zero coins.
+
+73
+00:05:25,840 --> 00:05:28,300
+So if I draw game, I play a reference.
+
+74
+00:05:28,810 --> 00:05:33,640
+I drag up here and look for set coins and I'll set this to be there.
+
+75
+00:05:34,460 --> 00:05:38,450
+Then the next thing we're going to do is increase the amount of life that they have by one.
+
+76
+00:05:38,690 --> 00:05:41,120
+So drag up here and we'll get lives.
+
+77
+00:05:42,530 --> 00:05:45,370
+And our a pick n add here.
+
+78
+00:05:45,440 --> 00:05:51,800
+I'm going to put one and then I'll drag a pair and look for set lives and just connect the note here.
+
+79
+00:05:51,980 --> 00:05:55,010
+So we'll get around life that my pair has and increase it by one.
+
+80
+00:05:58,390 --> 00:06:00,490
+And actually if we go back to our prior hard.
+
+81
+00:06:01,360 --> 00:06:04,990
+Best to create a new customer account here where we update the players lives.
+
+82
+00:06:04,990 --> 00:06:08,420
+So right click and add custom event reports.
+
+83
+00:06:08,440 --> 00:06:10,690
+Update lives.
+
+84
+00:06:13,420 --> 00:06:14,650
+And connect us with you here.
+
+85
+00:06:15,130 --> 00:06:19,480
+And when we update our lives, it will automatically update the amount of coins that we have because
+
+86
+00:06:19,480 --> 00:06:20,920
+this node is connected to here.
+
+87
+00:06:21,340 --> 00:06:23,260
+So now if I go back to my coin pickup.
+
+88
+00:06:24,420 --> 00:06:27,140
+I can drag a pet and get my reference.
+
+89
+00:06:28,860 --> 00:06:37,470
+And I can drive a here and look for update lives and I'll connect this here and go compile so we can
+
+90
+00:06:37,470 --> 00:06:39,150
+close this and test this all out.
+
+91
+00:06:39,180 --> 00:06:43,230
+So I'm going to drag in my coin pickup, move it to layer 20.
+
+92
+00:06:44,770 --> 00:06:46,450
+And let's place five points.
+
+93
+00:06:48,660 --> 00:06:50,130
+Actually, I just placed three.
+
+94
+00:06:50,130 --> 00:06:51,300
+And now we play.
+
+95
+00:06:51,780 --> 00:06:53,370
+We can see I observe coins.
+
+96
+00:06:53,400 --> 00:06:56,730
+However, if I pick up a coin, I now get one.
+
+97
+00:06:57,420 --> 00:06:58,140
+Oh, whoops.
+
+98
+00:06:58,140 --> 00:07:01,080
+I forgot to make it so that if we pick up a coin, we should just it.
+
+99
+00:07:01,470 --> 00:07:02,610
+So we go back to our coin.
+
+100
+00:07:02,620 --> 00:07:03,120
+Pick up.
+
+101
+00:07:04,460 --> 00:07:07,130
+After we pick up a coin, we're going to destroy this actor.
+
+102
+00:07:07,370 --> 00:07:12,320
+So I drag and destroy actor and also drag and destroy actor.
+
+103
+00:07:12,740 --> 00:07:14,990
+And now they're go compile and play.
+
+104
+00:07:15,590 --> 00:07:16,410
+I have zero coins.
+
+105
+00:07:16,430 --> 00:07:19,640
+If I pick one up, I get one, and then the coin becomes destroyed.
+
+106
+00:07:20,390 --> 00:07:21,050
+Nice.
+
+107
+00:07:21,620 --> 00:07:25,010
+Just so that we can test for our life update system is working.
+
+108
+00:07:25,040 --> 00:07:26,090
+Let's go to our player.
+
+109
+00:07:26,120 --> 00:07:26,720
+Beep.
+
+110
+00:07:27,110 --> 00:07:31,460
+Set the amount of coins that they have and make it so they start with 99 points.
+
+111
+00:07:32,030 --> 00:07:35,240
+And now if I go play, I'll cut my 100th coin.
+
+112
+00:07:35,270 --> 00:07:40,980
+Now, when I cut my 101 coin by coin should be set to zero and I should get one more life.
+
+113
+00:07:41,000 --> 00:07:41,900
+So I do that.
+
+114
+00:07:41,900 --> 00:07:43,940
+I have zero coins and I have one more life.
+
+115
+00:07:44,180 --> 00:07:44,840
+Nice.
+
+116
+00:07:44,930 --> 00:07:47,660
+With this, we have set up our coin pickup system.
+
